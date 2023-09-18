@@ -1,0 +1,11 @@
+{
+  "name": "paga-ui",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "Dang Van Thanh",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ]
+}
