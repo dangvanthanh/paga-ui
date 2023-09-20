@@ -4,14 +4,19 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "bunx --bun vite",
+    "prepare": "panda codegen",
+    "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@zag-js/accordion": "^0.21.0",
+    "@zag-js/switch": "^0.21.0",
+    "@zag-js/vue": "^0.21.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@pandacss/dev": "^0.15.1",
     "@vitejs/plugin-vue": "^4.2.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",

@@ -19,7 +19,7 @@ import { rangeSlider } from './range-slider';
 import { segmentedControl } from './segmented-control';
 import { select } from './select';
 import { slider } from './slider';
-import { switches } from './switch';
+import { switchRecipe } from './switch';
 import { tabs } from './tabs';
 import { tagsInput } from './tags-input';
 import { toast } from './toast';
@@ -48,7 +48,7 @@ export const slotRecipes = {
   segmentedControl,
   select,
   slider,
-  switches,
+  switchRecipe,
   tabs,
   tagsInput,
   toast,

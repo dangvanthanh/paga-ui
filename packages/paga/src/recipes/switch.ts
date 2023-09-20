@@ -1,6 +1,6 @@
 import { defineSlotRecipe } from '@pandacss/dev';
 
-export const switches = defineSlotRecipe({
-  className: 'switches',
+export const switchRecipe = defineSlotRecipe({
+  className: 'switch',
   slots: [],
 });
