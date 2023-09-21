@@ -3,7 +3,7 @@ import * as zagSwitch from "@zag-js/switch";
 import { normalizeProps, useMachine } from "@zag-js/vue";
 import { computed } from "vue";
 import { css } from "../styled-system/css";
-import { flex } from "../styled-system/patterns";
+import { flex, stack } from "../styled-system/patterns";
 
 const [state, send] = useMachine(zagSwitch.machine({ id: "1" }));
 
@@ -93,8 +93,17 @@ const api = computed(() =>
   </header>
   <main role="main">
     <div :class="css({ maxW: '7xl', mx: 'auto', px: '4' })">
-      <div :class="flex({ align: 'start' })">
-        <div :class="css({ w: '1/3' })">
+      <div :class="flex({ align: 'start', wrap: 'wrap' })">
+        <div
+          :class="
+            css({
+              w: 'full',
+              lg: {
+                w: '1/3',
+              },
+            })
+          "
+        >
           <h2 :class="css({ fontSize: '6xl', lineHeight: '1', pt: '12' })">
             Start building your app now
           </h2>
@@ -103,10 +112,24 @@ const api = computed(() =>
             work with a variety of JS frameworks.
           </p>
         </div>
-        <div :class="css({ w: '2/3', pl: '32' })">
+        <div
+          :class="
+            css({
+              w: 'full',
+              my: '8',
+              lg: {
+                w: '2/3',
+                pl: '32',
+                mt: '0',
+              },
+            })
+          "
+        >
           <div
             :class="
               css({
+                border: '1px solid',
+                borderColor: 'gray.100',
                 boxShadow: 'sm',
                 p: '6',
                 borderRadius: 'sm',
@@ -116,7 +139,7 @@ const api = computed(() =>
             <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">
               Notifications
             </h3>
-            <p :class="css({ fontSize: 'sm', color: 'gray.500' })">
+            <p :class="css({ fontSize: 'sm', color: 'gray.600' })">
               Manage your notification settings.
             </p>
             <hr :class="css({ borderColor: 'gray.200', my: '6' })" />
@@ -125,14 +148,14 @@ const api = computed(() =>
                 <h4 :class="css({ fontSize: 'sm', fontWeight: '600' })">
                   Comments
                 </h4>
-                <p :class="css({ fontSize: 'sm', color: 'gray.500' })">
+                <p :class="css({ fontSize: 'sm', color: 'gray.600' })">
                   Receive notifications when someone comments on your documents
                   or mentions you.
                 </p>
               </div>
               <div :class="flex({ direction: 'column', align: 'start' })">
                 <label v-bind="api.rootProps">
-                  <input v-bind="api.inputProps" />
+                  <input v-bind="api.hiddenInputProps" />
                   <span v-bind="api.controlProps">
                     <span v-bind="api.thumbProps" />
                   </span>
@@ -142,7 +165,7 @@ const api = computed(() =>
                   </span>
                 </label>
                 <label v-bind="api.rootProps">
-                  <input v-bind="api.inputProps" />
+                  <input v-bind="api.hiddenInputProps" />
                   <span v-bind="api.controlProps">
                     <span v-bind="api.thumbProps" />
                   </span>
@@ -152,7 +175,7 @@ const api = computed(() =>
                   </span>
                 </label>
                 <label v-bind="api.rootProps">
-                  <input v-bind="api.inputProps" />
+                  <input v-bind="api.hiddenInputProps" />
                   <span v-bind="api.controlProps">
                     <span v-bind="api.thumbProps" />
                   </span>
@@ -169,14 +192,14 @@ const api = computed(() =>
                 <h4 :class="css({ fontSize: 'sm', fontWeight: '600' })">
                   Favorites
                 </h4>
-                <p :class="css({ fontSize: 'sm', color: 'gray.500' })">
+                <p :class="css({ fontSize: 'sm', color: 'gray.600' })">
                   Receive notifications when someone comments on your documents
                   or mentions you.
                 </p>
               </div>
               <div :class="flex({ direction: 'column', align: 'start' })">
                 <label v-bind="api.rootProps">
-                  <input v-bind="api.inputProps" />
+                  <input v-bind="api.hiddenInputProps" />
                   <span v-bind="api.controlProps">
                     <span v-bind="api.thumbProps" />
                   </span>
@@ -186,7 +209,7 @@ const api = computed(() =>
                   </span>
                 </label>
                 <label v-bind="api.rootProps">
-                  <input v-bind="api.inputProps" />
+                  <input v-bind="api.hiddenInputProps" />
                   <span v-bind="api.controlProps">
                     <span v-bind="api.thumbProps" />
                   </span>
@@ -196,7 +219,7 @@ const api = computed(() =>
                   </span>
                 </label>
                 <label v-bind="api.rootProps">
-                  <input v-bind="api.inputProps" />
+                  <input v-bind="api.hiddenInputProps" />
                   <span v-bind="api.controlProps">
                     <span v-bind="api.thumbProps" />
                   </span>
@@ -205,6 +228,130 @@ const api = computed(() =>
                     <span v-else>Slack</span>
                   </span>
                 </label>
+              </div>
+            </div>
+          </div>
+          <div
+            :class="
+              css({
+                border: '1px solid',
+                borderColor: 'gray.100',
+                boxShadow: 'sm',
+                p: '6',
+                borderRadius: 'sm',
+                mt: '8',
+              })
+            "
+          >
+            <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Sign Up</h3>
+            <p :class="css({ fontSize: 'sm', color: 'gray.600' })">
+              Create an account and discover the worlds' best UI component
+              framework.
+            </p>
+            <div :class="stack({ gap: '4', my: '6' })">
+              <div :class="stack({ gap: '3', direction: 'row' })">
+                <button
+                  :class="
+                    css({
+                      alignItems: 'center',
+                      appearance: 'none',
+                      borderRadius: 'l2',
+                      cursor: 'pointer',
+                      display: 'inline-flex',
+                      fontWeight: 'semibold',
+                      minWidth: '0',
+                      justifyContent: 'center',
+                      outline: 'none',
+                      position: 'relative',
+                      transitionDuration: 'normal',
+                      transitionProperty:
+                        'background, border-color, color, box-shadow',
+                      transitionTimingFunction: 'default',
+                      userSelect: 'none',
+                      verticalAlign: 'middle',
+                      whiteSpace: 'nowrap',
+                      background: 'white',
+                      borderStyle: 'solid',
+                      borderWidth: '1px',
+                      borderColor: 'gray.200',
+                      color: 'gray.700',
+                      h: '10',
+                      minW: '10',
+                      textStyle: 'sm',
+                      px: '4',
+                      gap: '2',
+                      w: 'full',
+                      _hover: {
+                        background: 'gray.100',
+                      },
+                      _focusVisible: {
+                        outlineOffset: '2px',
+                        outline: '2px solid',
+                        outlineColor: 'border.accent',
+                      },
+                      _disabled: {
+                        background: 'gray.50',
+                        cursor: 'not-allowed',
+                        _hover: {
+                          background: 'gray.50',
+                        },
+                      },
+                    })
+                  "
+                >
+                  Google
+                </button>
+                <button
+                  :class="
+                    css({
+                      alignItems: 'center',
+                      appearance: 'none',
+                      borderRadius: 'l2',
+                      cursor: 'pointer',
+                      display: 'inline-flex',
+                      fontWeight: 'semibold',
+                      minWidth: '0',
+                      justifyContent: 'center',
+                      outline: 'none',
+                      position: 'relative',
+                      transitionDuration: 'normal',
+                      transitionProperty:
+                        'background, border-color, color, box-shadow',
+                      transitionTimingFunction: 'default',
+                      userSelect: 'none',
+                      verticalAlign: 'middle',
+                      whiteSpace: 'nowrap',
+                      background: 'white',
+                      borderStyle: 'solid',
+                      borderWidth: '1px',
+                      borderColor: 'gray.200',
+                      color: 'gray.700',
+                      h: '10',
+                      minW: '10',
+                      textStyle: 'sm',
+                      px: '4',
+                      gap: '2',
+                      w: 'full',
+                      _hover: {
+                        background: 'gray.100',
+                      },
+                      _focusVisible: {
+                        outlineOffset: '2px',
+                        outline: '2px solid',
+                        outlineColor: 'border.accent',
+                      },
+                      _disabled: {
+                        background: 'gray.50',
+                        cursor: 'not-allowed',
+                        _hover: {
+                          background: 'gray.50',
+                        },
+                      },
+                    })
+                  "
+                >
+                  Github
+                </button>
               </div>
             </div>
           </div>
