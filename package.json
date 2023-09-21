@@ -1,8 +1,8 @@
 {
   "name": "paga-ui",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "description": "Beautifully designed components built with Zagjs and Panda CSS. ",
+  "keywords": ["Zagjs", "PandaCSS"],
   "author": "Dang Van Thanh",
   "license": "MIT",
   "workspaces": [
