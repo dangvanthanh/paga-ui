@@ -1,5 +1,5 @@
 {
-  "name": "website",
+  "name": "web",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@paga/ui": "workspace:*",
     "@zag-js/accordion": "^0.21.0",
     "@zag-js/switch": "^0.21.0",
     "@zag-js/vue": "^0.21.0",
