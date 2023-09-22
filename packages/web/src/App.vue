@@ -6,12 +6,22 @@ import { css, cx } from "../styled-system/css";
 import { flex, stack } from "../styled-system/patterns";
 import { button, switches } from "../styled-system/recipes";
 
-const classes = switches({ size: "sm" });
+const switchClasses = switches({ size: "sm" });
 
-const [state, send] = useMachine(zagSwitch.machine({ id: "1" }));
+const [statePush, sendPush] = useMachine(zagSwitch.machine({ id: "1" }));
+const [stateEmail, sendEmail] = useMachine(zagSwitch.machine({ id: "2" }));
+const [stateSlack, sendSlack] = useMachine(zagSwitch.machine({ id: "3" }));
 
-const api = computed(() =>
-  zagSwitch.connect(state.value, send, normalizeProps)
+const apiPush = computed(() =>
+  zagSwitch.connect(statePush.value, sendPush, normalizeProps)
+);
+
+const apiEmail = computed(() =>
+  zagSwitch.connect(stateEmail.value, sendEmail, normalizeProps)
+);
+
+const apiSlack = computed(() =>
+  zagSwitch.connect(stateSlack.value, sendSlack, normalizeProps)
 );
 </script>
 
@@ -76,20 +86,6 @@ const api = computed(() =>
             <path d="m6.34 17.66-1.41 1.41" />
             <path d="m19.07 4.93-1.41 1.41" />
           </svg>
-          <!-- <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="lucide lucide-moon"
-      >
-        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-      </svg> -->
         </a>
       </nav>
     </div>
@@ -165,61 +161,76 @@ const api = computed(() =>
               >
                 <label
                   for="comments-push"
-                  v-bind="api.rootProps"
-                  v-bind:class="classes.root"
+                  v-bind="apiPush.rootProps"
+                  v-bind:class="switchClasses.root"
                 >
-                  <input id="comments-push" v-bind="api.hiddenInputProps" />
+                  <input id="comments-push" v-bind="apiPush.hiddenInputProps" />
                   <span
-                    v-bind="api.controlProps"
-                    v-bind:class="classes.control"
+                    v-bind="apiPush.controlProps"
+                    v-bind:class="switchClasses.control"
                   >
                     <span
-                      v-bind="api.thumbProps"
-                      v-bind:class="classes.thumb"
+                      v-bind="apiPush.thumbProps"
+                      v-bind:class="switchClasses.thumb"
                     />
                   </span>
-                  <span v-bind="api.labelProps" v-bind:class="classes.label">
-                    <span v-if="api.isChecked">Push</span>
+                  <span
+                    v-bind="apiPush.labelProps"
+                    v-bind:class="switchClasses.label"
+                  >
+                    <span v-if="apiPush.isChecked">Push</span>
                     <span v-else>Push</span>
                   </span>
                 </label>
                 <label
                   for="comments-email"
-                  v-bind="api.rootProps"
-                  v-bind:class="classes.root"
+                  v-bind="apiEmail.rootProps"
+                  v-bind:class="switchClasses.root"
                 >
-                  <input id="comments-email" v-bind="api.hiddenInputProps" />
+                  <input
+                    id="comments-email"
+                    v-bind="apiEmail.hiddenInputProps"
+                  />
                   <span
-                    v-bind="api.controlProps"
-                    v-bind:class="classes.control"
+                    v-bind="apiEmail.controlProps"
+                    v-bind:class="switchClasses.control"
                   >
                     <span
-                      v-bind="api.thumbProps"
-                      v-bind:class="classes.thumb"
+                      v-bind="apiEmail.thumbProps"
+                      v-bind:class="switchClasses.thumb"
                     />
                   </span>
-                  <span v-bind="api.labelProps" v-bind:class="classes.label">
-                    <span v-if="api.isChecked">Email</span>
+                  <span
+                    v-bind="apiEmail.labelProps"
+                    v-bind:class="switchClasses.label"
+                  >
+                    <span v-if="apiEmail.isChecked">Email</span>
                     <span v-else>Email</span>
                   </span>
                 </label>
                 <label
                   for="comments-slack"
-                  v-bind="api.rootProps"
-                  v-bind:class="classes.root"
+                  v-bind="apiSlack.rootProps"
+                  v-bind:class="switchClasses.root"
                 >
-                  <input id="comments-slack" v-bind="api.hiddenInputProps" />
+                  <input
+                    id="comments-slack"
+                    v-bind="apiSlack.hiddenInputProps"
+                  />
                   <span
-                    v-bind="api.controlProps"
-                    v-bind:class="classes.control"
+                    v-bind="apiSlack.controlProps"
+                    v-bind:class="switchClasses.control"
                   >
                     <span
-                      v-bind="api.thumbProps"
-                      v-bind:class="classes.thumb"
+                      v-bind="apiSlack.thumbProps"
+                      v-bind:class="switchClasses.thumb"
                     />
                   </span>
-                  <span v-bind="api.labelProps" v-bind:class="classes.label">
-                    <span v-if="api.isChecked">Slack</span>
+                  <span
+                    v-bind="apiSlack.labelProps"
+                    v-bind:class="switchClasses.label"
+                  >
+                    <span v-if="apiSlack.isChecked">Slack</span>
                     <span v-else>Slack</span>
                   </span>
                 </label>
@@ -243,61 +254,79 @@ const api = computed(() =>
               >
                 <label
                   for="favorites-push"
-                  v-bind="api.rootProps"
-                  v-bind:class="classes.root"
+                  v-bind="apiPush.rootProps"
+                  v-bind:class="switchClasses.root"
                 >
-                  <input id="favorites-push" v-bind="api.hiddenInputProps" />
+                  <input
+                    id="favorites-push"
+                    v-bind="apiPush.hiddenInputProps"
+                  />
                   <span
-                    v-bind="api.controlProps"
-                    v-bind:class="classes.control"
+                    v-bind="apiPush.controlProps"
+                    v-bind:class="switchClasses.control"
                   >
                     <span
-                      v-bind="api.thumbProps"
-                      v-bind:class="classes.thumb"
+                      v-bind="apiPush.thumbProps"
+                      v-bind:class="switchClasses.thumb"
                     />
                   </span>
-                  <span v-bind="api.labelProps" v-bind:class="classes.label">
-                    <span v-if="api.isChecked">Push</span>
+                  <span
+                    v-bind="apiPush.labelProps"
+                    v-bind:class="switchClasses.label"
+                  >
+                    <span v-if="apiPush.isChecked">Push</span>
                     <span v-else>Push</span>
                   </span>
                 </label>
                 <label
                   for="favorites-email"
-                  v-bind="api.rootProps"
-                  v-bind:class="classes.root"
+                  v-bind="apiEmail.rootProps"
+                  v-bind:class="switchClasses.root"
                 >
-                  <input id="favorites-email" v-bind="api.hiddenInputProps" />
+                  <input
+                    id="favorites-email"
+                    v-bind="apiEmail.hiddenInputProps"
+                  />
                   <span
-                    v-bind="api.controlProps"
-                    v-bind:class="classes.control"
+                    v-bind="apiEmail.controlProps"
+                    v-bind:class="switchClasses.control"
                   >
                     <span
-                      v-bind="api.thumbProps"
-                      v-bind:class="classes.thumb"
+                      v-bind="apiEmail.thumbProps"
+                      v-bind:class="switchClasses.thumb"
                     />
                   </span>
-                  <span v-bind="api.labelProps" v-bind:class="classes.label">
-                    <span v-if="api.isChecked">Email</span>
+                  <span
+                    v-bind="apiEmail.labelProps"
+                    v-bind:class="switchClasses.label"
+                  >
+                    <span v-if="apiEmail.isChecked">Email</span>
                     <span v-else>Email</span>
                   </span>
                 </label>
                 <label
                   for="favorites-slack"
-                  v-bind="api.rootProps"
-                  v-bind:class="classes.root"
+                  v-bind="apiSlack.rootProps"
+                  v-bind:class="switchClasses.root"
                 >
-                  <input id="favorites-slack" v-bind="api.hiddenInputProps" />
+                  <input
+                    id="favorites-slack"
+                    v-bind="apiSlack.hiddenInputProps"
+                  />
                   <span
-                    v-bind="api.controlProps"
-                    v-bind:class="classes.control"
+                    v-bind="apiSlack.controlProps"
+                    v-bind:class="switchClasses.control"
                   >
                     <span
-                      v-bind="api.thumbProps"
-                      v-bind:class="classes.thumb"
+                      v-bind="apiSlack.thumbProps"
+                      v-bind:class="switchClasses.thumb"
                     />
                   </span>
-                  <span v-bind="api.labelProps" v-bind:class="classes.label">
-                    <span v-if="api.isChecked">Slack</span>
+                  <span
+                    v-bind="apiSlack.labelProps"
+                    v-bind:class="switchClasses.label"
+                  >
+                    <span v-if="apiSlack.isChecked">Slack</span>
                     <span v-else>Slack</span>
                   </span>
                 </label>

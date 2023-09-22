@@ -1,7 +1,7 @@
 import { defineConfig } from "@pandacss/dev";
-import { buttonRecipe, switchRecipe } from "@paga/ui";
 
 export default defineConfig({
+  presets: ["@pandacss/preset-panda", "@paga/presets"],
   // Whether to use css reset
   preflight: true,
 
@@ -16,14 +16,7 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {
-      recipes: {
-        button: buttonRecipe,
-      },
-      slotRecipes: {
-        switches: switchRecipe,
-      },
-    },
+    extend: {},
   },
 
   // The output directory for your css system
