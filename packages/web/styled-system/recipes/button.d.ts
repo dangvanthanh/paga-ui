@@ -4,7 +4,7 @@ import type { Pretty } from '../types/helpers';
 import type { DistributiveOmit } from '../types/system-types';
 
 type ButtonVariant = {
-  variant: "primary"
+  variant: "primary" | "ghost"
 size: "xs" | "sm" | "md" | "lg"
 }
 

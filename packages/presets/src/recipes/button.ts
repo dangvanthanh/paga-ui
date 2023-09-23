@@ -9,26 +9,34 @@ export const button = defineRecipe({
     userSelect: "none",
     verticalAlign: "top",
     cursor: "pointer",
+    borderRadius: "sm",
+    borderWidth: "1px",
+    _focusVisible: {
+      outlineOffset: "2px",
+      outline: "2px solid",
+      outlineColor: "blue.600",
+    },
+    _disabled: {
+      cursor: "not-allowed",
+      pointerEvents: "none",
+      opacity: 0.75,
+    },
   },
   variants: {
     variant: {
       primary: {
-        borderWidth: "1px",
-        borderColor: "gray.100",
+        borderColor: "blue.100",
+        background: "blue.500",
+        color: "white",
+        _hover: {
+          background: "blue.400",
+        },
+      },
+      ghost: {
+        borderColor: "gray.200",
+        background: "gray.100",
         _hover: {
           background: "gray.50",
-        },
-        _focusVisible: {
-          outlineOffset: "2px",
-          outline: "2px solid",
-          outlineColor: "blue.600",
-        },
-        _disabled: {
-          background: "gray.300",
-          cursor: "not-allowed",
-          _hover: {
-            background: "gray.300",
-          },
         },
       },
     },

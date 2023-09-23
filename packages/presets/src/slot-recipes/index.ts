@@ -19,7 +19,7 @@
 // import { segmentedControl } from './segmented-control';
 // import { select } from './select';
 // import { slider } from './slider';
-import { switchRecipe } from "./switch";
+import { switchRecipe } from './switch';
 // import { tabs } from './tabs';
 // import { tagsInput } from './tags-input';
 // import { toast } from './toast';

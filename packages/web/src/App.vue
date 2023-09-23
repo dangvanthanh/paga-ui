@@ -4,7 +4,7 @@ import { normalizeProps, useMachine } from "@zag-js/vue";
 import { computed } from "vue";
 import { css, cx } from "../styled-system/css";
 import { flex, stack } from "../styled-system/patterns";
-import { button, switches } from "../styled-system/recipes";
+import { button, switches, label, input } from "../styled-system/recipes";
 
 const switchClasses = switches({ size: "sm" });
 
@@ -27,7 +27,16 @@ const apiSlack = computed(() =>
 
 <template>
   <header role="banner" v-bind:class="css({ px: '4', py: '4' })">
-    <div v-bind:class="flex({ align: 'center', justify: 'space-between' })">
+    <div
+      v-bind:class="
+        flex({
+          maxW: '8xl',
+          mx: 'auto',
+          align: 'center',
+          justify: 'space-between',
+        })
+      "
+    >
       <h1>
         <a
           href="/"
@@ -352,12 +361,48 @@ const apiSlack = computed(() =>
               Create an account and discover the worlds' best UI component
               framework.
             </p>
+            <div
+              v-bind:class="stack({ direction: 'column', gap: '4', mt: '6' })"
+            >
+              <div v-bind:class="stack({ direction: 'column' })">
+                <label for="username" v-bind:class="label({ size: 'sm' })"
+                  >Username</label
+                >
+                <input
+                  id="username"
+                  type="text"
+                  v-bind:class="input({ size: 'sm' })"
+                />
+              </div>
+              <div v-bind:class="stack({ direction: 'column' })">
+                <label for="password" v-bind:class="label({ size: 'sm' })"
+                  >Password</label
+                >
+                <input
+                  id="password"
+                  type="password"
+                  v-bind:class="input({ size: 'sm' })"
+                />
+              </div>
+              <button v-bind:class="cx(css({ w: 'full' }), button())">
+                Signup
+              </button>
+            </div>
+            <hr v-bind:class="css({ borderColor: 'gray.200', my: '6' })" />
             <div v-bind:class="stack({ gap: '4', my: '6' })">
               <div v-bind:class="stack({ gap: '3', direction: 'row' })">
-                <button v-bind:class="cx(css({ w: 'full' }), button())">
+                <button
+                  v-bind:class="
+                    cx(css({ w: 'full' }), button({ variant: 'ghost' }))
+                  "
+                >
                   Google
                 </button>
-                <button v-bind:class="cx(css({ w: 'full' }), button())">
+                <button
+                  v-bind:class="
+                    cx(css({ w: 'full' }), button({ variant: 'ghost' }))
+                  "
+                >
                   Github
                 </button>
               </div>
