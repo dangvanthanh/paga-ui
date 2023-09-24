@@ -1,16 +1,26 @@
 <script setup lang="ts">
+import * as zagAvatar from "@zag-js/avatar";
 import * as zagSwitch from "@zag-js/switch";
 import { normalizeProps, useMachine } from "@zag-js/vue";
 import { computed } from "vue";
 import { css, cx } from "../styled-system/css";
-import { flex, stack } from "../styled-system/patterns";
-import { button, switches, label, input } from "../styled-system/recipes";
+import { flex, stack, grid, vstack, hstack } from "../styled-system/patterns";
+import {
+  button,
+  switches,
+  label,
+  input,
+  avatar,
+} from "../styled-system/recipes";
 
 const switchClasses = switches({ size: "sm" });
+const avatarClasses = avatar();
 
 const [statePush, sendPush] = useMachine(zagSwitch.machine({ id: "1" }));
 const [stateEmail, sendEmail] = useMachine(zagSwitch.machine({ id: "2" }));
 const [stateSlack, sendSlack] = useMachine(zagSwitch.machine({ id: "3" }));
+
+const [stateAvatar, sendAvatar] = useMachine(zagAvatar.machine({ id: "1" }));
 
 const apiPush = computed(() =>
   zagSwitch.connect(statePush.value, sendPush, normalizeProps)
@@ -22,6 +32,10 @@ const apiEmail = computed(() =>
 
 const apiSlack = computed(() =>
   zagSwitch.connect(stateSlack.value, sendSlack, normalizeProps)
+);
+
+const apiAvatar = computed(() =>
+  zagAvatar.connect(stateAvatar.value, sendAvatar, normalizeProps)
 );
 </script>
 
@@ -129,282 +143,478 @@ const apiSlack = computed(() =>
               my: '8',
               lg: {
                 w: '2/3',
-                pl: '32',
+                pl: '12',
                 mt: '0',
               },
             })
           "
         >
-          <div
-            v-bind:class="
-              css({
-                border: '1px solid',
-                borderColor: 'gray.100',
-                boxShadow: 'sm',
-                p: '6',
-                borderRadius: 'sm',
-              })
-            "
-          >
-            <h3 v-bind:class="css({ fontSize: 'lg', fontWeight: '600' })">
-              Notifications
-            </h3>
-            <p v-bind:class="css({ fontSize: 'sm', color: 'gray.600' })">
-              Manage your notification settings.
-            </p>
-            <hr v-bind:class="css({ borderColor: 'gray.200', my: '6' })" />
-            <div v-bind:class="flex({ gap: '8', justify: 'space-between' })">
-              <div>
-                <h4 v-bind:class="css({ fontSize: 'sm', fontWeight: '600' })">
-                  Comments
-                </h4>
-                <p v-bind:class="css({ fontSize: 'sm', color: 'gray.600' })">
-                  Receive notifications when someone comments on your documents
-                  or mentions you.
-                </p>
-              </div>
-              <div
-                v-bind:class="
-                  flex({ direction: 'column', align: 'start', gap: '1' })
-                "
-              >
-                <label
-                  for="comments-push"
-                  v-bind="apiPush.rootProps"
-                  v-bind:class="switchClasses.root"
-                >
-                  <input id="comments-push" v-bind="apiPush.hiddenInputProps" />
-                  <span
-                    v-bind="apiPush.controlProps"
-                    v-bind:class="switchClasses.control"
-                  >
-                    <span
-                      v-bind="apiPush.thumbProps"
-                      v-bind:class="switchClasses.thumb"
-                    />
-                  </span>
-                  <span
-                    v-bind="apiPush.labelProps"
-                    v-bind:class="switchClasses.label"
-                  >
-                    <span v-if="apiPush.isChecked">Push</span>
-                    <span v-else>Push</span>
-                  </span>
-                </label>
-                <label
-                  for="comments-email"
-                  v-bind="apiEmail.rootProps"
-                  v-bind:class="switchClasses.root"
-                >
-                  <input
-                    id="comments-email"
-                    v-bind="apiEmail.hiddenInputProps"
-                  />
-                  <span
-                    v-bind="apiEmail.controlProps"
-                    v-bind:class="switchClasses.control"
-                  >
-                    <span
-                      v-bind="apiEmail.thumbProps"
-                      v-bind:class="switchClasses.thumb"
-                    />
-                  </span>
-                  <span
-                    v-bind="apiEmail.labelProps"
-                    v-bind:class="switchClasses.label"
-                  >
-                    <span v-if="apiEmail.isChecked">Email</span>
-                    <span v-else>Email</span>
-                  </span>
-                </label>
-                <label
-                  for="comments-slack"
-                  v-bind="apiSlack.rootProps"
-                  v-bind:class="switchClasses.root"
-                >
-                  <input
-                    id="comments-slack"
-                    v-bind="apiSlack.hiddenInputProps"
-                  />
-                  <span
-                    v-bind="apiSlack.controlProps"
-                    v-bind:class="switchClasses.control"
-                  >
-                    <span
-                      v-bind="apiSlack.thumbProps"
-                      v-bind:class="switchClasses.thumb"
-                    />
-                  </span>
-                  <span
-                    v-bind="apiSlack.labelProps"
-                    v-bind:class="switchClasses.label"
-                  >
-                    <span v-if="apiSlack.isChecked">Slack</span>
-                    <span v-else>Slack</span>
-                  </span>
-                </label>
-              </div>
-            </div>
-            <hr v-bind:class="css({ borderColor: 'gray.200', my: '6' })" />
-            <div v-bind:class="flex({ gap: '8', justify: 'space-between' })">
-              <div>
-                <h4 v-bind:class="css({ fontSize: 'sm', fontWeight: '600' })">
-                  Favorites
-                </h4>
-                <p v-bind:class="css({ fontSize: 'sm', color: 'gray.600' })">
-                  Receive notifications when someone comments on your documents
-                  or mentions you.
-                </p>
-              </div>
-              <div
-                v-bind:class="
-                  flex({ direction: 'column', align: 'start', gap: '1' })
-                "
-              >
-                <label
-                  for="favorites-push"
-                  v-bind="apiPush.rootProps"
-                  v-bind:class="switchClasses.root"
-                >
-                  <input
-                    id="favorites-push"
-                    v-bind="apiPush.hiddenInputProps"
-                  />
-                  <span
-                    v-bind="apiPush.controlProps"
-                    v-bind:class="switchClasses.control"
-                  >
-                    <span
-                      v-bind="apiPush.thumbProps"
-                      v-bind:class="switchClasses.thumb"
-                    />
-                  </span>
-                  <span
-                    v-bind="apiPush.labelProps"
-                    v-bind:class="switchClasses.label"
-                  >
-                    <span v-if="apiPush.isChecked">Push</span>
-                    <span v-else>Push</span>
-                  </span>
-                </label>
-                <label
-                  for="favorites-email"
-                  v-bind="apiEmail.rootProps"
-                  v-bind:class="switchClasses.root"
-                >
-                  <input
-                    id="favorites-email"
-                    v-bind="apiEmail.hiddenInputProps"
-                  />
-                  <span
-                    v-bind="apiEmail.controlProps"
-                    v-bind:class="switchClasses.control"
-                  >
-                    <span
-                      v-bind="apiEmail.thumbProps"
-                      v-bind:class="switchClasses.thumb"
-                    />
-                  </span>
-                  <span
-                    v-bind="apiEmail.labelProps"
-                    v-bind:class="switchClasses.label"
-                  >
-                    <span v-if="apiEmail.isChecked">Email</span>
-                    <span v-else>Email</span>
-                  </span>
-                </label>
-                <label
-                  for="favorites-slack"
-                  v-bind="apiSlack.rootProps"
-                  v-bind:class="switchClasses.root"
-                >
-                  <input
-                    id="favorites-slack"
-                    v-bind="apiSlack.hiddenInputProps"
-                  />
-                  <span
-                    v-bind="apiSlack.controlProps"
-                    v-bind:class="switchClasses.control"
-                  >
-                    <span
-                      v-bind="apiSlack.thumbProps"
-                      v-bind:class="switchClasses.thumb"
-                    />
-                  </span>
-                  <span
-                    v-bind="apiSlack.labelProps"
-                    v-bind:class="switchClasses.label"
-                  >
-                    <span v-if="apiSlack.isChecked">Slack</span>
-                    <span v-else>Slack</span>
-                  </span>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            v-bind:class="
-              css({
-                border: '1px solid',
-                borderColor: 'gray.100',
-                boxShadow: 'sm',
-                p: '6',
-                borderRadius: 'sm',
-                mt: '8',
-              })
-            "
-          >
-            <h3 v-bind:class="css({ fontSize: 'lg', fontWeight: '600' })">
-              Sign Up
-            </h3>
-            <p v-bind:class="css({ fontSize: 'sm', color: 'gray.600' })">
-              Create an account and discover the worlds' best UI component
-              framework.
-            </p>
+          <div v-bind:class="grid({ columns: 2, gap: 4, lg: { gap: 8 } })">
             <div
-              v-bind:class="stack({ direction: 'column', gap: '4', mt: '6' })"
+              v-bind:class="
+                css({
+                  border: '1px solid',
+                  borderColor: 'gray.100',
+                  boxShadow: 'sm',
+                  p: '6',
+                  borderRadius: 'sm',
+                })
+              "
             >
-              <div v-bind:class="stack({ direction: 'column' })">
-                <label for="username" v-bind:class="label({ size: 'sm' })"
-                  >Username</label
+              <h3 v-bind:class="css({ fontSize: 'lg', fontWeight: '600' })">
+                Notifications
+              </h3>
+              <p v-bind:class="css({ fontSize: 'sm', color: 'gray.600' })">
+                Manage your notification settings.
+              </p>
+              <hr v-bind:class="css({ borderColor: 'gray.200', my: '6' })" />
+              <div v-bind:class="flex({ gap: '8', justify: 'space-between' })">
+                <div>
+                  <h4 v-bind:class="css({ fontSize: 'sm', fontWeight: '600' })">
+                    Comments
+                  </h4>
+                  <p v-bind:class="css({ fontSize: 'sm', color: 'gray.600' })">
+                    Receive notifications when someone comments on your
+                    documents or mentions you.
+                  </p>
+                </div>
+                <div
+                  v-bind:class="
+                    flex({ direction: 'column', align: 'start', gap: '1' })
+                  "
                 >
-                <input
-                  id="username"
-                  type="text"
-                  v-bind:class="input({ size: 'sm' })"
-                />
+                  <label
+                    for="comments-push"
+                    v-bind="apiPush.rootProps"
+                    v-bind:class="switchClasses.root"
+                  >
+                    <input
+                      id="comments-push"
+                      v-bind="apiPush.hiddenInputProps"
+                    />
+                    <span
+                      v-bind="apiPush.controlProps"
+                      v-bind:class="switchClasses.control"
+                    >
+                      <span
+                        v-bind="apiPush.thumbProps"
+                        v-bind:class="switchClasses.thumb"
+                      />
+                    </span>
+                    <span
+                      v-bind="apiPush.labelProps"
+                      v-bind:class="switchClasses.label"
+                    >
+                      <span v-if="apiPush.isChecked">Push</span>
+                      <span v-else>Push</span>
+                    </span>
+                  </label>
+                  <label
+                    for="comments-email"
+                    v-bind="apiEmail.rootProps"
+                    v-bind:class="switchClasses.root"
+                  >
+                    <input
+                      id="comments-email"
+                      v-bind="apiEmail.hiddenInputProps"
+                    />
+                    <span
+                      v-bind="apiEmail.controlProps"
+                      v-bind:class="switchClasses.control"
+                    >
+                      <span
+                        v-bind="apiEmail.thumbProps"
+                        v-bind:class="switchClasses.thumb"
+                      />
+                    </span>
+                    <span
+                      v-bind="apiEmail.labelProps"
+                      v-bind:class="switchClasses.label"
+                    >
+                      <span v-if="apiEmail.isChecked">Email</span>
+                      <span v-else>Email</span>
+                    </span>
+                  </label>
+                  <label
+                    for="comments-slack"
+                    v-bind="apiSlack.rootProps"
+                    v-bind:class="switchClasses.root"
+                  >
+                    <input
+                      id="comments-slack"
+                      v-bind="apiSlack.hiddenInputProps"
+                    />
+                    <span
+                      v-bind="apiSlack.controlProps"
+                      v-bind:class="switchClasses.control"
+                    >
+                      <span
+                        v-bind="apiSlack.thumbProps"
+                        v-bind:class="switchClasses.thumb"
+                      />
+                    </span>
+                    <span
+                      v-bind="apiSlack.labelProps"
+                      v-bind:class="switchClasses.label"
+                    >
+                      <span v-if="apiSlack.isChecked">Slack</span>
+                      <span v-else>Slack</span>
+                    </span>
+                  </label>
+                </div>
               </div>
-              <div v-bind:class="stack({ direction: 'column' })">
-                <label for="password" v-bind:class="label({ size: 'sm' })"
-                  >Password</label
+              <hr v-bind:class="css({ borderColor: 'gray.200', my: '6' })" />
+              <div v-bind:class="flex({ gap: '8', justify: 'space-between' })">
+                <div>
+                  <h4 v-bind:class="css({ fontSize: 'sm', fontWeight: '600' })">
+                    Favorites
+                  </h4>
+                  <p v-bind:class="css({ fontSize: 'sm', color: 'gray.600' })">
+                    Receive notifications when someone comments on your
+                    documents or mentions you.
+                  </p>
+                </div>
+                <div
+                  v-bind:class="
+                    flex({ direction: 'column', align: 'start', gap: '1' })
+                  "
                 >
-                <input
-                  id="password"
-                  type="password"
-                  v-bind:class="input({ size: 'sm' })"
-                />
+                  <label
+                    for="favorites-push"
+                    v-bind="apiPush.rootProps"
+                    v-bind:class="switchClasses.root"
+                  >
+                    <input
+                      id="favorites-push"
+                      v-bind="apiPush.hiddenInputProps"
+                    />
+                    <span
+                      v-bind="apiPush.controlProps"
+                      v-bind:class="switchClasses.control"
+                    >
+                      <span
+                        v-bind="apiPush.thumbProps"
+                        v-bind:class="switchClasses.thumb"
+                      />
+                    </span>
+                    <span
+                      v-bind="apiPush.labelProps"
+                      v-bind:class="switchClasses.label"
+                    >
+                      <span v-if="apiPush.isChecked">Push</span>
+                      <span v-else>Push</span>
+                    </span>
+                  </label>
+                  <label
+                    for="favorites-email"
+                    v-bind="apiEmail.rootProps"
+                    v-bind:class="switchClasses.root"
+                  >
+                    <input
+                      id="favorites-email"
+                      v-bind="apiEmail.hiddenInputProps"
+                    />
+                    <span
+                      v-bind="apiEmail.controlProps"
+                      v-bind:class="switchClasses.control"
+                    >
+                      <span
+                        v-bind="apiEmail.thumbProps"
+                        v-bind:class="switchClasses.thumb"
+                      />
+                    </span>
+                    <span
+                      v-bind="apiEmail.labelProps"
+                      v-bind:class="switchClasses.label"
+                    >
+                      <span v-if="apiEmail.isChecked">Email</span>
+                      <span v-else>Email</span>
+                    </span>
+                  </label>
+                  <label
+                    for="favorites-slack"
+                    v-bind="apiSlack.rootProps"
+                    v-bind:class="switchClasses.root"
+                  >
+                    <input
+                      id="favorites-slack"
+                      v-bind="apiSlack.hiddenInputProps"
+                    />
+                    <span
+                      v-bind="apiSlack.controlProps"
+                      v-bind:class="switchClasses.control"
+                    >
+                      <span
+                        v-bind="apiSlack.thumbProps"
+                        v-bind:class="switchClasses.thumb"
+                      />
+                    </span>
+                    <span
+                      v-bind="apiSlack.labelProps"
+                      v-bind:class="switchClasses.label"
+                    >
+                      <span v-if="apiSlack.isChecked">Slack</span>
+                      <span v-else>Slack</span>
+                    </span>
+                  </label>
+                </div>
               </div>
-              <button v-bind:class="cx(css({ w: 'full' }), button())">
-                Signup
-              </button>
             </div>
-            <hr v-bind:class="css({ borderColor: 'gray.200', my: '6' })" />
-            <div v-bind:class="stack({ gap: '4', my: '6' })">
-              <div v-bind:class="stack({ gap: '3', direction: 'row' })">
-                <button
+            <div
+              v-bind:class="
+                css({
+                  border: '1px solid',
+                  borderColor: 'gray.100',
+                  boxShadow: 'sm',
+                  p: '6',
+                  borderRadius: 'sm',
+                })
+              "
+            >
+              <h3 v-bind:class="css({ fontSize: 'lg', fontWeight: '600' })">
+                Sign Up
+              </h3>
+              <p v-bind:class="css({ fontSize: 'sm', color: 'gray.600' })">
+                Create an account and discover the worlds' best UI component
+                framework.
+              </p>
+              <form
+                v-bind:class="stack({ direction: 'column', gap: '4', mt: '6' })"
+              >
+                <div v-bind:class="stack({ direction: 'column' })">
+                  <label for="username" v-bind:class="label({ size: 'sm' })"
+                    >Username</label
+                  >
+                  <input
+                    id="username"
+                    type="text"
+                    v-bind:class="input({ size: 'sm' })"
+                  />
+                </div>
+                <div v-bind:class="stack({ direction: 'column' })">
+                  <label for="password" v-bind:class="label({ size: 'sm' })"
+                    >Password</label
+                  >
+                  <input
+                    id="password"
+                    type="password"
+                    v-bind:class="input({ size: 'sm' })"
+                  />
+                </div>
+                <button v-bind:class="cx(css({ w: 'full' }), button())">
+                  Signup
+                </button>
+              </form>
+              <hr v-bind:class="css({ borderColor: 'gray.200', my: '6' })" />
+              <div v-bind:class="stack({ gap: '4', my: '6' })">
+                <div v-bind:class="stack({ gap: '3', direction: 'row' })">
+                  <button
+                    v-bind:class="
+                      cx(css({ w: 'full' }), button({ variant: 'ghost' }))
+                    "
+                  >
+                    Google
+                  </button>
+                  <button
+                    v-bind:class="
+                      cx(css({ w: 'full' }), button({ variant: 'ghost' }))
+                    "
+                  >
+                    Github
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              v-bind:class="
+                css({
+                  border: '1px solid',
+                  borderColor: 'gray.100',
+                  boxShadow: 'sm',
+                  p: '6',
+                  borderRadius: 'sm',
+                  gridColumn: 2,
+                })
+              "
+            >
+              <h3 v-bind:class="css({ fontSize: 'lg', fontWeight: '600' })">
+                Your team
+              </h3>
+              <p v-bind:class="css({ fontSize: 'sm', color: 'gray.600' })">
+                Invite and manage your team members.
+              </p>
+              <div
+                v-bind:class="stack({ direction: 'column', gap: '4', mt: '6' })"
+              >
+                <div v-bind:class="hstack({ gap: 2 })">
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    v-bind:class="
+                      cx(input({ size: 'sm' }), css({ flex: '1 1 0%' }))
+                    "
+                  />
+                  <button v-bind:class="button()">Invite</button>
+                </div>
+              </div>
+              <div
+                v-bind:class="
+                  vstack({ alignItems: 'flex-start', gap: 4, mt: 6 })
+                "
+              >
+                <div
                   v-bind:class="
-                    cx(css({ w: 'full' }), button({ variant: 'ghost' }))
+                    hstack({
+                      gap: 6,
+                      alignItems: 'center',
+                      justifyContent: 'flex-start',
+                      borderBottom: '1px solid',
+                      borderColor: 'gray.200',
+                      w: 'full',
+                      py: '2',
+                    })
                   "
                 >
-                  Google
-                </button>
-                <button
+                  <div v-bind:class="css({ w: 10, h: 10, mt: 2 })">
+                    <div
+                      v-bind="apiAvatar.rootProps"
+                      v-bind:class="avatarClasses.root"
+                    >
+                      <span
+                        v-bind="apiAvatar.fallbackProps"
+                        v-bind:class="avatarClasses.fallback"
+                        >DT</span
+                      >
+                      <img
+                        alt="DT"
+                        src=""
+                        v-bind="apiAvatar.imageProps"
+                        v-bind:class="avatarClasses.image"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    v-bind:class="
+                      css({
+                        fontSize: 'sm',
+                        color: 'blue.500',
+                        flex: '1 1 0%',
+                        w: 'auto',
+                      })
+                    "
+                  >
+                    Dang Van Thanh
+                  </div>
+                  <div>
+                    <a
+                      href="mailto@dangvanthanh@dangthanh.org"
+                      v-bind:class="css({ fontSize: 'sm', color: 'gray.500' })"
+                      >dangvanthanh@dangthanh.org</a
+                    >
+                  </div>
+                </div>
+                <div
                   v-bind:class="
-                    cx(css({ w: 'full' }), button({ variant: 'ghost' }))
+                    hstack({
+                      gap: 6,
+                      alignItems: 'center',
+                      justifyContent: 'flex-start',
+                      borderBottom: '1px solid',
+                      borderColor: 'gray.200',
+                      w: 'full',
+                      py: '2',
+                    })
                   "
                 >
-                  Github
-                </button>
+                  <div v-bind:class="css({ w: 10, h: 10, mt: 2 })">
+                    <div
+                      v-bind="apiAvatar.rootProps"
+                      v-bind:class="avatarClasses.root"
+                    >
+                      <span
+                        v-bind="apiAvatar.fallbackProps"
+                        v-bind:class="avatarClasses.fallback"
+                        >HS</span
+                      >
+                      <img
+                        alt="HS"
+                        src=""
+                        v-bind="apiAvatar.imageProps"
+                        v-bind:class="avatarClasses.image"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    v-bind:class="
+                      css({
+                        fontSize: 'sm',
+                        color: 'blue.500',
+                        flex: '1 1 0%',
+                        w: 'auto',
+                      })
+                    "
+                  >
+                    Hoa Long Sinh
+                  </div>
+                  <div>
+                    <a
+                      href="mailto@hoalongsinh@gmail.com"
+                      v-bind:class="css({ fontSize: 'sm', color: 'gray.500' })"
+                      >hoalongsinh@gmail.com</a
+                    >
+                  </div>
+                </div>
+                <div
+                  v-bind:class="
+                    hstack({
+                      gap: 6,
+                      alignItems: 'center',
+                      justifyContent: 'flex-start',
+                      borderBottom: '1px solid',
+                      borderColor: 'gray.200',
+                      w: 'full',
+                      py: '2',
+                    })
+                  "
+                >
+                  <div v-bind:class="css({ w: 10, h: 10, mt: 2 })">
+                    <div
+                      v-bind="apiAvatar.rootProps"
+                      v-bind:class="avatarClasses.root"
+                    >
+                      <span
+                        v-bind="apiAvatar.fallbackProps"
+                        v-bind:class="avatarClasses.fallback"
+                        >TH</span
+                      >
+                      <img
+                        alt="TH"
+                        src=""
+                        v-bind="apiAvatar.imageProps"
+                        v-bind:class="avatarClasses.image"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    v-bind:class="
+                      css({
+                        fontSize: 'sm',
+                        color: 'blue.500',
+                        flex: '1 1 0%',
+                        w: 'auto',
+                      })
+                    "
+                  >
+                    Hai Hanux
+                  </div>
+                  <div>
+                    <a
+                      href="mailto@tuanhai12h@gmail.com"
+                      v-bind:class="css({ fontSize: 'sm', color: 'gray.500' })"
+                      >tuanhai12h@gmail.com</a
+                    >
+                  </div>
+                </div>
               </div>
             </div>
           </div>

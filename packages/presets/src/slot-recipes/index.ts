@@ -1,5 +1,5 @@
 // import { accordion } from './accordion';
-// import { avatar } from './avatar';
+import { avatar } from './avatar';
 // import { checkbox } from './checkbox';
 // import { combobox } from './combobox';
 // import { contextMenu } from './context-menu';
@@ -27,5 +27,6 @@ import { switchRecipe } from './switch';
 // import { tooltip } from './tooltip';
 
 export const slotRecipes = {
+  avatar,
   switches: switchRecipe,
 };

@@ -3,7 +3,7 @@ import { createRecipe } from './create-recipe.mjs';
 
 const buttonFn = createRecipe('button', {
   "variant": "primary",
-  "size": "md"
+  "size": "sm"
 }, [])
 
 const buttonVariantMap = {

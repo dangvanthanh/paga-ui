@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@paga/presets": "workspace:*",
+    "@zag-js/avatar": "^0.21.0",
     "@zag-js/accordion": "^0.21.0",
     "@zag-js/switch": "^0.21.0",
     "@zag-js/vue": "^0.21.0",

@@ -5,5 +5,5 @@ import { label } from './label';
 export const recipes = {
   button,
   input,
-  label
+  label,
 };

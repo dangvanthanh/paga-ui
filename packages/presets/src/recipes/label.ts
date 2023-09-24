@@ -1,29 +1,29 @@
-import { defineRecipe } from "@pandacss/dev";
+import { defineRecipe } from '@pandacss/dev';
 
 export const label = defineRecipe({
-  className: "label",
+  className: 'label',
   base: {
-    color: "gray.700",
-    fontWeight: "500",
+    color: 'gray.700',
+    fontWeight: '500',
   },
   variants: {
     size: {
       xs: {
-        textStyle: "xs",
+        textStyle: 'xs',
       },
       sm: {
-        textStyle: "sm",
+        textStyle: 'sm',
       },
       md: {
-        textStyle: "md",
+        textStyle: 'md',
       },
 
       lg: {
-        textStyle: "lg",
+        textStyle: 'lg',
       },
     },
   },
   defaultVariants: {
-    size: "md",
+    size: 'md',
   },
 });
