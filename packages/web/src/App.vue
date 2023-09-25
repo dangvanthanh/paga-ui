@@ -281,7 +281,7 @@ import { Avatar, Switch } from "@/ui";
                 <div
                   v-bind:class="
                     hstack({
-                      gap: 6,
+                      gap: 4,
                       alignItems: 'center',
                       justifyContent: 'flex-start',
                       borderBottom: '1px solid',
@@ -317,7 +317,7 @@ import { Avatar, Switch } from "@/ui";
                 <div
                   v-bind:class="
                     hstack({
-                      gap: 6,
+                      gap: 4,
                       alignItems: 'center',
                       justifyContent: 'flex-start',
                       borderBottom: '1px solid',
@@ -353,7 +353,7 @@ import { Avatar, Switch } from "@/ui";
                 <div
                   v-bind:class="
                     hstack({
-                      gap: 6,
+                      gap: 4,
                       alignItems: 'center',
                       justifyContent: 'flex-start',
                       borderBottom: '1px solid',
