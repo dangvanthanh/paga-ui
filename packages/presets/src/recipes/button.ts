@@ -14,7 +14,7 @@ export const button = defineRecipe({
     _focusVisible: {
       outlineOffset: '2px',
       outline: '2px solid',
-      outlineColor: 'blue.600',
+      outlineColor: 'gray.900',
     },
     _disabled: {
       cursor: 'not-allowed',
@@ -25,11 +25,11 @@ export const button = defineRecipe({
   variants: {
     variant: {
       primary: {
-        borderColor: 'blue.100',
-        background: 'blue.500',
+        borderColor: 'gray.100',
+        background: 'gray.800',
         color: 'white',
         _hover: {
-          background: 'blue.400',
+          background: 'gray.900',
         },
       },
       ghost: {

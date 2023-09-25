@@ -1,42 +1,8 @@
 <script setup lang="ts">
-import * as zagAvatar from "@zag-js/avatar";
-import * as zagSwitch from "@zag-js/switch";
-import { normalizeProps, useMachine } from "@zag-js/vue";
-import { computed } from "vue";
-import { css, cx } from "../styled-system/css";
-import { flex, stack, grid, vstack, hstack } from "../styled-system/patterns";
-import {
-  button,
-  switches,
-  label,
-  input,
-  avatar,
-} from "../styled-system/recipes";
-
-const switchClasses = switches({ size: "sm" });
-const avatarClasses = avatar();
-
-const [statePush, sendPush] = useMachine(zagSwitch.machine({ id: "1" }));
-const [stateEmail, sendEmail] = useMachine(zagSwitch.machine({ id: "2" }));
-const [stateSlack, sendSlack] = useMachine(zagSwitch.machine({ id: "3" }));
-
-const [stateAvatar, sendAvatar] = useMachine(zagAvatar.machine({ id: "1" }));
-
-const apiPush = computed(() =>
-  zagSwitch.connect(statePush.value, sendPush, normalizeProps)
-);
-
-const apiEmail = computed(() =>
-  zagSwitch.connect(stateEmail.value, sendEmail, normalizeProps)
-);
-
-const apiSlack = computed(() =>
-  zagSwitch.connect(stateSlack.value, sendSlack, normalizeProps)
-);
-
-const apiAvatar = computed(() =>
-  zagAvatar.connect(stateAvatar.value, sendAvatar, normalizeProps)
-);
+import { css, cx } from "@styled-system/css";
+import { flex, stack, grid, vstack, hstack } from "@styled-system/patterns";
+import { button, label, input } from "@styled-system/recipes";
+import { Avatar, Switch } from "@/ui";
 </script>
 
 <template>
@@ -183,84 +149,9 @@ const apiAvatar = computed(() =>
                     flex({ direction: 'column', align: 'start', gap: '1' })
                   "
                 >
-                  <label
-                    for="comments-push"
-                    v-bind="apiPush.rootProps"
-                    v-bind:class="switchClasses.root"
-                  >
-                    <input
-                      id="comments-push"
-                      v-bind="apiPush.hiddenInputProps"
-                    />
-                    <span
-                      v-bind="apiPush.controlProps"
-                      v-bind:class="switchClasses.control"
-                    >
-                      <span
-                        v-bind="apiPush.thumbProps"
-                        v-bind:class="switchClasses.thumb"
-                      />
-                    </span>
-                    <span
-                      v-bind="apiPush.labelProps"
-                      v-bind:class="switchClasses.label"
-                    >
-                      <span v-if="apiPush.isChecked">Push</span>
-                      <span v-else>Push</span>
-                    </span>
-                  </label>
-                  <label
-                    for="comments-email"
-                    v-bind="apiEmail.rootProps"
-                    v-bind:class="switchClasses.root"
-                  >
-                    <input
-                      id="comments-email"
-                      v-bind="apiEmail.hiddenInputProps"
-                    />
-                    <span
-                      v-bind="apiEmail.controlProps"
-                      v-bind:class="switchClasses.control"
-                    >
-                      <span
-                        v-bind="apiEmail.thumbProps"
-                        v-bind:class="switchClasses.thumb"
-                      />
-                    </span>
-                    <span
-                      v-bind="apiEmail.labelProps"
-                      v-bind:class="switchClasses.label"
-                    >
-                      <span v-if="apiEmail.isChecked">Email</span>
-                      <span v-else>Email</span>
-                    </span>
-                  </label>
-                  <label
-                    for="comments-slack"
-                    v-bind="apiSlack.rootProps"
-                    v-bind:class="switchClasses.root"
-                  >
-                    <input
-                      id="comments-slack"
-                      v-bind="apiSlack.hiddenInputProps"
-                    />
-                    <span
-                      v-bind="apiSlack.controlProps"
-                      v-bind:class="switchClasses.control"
-                    >
-                      <span
-                        v-bind="apiSlack.thumbProps"
-                        v-bind:class="switchClasses.thumb"
-                      />
-                    </span>
-                    <span
-                      v-bind="apiSlack.labelProps"
-                      v-bind:class="switchClasses.label"
-                    >
-                      <span v-if="apiSlack.isChecked">Slack</span>
-                      <span v-else>Slack</span>
-                    </span>
-                  </label>
+                  <Switch id="1" label="Push" />
+                  <Switch id="2" label="Email" />
+                  <Switch id="3" label="Slack" />
                 </div>
               </div>
               <hr v-bind:class="css({ borderColor: 'gray.200', my: '6' })" />
@@ -279,84 +170,9 @@ const apiAvatar = computed(() =>
                     flex({ direction: 'column', align: 'start', gap: '1' })
                   "
                 >
-                  <label
-                    for="favorites-push"
-                    v-bind="apiPush.rootProps"
-                    v-bind:class="switchClasses.root"
-                  >
-                    <input
-                      id="favorites-push"
-                      v-bind="apiPush.hiddenInputProps"
-                    />
-                    <span
-                      v-bind="apiPush.controlProps"
-                      v-bind:class="switchClasses.control"
-                    >
-                      <span
-                        v-bind="apiPush.thumbProps"
-                        v-bind:class="switchClasses.thumb"
-                      />
-                    </span>
-                    <span
-                      v-bind="apiPush.labelProps"
-                      v-bind:class="switchClasses.label"
-                    >
-                      <span v-if="apiPush.isChecked">Push</span>
-                      <span v-else>Push</span>
-                    </span>
-                  </label>
-                  <label
-                    for="favorites-email"
-                    v-bind="apiEmail.rootProps"
-                    v-bind:class="switchClasses.root"
-                  >
-                    <input
-                      id="favorites-email"
-                      v-bind="apiEmail.hiddenInputProps"
-                    />
-                    <span
-                      v-bind="apiEmail.controlProps"
-                      v-bind:class="switchClasses.control"
-                    >
-                      <span
-                        v-bind="apiEmail.thumbProps"
-                        v-bind:class="switchClasses.thumb"
-                      />
-                    </span>
-                    <span
-                      v-bind="apiEmail.labelProps"
-                      v-bind:class="switchClasses.label"
-                    >
-                      <span v-if="apiEmail.isChecked">Email</span>
-                      <span v-else>Email</span>
-                    </span>
-                  </label>
-                  <label
-                    for="favorites-slack"
-                    v-bind="apiSlack.rootProps"
-                    v-bind:class="switchClasses.root"
-                  >
-                    <input
-                      id="favorites-slack"
-                      v-bind="apiSlack.hiddenInputProps"
-                    />
-                    <span
-                      v-bind="apiSlack.controlProps"
-                      v-bind:class="switchClasses.control"
-                    >
-                      <span
-                        v-bind="apiSlack.thumbProps"
-                        v-bind:class="switchClasses.thumb"
-                      />
-                    </span>
-                    <span
-                      v-bind="apiSlack.labelProps"
-                      v-bind:class="switchClasses.label"
-                    >
-                      <span v-if="apiSlack.isChecked">Slack</span>
-                      <span v-else>Slack</span>
-                    </span>
-                  </label>
+                  <Switch id="4" label="Push" />
+                  <Switch id="5" label="Email" />
+                  <Switch id="6" label="Slack" />
                 </div>
               </div>
             </div>
@@ -476,28 +292,13 @@ const apiAvatar = computed(() =>
                   "
                 >
                   <div v-bind:class="css({ w: 10, h: 10, mt: 2 })">
-                    <div
-                      v-bind="apiAvatar.rootProps"
-                      v-bind:class="avatarClasses.root"
-                    >
-                      <span
-                        v-bind="apiAvatar.fallbackProps"
-                        v-bind:class="avatarClasses.fallback"
-                        >DT</span
-                      >
-                      <img
-                        alt="DT"
-                        src=""
-                        v-bind="apiAvatar.imageProps"
-                        v-bind:class="avatarClasses.image"
-                      />
-                    </div>
+                    <Avatar id="7" fallback="DT" />
                   </div>
                   <div
                     v-bind:class="
                       css({
                         fontSize: 'sm',
-                        color: 'blue.500',
+                        color: 'gray.800',
                         flex: '1 1 0%',
                         w: 'auto',
                       })
@@ -527,28 +328,13 @@ const apiAvatar = computed(() =>
                   "
                 >
                   <div v-bind:class="css({ w: 10, h: 10, mt: 2 })">
-                    <div
-                      v-bind="apiAvatar.rootProps"
-                      v-bind:class="avatarClasses.root"
-                    >
-                      <span
-                        v-bind="apiAvatar.fallbackProps"
-                        v-bind:class="avatarClasses.fallback"
-                        >HS</span
-                      >
-                      <img
-                        alt="HS"
-                        src=""
-                        v-bind="apiAvatar.imageProps"
-                        v-bind:class="avatarClasses.image"
-                      />
-                    </div>
+                    <Avatar id="8" fallback="HL" />
                   </div>
                   <div
                     v-bind:class="
                       css({
                         fontSize: 'sm',
-                        color: 'blue.500',
+                        color: 'gray.800',
                         flex: '1 1 0%',
                         w: 'auto',
                       })
@@ -578,28 +364,13 @@ const apiAvatar = computed(() =>
                   "
                 >
                   <div v-bind:class="css({ w: 10, h: 10, mt: 2 })">
-                    <div
-                      v-bind="apiAvatar.rootProps"
-                      v-bind:class="avatarClasses.root"
-                    >
-                      <span
-                        v-bind="apiAvatar.fallbackProps"
-                        v-bind:class="avatarClasses.fallback"
-                        >TH</span
-                      >
-                      <img
-                        alt="TH"
-                        src=""
-                        v-bind="apiAvatar.imageProps"
-                        v-bind:class="avatarClasses.image"
-                      />
-                    </div>
+                    <Avatar id="9" fallback="HH" />
                   </div>
                   <div
                     v-bind:class="
                       css({
                         fontSize: 'sm',
-                        color: 'blue.500',
+                        color: 'gray.800',
                         flex: '1 1 0%',
                         w: 'auto',
                       })

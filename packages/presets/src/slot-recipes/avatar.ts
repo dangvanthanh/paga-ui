@@ -20,7 +20,7 @@ export const avatar = defineSlotRecipe({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      background: 'blue.500',
+      background: 'gray.800',
       boxShadow: 'md',
       color: 'white',
       fontSize: '1rem',

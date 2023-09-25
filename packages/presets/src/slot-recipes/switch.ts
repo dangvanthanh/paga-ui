@@ -15,7 +15,7 @@ export const switchRecipe = defineSlotRecipe({
       position: 'relative',
       borderColor: 'gray.100',
       _checked: {
-        bg: 'blue.300',
+        bg: 'gray.800',
       },
       _disabled: {
         bg: 'gray.300',
@@ -28,7 +28,7 @@ export const switchRecipe = defineSlotRecipe({
       borderRadius: 'sm',
       transition: 'transform .14s cubic-bezier(.45,.05,.55,.95)',
       _checked: {
-        transform: 'translateX(100%)',
+        transform: 'translateX(105%)',
       },
     },
     label: { marginStart: '2' },

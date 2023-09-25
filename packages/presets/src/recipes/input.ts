@@ -18,7 +18,7 @@ export const input = defineRecipe({
       cursor: 'not-allowed',
     },
     _focus: {
-      borderColor: 'blue.500',
+      borderColor: 'gray.800',
       boxShadow: 'sm',
     },
   },
