@@ -1,14 +1,27 @@
 <script setup lang="ts">
+import { ref } from "vue";
+import {
+  AlignJustify,
+  SkipForward,
+  SkipBack,
+  Play,
+  Pause,
+  Repeat,
+} from "lucide-vue-next";
 import { css, cx } from "@styled-system/css";
 import { flex, stack, grid, vstack, hstack } from "@styled-system/patterns";
 import { button, label, input } from "@styled-system/recipes";
-import { Avatar, Switch } from "@/ui";
+import { Avatar, Switch, Slider } from "@/ui";
+
+const isPlaying = ref(true);
+
+const togglePlaying = () => (isPlaying.value = !isPlaying.value);
 </script>
 
 <template>
-  <header role="banner" v-bind:class="css({ px: '4', py: '4' })">
+  <header role="banner" :class="css({ px: '4', py: '4' })">
     <div
-      v-bind:class="
+      :class="
         flex({
           maxW: '8xl',
           mx: 'auto',
@@ -20,7 +33,7 @@ import { Avatar, Switch } from "@/ui";
       <h1>
         <a
           href="/"
-          v-bind:class="
+          :class="
             css({
               fontSize: '2xl',
               fontFamily: 'Exo',
@@ -31,9 +44,9 @@ import { Avatar, Switch } from "@/ui";
           >Paga UI</a
         >
       </h1>
-      <nav v-bind:class="flex({ gap: '3' })">
-        <a href="#" v-bind:class="css({ color: 'gray.700' })">Documentation</a>
-        <a href="#" v-bind:class="css({ color: 'gray.700' })">
+      <nav :class="flex({ gap: '3' })">
+        <a href="#" :class="css({ color: 'gray.700' })">Documentation</a>
+        <a href="#" :class="css({ color: 'gray.700' })">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -52,7 +65,7 @@ import { Avatar, Switch } from "@/ui";
             <path d="M9 18c-4.51 2-5-2-7-2" />
           </svg>
         </a>
-        <a href="#" v-bind:class="css({ color: 'gray.700' })">
+        <a href="#" :class="css({ color: 'gray.700' })">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -80,10 +93,10 @@ import { Avatar, Switch } from "@/ui";
     </div>
   </header>
   <main role="main">
-    <div v-bind:class="css({ maxW: '7xl', mx: 'auto', px: '4' })">
-      <div v-bind:class="flex({ align: 'start', wrap: 'wrap' })">
+    <div :class="css({ maxW: '7xl', mx: 'auto', px: '4' })">
+      <div :class="flex({ align: 'start', wrap: 'wrap' })">
         <div
-          v-bind:class="
+          :class="
             css({
               w: 'full',
               lg: {
@@ -92,18 +105,16 @@ import { Avatar, Switch } from "@/ui";
             })
           "
         >
-          <h2
-            v-bind:class="css({ fontSize: '6xl', lineHeight: '1', pt: '12' })"
-          >
+          <h2 :class="css({ fontSize: '6xl', lineHeight: '1', pt: '12' })">
             Start building your app now
           </h2>
-          <p v-bind:class="css({ fontSize: 'xl', pt: '6' })">
+          <p :class="css({ fontSize: 'xl', pt: '6' })">
             Beautifully designed components built with Zagjs and Panda CSS that
             work with a variety of JS frameworks.
           </p>
         </div>
         <div
-          v-bind:class="
+          :class="
             css({
               w: 'full',
               my: '8',
@@ -115,9 +126,9 @@ import { Avatar, Switch } from "@/ui";
             })
           "
         >
-          <div v-bind:class="grid({ columns: 2, gap: 4, lg: { gap: 8 } })">
+          <div :class="grid({ columns: 2, gap: 4, lg: { gap: 8 } })">
             <div
-              v-bind:class="
+              :class="
                 css({
                   border: '1px solid',
                   borderColor: 'gray.100',
@@ -127,25 +138,25 @@ import { Avatar, Switch } from "@/ui";
                 })
               "
             >
-              <h3 v-bind:class="css({ fontSize: 'lg', fontWeight: '600' })">
+              <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">
                 Notifications
               </h3>
-              <p v-bind:class="css({ fontSize: 'sm', color: 'gray.600' })">
+              <p :class="css({ fontSize: 'sm', color: 'gray.600' })">
                 Manage your notification settings.
               </p>
-              <hr v-bind:class="css({ borderColor: 'gray.200', my: '6' })" />
-              <div v-bind:class="flex({ gap: '8', justify: 'space-between' })">
+              <hr :class="css({ borderColor: 'gray.200', my: '6' })" />
+              <div :class="flex({ gap: '8', justify: 'space-between' })">
                 <div>
-                  <h4 v-bind:class="css({ fontSize: 'sm', fontWeight: '600' })">
+                  <h4 :class="css({ fontSize: 'sm', fontWeight: '600' })">
                     Comments
                   </h4>
-                  <p v-bind:class="css({ fontSize: 'sm', color: 'gray.600' })">
+                  <p :class="css({ fontSize: 'sm', color: 'gray.600' })">
                     Receive notifications when someone comments on your
                     documents or mentions you.
                   </p>
                 </div>
                 <div
-                  v-bind:class="
+                  :class="
                     flex({ direction: 'column', align: 'start', gap: '1' })
                   "
                 >
@@ -154,19 +165,19 @@ import { Avatar, Switch } from "@/ui";
                   <Switch id="3" label="Slack" />
                 </div>
               </div>
-              <hr v-bind:class="css({ borderColor: 'gray.200', my: '6' })" />
-              <div v-bind:class="flex({ gap: '8', justify: 'space-between' })">
+              <hr :class="css({ borderColor: 'gray.200', my: '6' })" />
+              <div :class="flex({ gap: '8', justify: 'space-between' })">
                 <div>
-                  <h4 v-bind:class="css({ fontSize: 'sm', fontWeight: '600' })">
+                  <h4 :class="css({ fontSize: 'sm', fontWeight: '600' })">
                     Favorites
                   </h4>
-                  <p v-bind:class="css({ fontSize: 'sm', color: 'gray.600' })">
+                  <p :class="css({ fontSize: 'sm', color: 'gray.600' })">
                     Receive notifications when someone comments on your
                     documents or mentions you.
                   </p>
                 </div>
                 <div
-                  v-bind:class="
+                  :class="
                     flex({ direction: 'column', align: 'start', gap: '1' })
                   "
                 >
@@ -177,7 +188,7 @@ import { Avatar, Switch } from "@/ui";
               </div>
             </div>
             <div
-              v-bind:class="
+              :class="
                 css({
                   border: '1px solid',
                   borderColor: 'gray.100',
@@ -187,52 +198,50 @@ import { Avatar, Switch } from "@/ui";
                 })
               "
             >
-              <h3 v-bind:class="css({ fontSize: 'lg', fontWeight: '600' })">
+              <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">
                 Sign Up
               </h3>
-              <p v-bind:class="css({ fontSize: 'sm', color: 'gray.600' })">
+              <p :class="css({ fontSize: 'sm', color: 'gray.600' })">
                 Create an account and discover the worlds' best UI component
                 framework.
               </p>
-              <form
-                v-bind:class="stack({ direction: 'column', gap: '4', mt: '6' })"
-              >
-                <div v-bind:class="stack({ direction: 'column' })">
-                  <label for="username" v-bind:class="label({ size: 'sm' })"
+              <form :class="stack({ direction: 'column', gap: '4', mt: '6' })">
+                <div :class="stack({ direction: 'column' })">
+                  <label for="username" :class="label({ size: 'sm' })"
                     >Username</label
                   >
                   <input
                     id="username"
                     type="text"
-                    v-bind:class="input({ size: 'sm' })"
+                    :class="input({ size: 'sm' })"
                   />
                 </div>
-                <div v-bind:class="stack({ direction: 'column' })">
-                  <label for="password" v-bind:class="label({ size: 'sm' })"
+                <div :class="stack({ direction: 'column' })">
+                  <label for="password" :class="label({ size: 'sm' })"
                     >Password</label
                   >
                   <input
                     id="password"
                     type="password"
-                    v-bind:class="input({ size: 'sm' })"
+                    :class="input({ size: 'sm' })"
                   />
                 </div>
-                <button v-bind:class="cx(css({ w: 'full' }), button())">
+                <button :class="cx(css({ w: 'full' }), button())">
                   Signup
                 </button>
               </form>
-              <hr v-bind:class="css({ borderColor: 'gray.200', my: '6' })" />
-              <div v-bind:class="stack({ gap: '4', my: '6' })">
-                <div v-bind:class="stack({ gap: '3', direction: 'row' })">
+              <hr :class="css({ borderColor: 'gray.200', my: '6' })" />
+              <div :class="stack({ gap: '4', my: '6' })">
+                <div :class="stack({ gap: '3', direction: 'row' })">
                   <button
-                    v-bind:class="
+                    :class="
                       cx(css({ w: 'full' }), button({ variant: 'ghost' }))
                     "
                   >
                     Google
                   </button>
                   <button
-                    v-bind:class="
+                    :class="
                       cx(css({ w: 'full' }), button({ variant: 'ghost' }))
                     "
                   >
@@ -242,7 +251,7 @@ import { Avatar, Switch } from "@/ui";
               </div>
             </div>
             <div
-              v-bind:class="
+              :class="
                 css({
                   border: '1px solid',
                   borderColor: 'gray.100',
@@ -253,33 +262,25 @@ import { Avatar, Switch } from "@/ui";
                 })
               "
             >
-              <h3 v-bind:class="css({ fontSize: 'lg', fontWeight: '600' })">
+              <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">
                 Your team
               </h3>
-              <p v-bind:class="css({ fontSize: 'sm', color: 'gray.600' })">
+              <p :class="css({ fontSize: 'sm', color: 'gray.600' })">
                 Invite and manage your team members.
               </p>
-              <div
-                v-bind:class="stack({ direction: 'column', gap: '4', mt: '6' })"
-              >
-                <div v-bind:class="hstack({ gap: 2 })">
+              <div :class="stack({ direction: 'column', gap: '4', mt: '6' })">
+                <div :class="hstack({ gap: 2 })">
                   <input
                     type="email"
                     placeholder="Email address"
-                    v-bind:class="
-                      cx(input({ size: 'sm' }), css({ flex: '1 1 0%' }))
-                    "
+                    :class="cx(input({ size: 'sm' }), css({ flex: '1 1 0%' }))"
                   />
-                  <button v-bind:class="button()">Invite</button>
+                  <button :class="button()">Invite</button>
                 </div>
               </div>
-              <div
-                v-bind:class="
-                  vstack({ alignItems: 'flex-start', gap: 4, mt: 6 })
-                "
-              >
+              <div :class="vstack({ alignItems: 'flex-start', gap: 4, mt: 6 })">
                 <div
-                  v-bind:class="
+                  :class="
                     hstack({
                       gap: 4,
                       alignItems: 'center',
@@ -291,11 +292,11 @@ import { Avatar, Switch } from "@/ui";
                     })
                   "
                 >
-                  <div v-bind:class="css({ w: 10, h: 10, mt: 2 })">
+                  <div :class="css({ w: 10, h: 10, mt: 2 })">
                     <Avatar id="7" fallback="DT" />
                   </div>
                   <div
-                    v-bind:class="
+                    :class="
                       css({
                         fontSize: 'sm',
                         color: 'gray.800',
@@ -308,14 +309,14 @@ import { Avatar, Switch } from "@/ui";
                   </div>
                   <div>
                     <a
-                      href="mailto@dangvanthanh@dangthanh.org"
-                      v-bind:class="css({ fontSize: 'sm', color: 'gray.500' })"
-                      >dangvanthanh@dangthanh.org</a
+                      href="mailto@chieuhue@gmail.com"
+                      :class="css({ fontSize: 'sm', color: 'gray.500' })"
+                      >chieuhue@gmail.com</a
                     >
                   </div>
                 </div>
                 <div
-                  v-bind:class="
+                  :class="
                     hstack({
                       gap: 4,
                       alignItems: 'center',
@@ -327,11 +328,11 @@ import { Avatar, Switch } from "@/ui";
                     })
                   "
                 >
-                  <div v-bind:class="css({ w: 10, h: 10, mt: 2 })">
+                  <div :class="css({ w: 10, h: 10, mt: 2 })">
                     <Avatar id="8" fallback="HL" />
                   </div>
                   <div
-                    v-bind:class="
+                    :class="
                       css({
                         fontSize: 'sm',
                         color: 'gray.800',
@@ -345,29 +346,27 @@ import { Avatar, Switch } from "@/ui";
                   <div>
                     <a
                       href="mailto@hoalongsinh@gmail.com"
-                      v-bind:class="css({ fontSize: 'sm', color: 'gray.500' })"
+                      :class="css({ fontSize: 'sm', color: 'gray.500' })"
                       >hoalongsinh@gmail.com</a
                     >
                   </div>
                 </div>
                 <div
-                  v-bind:class="
+                  :class="
                     hstack({
                       gap: 4,
                       alignItems: 'center',
                       justifyContent: 'flex-start',
-                      borderBottom: '1px solid',
-                      borderColor: 'gray.200',
                       w: 'full',
                       py: '2',
                     })
                   "
                 >
-                  <div v-bind:class="css({ w: 10, h: 10, mt: 2 })">
+                  <div :class="css({ w: 10, h: 10, mt: 2 })">
                     <Avatar id="9" fallback="HH" />
                   </div>
                   <div
-                    v-bind:class="
+                    :class="
                       css({
                         fontSize: 'sm',
                         color: 'gray.800',
@@ -381,9 +380,101 @@ import { Avatar, Switch } from "@/ui";
                   <div>
                     <a
                       href="mailto@tuanhai12h@gmail.com"
-                      v-bind:class="css({ fontSize: 'sm', color: 'gray.500' })"
+                      :class="css({ fontSize: 'sm', color: 'gray.500' })"
                       >tuanhai12h@gmail.com</a
                     >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              :class="
+                css({
+                  border: '1px solid',
+                  borderColor: 'gray.100',
+                  boxShadow: 'sm',
+                  p: '6',
+                  borderRadius: 'sm',
+                  gridColumn: 2,
+                })
+              "
+            >
+              <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Sound</h3>
+              <div :class="css({ mt: 6 })">
+                <Slider />
+                <div
+                  :class="
+                    grid({ columns: 5, gap: 2, alignItems: 'center', mt: 3 })
+                  "
+                >
+                  <div :class="flex({ justify: 'center' })">
+                    <button
+                      type="button"
+                      :class="css({ color: 'gray.500', cursor: 'pointer' })"
+                    >
+                      <Repeat />
+                    </button>
+                  </div>
+                  <div :class="flex({ justify: 'center' })">
+                    <button
+                      type="button"
+                      :class="css({ color: 'gray.500', cursor: 'pointer' })"
+                    >
+                      <SkipBack />
+                    </button>
+                  </div>
+                  <div :class="flex({ justify: 'center', color: 'gray.900' })">
+                    <button
+                      type="button"
+                      :class="
+                        flex({
+                          cursor: 'pointer',
+                          w: 20,
+                          h: 20,
+                          align: 'center',
+                          justify: 'center',
+                          borderWidth: '2px',
+                          borderStyle: 'dashed',
+                          borderRadius: 'full',
+                          borderColor: 'gray.400',
+                        })
+                      "
+                      @click="togglePlaying()"
+                    >
+                      <div
+                        :class="
+                          flex({
+                            w: 16,
+                            h: 16,
+                            align: 'center',
+                            justify: 'center',
+                            borderWidth: '2px',
+                            borderStyle: 'dashed',
+                            borderRadius: 'full',
+                            borderColor: 'red.400',
+                          })
+                        "
+                      >
+                        <Play :class="css({ w: 10, h: 10, ml: 1 })" v-if="isPlaying" />
+                        <Pause :class="css({ w: 10, h: 10 })" v-else />
+                      </div>
+                    </button>
+                  </div>
+                  <div :class="flex({ justify: 'center' })">
+                    <button
+                      type="button"
+                      :class="css({ color: 'gray.500', cursor: 'pointer' })"
+                    >
+                      <SkipForward />
+                    </button>
+                  </div>
+                  <div :class="flex({ justify: 'center' })">
+                    <button
+                      type="button"
+                      :class="css({ color: 'gray.500', cursor: 'pointer' })"
+                    >
+                      <AlignJustify />
+                    </button>
                   </div>
                 </div>
               </div>

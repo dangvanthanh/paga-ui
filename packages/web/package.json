@@ -10,11 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "lucide-vue-next": "^0.284.0",
     "@paga/presets": "workspace:*",
-    "@zag-js/avatar": "^0.21.0",
-    "@zag-js/accordion": "^0.21.0",
-    "@zag-js/switch": "^0.21.0",
-    "@zag-js/vue": "^0.21.0",
+    "@zag-js/avatar": "^0.23.0",
+    "@zag-js/accordion": "^0.23.0",
+    "@zag-js/switch": "^0.23.0",
+    "@zag-js/slider": "^0.23.0",
+    "@zag-js/vue": "^0.23.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {

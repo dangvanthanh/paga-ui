@@ -18,8 +18,8 @@ import { avatar } from './avatar';
 // import { rangeSlider } from './range-slider';
 // import { segmentedControl } from './segmented-control';
 // import { select } from './select';
-// import { slider } from './slider';
 import { switchRecipe } from './switch';
+import { slider } from './slider';
 // import { tabs } from './tabs';
 // import { tagsInput } from './tags-input';
 // import { toast } from './toast';
@@ -29,4 +29,5 @@ import { switchRecipe } from './switch';
 export const slotRecipes = {
   avatar,
   switches: switchRecipe,
+  slider
 };

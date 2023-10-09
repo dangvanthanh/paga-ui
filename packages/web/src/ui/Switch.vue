@@ -19,15 +19,15 @@ const api = computed(() =>
 </script>
 
 <template>
-  <label v-bind="api.rootProps" v-bind:class="switchClasses.root">
+  <label v-bind="api.rootProps" :class="switchClasses.root">
     <input v-bind="api.hiddenInputProps" />
-    <span v-bind="api.controlProps" v-bind:class="switchClasses.control">
-      <span v-bind="api.thumbProps" v-bind:class="switchClasses.thumb"></span>
+    <span v-bind="api.controlProps" :class="switchClasses.control">
+      <span v-bind="api.thumbProps" :class="switchClasses.thumb"></span>
     </span>
     <span
       v-if="props.label"
       v-bind="api.labelProps"
-      v-bind:class="switchClasses.label"
+      :class="switchClasses.label"
     >
       <span v-if="api.isChecked">{{ props.label }}</span>
       <span v-else>{{ props.label }}</span>
