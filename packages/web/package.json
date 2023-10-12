@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "lucide-vue-next": "^0.284.0",
-    "@paga/presets": "0.0.1",
+    "@paga/presets": "workspace:*",
     "@zag-js/avatar": "^0.23.0",
     "@zag-js/accordion": "^0.23.0",
     "@zag-js/switch": "^0.23.0",
