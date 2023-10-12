@@ -11,7 +11,8 @@ import {
 import { css, cx } from "@styled-system/css";
 import { flex, stack, grid, vstack, hstack } from "@styled-system/patterns";
 import { button, label, input } from "@styled-system/recipes";
-import { Avatar, Switch, Slider } from "@/ui";
+import { Avatar, Pagination, Switch, Slider } from "@/ui";
+import { teams } from "@/lib";
 
 const isPlaying = ref(true);
 
@@ -19,7 +20,10 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
 </script>
 
 <template>
-  <header role="banner" :class="css({ px: '4', py: '4' })">
+  <header
+    role="banner"
+    :class="css({ px: '4', py: '4', pos: 'relative', zIndex: 10 })"
+  >
     <div
       :class="
         flex({
@@ -105,13 +109,33 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
             })
           "
         >
-          <h2 :class="css({ fontSize: '6xl', lineHeight: '1', pt: '12' })">
+          <h2
+            :class="
+              css({
+                fontSize: '6xl',
+                lineHeight: '1',
+                pt: '12',
+                fontWeight: '700',
+              })
+            "
+          >
             Start building your app now
           </h2>
           <p :class="css({ fontSize: 'xl', pt: '6' })">
             Beautifully designed components built with Zagjs and Panda CSS that
             work with a variety of JS frameworks.
           </p>
+
+          <button
+            :class="
+              cx(
+                css({ w: '1/2', mt: 8, fontWeight: 700 }),
+                button({ variant: 'primary', size: 'lg' })
+              )
+            "
+          >
+            Get Started
+          </button>
         </div>
         <div
           :class="
@@ -122,6 +146,7 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                 w: '2/3',
                 pl: '12',
                 mt: '0',
+                transform: 'translate(100px, -20px) skew(6deg, -6deg)',
               },
             })
           "
@@ -139,51 +164,62 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
               "
             >
               <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">
-                Notifications
+                Your team
               </h3>
               <p :class="css({ fontSize: 'sm', color: 'gray.600' })">
-                Manage your notification settings.
+                Invite and manage your team members.
               </p>
-              <hr :class="css({ borderColor: 'gray.200', my: '6' })" />
-              <div :class="flex({ gap: '8', justify: 'space-between' })">
-                <div>
-                  <h4 :class="css({ fontSize: 'sm', fontWeight: '600' })">
-                    Comments
-                  </h4>
-                  <p :class="css({ fontSize: 'sm', color: 'gray.600' })">
-                    Receive notifications when someone comments on your
-                    documents or mentions you.
-                  </p>
-                </div>
-                <div
-                  :class="
-                    flex({ direction: 'column', align: 'start', gap: '1' })
-                  "
-                >
-                  <Switch id="1" label="Push" />
-                  <Switch id="2" label="Email" />
-                  <Switch id="3" label="Slack" />
+              <div :class="stack({ direction: 'column', gap: '4', mt: '6' })">
+                <div :class="hstack({ gap: 2 })">
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    :class="cx(input({ size: 'sm' }), css({ flex: '1 1 0%' }))"
+                  />
+                  <button :class="button()">Invite</button>
                 </div>
               </div>
-              <hr :class="css({ borderColor: 'gray.200', my: '6' })" />
-              <div :class="flex({ gap: '8', justify: 'space-between' })">
-                <div>
-                  <h4 :class="css({ fontSize: 'sm', fontWeight: '600' })">
-                    Favorites
-                  </h4>
-                  <p :class="css({ fontSize: 'sm', color: 'gray.600' })">
-                    Receive notifications when someone comments on your
-                    documents or mentions you.
-                  </p>
-                </div>
-                <div
-                  :class="
-                    flex({ direction: 'column', align: 'start', gap: '1' })
-                  "
-                >
-                  <Switch id="4" label="Push" />
-                  <Switch id="5" label="Email" />
-                  <Switch id="6" label="Slack" />
+              <div :class="vstack({ alignItems: 'flex-start', gap: 4, mt: 6 })">
+                <template v-for="team in teams">
+                  <div
+                    :class="
+                      hstack({
+                        gap: 4,
+                        alignItems: 'center',
+                        justifyContent: 'flex-start',
+                        borderBottom: '1px solid',
+                        borderColor: 'gray.200',
+                        w: 'full',
+                        py: '2',
+                      })
+                    "
+                  >
+                    <div :class="css({ w: 10, h: 10, mt: 2 })">
+                      <Avatar id="7" :fallback="team.avatar" />
+                    </div>
+                    <div
+                      :class="
+                        css({
+                          fontSize: 'sm',
+                          color: 'gray.800',
+                          flex: '1 1 0%',
+                          w: 'auto',
+                        })
+                      "
+                    >
+                      {{ team.name }}
+                    </div>
+                    <div>
+                      <a
+                        :href="team.email"
+                        :class="css({ fontSize: 'sm', color: 'gray.500' })"
+                        >{{ team.email }}</a
+                      >
+                    </div>
+                  </div>
+                </template>
+                <div :class="flex({ w: 'full', justify: 'center' })">
+                  <Pagination :count="teams.length" :page-size="1" />
                 </div>
               </div>
             </div>
@@ -258,132 +294,55 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                   boxShadow: 'sm',
                   p: '6',
                   borderRadius: 'sm',
-                  gridColumn: 2,
                 })
               "
             >
               <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">
-                Your team
+                Notifications
               </h3>
               <p :class="css({ fontSize: 'sm', color: 'gray.600' })">
-                Invite and manage your team members.
+                Manage your notification settings.
               </p>
-              <div :class="stack({ direction: 'column', gap: '4', mt: '6' })">
-                <div :class="hstack({ gap: 2 })">
-                  <input
-                    type="email"
-                    placeholder="Email address"
-                    :class="cx(input({ size: 'sm' }), css({ flex: '1 1 0%' }))"
-                  />
-                  <button :class="button()">Invite</button>
+              <hr :class="css({ borderColor: 'gray.200', my: '6' })" />
+              <div :class="flex({ gap: '8', justify: 'space-between' })">
+                <div>
+                  <h4 :class="css({ fontSize: 'sm', fontWeight: '600' })">
+                    Comments
+                  </h4>
+                  <p :class="css({ fontSize: 'sm', color: 'gray.600' })">
+                    Receive notifications when someone comments on your
+                    documents or mentions you.
+                  </p>
+                </div>
+                <div
+                  :class="
+                    flex({ direction: 'column', align: 'start', gap: '1' })
+                  "
+                >
+                  <Switch id="1" label="Push" />
+                  <Switch id="2" label="Email" />
+                  <Switch id="3" label="Slack" />
                 </div>
               </div>
-              <div :class="vstack({ alignItems: 'flex-start', gap: 4, mt: 6 })">
-                <div
-                  :class="
-                    hstack({
-                      gap: 4,
-                      alignItems: 'center',
-                      justifyContent: 'flex-start',
-                      borderBottom: '1px solid',
-                      borderColor: 'gray.200',
-                      w: 'full',
-                      py: '2',
-                    })
-                  "
-                >
-                  <div :class="css({ w: 10, h: 10, mt: 2 })">
-                    <Avatar id="7" fallback="DT" />
-                  </div>
-                  <div
-                    :class="
-                      css({
-                        fontSize: 'sm',
-                        color: 'gray.800',
-                        flex: '1 1 0%',
-                        w: 'auto',
-                      })
-                    "
-                  >
-                    Dang Van Thanh
-                  </div>
-                  <div>
-                    <a
-                      href="mailto@chieuhue@gmail.com"
-                      :class="css({ fontSize: 'sm', color: 'gray.500' })"
-                      >chieuhue@gmail.com</a
-                    >
-                  </div>
+              <hr :class="css({ borderColor: 'gray.200', my: '6' })" />
+              <div :class="flex({ gap: '8', justify: 'space-between' })">
+                <div>
+                  <h4 :class="css({ fontSize: 'sm', fontWeight: '600' })">
+                    Favorites
+                  </h4>
+                  <p :class="css({ fontSize: 'sm', color: 'gray.600' })">
+                    Receive notifications when someone comments on your
+                    documents or mentions you.
+                  </p>
                 </div>
                 <div
                   :class="
-                    hstack({
-                      gap: 4,
-                      alignItems: 'center',
-                      justifyContent: 'flex-start',
-                      borderBottom: '1px solid',
-                      borderColor: 'gray.200',
-                      w: 'full',
-                      py: '2',
-                    })
+                    flex({ direction: 'column', align: 'start', gap: '1' })
                   "
                 >
-                  <div :class="css({ w: 10, h: 10, mt: 2 })">
-                    <Avatar id="8" fallback="HL" />
-                  </div>
-                  <div
-                    :class="
-                      css({
-                        fontSize: 'sm',
-                        color: 'gray.800',
-                        flex: '1 1 0%',
-                        w: 'auto',
-                      })
-                    "
-                  >
-                    Hoa Long Sinh
-                  </div>
-                  <div>
-                    <a
-                      href="mailto@hoalongsinh@gmail.com"
-                      :class="css({ fontSize: 'sm', color: 'gray.500' })"
-                      >hoalongsinh@gmail.com</a
-                    >
-                  </div>
-                </div>
-                <div
-                  :class="
-                    hstack({
-                      gap: 4,
-                      alignItems: 'center',
-                      justifyContent: 'flex-start',
-                      w: 'full',
-                      py: '2',
-                    })
-                  "
-                >
-                  <div :class="css({ w: 10, h: 10, mt: 2 })">
-                    <Avatar id="9" fallback="HH" />
-                  </div>
-                  <div
-                    :class="
-                      css({
-                        fontSize: 'sm',
-                        color: 'gray.800',
-                        flex: '1 1 0%',
-                        w: 'auto',
-                      })
-                    "
-                  >
-                    Hai Hanux
-                  </div>
-                  <div>
-                    <a
-                      href="mailto@tuanhai12h@gmail.com"
-                      :class="css({ fontSize: 'sm', color: 'gray.500' })"
-                      >tuanhai12h@gmail.com</a
-                    >
-                  </div>
+                  <Switch id="4" label="Push" />
+                  <Switch id="5" label="Email" />
+                  <Switch id="6" label="Slack" />
                 </div>
               </div>
             </div>
@@ -395,7 +354,6 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                   boxShadow: 'sm',
                   p: '6',
                   borderRadius: 'sm',
-                  gridColumn: 2,
                 })
               "
             >
@@ -404,7 +362,7 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                 <Slider />
                 <div
                   :class="
-                    grid({ columns: 5, gap: 2, alignItems: 'center', mt: 3 })
+                    grid({ columns: 5, gap: 1, alignItems: 'center', mt: 3 })
                   "
                 >
                   <div :class="flex({ justify: 'center' })">
@@ -429,8 +387,8 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                       :class="
                         flex({
                           cursor: 'pointer',
-                          w: 20,
-                          h: 20,
+                          w: 16,
+                          h: 16,
                           align: 'center',
                           justify: 'center',
                           borderWidth: '2px',
@@ -444,8 +402,8 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                       <div
                         :class="
                           flex({
-                            w: 16,
-                            h: 16,
+                            w: 12,
+                            h: 12,
                             align: 'center',
                             justify: 'center',
                             borderWidth: '2px',
@@ -455,8 +413,11 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                           })
                         "
                       >
-                        <Play :class="css({ w: 10, h: 10, ml: 1 })" v-if="isPlaying" />
-                        <Pause :class="css({ w: 10, h: 10 })" v-else />
+                        <Play
+                          :class="css({ w: 8, h: 8, ml: 1 })"
+                          v-if="isPlaying"
+                        />
+                        <Pause :class="css({ w: 8, h: 8 })" v-else />
                       </div>
                     </button>
                   </div>

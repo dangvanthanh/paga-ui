@@ -19,4 +19,5 @@ body {
   color: #000;
   font-size: 16px;
   line-height: 1.5;
+  overflow: hidden;
 }

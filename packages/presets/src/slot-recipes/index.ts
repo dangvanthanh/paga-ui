@@ -10,7 +10,7 @@ import { avatar } from './avatar';
 // import { menu } from './menu';
 // import { nestedMenu } from './nested-menu';
 // import { numberInput } from './number-input';
-// import { pagination } from './pagination';
+import { pagination } from './pagination';
 // import { pinInput } from './pin-input';
 // import { popover } from './popover';
 // import { pressable } from './pressable';
@@ -28,6 +28,7 @@ import { slider } from './slider';
 
 export const slotRecipes = {
   avatar,
+  pagination,
   switches: switchRecipe,
   slider
 };
