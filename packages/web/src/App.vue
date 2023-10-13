@@ -7,6 +7,8 @@ import {
   Play,
   Pause,
   Repeat,
+  Github,
+  Sun,
 } from "lucide-vue-next";
 import { css, cx } from "@styled-system/css";
 import { flex, stack, grid, vstack, hstack } from "@styled-system/patterns";
@@ -15,6 +17,14 @@ import { Avatar, Pagination, Switch, Slider } from "@/ui";
 import { teams } from "@/lib";
 
 const isPlaying = ref(true);
+
+const cardClasses = css({
+  border: "1px solid",
+  borderColor: "gray.100",
+  boxShadow: "sm",
+  p: "6",
+  borderRadius: "sm",
+});
 
 const togglePlaying = () => (isPlaying.value = !isPlaying.value);
 </script>
@@ -51,47 +61,10 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
       <nav :class="flex({ gap: '3' })">
         <a href="#" :class="css({ color: 'gray.700' })">Documentation</a>
         <a href="#" :class="css({ color: 'gray.700' })">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-github"
-          >
-            <path
-              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
-            />
-            <path d="M9 18c-4.51 2-5-2-7-2" />
-          </svg>
+          <Github :class="css({ w: 6, h: 6 })" />
         </a>
         <a href="#" :class="css({ color: 'gray.700' })">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-sun"
-          >
-            <circle cx="12" cy="12" r="4" />
-            <path d="M12 2v2" />
-            <path d="M12 20v2" />
-            <path d="m4.93 4.93 1.41 1.41" />
-            <path d="m17.66 17.66 1.41 1.41" />
-            <path d="M2 12h2" />
-            <path d="M20 12h2" />
-            <path d="m6.34 17.66-1.41 1.41" />
-            <path d="m19.07 4.93-1.41 1.41" />
-          </svg>
+          <Sun :class="css({ w: 6, h: 6 })" />
         </a>
       </nav>
     </div>
@@ -152,17 +125,7 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
           "
         >
           <div :class="grid({ columns: 2, gap: 4, lg: { gap: 8 } })">
-            <div
-              :class="
-                css({
-                  border: '1px solid',
-                  borderColor: 'gray.100',
-                  boxShadow: 'sm',
-                  p: '6',
-                  borderRadius: 'sm',
-                })
-              "
-            >
+            <div :class="cardClasses">
               <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">
                 Your team
               </h3>
@@ -223,17 +186,7 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                 </div>
               </div>
             </div>
-            <div
-              :class="
-                css({
-                  border: '1px solid',
-                  borderColor: 'gray.100',
-                  boxShadow: 'sm',
-                  p: '6',
-                  borderRadius: 'sm',
-                })
-              "
-            >
+            <div :class="cardClasses">
               <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">
                 Sign Up
               </h3>
@@ -286,17 +239,7 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                 </div>
               </div>
             </div>
-            <div
-              :class="
-                css({
-                  border: '1px solid',
-                  borderColor: 'gray.100',
-                  boxShadow: 'sm',
-                  p: '6',
-                  borderRadius: 'sm',
-                })
-              "
-            >
+            <div :class="cardClasses">
               <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">
                 Notifications
               </h3>
@@ -346,17 +289,7 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                 </div>
               </div>
             </div>
-            <div
-              :class="
-                css({
-                  border: '1px solid',
-                  borderColor: 'gray.100',
-                  boxShadow: 'sm',
-                  p: '6',
-                  borderRadius: 'sm',
-                })
-              "
-            >
+            <div :class="cardClasses">
               <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Sound</h3>
               <div :class="css({ mt: 6 })">
                 <Slider />
@@ -370,7 +303,7 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                       type="button"
                       :class="css({ color: 'gray.500', cursor: 'pointer' })"
                     >
-                      <Repeat />
+                      <Repeat :class="css({ w: 5, h: 5 })" />
                     </button>
                   </div>
                   <div :class="flex({ justify: 'center' })">
@@ -378,7 +311,7 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                       type="button"
                       :class="css({ color: 'gray.500', cursor: 'pointer' })"
                     >
-                      <SkipBack />
+                      <SkipBack :class="css({ w: 5, h: 5 })" />
                     </button>
                   </div>
                   <div :class="flex({ justify: 'center', color: 'gray.900' })">
@@ -387,8 +320,8 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                       :class="
                         flex({
                           cursor: 'pointer',
-                          w: 16,
-                          h: 16,
+                          w: 12,
+                          h: 12,
                           align: 'center',
                           justify: 'center',
                           borderWidth: '2px',
@@ -402,8 +335,8 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                       <div
                         :class="
                           flex({
-                            w: 12,
-                            h: 12,
+                            w: 10,
+                            h: 10,
                             align: 'center',
                             justify: 'center',
                             borderWidth: '2px',
@@ -414,10 +347,10 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                         "
                       >
                         <Play
-                          :class="css({ w: 8, h: 8, ml: 1 })"
+                          :class="css({ w: 6, h: 6, ml: 1 })"
                           v-if="isPlaying"
                         />
-                        <Pause :class="css({ w: 8, h: 8 })" v-else />
+                        <Pause :class="css({ w: 6, h: 6 })" v-else />
                       </div>
                     </button>
                   </div>
@@ -426,7 +359,7 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                       type="button"
                       :class="css({ color: 'gray.500', cursor: 'pointer' })"
                     >
-                      <SkipForward />
+                      <SkipForward :class="css({ w: 5, h: 5 })" />
                     </button>
                   </div>
                   <div :class="flex({ justify: 'center' })">
@@ -434,7 +367,7 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                       type="button"
                       :class="css({ color: 'gray.500', cursor: 'pointer' })"
                     >
-                      <AlignJustify />
+                      <AlignJustify :class="css({ w: 5, h: 5 })" />
                     </button>
                   </div>
                 </div>
