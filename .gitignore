@@ -25,3 +25,7 @@ dist-ssr
 
 # PandaCSS
 styled-system
+
+# moon
+.moon/cache
+.moon/docker

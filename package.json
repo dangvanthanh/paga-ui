@@ -2,10 +2,20 @@
   "name": "paga-ui",
   "version": "1.0.0",
   "description": "Beautifully designed components built with Zagjs and Panda CSS. ",
-  "keywords": ["Zagjs", "PandaCSS"],
+  "scripts": {
+    "moon": "moon"
+  },
+  "keywords": [
+    "Zagjs",
+    "PandaCSS"
+  ],
   "author": "Dang Van Thanh",
   "license": "MIT",
-  "workspaces": [
-    "packages/*"
-  ]
+  "devDependencies": {
+    "@moonrepo/cli": "^1.15.1"
+  },
+  "packageManager": "",
+  "engines": {
+    "node": "20.0.0"
+  }
 }

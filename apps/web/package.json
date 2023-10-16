@@ -1,0 +1,30 @@
+{
+  "name": "web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "panda codegen",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/content": "^2.8.5",
+    "@nuxt/devtools": "latest",
+    "@pandacss/dev": "^0.16.0",
+    "nuxt": "^3.7.4",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@zag-js/accordion": "^0.23.0",
+    "@zag-js/avatar": "^0.23.0",
+    "@zag-js/pagination": "^0.23.0",
+    "@zag-js/slider": "^0.23.0",
+    "@zag-js/switch": "^0.23.0",
+    "@zag-js/vue": "^0.23.0",
+    "lucide-vue-next": "^0.284.0"
+  }
+}
