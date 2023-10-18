@@ -2,7 +2,7 @@
 import * as zagAvatar from "@zag-js/avatar";
 import { normalizeProps, useMachine } from "@zag-js/vue";
 import { computed } from "vue";
-import { avatar } from "../styled-system/recipes";
+import { avatar } from "~/styled-system/recipes";
 
 const props = defineProps<{
   id: string;

@@ -2,7 +2,7 @@
 import * as zagPagination from "@zag-js/pagination";
 import { normalizeProps, useMachine } from "@zag-js/vue";
 import { computed } from "vue";
-import { pagination } from "../styled-system/recipes";
+import { pagination } from "~/styled-system/recipes";
 import { ChevronLeft, ChevronRight } from "lucide-vue-next";
 
 const props = defineProps<{

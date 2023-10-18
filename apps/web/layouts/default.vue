@@ -1,13 +1,23 @@
 <script setup lang="ts">
 import { Github, Sun } from "lucide-vue-next";
-import { css } from "../styled-system/css";
-import { flex } from "../styled-system/patterns";
+import { css } from "~/styled-system/css";
+import { flex } from "~/styled-system/patterns";
 </script>
 
 <template>
   <header
     role="banner"
-    :class="css({ px: '4', py: '4', pos: 'relative', zIndex: 10 })"
+    :class="
+      css({
+        px: '4',
+        py: '4',
+        zIndex: 10,
+        shadow: 'xs',
+        bg: 'white',
+        pos: 'sticky',
+        top: 0
+      })
+    "
   >
     <div
       :class="

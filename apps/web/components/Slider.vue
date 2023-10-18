@@ -2,8 +2,8 @@
 import * as zagSlider from "@zag-js/slider";
 import { normalizeProps, useMachine } from "@zag-js/vue";
 import { computed } from "vue";
-import { css } from "../styled-system/css";
-import { slider } from "../styled-system/recipes";
+import { css } from "~/styled-system/css";
+import { slider } from "~/styled-system/recipes";
 
 const sliderClasses = slider({ size: "sm" });
 

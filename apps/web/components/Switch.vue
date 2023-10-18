@@ -2,7 +2,7 @@
 import * as zagSwitch from "@zag-js/switch";
 import { normalizeProps, useMachine } from "@zag-js/vue";
 import { computed } from "vue";
-import { switches } from "../styled-system/recipes";
+import { switches } from "~/styled-system/recipes";
 
 const props = defineProps<{
   id: string;
