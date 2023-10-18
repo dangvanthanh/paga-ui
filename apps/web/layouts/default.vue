@@ -2,6 +2,10 @@
 import { Github, Sun } from "lucide-vue-next";
 import { css } from "~/styled-system/css";
 import { flex } from "~/styled-system/patterns";
+
+useHead({
+  title: 'Paga UI - Beautifully designed components built with Zagjs and Panda CSS that work with a variety of JS frameworks'
+})
 </script>
 
 <template>
