@@ -31,7 +31,7 @@ api.value.setPageSize(props.pageSize);
   >
     <a
       href="#previous"
-      v-bind="api.prevPageTriggerProps"
+      v-bind="api.prevTriggerProps"
       :class="paginationClasses['prev-trigger']"
     >
       <ChevronLeft />
@@ -43,7 +43,7 @@ api.value.setPageSize(props.pageSize);
       <template v-if="page.type === 'page'">
         <a
           :href="`#${page.value}`"
-          v-bind="api.getPageTriggerProps(page)"
+          v-bind="api.getItemProps(page)"
           :class="paginationClasses.item"
         >
           {{ page.value }}
@@ -59,7 +59,7 @@ api.value.setPageSize(props.pageSize);
     </template>
     <a
       href="#next"
-      v-bind="api.nextPageTriggerProps"
+      v-bind="api.nextPage"
       :class="paginationClasses['next-trigger']"
     >
       <ChevronRight />

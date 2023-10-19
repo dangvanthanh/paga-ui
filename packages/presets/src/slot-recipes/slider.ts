@@ -7,11 +7,11 @@ export const slider = defineSlotRecipe({
     root: { width: "full" },
     label: { color: "gray.900", fontWeight: "semibold" },
     control: { position: "relative", display: "flex", alignItems: "center" },
-    track: { bg: "gray.300", borderRadius: "xl", flex: "1" },
+    track: { bg: "gray.200", borderRadius: "xl", flex: "1" },
     range: { bg: "gray.900", borderRadius: "xl" },
     thumb: {
       bg: "gray.900",
-      borderColor: "gray.300",
+      borderColor: "gray.200",
       borderRadius: "full",
       borderWidth: "2px",
       boxShadow: "sm",

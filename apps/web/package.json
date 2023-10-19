@@ -19,12 +19,14 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@zag-js/accordion": "^0.23.0",
-    "@zag-js/avatar": "^0.23.0",
-    "@zag-js/pagination": "^0.23.0",
-    "@zag-js/slider": "^0.23.0",
-    "@zag-js/switch": "^0.23.0",
-    "@zag-js/vue": "^0.23.0",
+    "@zag-js/accordion": "^0.25.0",
+    "@zag-js/avatar": "^0.25.0",
+    "@zag-js/checkbox": "^0.25.0",
+    "@zag-js/pagination": "^0.25.0",
+    "@zag-js/pin-input": "^0.25.0",
+    "@zag-js/slider": "^0.25.0",
+    "@zag-js/switch": "^0.25.0",
+    "@zag-js/vue": "^0.25.0",
     "lucide-vue-next": "^0.284.0"
   }
 }

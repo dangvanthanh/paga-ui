@@ -29,7 +29,14 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
 </script>
 
 <template>
-  <div :class="css({ overflow: 'hidden', height: 'calc(100vh - 68px)' })">
+  <div
+    :class="
+      css({
+        overflow: 'hidden',
+        height: { base: 'auto', lg: 'calc(100vh - 68px)' },
+      })
+    "
+  >
     <div :class="css({ maxW: '7xl', mx: 'auto', px: '4' })">
       <div :class="flex({ align: 'start', wrap: 'wrap' })">
         <div
@@ -85,7 +92,11 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
             })
           "
         >
-          <div :class="grid({ columns: 2, gap: 4, lg: { gap: 8 } })">
+          <div
+            :class="
+              grid({ columns: { base: 1, lg: 2 }, gap: { base: 4, lg: 8 } })
+            "
+          >
             <div :class="cardClasses">
               <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">
                 Your team
@@ -253,7 +264,7 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
             <div :class="cardClasses">
               <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Sound</h3>
               <div :class="css({ mt: 6 })">
-                <Slider />
+                <Slider id="1" />
                 <div
                   :class="
                     grid({ columns: 5, gap: 1, alignItems: 'center', mt: 3 })

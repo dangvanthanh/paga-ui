@@ -12,7 +12,7 @@ const props = defineProps<{
 const sliderClasses = slider({ size: "sm" });
 
 const [state, send] = useMachine(
-  zagSlider.machine({ id: props.id, value: [30], min: 0, max: 100 })
+  zagSlider.machine({ id: props.id, value: [30, 60], min: 0, max: 100 })
 );
 const api = computed(() =>
   zagSlider.connect(state.value, send, normalizeProps)

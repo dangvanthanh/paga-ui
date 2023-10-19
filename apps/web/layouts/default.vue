@@ -16,7 +16,7 @@ useHead({
         px: '4',
         py: '4',
         zIndex: 10,
-        shadow: 'xs',
+        shadow: 'sm',
         bg: 'white',
         pos: 'sticky',
         top: 0
@@ -47,7 +47,7 @@ useHead({
           >Paga UI</a
         >
       </h1>
-      <nav :class="flex({ gap: '3' })">
+      <nav :class="flex({ gap: 5 })">
         <a href="/documentation" :class="css({ color: 'gray.700' })"
           >Documentation</a
         >
