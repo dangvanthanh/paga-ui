@@ -11,7 +11,7 @@ import { avatar } from './avatar';
 // import { nestedMenu } from './nested-menu';
 // import { numberInput } from './number-input';
 import { pagination } from './pagination';
-// import { pinInput } from './pin-input';
+import { pinInput } from './pin-input';
 // import { popover } from './popover';
 // import { pressable } from './pressable';
 // import { radioGroup } from './radio-group';
@@ -29,6 +29,7 @@ import { slider } from './slider';
 export const slotRecipes = {
   avatar,
   pagination,
+  pinInput,
   switches: switchRecipe,
   slider
 };

@@ -133,7 +133,7 @@ const cardContentClasses = flex({
       <div :class="cardClasses">
         <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Pin Input</h3>
         <div :class="cx(css({ bg: 'cyan.100' }), cardContentClasses)">
-          &nbsp;
+          <PinInput />
         </div>
       </div>
       <div :class="cardClasses">
