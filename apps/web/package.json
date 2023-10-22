@@ -26,6 +26,7 @@
     "@zag-js/pin-input": "^0.25.0",
     "@zag-js/slider": "^0.25.0",
     "@zag-js/switch": "^0.25.0",
+    "@zag-js/tags-input": "^0.26.0",
     "@zag-js/vue": "^0.25.0",
     "lucide-vue-next": "^0.284.0"
   }

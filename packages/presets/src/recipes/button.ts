@@ -33,7 +33,7 @@ export const button = defineRecipe({
         },
       },
       ghost: {
-        borderColor: 'gray.200',
+        borderColor: 'gray.300',
         background: 'gray.100',
         _hover: {
           background: 'gray.50',

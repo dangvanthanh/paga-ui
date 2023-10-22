@@ -123,7 +123,7 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                         alignItems: 'center',
                         justifyContent: 'flex-start',
                         borderBottom: '1px solid',
-                        borderColor: 'gray.200',
+                        borderColor: 'gray.300',
                         w: 'full',
                         py: '2',
                       })
@@ -191,7 +191,7 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                   Signup
                 </button>
               </form>
-              <hr :class="css({ borderColor: 'gray.200', my: '6' })" />
+              <hr :class="css({ borderColor: 'gray.300', my: '6' })" />
               <div :class="stack({ gap: '4', my: '6' })">
                 <div :class="stack({ gap: '3', direction: 'row' })">
                   <button
@@ -218,7 +218,7 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
               <p :class="css({ fontSize: 'sm', color: 'gray.600' })">
                 Manage your notification settings.
               </p>
-              <hr :class="css({ borderColor: 'gray.200', my: '6' })" />
+              <hr :class="css({ borderColor: 'gray.300', my: '6' })" />
               <div :class="flex({ gap: '8', justify: 'space-between' })">
                 <div>
                   <h4 :class="css({ fontSize: 'sm', fontWeight: '600' })">
@@ -239,7 +239,7 @@ const togglePlaying = () => (isPlaying.value = !isPlaying.value);
                   <Switch id="3" label="Slack" />
                 </div>
               </div>
-              <hr :class="css({ borderColor: 'gray.200', my: '6' })" />
+              <hr :class="css({ borderColor: 'gray.300', my: '6' })" />
               <div :class="flex({ gap: '8', justify: 'space-between' })">
                 <div>
                   <h4 :class="css({ fontSize: 'sm', fontWeight: '600' })">

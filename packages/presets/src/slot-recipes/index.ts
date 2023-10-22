@@ -21,7 +21,7 @@ import { pinInput } from './pin-input';
 import { switchRecipe } from './switch';
 import { slider } from './slider';
 // import { tabs } from './tabs';
-// import { tagsInput } from './tags-input';
+import { tagsInput } from './tags-input';
 // import { toast } from './toast';
 // import { toggleGroup } from './toggle-group';
 // import { tooltip } from './tooltip';
@@ -31,5 +31,6 @@ export const slotRecipes = {
   pagination,
   pinInput,
   switches: switchRecipe,
-  slider
+  slider,
+  tagsInput
 };

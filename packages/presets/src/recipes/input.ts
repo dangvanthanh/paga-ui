@@ -5,7 +5,7 @@ export const input = defineRecipe({
   base: {
     appearance: 'none',
     background: 'white',
-    borderColor: 'gray.200',
+    borderColor: 'gray.300',
     borderRadius: 'sm',
     borderWidth: '1px',
     outline: 0,
