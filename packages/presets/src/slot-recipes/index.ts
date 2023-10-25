@@ -1,6 +1,6 @@
-// import { accordion } from './accordion';
+import { accordion } from './accordion';
 import { avatar } from './avatar';
-// import { checkbox } from './checkbox';
+import { checkbox } from './checkbox';
 // import { combobox } from './combobox';
 // import { contextMenu } from './context-menu';
 // import { dialog } from './dialog';
@@ -24,13 +24,16 @@ import { slider } from './slider';
 import { tagsInput } from './tags-input';
 // import { toast } from './toast';
 // import { toggleGroup } from './toggle-group';
-// import { tooltip } from './tooltip';
+import { tooltip } from './tooltip';
 
 export const slotRecipes = {
+  accordion,
   avatar,
+  checkbox,
   pagination,
   pinInput,
   switches: switchRecipe,
   slider,
-  tagsInput
+  tagsInput,
+  tooltip
 };

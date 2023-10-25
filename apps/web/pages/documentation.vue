@@ -51,7 +51,7 @@ const cardContentClasses = flex({
       <div :class="cardClasses">
         <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Accordion</h3>
         <div :class="cx(css({ bg: 'green.50' }), cardContentClasses)">
-          &nbsp;
+          <Accordion />
         </div>
       </div>
       <div :class="cardClasses">
@@ -63,7 +63,7 @@ const cardContentClasses = flex({
       <div :class="cardClasses">
         <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Checkbox</h3>
         <div :class="cx(css({ bg: 'green.200' }), cardContentClasses)">
-          &nbsp;
+        <Checkbox/> 
         </div>
       </div>
       <div :class="cardClasses">
@@ -217,7 +217,7 @@ const cardContentClasses = flex({
       <div :class="cardClasses">
         <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Tooltip</h3>
         <div :class="cx(css({ bg: 'red.200' }), cardContentClasses)">
-          &nbsp;
+          <Tooltip />
         </div>
       </div>
     </div>

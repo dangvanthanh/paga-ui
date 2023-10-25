@@ -59,7 +59,7 @@ api.value.setPageSize(props.pageSize);
     </template>
     <a
       href="#next"
-      v-bind="api.nextPage"
+      v-bind="api.nextTriggerProps"
       :class="paginationClasses['next-trigger']"
     >
       <ChevronRight />

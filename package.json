@@ -14,8 +14,8 @@
   "devDependencies": {
     "@moonrepo/cli": "^1.15.1"
   },
-  "packageManager": "",
+  "packageManager": "pnpm@8.9.0",
   "engines": {
-    "node": "20.0.0"
+    "node": "18.17.1"
   }
 }
