@@ -3,7 +3,7 @@ import { avatar } from './avatar';
 import { checkbox } from './checkbox';
 import { combobox } from './combobox';
 // import { contextMenu } from './context-menu';
-// import { dialog } from './dialog';
+import { dialog } from './dialog';
 // import { editable } from './editable';
 // import { fileUpload } from './file-upload';
 // import { hoverCard } from './hover-card';
@@ -31,6 +31,7 @@ export const slotRecipes = {
   avatar,
   checkbox,
   combobox,
+  dialog,
   pagination,
   pinInput,
   switches: switchRecipe,
