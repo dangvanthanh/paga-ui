@@ -1,7 +1,7 @@
 import { accordion } from './accordion';
 import { avatar } from './avatar';
 import { checkbox } from './checkbox';
-// import { combobox } from './combobox';
+import { combobox } from './combobox';
 // import { contextMenu } from './context-menu';
 // import { dialog } from './dialog';
 // import { editable } from './editable';
@@ -30,6 +30,7 @@ export const slotRecipes = {
   accordion,
   avatar,
   checkbox,
+  combobox,
   pagination,
   pinInput,
   switches: switchRecipe,

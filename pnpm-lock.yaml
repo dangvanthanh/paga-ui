@@ -23,6 +23,9 @@ importers:
       '@zag-js/checkbox':
         specifier: ^0.26.0
         version: 0.26.0
+      '@zag-js/combobox':
+        specifier: ^0.26.0
+        version: 0.26.0
       '@zag-js/pagination':
         specifier: ^0.26.0
         version: 0.26.0
@@ -3202,6 +3205,12 @@ packages:
       '@zag-js/dom-query': 0.12.0
     dev: true
 
+  /@zag-js/aria-hidden@0.26.0:
+    resolution: {integrity: sha512-7uN9u+/akQWnpQ6kqhsScCFKCdqITH2kY7OowZYxBas/yiSbZ6oRxgVGnPAGZlMPZf5FXiP5OSCNoPFmn6/udQ==}
+    dependencies:
+      '@zag-js/dom-query': 0.26.0
+    dev: false
+
   /@zag-js/auto-resize@0.12.0:
     resolution: {integrity: sha512-srP/CcYw1kiP3HKeppM/1siBrYQTmhJU0YDzLIiATNc9JdfIZp2k6OC264QptwPRcbZaNGnXbVJVNeS/5efB3g==}
     dependencies:
@@ -3270,6 +3279,10 @@ packages:
       '@zag-js/visually-hidden': 0.26.0
     dev: false
 
+  /@zag-js/collection@0.26.0:
+    resolution: {integrity: sha512-lD+KMtcFST8t8W1gOY4vdo8i3AUpPmgnllN/15D2JjbsfSgDlpAKMgycRu6g4wZO660qw4uMGoTwvtd4GEBK1g==}
+    dev: false
+
   /@zag-js/color-picker@0.12.0:
     resolution: {integrity: sha512-8XmhQVm9eaN5j8gtuqQ0AOiOCqrHS400SDDbMl82jDuc286sAAJJ3R/XCoSfJg7humODAZq0wCUvT05+J/MUPA==}
     dependencies:
@@ -3303,6 +3316,22 @@ packages:
       '@zag-js/types': 0.12.0
       '@zag-js/utils': 0.12.0
     dev: true
+
+  /@zag-js/combobox@0.26.0:
+    resolution: {integrity: sha512-S+4cX3MEeBT8Y+WCXAAqX/t4K5OrueVjlf7HOdRnN1ASx6B6vHji5jj9rkvczoUPsVoq13wobt2BxLDSFFXUlg==}
+    dependencies:
+      '@zag-js/anatomy': 0.26.0
+      '@zag-js/aria-hidden': 0.26.0
+      '@zag-js/collection': 0.26.0
+      '@zag-js/core': 0.26.0
+      '@zag-js/dismissable': 0.26.0
+      '@zag-js/dom-event': 0.26.0
+      '@zag-js/dom-query': 0.26.0
+      '@zag-js/mutation-observer': 0.26.0
+      '@zag-js/popper': 0.26.0
+      '@zag-js/types': 0.26.0
+      '@zag-js/utils': 0.26.0
+    dev: false
 
   /@zag-js/core@0.12.0:
     resolution: {integrity: sha512-U0Nqf0o/2I4VhKCyCNV7txLynaemiIOf4yP3sbl/y0Trz1HE4VHbkqSzPTNKLdRmvMSjDceO9osvXtnIVZFEpA==}
@@ -3365,6 +3394,15 @@ packages:
       '@zag-js/interact-outside': 0.12.0
       '@zag-js/utils': 0.12.0
     dev: true
+
+  /@zag-js/dismissable@0.26.0:
+    resolution: {integrity: sha512-T4G6V1ZGjD6KPRfyy7n0vifSIrv/0hY9iiWv9mTJz0RgeF5SEjIHXKG511tW0t8puXUxNWdFNM0CKyFnfPeKjg==}
+    dependencies:
+      '@zag-js/dom-event': 0.26.0
+      '@zag-js/dom-query': 0.26.0
+      '@zag-js/interact-outside': 0.26.0
+      '@zag-js/utils': 0.26.0
+    dev: false
 
   /@zag-js/dom-event@0.12.0:
     resolution: {integrity: sha512-ynyx8bF+pfrWAGWfYWis2zMpgWYDx37CfSv5lOlMMzF/vdYq86Z+yXoQPRgPSNcgS/gRFtTUwbZTmoxvAqbn9Q==}

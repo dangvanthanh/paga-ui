@@ -23,26 +23,20 @@ const cardContentClasses = flex({
 <template>
   <div :class="css({ maxW: '7xl', mx: 'auto', px: '4' })">
     <div :class="flex({ align: 'center' })">
-      <div
-        :class="
-          css({
-            w: 'full',
-            lg: {
-              w: '2/5',
-            },
-          })
-        "
-      >
-        <h2
-          :class="
-            css({
-              fontSize: '6xl',
-              lineHeight: '1',
-              pt: '12',
-              fontWeight: '700',
-            })
-          "
-        >
+      <div :class="css({
+        w: 'full',
+        lg: {
+          w: '2/5',
+        },
+      })
+        ">
+        <h2 :class="css({
+          fontSize: '6xl',
+          lineHeight: '1',
+          pt: '12',
+          fontWeight: '700',
+        })
+          ">
           Components
         </h2>
       </div>
@@ -63,13 +57,13 @@ const cardContentClasses = flex({
       <div :class="cardClasses">
         <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Checkbox</h3>
         <div :class="cx(css({ bg: 'green.200' }), cardContentClasses)">
-        <Checkbox/> 
+          <Checkbox />
         </div>
       </div>
       <div :class="cardClasses">
         <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Combobox</h3>
         <div :class="cx(css({ bg: 'green.200' }), cardContentClasses)">
-          &nbsp;
+          <Combobox />
         </div>
       </div>
       <div :class="cardClasses">
