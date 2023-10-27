@@ -29,6 +29,9 @@ importers:
       '@zag-js/dialog':
         specifier: ^0.26.0
         version: 0.26.0
+      '@zag-js/editable':
+        specifier: ^0.26.0
+        version: 0.26.0
       '@zag-js/pagination':
         specifier: ^0.26.0
         version: 0.26.0
@@ -3455,6 +3458,19 @@ packages:
       '@zag-js/types': 0.12.0
       '@zag-js/utils': 0.12.0
     dev: true
+
+  /@zag-js/editable@0.26.0:
+    resolution: {integrity: sha512-5+60pOdr8AEgd2mGm6x06eJe4v/+Fk/QhXgK7mgBZcpxGZbH9r8EjnC6EuHF+LfaAFcs+3OH1riPQ8R9RjF4Hg==}
+    dependencies:
+      '@zag-js/anatomy': 0.26.0
+      '@zag-js/core': 0.26.0
+      '@zag-js/dom-event': 0.26.0
+      '@zag-js/dom-query': 0.26.0
+      '@zag-js/form-utils': 0.26.0
+      '@zag-js/interact-outside': 0.26.0
+      '@zag-js/types': 0.26.0
+      '@zag-js/utils': 0.26.0
+    dev: false
 
   /@zag-js/element-rect@0.12.0:
     resolution: {integrity: sha512-KLY8g+wmeR5Utd4GuvIqf9cB42lN6d9urFCFofxxmRfHUG7i/rk4Im7O/DCrAl7gw6DzmyDDYPM4745rVjEKqw==}

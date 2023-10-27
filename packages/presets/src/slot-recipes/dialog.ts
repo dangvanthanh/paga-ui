@@ -18,6 +18,7 @@ export const dialog = defineSlotRecipe({
       inset: 0,
       position: 'fixed',
       zIndex: 101,
+      opacity: .75,
       _open: {
         animation: 'backdropIn'
       },

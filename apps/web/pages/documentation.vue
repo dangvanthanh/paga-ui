@@ -75,7 +75,7 @@ const cardContentClasses = flex({
       <div :class="cardClasses">
         <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Editable</h3>
         <div :class="cx(css({ bg: 'green.50' }), cardContentClasses)">
-          &nbsp;
+        <Editable />
         </div>
       </div>
       <div :class="cardClasses">

@@ -24,10 +24,10 @@ export const input = defineRecipe({
   },
   variants: {
     size: {
-      xs: { px: '3', h: '8', minW: '8', fontSize: 'xs' },
-      sm: { px: '3.5', h: '9', minW: '9', fontSize: 'sm' },
-      md: { px: '4', h: '10', minW: '10', fontSize: 'md' },
-      lg: { px: '6', h: '12', minW: '12', fontSize: 'lg' },
+      xs: { px: '3', h: '8', minW: '8', textStyle: 'xs' },
+      sm: { px: '3.5', h: '9', minW: '9', textStyle: 'sm' },
+      md: { px: '4', h: '10', minW: '10', textStyle: 'md' },
+      lg: { px: '6', h: '12', minW: '12', textStyle: 'lg' },
     },
   },
   defaultVariants: {

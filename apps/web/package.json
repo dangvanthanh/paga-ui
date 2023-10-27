@@ -24,6 +24,7 @@
     "@zag-js/checkbox": "^0.26.0",
     "@zag-js/combobox": "^0.26.0",
     "@zag-js/dialog": "^0.26.0",
+    "@zag-js/editable": "^0.26.0",
     "@zag-js/pagination": "^0.26.0",
     "@zag-js/pin-input": "^0.26.0",
     "@zag-js/slider": "^0.26.0",

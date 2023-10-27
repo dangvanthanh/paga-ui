@@ -4,7 +4,7 @@ import { checkbox } from './checkbox';
 import { combobox } from './combobox';
 // import { contextMenu } from './context-menu';
 import { dialog } from './dialog';
-// import { editable } from './editable';
+import { editable } from './editable';
 // import { fileUpload } from './file-upload';
 // import { hoverCard } from './hover-card';
 // import { menu } from './menu';
@@ -32,6 +32,7 @@ export const slotRecipes = {
   checkbox,
   combobox,
   dialog,
+  editable,
   pagination,
   pinInput,
   switches: switchRecipe,
