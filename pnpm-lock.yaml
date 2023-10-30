@@ -32,6 +32,9 @@ importers:
       '@zag-js/editable':
         specifier: ^0.26.0
         version: 0.26.0
+      '@zag-js/hover-card':
+        specifier: ^0.26.0
+        version: 0.26.0
       '@zag-js/pagination':
         specifier: ^0.26.0
         version: 0.26.0
@@ -3511,6 +3514,18 @@ packages:
       '@zag-js/types': 0.12.0
       '@zag-js/utils': 0.12.0
     dev: true
+
+  /@zag-js/hover-card@0.26.0:
+    resolution: {integrity: sha512-Iw3duW0KvnvJO/C7egvxt87hY231p6YL+BF2KR6Ux0jEdZvUrdMDIOizUeNJRpTNFZfqAD1G/N48ZfUhuKh1dg==}
+    dependencies:
+      '@zag-js/anatomy': 0.26.0
+      '@zag-js/core': 0.26.0
+      '@zag-js/dismissable': 0.26.0
+      '@zag-js/dom-query': 0.26.0
+      '@zag-js/popper': 0.26.0
+      '@zag-js/types': 0.26.0
+      '@zag-js/utils': 0.26.0
+    dev: false
 
   /@zag-js/interact-outside@0.12.0:
     resolution: {integrity: sha512-M5AfCJG0DoIkh6svcY7c3hc6M9IKA+emEE4tIbTYWM3BvzqJd7OQ4Zok5coX/jLXsD5awT52JoSxxpevodRY/Q==}

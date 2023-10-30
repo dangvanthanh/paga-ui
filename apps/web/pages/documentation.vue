@@ -75,7 +75,7 @@ const cardContentClasses = flex({
       <div :class="cardClasses">
         <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Editable</h3>
         <div :class="cx(css({ bg: 'green.50' }), cardContentClasses)">
-        <Editable />
+          <Editable />
         </div>
       </div>
       <div :class="cardClasses">
@@ -87,7 +87,7 @@ const cardContentClasses = flex({
       <div :class="cardClasses">
         <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Hover Card</h3>
         <div :class="cx(css({ bg: 'blue.100' }), cardContentClasses)">
-          &nbsp;
+          <HoverCard />
         </div>
       </div>
       <div :class="cardClasses">
