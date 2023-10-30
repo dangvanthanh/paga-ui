@@ -16,7 +16,7 @@ const api = computed(() => zagHoverCard.connect(state.value, send, normalizeProp
 
 <template>
   <a href="https://twitter.com/dangvanthanh" _target="blank" v-bind="api.triggerProps" :class="hoverCardClasses.trigger">
-    DT
+    @dangvanthanh
   </a>
   <Teleport to="body" v-if="api.isOpen">
     <div v-bind="api.positionerProps">
@@ -24,11 +24,14 @@ const api = computed(() => zagHoverCard.connect(state.value, send, normalizeProp
         <div v-bind="api.arrowProps" :class="hoverCardClasses.arrow">
           <div v-bind="api.arrowTipProps"></div>
         </div>
-        <div :class="flex({ align: 'center', gap: 3 })">
-          <Avatar id="DT" fallback="DT" />
+        <div :class="flex({ align: 'flex-start', gap: 3 })">
+          <div :class="css({ mt: 1 })">
+            <Avatar id="DT" fallback="DT" />
+          </div>
           <div :class="css({ flex: '1 1 0%' })">
-            <p>Dang Van Thanh</p>
-            <p :class="css({ color: 'gray.300' })">@dangvanthanh</p>
+            <p :class="css({ color: 'gray.900', fontWeight: 600 })">Dang Van Thanh</p>
+            <p :class="css({ color: 'gray.400' })">@dangvanthanh</p>
+            <p :class="css({ color: 'gray.600' })">Front-end Enginner</p>
           </div>
         </div>
       </div>
