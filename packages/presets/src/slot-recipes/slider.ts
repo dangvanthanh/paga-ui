@@ -1,21 +1,21 @@
-import { defineSlotRecipe } from "@pandacss/dev";
+import { defineSlotRecipe } from '@pandacss/dev';
 
 export const slider = defineSlotRecipe({
-  className: "slider",
-  slots: ["root", "label", "control", "track", "range", "thumb", "output"],
+  className: 'slider',
+  slots: ['root', 'label', 'control', 'track', 'range', 'thumb', 'output'],
   base: {
-    root: { width: "full" },
-    label: { color: "gray.900", fontWeight: "semibold" },
-    control: { position: "relative", display: "flex", alignItems: "center" },
-    track: { bg: "gray.200", borderRadius: "xl", flex: "1" },
-    range: { bg: "gray.900", borderRadius: "xl" },
+    root: { width: 'full' },
+    label: { color: 'gray.900', fontWeight: 'semibold' },
+    control: { position: 'relative', display: 'flex', alignItems: 'center' },
+    track: { bg: 'gray.200', borderRadius: 'xl', flex: '1' },
+    range: { bg: 'gray.900', borderRadius: 'xl' },
     thumb: {
-      bg: "gray.900",
-      borderColor: "gray.200",
-      borderRadius: "full",
-      borderWidth: "2px",
-      boxShadow: "sm",
-      outline: "none",
+      bg: 'gray.900',
+      borderColor: 'gray.200',
+      borderRadius: 'full',
+      borderWidth: '2px',
+      boxShadow: 'sm',
+      outline: 'none',
     },
   },
   variants: {
@@ -29,6 +29,6 @@ export const slider = defineSlotRecipe({
     },
   },
   defaultVariants: {
-    size: "sm",
+    size: 'sm',
   },
 });

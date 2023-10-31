@@ -22,7 +22,7 @@ export const hoverCard = defineSlotRecipe({
     },
     arrow: {
       '--arrow-size': '12px',
-      '--arrow-background': 'white'
+      '--arrow-background': 'white',
     },
   },
 });

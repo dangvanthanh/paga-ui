@@ -8,7 +8,7 @@ export const combobox = defineSlotRecipe({
       display: 'flex',
       flexDirection: 'column',
       gap: 1.5,
-      w: 'full'
+      w: 'full',
     },
     control: {
       pos: 'relative',
@@ -26,7 +26,7 @@ export const combobox = defineSlotRecipe({
       pos: 'absolute',
       top: 0,
       right: 1.5,
-      bottom: 0
+      bottom: 0,
     },
     content: {
       background: 'white',
@@ -44,8 +44,8 @@ export const combobox = defineSlotRecipe({
       _focusVisible: {
         outlineOffset: '2px',
         outline: '2px solid',
-        outlineColor: 'gray.900'
-      }
+        outlineColor: 'gray.900',
+      },
     },
     item: {
       w: 'full',
@@ -74,9 +74,9 @@ export const combobox = defineSlotRecipe({
         cursor: 'default',
         pointerEvents: 'none',
         _hover: {
-          bg: 'transparent'
-        }
-      }
-    }
-  }
+          bg: 'transparent',
+        },
+      },
+    },
+  },
 });

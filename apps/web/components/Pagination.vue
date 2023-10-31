@@ -32,7 +32,7 @@ api.value.setPageSize(props.pageSize);
     <a
       href="#previous"
       v-bind="api.prevTriggerProps"
-      :class="paginationClasses['prev-trigger']"
+      :class="paginationClasses.prevTrigger"
     >
       <ChevronLeft />
     </a>
@@ -60,7 +60,7 @@ api.value.setPageSize(props.pageSize);
     <a
       href="#next"
       v-bind="api.nextTriggerProps"
-      :class="paginationClasses['next-trigger']"
+      :class="paginationClasses.nextTrigger"
     >
       <ChevronRight />
     </a>

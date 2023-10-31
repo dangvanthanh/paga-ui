@@ -2,7 +2,7 @@ import { defineSlotRecipe } from '@pandacss/dev';
 
 export const dialog = defineSlotRecipe({
   className: 'dialog',
-  slots: ['root', 'trigger', 'backdrop', 'positioner', 'content', 'title', 'description', 'close-trigger'],
+  slots: ['root', 'trigger', 'backdrop', 'positioner', 'content', 'title', 'description', 'closeTrigger'],
   base: {
     root: {
       display: 'flex',
@@ -10,7 +10,7 @@ export const dialog = defineSlotRecipe({
       justifyContent: 'center',
       inset: 0,
       position: 'fixed',
-      zIndex: 100
+      zIndex: 100,
     },
     backdrop: {
       backdropFilter: 'blur(2px)',
@@ -18,13 +18,13 @@ export const dialog = defineSlotRecipe({
       inset: 0,
       position: 'fixed',
       zIndex: 101,
-      opacity: .75,
+      opacity: 0.75,
       _open: {
-        animation: 'backdropIn'
+        animation: 'backdropIn',
       },
       _closed: {
-        animation: 'backdropOut'
-      }
+        animation: 'backdropOut',
+      },
     },
     content: {
       background: 'white',
@@ -35,11 +35,11 @@ export const dialog = defineSlotRecipe({
       p: 3,
       zIndex: 102,
       _open: {
-        animation: 'dialogIn'
+        animation: 'dialogIn',
       },
       _closed: {
-        animation: 'dialogOut'
-      }
+        animation: 'dialogOut',
+      },
     },
     title: {
       fontWeight: 600,
@@ -49,11 +49,11 @@ export const dialog = defineSlotRecipe({
       color: 'gray.500',
       textStyle: 'sm',
     },
-    'close-trigger': {
+    closeTrigger: {
       position: 'absolute',
       top: 0,
       right: 2,
       cursor: 'pointer',
-    }
+    },
   },
 });

@@ -31,5 +31,5 @@ export const checkbox = defineSlotRecipe({
       },
     },
     label: { color: 'gray.700', fontWeight: 500, textStyle: 'sm' },
-  }
+  },
 });

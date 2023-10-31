@@ -12,7 +12,7 @@ export const accordion = defineSlotRecipe({
       flexDirection: 'column',
     },
     item: {
-      py: 1
+      py: 1,
     },
     trigger: {
       display: 'flex',
@@ -21,7 +21,7 @@ export const accordion = defineSlotRecipe({
       textStyle: 'sm',
       w: 'full',
       color: 'gray.700',
-      fontWeight: 500
+      fontWeight: 500,
     },
     content: {
       display: 'grid',

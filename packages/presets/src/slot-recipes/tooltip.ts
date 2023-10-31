@@ -14,11 +14,11 @@ export const tooltip = defineSlotRecipe({
       boxShadow: 'sm',
       borderRadius: 'sm',
       _open: {
-        animation: 'fade-in 0.25s ease-out',
+        animation: 'fadeIn 0.25s ease-out',
       },
       _closed: {
-        animation: 'fade-out 0.2s ease-out',
+        animation: 'fadeOut 0.2s ease-out',
       },
-    }
-  }
+    },
+  },
 });

@@ -1,48 +1,48 @@
-import { defineSlotRecipe } from "@pandacss/dev";
+import { defineSlotRecipe } from '@pandacss/dev';
 
 export const pagination = defineSlotRecipe({
-  className: "pagination",
-  slots: ["root", "item", "ellipsis", "prev-trigger", "next-trigger"],
+  className: 'pagination',
+  slots: ['root', 'item', 'ellipsis', 'prevTrigger', 'nextTrigger'],
   base: {
-    root: { display: "flex", alignItems: "center", gap: "2" },
+    root: { display: 'flex', alignItems: 'center', gap: '2' },
     item: {
-      display: "inline-flex",
-      justifyContent: "center",
-      alignItems: "center",
-      borderWidth: "1px",
-      borderColor: "gray.300",
-      borderRadius: "sm",
+      display: 'inline-flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderWidth: '1px',
+      borderColor: 'gray.300',
+      borderRadius: 'sm',
       height: 9,
       minWidth: 9,
-      textStyle: "sm",
+      textStyle: 'sm',
       paddingInline: 3.5,
-      fontVariantNumeric: "tabular-nums",
+      fontVariantNumeric: 'tabular-nums',
       _selected: {
-        background: "gray.900",
-        color: "white",
+        background: 'gray.900',
+        color: 'white',
         _hover: {
-          background: "gray.800",
+          background: 'gray.800',
         },
       },
       _hover: {
-        bg: "gray.100",
+        bg: 'gray.100',
       },
     },
     ellipsis: {
-      display: "inline-flex",
-      alignItems: "center",
-      color: "gray.600",
-      fontWeight: "600",
+      display: 'inline-flex',
+      alignItems: 'center',
+      color: 'gray.600',
+      fontWeight: '600',
       px: 2,
     },
-    "prev-trigger": {
-      display: "inline-flex",
-      justifyContent: "center",
-      alignItems: "center",
-      borderRadius: "sm",
+    prevTrigger: {
+      display: 'inline-flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 'sm',
       height: 9,
       minWidth: 9,
-      textStyle: "sm",
+      textStyle: 'sm',
       paddingInline: 1.5,
       // _disabled: {
       //   opacity: ".3",
@@ -50,17 +50,17 @@ export const pagination = defineSlotRecipe({
       //   pointerEvents: "none",
       // },
       _hover: {
-        bg: "gray.100",
+        bg: 'gray.100',
       },
     },
-    "next-trigger": {
-      display: "inline-flex",
-      justifyContent: "center",
-      alignItems: "center",
-      borderRadius: "sm",
+    nextTrigger: {
+      display: 'inline-flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 'sm',
       height: 9,
       minWidth: 9,
-      textStyle: "sm",
+      textStyle: 'sm',
       paddingInline: 1.5,
       // _disabled: {
       //   opacity: ".3",
@@ -68,7 +68,7 @@ export const pagination = defineSlotRecipe({
       //   pointerEvents: "none",
       // },
       _hover: {
-        bg: "gray.100",
+        bg: 'gray.100',
       },
     },
   },

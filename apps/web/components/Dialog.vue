@@ -24,7 +24,7 @@ const api = computed(() => zagDialog.connect(state.value, send, normalizeProps))
             <p v-bind="api.descriptionProps" :class="dialogClasses.description">
               Make changes to your profile here. Click save when you are done.
             </p>
-            <button v-bind="api.closeTriggerProps" :class="dialogClasses['close-trigger']">
+            <button v-bind="api.closeTriggerProps" :class="dialogClasses.closeTrigger">
               <small>&#x2715;</small>
             </button>
             <div :class="css({ my: 3 })">

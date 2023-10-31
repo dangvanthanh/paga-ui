@@ -7,7 +7,7 @@ import { dialog } from './dialog';
 import { editable } from './editable';
 // import { fileUpload } from './file-upload';
 import { hoverCard } from './hover-card';
-// import { menu } from './menu';
+import { menu } from './menu';
 // import { nestedMenu } from './nested-menu';
 // import { numberInput } from './number-input';
 import { pagination } from './pagination';
@@ -34,10 +34,11 @@ export const slotRecipes = {
   dialog,
   editable,
   hoverCard,
+  menu,
   pagination,
   pinInput,
   switches: switchRecipe,
   slider,
   tagsInput,
-  tooltip
+  tooltip,
 };

@@ -15,7 +15,7 @@ const api = computed(() => zagHoverCard.connect(state.value, send, normalizeProp
 
 
 <template>
-  <a href="https://twitter.com/dangvanthanh" _target="blank" v-bind="api.triggerProps" :class="hoverCardClasses.trigger">
+  <a href="https://twitter.com/dangvanthanh" target="_blank" v-bind="api.triggerProps" :class="hoverCardClasses.trigger">
     @dangvanthanh
   </a>
   <Teleport to="body" v-if="api.isOpen">
