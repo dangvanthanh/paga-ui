@@ -5,7 +5,8 @@ export const menu = defineSlotRecipe({
   slots: ['trigger', 'content', 'item', 'optionItem', 'arrow'],
   base: {
     trigger: {
-      outline: 'none'
+      outline: 'none',
+      textStyle: 'sm'
     },
     content: {
       bg: 'white',

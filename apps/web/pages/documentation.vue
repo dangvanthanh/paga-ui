@@ -107,7 +107,7 @@ const cardContentClasses = flex({
       <div :class="cardClasses">
         <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Nested Menu</h3>
         <div :class="cx(css({ bg: 'blue.100' }), cardContentClasses)">
-          &nbsp;
+          <NestedMenu />
         </div>
       </div>
       <div :class="cardClasses">

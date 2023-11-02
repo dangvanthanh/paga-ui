@@ -4,6 +4,9 @@ export const hoverCard = defineSlotRecipe({
   className: 'hoverCard',
   slots: ['trigger', 'content', 'arrow'],
   base: {
+    trigger: {
+      textStyle: 'sm'
+    },
     content: {
       background: 'white',
       borderRadius: 'sm',

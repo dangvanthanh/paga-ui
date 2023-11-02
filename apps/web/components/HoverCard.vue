@@ -30,7 +30,6 @@ const api = computed(() => zagHoverCard.connect(state.value, send, normalizeProp
           </div>
           <div :class="css({ flex: '1 1 0%' })">
             <p :class="css({ color: 'gray.900', fontWeight: 600 })">Dang Van Thanh</p>
-            <p :class="css({ color: 'gray.400' })">@dangvanthanh</p>
             <p :class="css({ color: 'gray.600' })">Front-end Enginner</p>
           </div>
         </div>
