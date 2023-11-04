@@ -115,7 +115,7 @@ const cardContentClasses = flex({
           Number Input
         </h3>
         <div :class="cx(css({ bg: 'blue.50' }), cardContentClasses)">
-          &nbsp;
+          <NumberInput />
         </div>
       </div>
       <div :class="cardClasses">

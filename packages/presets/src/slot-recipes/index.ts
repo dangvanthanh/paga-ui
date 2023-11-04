@@ -9,7 +9,7 @@ import { editable } from './editable';
 import { hoverCard } from './hover-card';
 import { menu } from './menu';
 // import { nestedMenu } from './nested-menu';
-// import { numberInput } from './number-input';
+import { numberInput } from './number-input';
 import { pagination } from './pagination';
 import { pinInput } from './pin-input';
 // import { popover } from './popover';
@@ -35,6 +35,7 @@ export const slotRecipes = {
   editable,
   hoverCard,
   menu,
+  numberInput,
   pagination,
   pinInput,
   switches: switchRecipe,

@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@moonrepo/cli':
-        specifier: ^1.15.1
-        version: 1.15.1
+        specifier: ^1.16.0
+        version: 1.16.0
 
   apps/web:
     dependencies:
@@ -36,6 +36,9 @@ importers:
         specifier: ^0.27.1
         version: 0.27.1
       '@zag-js/menu':
+        specifier: ^0.27.1
+        version: 0.27.1
+      '@zag-js/number-input':
         specifier: ^0.27.1
         version: 0.27.1
       '@zag-js/pagination':
@@ -1338,6 +1341,12 @@ packages:
       '@swc/helpers': 0.5.3
     dev: true
 
+  /@internationalized/number@3.3.0:
+    resolution: {integrity: sha512-PuxgnKE5NJMOGKUcX1QROo8jq7sW7UWLrL5B6Rfe8BdWgU/be04cVvLyCeALD46vvbAv3d1mUvyHav/Q9a237g==}
+    dependencies:
+      '@swc/helpers': 0.5.3
+    dev: false
+
   /@ioredis/commands@1.2.0:
     resolution: {integrity: sha512-Sx1pU8EM64o2BrqNpEO1CNLtKQwyhuXuqyfH7oGKCk+1a33d2r5saW8zNwm3j6BTExtjrv2BxTgzzkMwts6vGg==}
     dev: true
@@ -1420,72 +1429,72 @@ packages:
       - supports-color
     dev: true
 
-  /@moonrepo/cli@1.15.1:
-    resolution: {integrity: sha512-zFFZw9bBwaoc0hizhcHdKFBqNrzL5bonDcLcWTny6/z/0eebo5FfhnWBjNjQmHkTevOWGRhGKK3I23h2GlWMRg==}
+  /@moonrepo/cli@1.16.0:
+    resolution: {integrity: sha512-u1VFtuxNaWJ0MDU1f8lJ966UwFwSbkPWrjpn98pPn3eSKEr/6dYIPPZ8I+UuYKgrzUOF+kx5/Gk9kyJ1OVU4uQ==}
     hasBin: true
     requiresBuild: true
     dependencies:
       detect-libc: 2.0.2
     optionalDependencies:
-      '@moonrepo/core-linux-arm64-gnu': 1.15.1
-      '@moonrepo/core-linux-arm64-musl': 1.15.1
-      '@moonrepo/core-linux-x64-gnu': 1.15.1
-      '@moonrepo/core-linux-x64-musl': 1.15.1
-      '@moonrepo/core-macos-arm64': 1.15.1
-      '@moonrepo/core-macos-x64': 1.15.1
-      '@moonrepo/core-windows-x64-msvc': 1.15.1
+      '@moonrepo/core-linux-arm64-gnu': 1.16.0
+      '@moonrepo/core-linux-arm64-musl': 1.16.0
+      '@moonrepo/core-linux-x64-gnu': 1.16.0
+      '@moonrepo/core-linux-x64-musl': 1.16.0
+      '@moonrepo/core-macos-arm64': 1.16.0
+      '@moonrepo/core-macos-x64': 1.16.0
+      '@moonrepo/core-windows-x64-msvc': 1.16.0
     dev: true
 
-  /@moonrepo/core-linux-arm64-gnu@1.15.1:
-    resolution: {integrity: sha512-p7aL+Ad4iTJm+Tr0vctwVxcrQjNXHBIBn4bS5LL/YNT7utqhO0UNlAsnA+7WjcVo/JWERjj5MfWj37uBtY/Ksg==}
+  /@moonrepo/core-linux-arm64-gnu@1.16.0:
+    resolution: {integrity: sha512-KRIVHqh4hyi5D/QIx2J1udZjHqZ1+vw/oQRJk6lAqwvhzsICg5Y6AsnCOE5ULkCW6SP380Akp4KHPKPJ5LpFQw==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@moonrepo/core-linux-arm64-musl@1.15.1:
-    resolution: {integrity: sha512-u789CsBxWPIh+WKgiPW6N81RXLLqMbjauPNLW7mlcoCqi0li14iSTRV92g0seFQpBg/IARLQLbYojAswbxmpjw==}
+  /@moonrepo/core-linux-arm64-musl@1.16.0:
+    resolution: {integrity: sha512-OiodBQKAc4FeHHd5ibMUJav9qqZktTxe1YsVLNR6BFcfiVQ3Wiy6IfYiX3rhyn0kCDJAfubZmOBm1tyi0BN9GQ==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@moonrepo/core-linux-x64-gnu@1.15.1:
-    resolution: {integrity: sha512-bAZkmEdPJz9lX7XRiVUkwyKqkQlMkqFjPLQifKA331vb039oxp6thwigWhVaoEO6isEt3zdu0nncAgUxZyCF/A==}
+  /@moonrepo/core-linux-x64-gnu@1.16.0:
+    resolution: {integrity: sha512-Iuk549R7mY2pVnOHshsy8H3ykuxlDYg19+iHYz758KAFx1bmqv3+mmvJR6IYdKy6G8TaVTqGPL+ZEz+mq0bEqw==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@moonrepo/core-linux-x64-musl@1.15.1:
-    resolution: {integrity: sha512-Uln2W9rjqHqkDyn+MmCmjfrCqXWZG7yvnH3f9gpzpvmuTah31054+IVG9v1EYJr4P3y6O84exMnM8Xmwu2xHkQ==}
+  /@moonrepo/core-linux-x64-musl@1.16.0:
+    resolution: {integrity: sha512-3diX6kKiOo8RxZhfU8kojKUdsP4OTN/jc21JN7Xp31rBecn9UPyS9sf9zoxgYIiNfkkUzkEa6sPx5IiKagyRxQ==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@moonrepo/core-macos-arm64@1.15.1:
-    resolution: {integrity: sha512-mT0MN1roNTg4Ln0Nq4ofIY08w/zRlTa/f5Clhzo3IXcMj3ZT7dtTZjUCb8SSvH/h0TYk+ut/HOp5hd2q+6vLMg==}
+  /@moonrepo/core-macos-arm64@1.16.0:
+    resolution: {integrity: sha512-OXklBpJWKXgqWT9knojMew8Op/ElsT5Xuqq7irDUHwGcXsXk11369PDTjkbXdgz0hIYsfWlKmjnxHjvCq5qtvw==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@moonrepo/core-macos-x64@1.15.1:
-    resolution: {integrity: sha512-5R3ps+5sBjsFq7x5Vwho7+JeOtrG5NjTSKZHY3R62Onz/Vu99z0EVQ4vzp5ZuElCvlX234lE8jMUxTxff9dasQ==}
+  /@moonrepo/core-macos-x64@1.16.0:
+    resolution: {integrity: sha512-ctwbPlMg46z7ACUW8r7hyq95O8gduePYaoV1rq0t2U2i+xBs4K387dbWPRSmDL7J2v3vTqP6i6E/Tj9k/zxNrQ==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@moonrepo/core-windows-x64-msvc@1.15.1:
-    resolution: {integrity: sha512-dImrk90sYR+JJpeVv3Gk6SelOBnkkrgFxk595G8WktK8+fsHgyl0+sNjS/OZMRArzcgeHdbuXhpD6DY/cY9YBA==}
+  /@moonrepo/core-windows-x64-msvc@1.16.0:
+    resolution: {integrity: sha512-XS9pMlT3AKiAcFKJfCzJghU6O2qSAF2+sEDO4JPExuwTql+gIku1iXYycTfE9aO8ZZaeWa20iAsENs7WMUBBFA==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
@@ -2773,7 +2782,6 @@ packages:
     resolution: {integrity: sha512-FaruWX6KdudYloq1AHD/4nU+UsMTdNE8CKyrseXWEcgjDAbvkwJg2QGPAnfIJLIWsjZOSPLOAykK6fuYp4vp4A==}
     dependencies:
       tslib: 2.6.2
-    dev: true
 
   /@tootallnate/once@2.0.0:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
@@ -3611,9 +3619,28 @@ packages:
       '@zag-js/utils': 0.12.0
     dev: true
 
+  /@zag-js/number-input@0.27.1:
+    resolution: {integrity: sha512-oqHYPVtEpNIs4MmBLfkbYIEv/+vRxsp9/wIbuhQEJrqcdMz2zttbA6VG30Cpw7e6b2KjNtDyq/JHT1cdHGCDvA==}
+    dependencies:
+      '@internationalized/number': 3.3.0
+      '@zag-js/anatomy': 0.27.1
+      '@zag-js/core': 0.27.1
+      '@zag-js/dom-event': 0.27.1
+      '@zag-js/dom-query': 0.27.1
+      '@zag-js/form-utils': 0.27.1
+      '@zag-js/mutation-observer': 0.27.1
+      '@zag-js/number-utils': 0.27.1
+      '@zag-js/types': 0.27.1
+      '@zag-js/utils': 0.27.1
+    dev: false
+
   /@zag-js/number-utils@0.12.0:
     resolution: {integrity: sha512-fadhp0oHglUzRblB4Gob0bo3OMfHiFLIUYsi9B1EMBJ16QR7SuBipWW1fmZ4Inlqz8r3Wo8XQham+6LiXerIjg==}
     dev: true
+
+  /@zag-js/number-utils@0.27.1:
+    resolution: {integrity: sha512-xQXWQ5wL3518SIoUs6jDLJhrDios3yQP6OU/mzCQ+vgExYo6/RMy55njbWWTJfHp4SVNb4l8d66v7cBMvzXaKg==}
+    dev: false
 
   /@zag-js/numeric-range@0.12.0:
     resolution: {integrity: sha512-8umHCBSK530dWwqBmvrfSBGY7PdEDopeNh4e6HReCy3pyJsBIjYjnQGH1K43s03hiXUN27bwAclO+GwK1BP+Vw==}
@@ -10038,7 +10065,6 @@ packages:
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
-    dev: true
 
   /tsup@7.2.0(postcss@8.4.27)(typescript@5.2.2):
     resolution: {integrity: sha512-vDHlczXbgUvY3rWvqFEbSqmC1L7woozbzngMqTtL2PGBODTtWlRwGDDawhvWzr5c1QjKe4OAKqJGfE1xeXUvtQ==}

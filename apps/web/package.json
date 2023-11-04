@@ -27,6 +27,7 @@
     "@zag-js/editable": "^0.27.1",
     "@zag-js/hover-card": "^0.27.1",
     "@zag-js/menu": "^0.27.1",
+    "@zag-js/number-input": "^0.27.1",
     "@zag-js/pagination": "^0.27.1",
     "@zag-js/pin-input": "^0.27.1",
     "@zag-js/slider": "^0.27.1",
