@@ -133,7 +133,7 @@ const cardContentClasses = flex({
       <div :class="cardClasses">
         <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Popover</h3>
         <div :class="cx(css({ bg: 'cyan.200' }), cardContentClasses)">
-          &nbsp;
+          <Popover />
         </div>
       </div>
       <div :class="cardClasses">
