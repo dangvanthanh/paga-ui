@@ -27,7 +27,7 @@ export const radioGroup = defineSlotRecipe({
       w: 4,
       h: 4,
       _checked: {
-        background: 'green.300',
+        background: 'gray.900',
       }
     },
     itemText: {
