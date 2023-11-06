@@ -2,7 +2,7 @@
 import * as zagPopover from '@zag-js/popover';
 import { normalizeProps, useMachine } from '@zag-js/vue';
 import { computed, Teleport } from 'vue';
-import { cx, css } from '~/styled-system/css';
+import { css, cx } from '~/styled-system/css';
 import { flex } from '~/styled-system/patterns'
 import { input, popover } from '~/styled-system/recipes';
 
