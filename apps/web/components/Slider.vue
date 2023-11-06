@@ -2,7 +2,6 @@
 import * as zagSlider from "@zag-js/slider";
 import { normalizeProps, useMachine } from "@zag-js/vue";
 import { computed } from "vue";
-import { css } from "~/styled-system/css";
 import { slider } from "~/styled-system/recipes";
 
 const props = defineProps<{
@@ -21,14 +20,6 @@ const api = computed(() =>
 
 <template>
   <div ref="ref" v-bind="api.rootProps" :class="sliderClasses.root">
-    <div :class="css({ display: 'none' })">
-      <label v-bind="api.labelProps" :class="sliderClasses.label"
-        >Slider Label</label
-      >
-      <output v-bind="api.outputProps" :class="sliderClasses.output">{{
-        api.value
-      }}</output>
-    </div>
     <div v-bind="api.controlProps" :class="sliderClasses.control">
       <div v-bind="api.trackProps" :class="sliderClasses.track">
         <div v-bind="api.rangeProps" :class="sliderClasses.range" />
