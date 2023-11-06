@@ -32,6 +32,9 @@ importers:
       '@zag-js/editable':
         specifier: ^0.27.1
         version: 0.27.1
+      '@zag-js/file-upload':
+        specifier: ^0.27.1
+        version: 0.27.1
       '@zag-js/hover-card':
         specifier: ^0.27.1
         version: 0.27.1
@@ -3314,6 +3317,22 @@ packages:
 
   /@zag-js/element-size@0.27.1:
     resolution: {integrity: sha512-rKlpZNNtE5Kz01zZ5kY13QWQqCGdr9ruVNvoa8InWp8hsb1g+SDZGjsAO97ukmO375lWLRRdSEJWfT540F4Jdg==}
+    dev: false
+
+  /@zag-js/file-upload@0.27.1:
+    resolution: {integrity: sha512-1IFOSH4CHtAnImZILw/lYwIO8BgyrJni/f/b70Q+uwav9Wz2YAdW2WQyNHKPln9mquO+meuPnWLC3jyYAoSevg==}
+    dependencies:
+      '@zag-js/anatomy': 0.27.1
+      '@zag-js/core': 0.27.1
+      '@zag-js/dom-query': 0.27.1
+      '@zag-js/file-utils': 0.27.1
+      '@zag-js/types': 0.27.1
+      '@zag-js/utils': 0.27.1
+      '@zag-js/visually-hidden': 0.27.1
+    dev: false
+
+  /@zag-js/file-utils@0.27.1:
+    resolution: {integrity: sha512-33uFPiIctct0oW0KYiQqOiVj8TctWDzn/tEvwwnO04mmbqkp11u/OQ4m11LKSPFfeXp9dDteezulQ0k0v8UjJQ==}
     dev: false
 
   /@zag-js/form-utils@0.12.0:

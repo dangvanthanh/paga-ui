@@ -5,7 +5,7 @@ import { combobox } from './combobox';
 // import { contextMenu } from './context-menu';
 import { dialog } from './dialog';
 import { editable } from './editable';
-// import { fileUpload } from './file-upload';
+import { fileUpload } from './file-upload';
 import { hoverCard } from './hover-card';
 import { menu } from './menu';
 // import { nestedMenu } from './nested-menu';
@@ -32,6 +32,7 @@ export const slotRecipes = {
   combobox,
   dialog,
   editable,
+  fileUpload,
   hoverCard,
   menu,
   numberInput,

@@ -81,7 +81,7 @@ const cardContentClasses = flex({
       <div :class="cardClasses">
         <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">File Upload</h3>
         <div :class="cx(css({ bg: 'blue.50' }), cardContentClasses)">
-          &nbsp;
+          <FileUpload />
         </div>
       </div>
       <div :class="cardClasses">

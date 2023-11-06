@@ -14,7 +14,9 @@ const api = computed(() => zagPopover.connect(state.value, send, normalizeProps)
 
 <template>
   <div>
-    <button v-bind="api.triggerProps" :class="popoverClasses.trigger">Dimensions</button>
+    <button v-bind="api.triggerProps" :class="popoverClasses.trigger">
+      Dimensions <span aria-hidden>▾</span>
+    </button>
     <Teleport to="body">
       <div v-bind="api.positionerProps" :class="popoverClasses.positioner">
         <div v-bind="api.contentProps" :class="popoverClasses.content">
@@ -27,6 +29,14 @@ const api = computed(() => zagPopover.connect(state.value, send, normalizeProps)
             <div :class="flex({ align: 'center', gap: 2, mt: 2 })">
               <span :class="css({ w: 16 })">Height</span>
               <input value="20vh" :class="cx(input({ size: 'sm' }), css({ w: 'full' }))" />
+            </div>
+            <div :class="flex({ align: 'center', gap: 2, mt: 2 })">
+              <span :class="css({ w: 16 })">Margin</span>
+              <input value="20px" :class="cx(input({ size: 'sm' }), css({ w: 'full' }))" />
+            </div>
+            <div :class="flex({ align: 'center', gap: 2, mt: 2 })">
+              <span :class="css({ w: 16 })">Pading</span>
+              <input value="20px" :class="cx(input({ size: 'sm' }), css({ w: 'full' }))" />
             </div>
           </div>
           <button v-bind="api.closeTriggerProps" :class="popoverClasses.closeTrigger">

@@ -23,8 +23,9 @@ const shareMenuTriggerProps = computed(() => fileMenuApi.value.getTriggerItemPro
 </script>
 
 <template>
-  <button v-bind="fileMenuApi.triggerProps" :class="menuClasses.trigger">File</button>
-
+  <button v-bind="fileMenuApi.triggerProps" :class="menuClasses.trigger">
+    File <span aria-hidden>▾</span>
+  </button>
   <Teleport to="body">
     <div v-bind="fileMenuApi.positionerProps">
       <ul ref="fileMenuRef" v-bind="fileMenuApi.contentProps" :class="menuClasses.content">
