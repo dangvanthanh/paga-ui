@@ -14,7 +14,7 @@ import { pagination } from './pagination';
 import { pinInput } from './pin-input';
 import { popover } from './popover';
 // import { pressable } from './pressable';
-// import { radioGroup } from './radio-group';
+import { radioGroup } from './radio-group';
 // import { segmentedControl } from './segmented-control';
 // import { select } from './select';
 import { switchRecipe } from './switch';
@@ -38,6 +38,7 @@ export const slotRecipes = {
   pagination,
   pinInput,
   popover,
+  radioGroup,
   switches: switchRecipe,
   slider,
   tagsInput,

@@ -31,6 +31,7 @@
     "@zag-js/pagination": "^0.27.1",
     "@zag-js/pin-input": "^0.27.1",
     "@zag-js/popover": "^0.27.1",
+    "@zag-js/radio-group": "^0.27.1",
     "@zag-js/slider": "^0.27.1",
     "@zag-js/switch": "^0.27.1",
     "@zag-js/tags-input": "^0.27.1",
