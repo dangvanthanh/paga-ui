@@ -147,7 +147,7 @@ const cardContentClasses = flex({
           Segmented Control
         </h3>
         <div :class="cx(css({ bg: 'cyan.100' }), cardContentClasses)">
-          &nbsp;
+          <SegmentedControl />
         </div>
       </div>
       <div :class="cardClasses">
