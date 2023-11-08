@@ -163,7 +163,7 @@ const cardContentClasses = flex({
           Rating Group
         </h3>
         <div :class="cx(css({ bg: 'orange.50' }), cardContentClasses)">
-          &nbsp;
+          <RatingGroup />
         </div>
       </div>
       <div :class="cardClasses">

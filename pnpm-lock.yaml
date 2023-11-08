@@ -56,6 +56,9 @@ importers:
       '@zag-js/radio-group':
         specifier: ^0.27.1
         version: 0.27.1
+      '@zag-js/rating-group':
+        specifier: ^0.27.1
+        version: 0.27.1
       '@zag-js/slider':
         specifier: ^0.27.1
         version: 0.27.1
@@ -3650,6 +3653,18 @@ packages:
       '@zag-js/types': 0.12.0
       '@zag-js/utils': 0.12.0
     dev: true
+
+  /@zag-js/rating-group@0.27.1:
+    resolution: {integrity: sha512-BgBfOOlre/5TT+WxsvPDqN//BqxnoTcrMHL+KN5mGB5NgR8d4ACYmjzUakcNw5iSANBNB0KrQ4F/Ucx/0fa4Ag==}
+    dependencies:
+      '@zag-js/anatomy': 0.27.1
+      '@zag-js/core': 0.27.1
+      '@zag-js/dom-event': 0.27.1
+      '@zag-js/dom-query': 0.27.1
+      '@zag-js/form-utils': 0.27.1
+      '@zag-js/types': 0.27.1
+      '@zag-js/utils': 0.27.1
+    dev: false
 
   /@zag-js/react@0.12.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-V8NpyLu3Vnfi2DmYtTpZv6MoCcAGjnNbRwS7htgXa7dMBMxZBuAohzO6uUi9OPKmjXssgXUzuIzXcFxW4ez1Mg==}
