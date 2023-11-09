@@ -101,7 +101,7 @@ const cardContentClasses = flex({
           Context Menu
         </h3>
         <div :class="cx(css({ bg: 'blue.200' }), cardContentClasses)">
-          &nbsp;
+          <ContextMenu />
         </div>
       </div>
       <div :class="cardClasses">

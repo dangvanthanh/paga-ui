@@ -2,28 +2,26 @@ import { accordion } from './accordion';
 import { avatar } from './avatar';
 import { checkbox } from './checkbox';
 import { combobox } from './combobox';
-// import { contextMenu } from './context-menu';
 import { dialog } from './dialog';
 import { editable } from './editable';
 import { fileUpload } from './file-upload';
 import { hoverCard } from './hover-card';
 import { menu } from './menu';
-// import { nestedMenu } from './nested-menu';
 import { numberInput } from './number-input';
 import { pagination } from './pagination';
 import { pinInput } from './pin-input';
 import { popover } from './popover';
-// import { pressable } from './pressable';
+import { pressable } from './pressable';
 import { radioGroup } from './radio-group';
 import { ratingGroup } from './rating-group';
 import { segmentedControl } from './segmented-control';
-// import { select } from './select';
-import { switchRecipe } from './switch';
+import { select } from './select';
 import { slider } from './slider';
-// import { tabs } from './tabs';
+import { switchRecipe } from './switch';
+import { tabs } from './tabs';
 import { tagsInput } from './tags-input';
-// import { toast } from './toast';
-// import { toggleGroup } from './toggle-group';
+import { toast } from './toast';
+import { toggleGroup } from './toggle-group';
 import { tooltip } from './tooltip';
 
 export const slotRecipes = {
@@ -40,11 +38,16 @@ export const slotRecipes = {
   pagination,
   pinInput,
   popover,
+  pressable,
   radioGroup,
   ratingGroup,
   segmentedControl,
-  switches: switchRecipe,
+  select,
   slider,
+  switches: switchRecipe,
+  tabs,
   tagsInput,
+  toast,
+  toggleGroup,
   tooltip,
 };
