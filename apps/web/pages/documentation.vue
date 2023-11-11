@@ -187,7 +187,7 @@ const cardContentClasses = flex({
       <div :class="cardClasses">
         <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Tabs</h3>
         <div :class="cx(css({ bg: 'orange.100' }), cardContentClasses)">
-          &nbsp;
+          <Tabs />
         </div>
       </div>
       <div :class="cardClasses">

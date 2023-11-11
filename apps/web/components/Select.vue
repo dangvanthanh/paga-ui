@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import * as zagSelect from "@zag-js/select";
-import { normalizeProps, useMachine } from "@zag-js/vue";
-import { computed, Teleport } from "vue";
+import * as zagSelect from '@zag-js/select';
+import { normalizeProps, useMachine } from '@zag-js/vue';
+import { computed, Teleport } from 'vue';
 import { select } from '~/styled-system/recipes'
 
 const selectClasses = select()
 
 const selectData = [
-  { label: "Nigeria", value: "NG" },
-  { label: "Japan", value: "JP" }
-  //...
+  { label: 'Vietnam', value: 'VN' },
+  { label: 'Canada', value: 'CA' },
+  { label: 'USA', value: 'US' }
 ];
 
 const [state, send] = useMachine(
   zagSelect.machine({
-    id: "1",
+    id: '1',
     collection: zagSelect.collection({
       items: selectData,
     }),

@@ -19,7 +19,7 @@ const data = [
   },
 ];
 
-const [state, send] = useMachine(zagAccordion.machine({ id: "1", value: ["Solid"] }));
+const [state, send] = useMachine(zagAccordion.machine({ id: '1', value: ["Solid"] }));
 
 const api = computed(() =>
   zagAccordion.connect(state.value, send, normalizeProps)
@@ -28,24 +28,14 @@ const api = computed(() =>
 
 <template>
   <div :class="zagAccordionClasses.root">
-    <div
-      v-for="item in data"
-      :key="item.title"
-      v-bind="api.getItemProps({ value: item.title })"
-      :class="zagAccordionClasses.item"
-    >
+    <div v-for="item in data" :key="item.title" v-bind="api.getItemProps({ value: item.title })"
+      :class="zagAccordionClasses.item">
       <h3>
-        <button
-          :class="zagAccordionClasses.trigger"
-          v-bind="api.getItemTriggerProps({ value: item.title })"
-        >
+        <button :class="zagAccordionClasses.trigger" v-bind="api.getItemTriggerProps({ value: item.title })">
           {{ item.title }}
         </button>
       </h3>
-      <div
-        v-bind="api.getItemContentProps({ value: item.title })"
-        :class="zagAccordionClasses.content"
-      >
+      <div v-bind="api.getItemContentProps({ value: item.title })" :class="zagAccordionClasses.content">
         {{ item.content }}
       </div>
     </div>

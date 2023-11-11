@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import * as zagTooltip from "@zag-js/tooltip";
-import { normalizeProps, useMachine } from "@zag-js/vue";
-import { computed } from "vue";
+import * as zagTooltip from '@zag-js/tooltip';
+import { normalizeProps, useMachine } from '@zag-js/vue';
+import { computed } from 'vue';
 import {tooltip} from '../styled-system/recipes';
 
 const tooltipClasses = tooltip();
 
-const [state, send] = useMachine(zagTooltip.machine({ id: "1" }));
+const [state, send] = useMachine(zagTooltip.machine({ id: '1' }));
 const api = computed(() =>
   zagTooltip.connect(state.value, send, normalizeProps)
 );

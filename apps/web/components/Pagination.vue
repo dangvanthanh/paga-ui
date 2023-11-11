@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import * as zagPagination from "@zag-js/pagination";
-import { normalizeProps, useMachine } from "@zag-js/vue";
-import { computed } from "vue";
-import { pagination } from "~/styled-system/recipes";
-import { ChevronLeft, ChevronRight } from "lucide-vue-next";
+import * as zagPagination from '@zag-js/pagination';
+import { normalizeProps, useMachine } from '@zag-js/vue';
+import { computed } from 'vue';
+import { pagination } from '~/styled-system/recipes';
+import { ChevronLeft, ChevronRight } from 'lucide-vue-next';
 
 const props = defineProps<{
   count: number;
@@ -13,7 +13,7 @@ const props = defineProps<{
 const paginationClasses = pagination();
 
 const [state, send] = useMachine(
-  zagPagination.machine({ id: "1", count: props.count })
+  zagPagination.machine({ id: '1', count: props.count })
 );
 
 const api = computed(() =>

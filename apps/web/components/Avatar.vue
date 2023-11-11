@@ -24,11 +24,6 @@ const api = computed(() =>
     <span v-bind="api.fallbackProps" v-bind:class="avatarClasses.fallback">{{
       props.fallback
     }}</span>
-    <img
-      v-bind:alt="props.fallback"
-      v-bind:src="props.src"
-      v-bind="api.imageProps"
-      v-bind:class="avatarClasses.image"
-    />
+    <img v-bind:alt="props.fallback" v-bind:src="props.src" v-bind="api.imageProps" v-bind:class="avatarClasses.image" />
   </div>
 </template>

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import * as zagNumberInput from '@zag-js/number-input';
 import { normalizeProps, useMachine } from '@zag-js/vue';
 import { computed } from 'vue';

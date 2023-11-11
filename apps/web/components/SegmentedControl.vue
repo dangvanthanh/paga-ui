@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import * as zagRadio from "@zag-js/radio-group"
-import { normalizeProps, useMachine } from "@zag-js/vue";
-import { computed } from "vue";
-import { segmentedControl } from "~/styled-system/recipes";
+import * as zagRadio from '@zag-js/radio-group'
+import { normalizeProps, useMachine } from '@zag-js/vue';
+import { computed } from 'vue';
+import { segmentedControl } from '~/styled-system/recipes';
 
 const segmentedControlClasses = segmentedControl();
 
 const items = [
-  { label: "React", value: "react-paga" },
-  { label: "Vue", value: "vue-paga" },
-  { label: "Svelte", value: "svelte-page" },
+  { label: 'React', value: 'react-paga' },
+  { label: 'Vue', value: 'vue-paga' },
+  { label: 'Svelte', value: 'svelte-paga' },
 ];
 
-const [state, send] = useMachine(zagRadio.machine({ id: "1" }));
+const [state, send] = useMachine(zagRadio.machine({ id: '1' }));
 
 const api = computed(() => zagRadio.connect(state.value, send, normalizeProps));
 </script>
