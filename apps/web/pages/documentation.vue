@@ -205,7 +205,7 @@ const cardContentClasses = flex({
           Toggle Group
         </h3>
         <div :class="cx(css({ bg: 'red.100' }), cardContentClasses)">
-          &nbsp;
+          <ToggleGroup />
         </div>
       </div>
       <div :class="cardClasses">
