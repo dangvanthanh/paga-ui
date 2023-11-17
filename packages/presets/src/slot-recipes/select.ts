@@ -95,7 +95,6 @@ export const select = defineSlotRecipe({
       },
     },
     itemLabel: {
-      fontWeight: 600,
       textStyle: "sm",
     },
     itemIndicator: {

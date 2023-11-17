@@ -6,7 +6,7 @@ import { menu } from '~/styled-system/recipes';
 
 const menuClasses = menu();
 
-const [state, send] = useMachine(zagMenu.machine({ id: '1', 'aria-label': 'File' }));
+const [state, send] = useMachine(zagMenu.machine({ id: '2', 'aria-label': 'File' }));
 
 const api = computed(() => zagMenu.connect(state.value, send, normalizeProps));
 </script>

@@ -20,6 +20,7 @@ export const editable = defineSlotRecipe({
       transitionTimingFunction: 'default',
       px: 3.5,
       h: 9,
+      textStyle: 'sm',
       _disabled: {
         opacity: 0.4,
         cursor: 'not-allowed',
