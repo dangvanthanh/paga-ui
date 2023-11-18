@@ -1,6 +1,7 @@
 import { accordion } from './accordion';
 import { avatar } from './avatar';
 import { checkbox } from './checkbox';
+import { colorPicker } from './color-picker';
 import { combobox } from './combobox';
 import { dialog } from './dialog';
 import { editable } from './editable';
@@ -28,6 +29,7 @@ export const slotRecipes = {
   accordion,
   avatar,
   checkbox,
+  colorPicker,
   combobox,
   dialog,
   editable,

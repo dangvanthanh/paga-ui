@@ -1,23 +1,55 @@
 <script setup lang="ts">
-import { flex, grid } from "~/styled-system/patterns";
-import { css, cx } from "~/styled-system/css";
+import { shallowRef, resolveComponent } from 'vue';
+import { flex, grid } from '~/styled-system/patterns';
+import { css, cx } from '~/styled-system/css';
 
 const cardClasses = css({
-  border: "1px solid",
-  borderColor: "gray.100",
-  boxShadow: "sm",
-  p: "4",
-  borderRadius: "lg",
+  border: '1px solid',
+  borderColor: 'gray.100',
+  boxShadow: 'sm',
+  p: '4',
+  borderRadius: 'lg',
 });
 
 const cardContentClasses = flex({
   mt: 6,
-  borderRadius: "lg",
+  borderRadius: 'lg',
   h: 32,
-  align: "center",
-  justify: "center",
+  align: 'center',
+  justify: 'center',
   p: 6,
 });
+
+const components = shallowRef([
+  { name: 'Accordion', showcase: resolveComponent('Accordion') },
+  { name: 'Avatar', showcase: resolveComponent('Avatar') },
+  { name: 'Checkbox', showcase: resolveComponent('Checkbox') },
+  { name: 'Color Picker', showcase: resolveComponent('ColorPicker') },
+  { name: 'Combobox', showcase: resolveComponent('Combobox') },
+  { name: 'Dialog', showcase: resolveComponent('Dialog') },
+  { name: 'Editable', showcase: resolveComponent('Editable') },
+  { name: 'File Upload', showcase: resolveComponent('FileUpload') },
+  { name: 'Hover Card', showcase: resolveComponent('HoverCard') },
+  { name: 'Menu', showcase: resolveComponent('Menu') },
+  { name: 'Context Menu', showcase: resolveComponent('ContextMenu') },
+  { name: 'Nested Menu', showcase: resolveComponent('NestedMenu') },
+  { name: 'Number Input', showcase: resolveComponent('NumberInput') },
+  { name: 'Pagination', showcase: resolveComponent('Pagination') },
+  { name: 'Pin Input', showcase: resolveComponent('PinInput') },
+  { name: 'Popover', showcase: resolveComponent('Popover') },
+  { name: 'Radio Group', showcase: resolveComponent('RadioGroup') },
+  { name: 'Segmented Control', showcase: resolveComponent('SegmentedControl') },
+  { name: 'Range Slider', showcase: resolveComponent('RangerSlider') },
+  { name: 'Rating Group', showcase: resolveComponent('RatingGroup') },
+  { name: 'Select', showcase: resolveComponent('Select') },
+  { name: 'Slider', showcase: resolveComponent('Slider') },
+  { name: 'Switch', showcase: resolveComponent('Switch') },
+  { name: 'Tabs', showcase: resolveComponent('Tabs') },
+  { name: 'Tags Input', showcase: resolveComponent('TagsInput') },
+  { name: 'Toast', showcase: resolveComponent('Toast') },
+  { name: 'Toggle Group', showcase: resolveComponent('ToggleGroup') },
+  { name: 'Tooltip', showcase: resolveComponent('Tooltip') },
+])
 </script>
 
 <template>
@@ -42,176 +74,10 @@ const cardContentClasses = flex({
       </div>
     </div>
     <div :class="grid({ my: 12, columns: { base: 1, md: 2, lg: 3 }, gap: 6 })">
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Accordion</h3>
-        <div :class="cx(css({ bg: 'green.50' }), cardContentClasses)">
-          <Accordion />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Avatar</h3>
-        <div :class="cx(css({ bg: 'green.100' }), cardContentClasses)">
-          <Avatar id="1" fallback="DT" />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Checkbox</h3>
-        <div :class="cx(css({ bg: 'green.200' }), cardContentClasses)">
-          <Checkbox />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Combobox</h3>
-        <div :class="cx(css({ bg: 'green.200' }), cardContentClasses)">
-          <Combobox />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Dialog</h3>
-        <div :class="cx(css({ bg: 'green.100' }), cardContentClasses)">
-          <Dialog />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Editable</h3>
-        <div :class="cx(css({ bg: 'green.50' }), cardContentClasses)">
-          <Editable />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">File Upload</h3>
-        <div :class="cx(css({ bg: 'blue.50' }), cardContentClasses)">
-          <FileUpload />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Hover Card</h3>
-        <div :class="cx(css({ bg: 'blue.100' }), cardContentClasses)">
-          <HoverCard />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Menu</h3>
-        <div :class="cx(css({ bg: 'blue.200' }), cardContentClasses)">
-          <Menu />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">
-          Context Menu
-        </h3>
-        <div :class="cx(css({ bg: 'blue.200' }), cardContentClasses)">
-          <ContextMenu />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Nested Menu</h3>
-        <div :class="cx(css({ bg: 'blue.100' }), cardContentClasses)">
-          <NestedMenu />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">
-          Number Input
-        </h3>
-        <div :class="cx(css({ bg: 'blue.50' }), cardContentClasses)">
-          <NumberInput />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Pagination</h3>
-        <div :class="cx(css({ bg: 'cyan.50' }), cardContentClasses)">
-          <Pagination :count="5" :page-size="1" />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Pin Input</h3>
-        <div :class="cx(css({ bg: 'cyan.100' }), cardContentClasses)">
-          <PinInput />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Popover</h3>
-        <div :class="cx(css({ bg: 'cyan.200' }), cardContentClasses)">
-          <Popover />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Radio Group</h3>
-        <div :class="cx(css({ bg: 'cyan.200' }), cardContentClasses)">
-          <RadioGroup />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">
-          Segmented Control
-        </h3>
-        <div :class="cx(css({ bg: 'cyan.100' }), cardContentClasses)">
-          <SegmentedControl />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">
-          Range Slider
-        </h3>
-        <div :class="cx(css({ bg: 'cyan.50' }), cardContentClasses)">
-          <RangerSlider id="2" />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">
-          Rating Group
-        </h3>
-        <div :class="cx(css({ bg: 'orange.50' }), cardContentClasses)">
-          <RatingGroup />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Select</h3>
-        <div :class="cx(css({ bg: 'orange.100' }), cardContentClasses)">
-          <Select />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Slider</h3>
-        <div :class="cx(css({ bg: 'orange.200' }), cardContentClasses)">
-          <Slider id="1" />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Switch</h3>
-        <div :class="cx(css({ bg: 'orange.200' }), cardContentClasses)">
-          <Switch id="1" />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Tabs</h3>
-        <div :class="cx(css({ bg: 'orange.100' }), cardContentClasses)">
-          <Tabs />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Tags Input</h3>
-        <div :class="cx(css({ bg: 'orange.50' }), cardContentClasses)">
-          <TagsInput />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Toast</h3>
-        <div :class="cx(css({ bg: 'red.50' }), cardContentClasses)">&nbsp;</div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">
-          Toggle Group
-        </h3>
-        <div :class="cx(css({ bg: 'red.100' }), cardContentClasses)">
-          <ToggleGroup />
-        </div>
-      </div>
-      <div :class="cardClasses">
-        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">Tooltip</h3>
-        <div :class="cx(css({ bg: 'red.200' }), cardContentClasses)">
-          <Tooltip />
+      <div :class="cardClasses" v-for="component in components">
+        <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">{{ component.name }}</h3>
+        <div :class="cx(css({ bg: 'gray.50' }), cardContentClasses)">
+          <component :is="component.showcase" />
         </div>
       </div>
     </div>

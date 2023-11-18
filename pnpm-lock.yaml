@@ -23,6 +23,9 @@ importers:
       '@zag-js/checkbox':
         specifier: ^0.30.0
         version: 0.30.0
+      '@zag-js/color-picker':
+        specifier: ^0.30.0
+        version: 0.30.0
       '@zag-js/combobox':
         specifier: ^0.30.0
         version: 0.30.0
@@ -3147,9 +3150,33 @@ packages:
       '@zag-js/utils': 0.12.0
     dev: true
 
+  /@zag-js/color-picker@0.30.0:
+    resolution: {integrity: sha512-gk8XKJsPaNY8xMyDiDPbxeHaOGPgocMK2ctPEl51/vQj+IMJOQh71zabdYSdx5hxrCvCqJBaMCJ/DFRTWFvx6w==}
+    dependencies:
+      '@zag-js/anatomy': 0.30.0
+      '@zag-js/color-utils': 0.30.0
+      '@zag-js/core': 0.30.0
+      '@zag-js/dismissable': 0.30.0
+      '@zag-js/dom-event': 0.30.0
+      '@zag-js/dom-query': 0.30.0
+      '@zag-js/form-utils': 0.30.0
+      '@zag-js/popper': 0.30.0
+      '@zag-js/tabbable': 0.30.0
+      '@zag-js/text-selection': 0.30.0
+      '@zag-js/types': 0.30.0
+      '@zag-js/utils': 0.30.0
+      '@zag-js/visually-hidden': 0.30.0
+    dev: false
+
   /@zag-js/color-utils@0.12.0:
     resolution: {integrity: sha512-SJ7rqHRlqRVtIsSz5/P9D5iLMI+QrPvPcCOhB7hGgiiITwo7pVGNmVrjv0K7eV6XfUbjjB/cOIpC3tlpzIbiJg==}
     dev: true
+
+  /@zag-js/color-utils@0.30.0:
+    resolution: {integrity: sha512-OsCGhm0+28xMvfF1EfXqtblG7xFCwt1FhrXxZnnXDJSjwxvB3pmwPAFCL6nauH39LG53+Qb3dgt768oGVVYk7A==}
+    dependencies:
+      '@zag-js/numeric-range': 0.30.0
+    dev: false
 
   /@zag-js/combobox@0.12.0:
     resolution: {integrity: sha512-dnUrQLvcYwlQyzB3O5SFfCX/M4y8BypGsJq/NzvZ23cc1TsS2t503zFuCncy+Z4P9NJoCtD5QFLtTjG2Gjf5+w==}

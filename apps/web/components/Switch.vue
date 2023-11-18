@@ -5,13 +5,12 @@ import { computed } from "vue";
 import { switches } from "~/styled-system/recipes";
 
 const props = defineProps<{
-  id: string;
   label?: string;
 }>();
 
 const switchClasses = switches({ size: "sm" });
 
-const [state, send] = useMachine(zagSwitch.machine({ id: props.id }));
+const [state, send] = useMachine(zagSwitch.machine({ id: '1' }));
 
 const api = computed(() =>
   zagSwitch.connect(state.value, send, normalizeProps)
