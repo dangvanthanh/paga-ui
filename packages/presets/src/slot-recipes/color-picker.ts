@@ -1,12 +1,12 @@
 import { defineSlotRecipe } from '@pandacss/dev';
 
-var thumb = {
-  borderRadius: '2xl',
-  h: 3,
-  w: 3,
+const thumb = {
+  borderRadius: 'xl',
+  h: 5,
+  w: 5,
   outline: 'none',
   transform: 'translate(-50%,-50%)',
-  boxShadow: '0 0 0 1px white, 0 0 0 2px white inset',
+  boxShadow: '0 0 0 1px #d1d5db, 0 0 0 2px white inset',
 }
 
 export const colorPicker = defineSlotRecipe({
@@ -25,7 +25,8 @@ export const colorPicker = defineSlotRecipe({
     'channelSlider',
     'channelSliderTrack',
     'channelSliderThumb',
-    'swatchGroup'
+    'swatchGroup',
+    'eyeDropperTrigger'
   ],
   base: {
     root: {
@@ -95,6 +96,14 @@ export const colorPicker = defineSlotRecipe({
       display: 'grid',
       gridTemplateColumns: 'repeat(7, 1fr)',
       gap: 2,
+    },
+    eyeDropperTrigger: {
+      display: 'flex',
+      borderWidth: '1px',
+      borderColor: 'gray.300',
+      p: 1.5,
+      borderRadius: 'sm',
+      cursor: 'pointer'
     }
   },
 });

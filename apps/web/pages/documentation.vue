@@ -74,7 +74,7 @@ const components = shallowRef([
       </div>
     </div>
     <div :class="grid({ my: 12, columns: { base: 1, md: 2, lg: 3 }, gap: 6 })">
-      <div :class="cardClasses" v-for="component in components">
+      <div :class="cardClasses" v-for="component in components" :key="component.name">
         <h3 :class="css({ fontSize: 'lg', fontWeight: '600' })">{{ component.name }}</h3>
         <div :class="cx(css({ bg: 'gray.50' }), cardContentClasses)">
           <component :is="component.showcase" />

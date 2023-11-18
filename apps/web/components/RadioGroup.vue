@@ -9,11 +9,12 @@ const radioGroupClasses = radioGroup();
 const items = [
   { id: 'svelte', label: 'Svelte' },
   { id: 'solid', label: 'Solid' },
+  { id: 'vue', label: 'Vue' },
 ]
 
-const [state, send] = useMachine(zagRadio.machine({ id: '1' }))
+const [state, send] = useMachine(zagRadio.machine({ id: '1', value: 'vue' }));
 
-const api = computed(() => zagRadio.connect(state.value, send, normalizeProps))
+const api = computed(() => zagRadio.connect(state.value, send, normalizeProps));
 </script>
 
 <template>
