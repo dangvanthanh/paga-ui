@@ -12,7 +12,7 @@
   "author": "Dang Van Thanh",
   "license": "MIT",
   "devDependencies": {
-    "@moonrepo/cli": "^1.7.0"
+    "@moonrepo/cli": "^1.7.3"
   },
   "packageManager": "pnpm@8.9.0",
   "engines": {
