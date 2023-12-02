@@ -4,7 +4,7 @@ import { normalizeProps, useMachine } from '@zag-js/vue';
 import { computed } from 'vue';
 import { Pipette } from 'lucide-vue-next';
 import { cx, css } from '~/styled-system/css';
-import { flex } from '~/styled-system/patterns';
+import { flex, grid } from '~/styled-system/patterns';
 import { colorPicker } from '~/styled-system/recipes';
 
 const colorPickerClasses = colorPicker();
@@ -27,10 +27,8 @@ const presets = ref(['#202020', '#d13415', '#ca244d', '#c2298a', '#ffba18', '#b0
         <div v-bind="api.getTransparencyGridProps({ size: '10px' })" :class="colorPickerClasses.transparencyGrid" />
         <div v-bind="api.getSwatchProps({ value: api.value })" :class="colorPickerClasses.swatch" />
       </button>
-      <input v-bind="api.getChannelInputProps({ channel: 'hex' })"
-        :class="cx(colorPickerClasses.input, css({ flex: '1 1 0%' }))" />
-      <input v-bind="api.getChannelInputProps({ channel: 'alpha' })"
-        :class="cx(colorPickerClasses.input, css({ maxW: '3rem' }))" />
+      <input v-bind="api.getChannelInputProps({ channel: 'hex' })" :class="colorPickerClasses.input" />
+      <input v-bind="api.getChannelInputProps({ channel: 'alpha' })" :class="colorPickerClasses.input" />
     </div>
 
     <div v-bind="api.positionerProps">
@@ -63,22 +61,22 @@ const presets = ref(['#202020', '#d13415', '#ca244d', '#c2298a', '#ffba18', '#b0
         </div>
 
         <template v-if="api.format === 'rgba'">
-          <div :class="flex({ gap: 1 })">
+          <div :class="grid({ columns: 4 })">
             <div :class="flex({ direction: 'column', gap: 1 })">
               <input v-bind="api.getChannelInputProps({ channel: 'red' })"
-                :class="cx(colorPickerClasses.input, css({ textAlign: 'center', maxW: '3rem' }))" />
+                :class="cx(colorPickerClasses.input, css({ textAlign: 'center' }))" />
               <span :class="css({ display: 'block', textAlign: 'center' })">R</span>
             </div>
 
             <div :class="flex({ direction: 'column', gap: 1 })">
               <input v-bind="api.getChannelInputProps({ channel: 'green' })"
-                :class="cx(colorPickerClasses.input, css({ textAlign: 'center', maxW: '3rem' }))" />
+                :class="cx(colorPickerClasses.input, css({ textAlign: 'center' }))" />
               <span :class="css({ display: 'block', textAlign: 'center' })">G</span>
             </div>
 
             <div :class="flex({ direction: 'column', gap: 1 })">
               <input v-bind="api.getChannelInputProps({ channel: 'blue' })"
-                :class="cx(colorPickerClasses.input, css({ textAlign: 'center', maxW: '3rem' }))" />
+                :class="cx(colorPickerClasses.input, css({ textAlign: 'center' }))" />
               <span :class="css({ display: 'block', textAlign: 'center' })">B</span>
             </div>
 
@@ -94,7 +92,7 @@ const presets = ref(['#202020', '#d13415', '#ca244d', '#c2298a', '#ffba18', '#b0
         <div v-bind="api.swatchGroupProps" :class="colorPickerClasses.swatchGroup">
           <template v-for="preset in presets">
             <button v-bind="api.getSwatchTriggerProps({ value: preset })">
-              <div v-bind="api.getTransparencyGridProps({ size: '4px' })" :class="colorPickerClasses.transparencyGrid" />
+              <div v-bind="api.getTransparencyGridProps()" :class="colorPickerClasses.transparencyGrid" />
               <div v-bind="api.getSwatchProps({ value: preset })" :class="colorPickerClasses.swatch" />
             </button>
           </template>

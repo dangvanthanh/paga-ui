@@ -37,7 +37,8 @@ export const colorPicker = defineSlotRecipe({
       borderRadius: 'sm',
     },
     swatch: {
-      w: 9,
+      w: 'full',
+      minW: 9,
       h: 9,
       borderRadius: 'sm',
     },
@@ -95,7 +96,7 @@ export const colorPicker = defineSlotRecipe({
     swatchGroup: {
       display: 'grid',
       gridTemplateColumns: 'repeat(7, 1fr)',
-      gap: 2,
+      gap: 4,
     },
     eyeDropperTrigger: {
       display: 'flex',
