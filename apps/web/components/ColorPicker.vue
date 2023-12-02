@@ -27,8 +27,10 @@ const presets = ref(['#202020', '#d13415', '#ca244d', '#c2298a', '#ffba18', '#b0
         <div v-bind="api.getTransparencyGridProps({ size: '10px' })" :class="colorPickerClasses.transparencyGrid" />
         <div v-bind="api.getSwatchProps({ value: api.value })" :class="colorPickerClasses.swatch" />
       </button>
-      <input v-bind="api.getChannelInputProps({ channel: 'hex' })" :class="colorPickerClasses.input" />
-      <input v-bind="api.getChannelInputProps({ channel: 'alpha' })" :class="colorPickerClasses.input" />
+      <input v-bind="api.getChannelInputProps({ channel: 'hex' })"
+        :class="cx(colorPickerClasses.input, css({ flex: '1 1 0%' }))" />
+      <input v-bind="api.getChannelInputProps({ channel: 'alpha' })"
+        :class="cx(colorPickerClasses.input, css({ maxW: '3rem' }))" />
     </div>
 
     <div v-bind="api.positionerProps">
@@ -64,19 +66,19 @@ const presets = ref(['#202020', '#d13415', '#ca244d', '#c2298a', '#ffba18', '#b0
           <div :class="flex({ gap: 1 })">
             <div :class="flex({ direction: 'column', gap: 1 })">
               <input v-bind="api.getChannelInputProps({ channel: 'red' })"
-                :class="cx(colorPickerClasses.input, css({ textAlign: 'center' }))" />
+                :class="cx(colorPickerClasses.input, css({ textAlign: 'center', maxW: '3rem' }))" />
               <span :class="css({ display: 'block', textAlign: 'center' })">R</span>
             </div>
 
             <div :class="flex({ direction: 'column', gap: 1 })">
               <input v-bind="api.getChannelInputProps({ channel: 'green' })"
-                :class="cx(colorPickerClasses.input, css({ textAlign: 'center' }))" />
+                :class="cx(colorPickerClasses.input, css({ textAlign: 'center', maxW: '3rem' }))" />
               <span :class="css({ display: 'block', textAlign: 'center' })">G</span>
             </div>
 
             <div :class="flex({ direction: 'column', gap: 1 })">
               <input v-bind="api.getChannelInputProps({ channel: 'blue' })"
-                :class="cx(colorPickerClasses.input, css({ textAlign: 'center' }))" />
+                :class="cx(colorPickerClasses.input, css({ textAlign: 'center', maxW: '3rem' }))" />
               <span :class="css({ display: 'block', textAlign: 'center' })">B</span>
             </div>
 
