@@ -32,6 +32,7 @@ export const colorPicker = defineSlotRecipe({
     root: {
       display: 'flex',
       flexDirection: 'column',
+      zIndex: 1,
     },
     transparencyGrid: {
       borderRadius: 'sm',
@@ -49,6 +50,7 @@ export const colorPicker = defineSlotRecipe({
       py: 1.5,
       px: 3,
       h: 9,
+      w: 'full'
     },
     control: {
       display: 'flex',
@@ -64,6 +66,7 @@ export const colorPicker = defineSlotRecipe({
       minW: 'xs',
       p: 3,
       gap: 3,
+      maxW: 'md',
       _open: {
         animation: 'fadeIn 0.2s ease-in-out',
       },
