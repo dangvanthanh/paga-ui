@@ -1,0 +1,9 @@
+tasks:
+  dev:
+    command: "astro dev"
+  build:
+    command: "astro check && astro build"
+  preview:
+    command: "astro preview"
+  astro:
+    command: "astro"
