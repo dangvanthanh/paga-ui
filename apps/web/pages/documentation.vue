@@ -39,7 +39,7 @@ const components = shallowRef([
   { name: 'Popover', showcase: resolveComponent('Popover') },
   { name: 'Radio Group', showcase: resolveComponent('RadioGroup') },
   { name: 'Segmented Control', showcase: resolveComponent('SegmentedControl') },
-  { name: 'Range Slider', showcase: resolveComponent('RangerSlider') },
+  { name: 'Range Slider', showcase: resolveComponent('RangeSlider') },
   { name: 'Rating Group', showcase: resolveComponent('RatingGroup') },
   { name: 'Select', showcase: resolveComponent('Select') },
   { name: 'Slider', showcase: resolveComponent('Slider') },

@@ -2,7 +2,7 @@
 import * as zagTooltip from '@zag-js/tooltip';
 import { normalizeProps, useMachine } from '@zag-js/vue';
 import { computed } from 'vue';
-import {tooltip} from '../styled-system/recipes';
+import {tooltip} from '~/styled-system/recipes';
 
 const tooltipClasses = tooltip();
 

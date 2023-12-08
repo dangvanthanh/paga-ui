@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import * as zagColorPicker from '@zag-js/color-picker';
 import { normalizeProps, useMachine } from '@zag-js/vue';
-import { computed } from 'vue';
+import { ref, computed } from 'vue';
 import { Pipette } from 'lucide-vue-next';
 import { cx, css } from '~/styled-system/css';
 import { flex, grid } from '~/styled-system/patterns';

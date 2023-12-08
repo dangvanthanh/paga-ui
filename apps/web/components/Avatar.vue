@@ -6,12 +6,12 @@ import { avatar } from "~/styled-system/recipes";
 
 const props = defineProps<{
   fallback?: string;
-  src?: string
+  src?: string;
 }>();
 
 const avatarClasses = avatar();
 
-const [state, send] = useMachine(zagAvatar.machine({ id: '1' }));
+const [state, send] = useMachine(zagAvatar.machine({ id: "1" }));
 
 const api = computed(() =>
   zagAvatar.connect(state.value, send, normalizeProps)
@@ -21,8 +21,13 @@ const api = computed(() =>
 <template>
   <div v-bind="api.rootProps" v-bind:class="avatarClasses.root">
     <span v-bind="api.fallbackProps" v-bind:class="avatarClasses.fallback">{{
-      props.fallback || 'PG'
+      props.fallback || "PG"
     }}</span>
-    <img v-bind:alt="props.fallback" v-bind:src="props.src" v-bind="api.imageProps" v-bind:class="avatarClasses.image" />
+    <img
+      v-bind:alt="props.fallback"
+      v-bind:src="props.src"
+      v-bind="api.imageProps"
+      v-bind:class="avatarClasses.image"
+    />
   </div>
 </template>

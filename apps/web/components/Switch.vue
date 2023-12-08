@@ -10,7 +10,7 @@ const props = defineProps<{
 
 const switchClasses = switches({ size: "sm" });
 
-const [state, send] = useMachine(zagSwitch.machine({ id: '1' }));
+const [state, send] = useMachine(zagSwitch.machine({ id: "1" }));
 
 const api = computed(() =>
   zagSwitch.connect(state.value, send, normalizeProps)
