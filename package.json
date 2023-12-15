@@ -1,21 +1,18 @@
 {
-  "name": "paga-ui",
-  "version": "1.0.0",
-  "description": "Beautifully designed components built with Zagjs and Panda CSS. ",
-  "scripts": {
-    "moon": "moon"
-  },
-  "keywords": [
-    "Zagjs",
-    "PandaCSS"
-  ],
-  "author": "Dang Van Thanh",
-  "license": "MIT",
-  "devDependencies": {
-    "@moonrepo/cli": "^1.7.4"
-  },
-  "packageManager": "pnpm@8.9.0",
-  "engines": {
-    "node": "18.17.1"
-  }
+	"name": "paga-ui",
+	"version": "1.0.0",
+	"description": "Beautifully designed components built with Zagjs and Panda CSS. ",
+	"scripts": {
+		"moon": "moon"
+	},
+	"keywords": ["Zagjs", "PandaCSS"],
+	"author": "Dang Van Thanh",
+	"license": "MIT",
+	"devDependencies": {
+		"@moonrepo/cli": "^1.18.1"
+	},
+	"packageManager": "pnpm@8.9.0",
+	"engines": {
+		"node": "18.17.1"
+	}
 }
