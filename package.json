@@ -2,13 +2,21 @@
 	"name": "paga-ui",
 	"version": "1.0.0",
 	"description": "Beautifully designed components built with Zagjs and Panda CSS. ",
-	"scripts": {
-		"moon": "moon"
-	},
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint"
+  },
 	"keywords": ["Zagjs", "PandaCSS"],
 	"author": "Dang Van Thanh",
 	"license": "MIT",
-	"engines": {
-		"node": "18.17.1"
-	}
+  "devDependencies": {
+    "@paga/presets": "workspace:*",
+    "@paga/typescript-config": "workspace:*",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@8.9.0",
+  "engines": {
+    "node": ">=18"
+  }
 }
