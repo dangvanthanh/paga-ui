@@ -7,14 +7,16 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@zag-js/progress':
-        specifier: ^0.31.1
-        version: 0.31.1
     devDependencies:
-      '@moonrepo/cli':
-        specifier: ^1.18.5
-        version: 1.18.5
+      '@paga/presets':
+        specifier: workspace:*
+        version: link:packages/presets
+      '@paga/typescript-config':
+        specifier: workspace:*
+        version: link:packages/typescript-config
+      turbo:
+        specifier: latest
+        version: 1.11.2
 
   apps/docs:
     dependencies:
@@ -269,6 +271,8 @@ importers:
       typescript:
         specifier: ^5.3.2
         version: 5.3.3
+
+  packages/typescript-config: {}
 
 packages:
 
@@ -1755,78 +1759,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: false
-
-  /@moonrepo/cli@1.18.5:
-    resolution: {integrity: sha512-37XefZOWy0V5dP6L9HnjSUuGqG4a7A75eWGvmRIya+DvMf7wfeLVSHSGeesCbbU0fyySxECqj7fei3ZKIDxpiQ==}
-    hasBin: true
-    requiresBuild: true
-    dependencies:
-      detect-libc: 2.0.2
-    optionalDependencies:
-      '@moonrepo/core-linux-arm64-gnu': 1.18.5
-      '@moonrepo/core-linux-arm64-musl': 1.18.5
-      '@moonrepo/core-linux-x64-gnu': 1.18.5
-      '@moonrepo/core-linux-x64-musl': 1.18.5
-      '@moonrepo/core-macos-arm64': 1.18.5
-      '@moonrepo/core-macos-x64': 1.18.5
-      '@moonrepo/core-windows-x64-msvc': 1.18.5
-    dev: true
-
-  /@moonrepo/core-linux-arm64-gnu@1.18.5:
-    resolution: {integrity: sha512-YPZNOB2plxnfVTnfrfqDpkYuvEZB+rXDF8hv7nA+JMxvhNURNHWSRqDmH9XB1isaagJzpH7s2i1xWT5eWfbCmg==}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@moonrepo/core-linux-arm64-musl@1.18.5:
-    resolution: {integrity: sha512-5D17A+7Pt8PZzmnhQS0UOpQYMti6pGpkupCWNVhI4i92WOe6NViqRaCO8J1DqT6SVfCyGp2VwFCrL55Y+cYE0g==}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@moonrepo/core-linux-x64-gnu@1.18.5:
-    resolution: {integrity: sha512-EQHf7Z+4WwVAfeIu65Nr92hAcBOD6ZuQSAgYZJ62juQgsQmObBx6xtIyustGxjqp3t6dsbfBo69sMpNGhdh+fQ==}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@moonrepo/core-linux-x64-musl@1.18.5:
-    resolution: {integrity: sha512-9H2TXp0e9ANkfbr3He82MJhctPRSo0e4n8rvymWATrxcYdqp4LHY8ClZbzBaZTD3CHwIsyiV6zCp+qE76BmhTw==}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@moonrepo/core-macos-arm64@1.18.5:
-    resolution: {integrity: sha512-wpWTg/s9e23FIN6NfnUqfGCBEb/treRVHg/1wWp4rn/FNyTsz9QwPgcLKTSyUoxb2vl5xwa3Aom9YcQiUUrpWg==}
-    cpu: [arm64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@moonrepo/core-macos-x64@1.18.5:
-    resolution: {integrity: sha512-Bcdb1GhahjXWQzVbRRzNGnrXaQi3T/tTXPo8fP0+/ciod36jqcM+P41tQomoJ0Cb7fBE39xVRCf6uJWTIaTvlQ==}
-    cpu: [x64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /@moonrepo/core-windows-x64-msvc@1.18.5:
-    resolution: {integrity: sha512-zr2c8EeQnoajEslL1GnxggkUInLio8ye2/+xn6Hs6ejjl0PXUCdPM1WShDqgiphMmoDK/MskWAlaXaqldD1bZA==}
-    cpu: [x64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
 
   /@netlify/functions@2.4.0:
     resolution: {integrity: sha512-dIqhdj5u4Lu/8qbYwtYpn8NfvIyPHbSTV2lAP4ocL+iwC9As06AXT0wa/xOpO2vRWJa0IMxdZaqCPnkyHlHiyg==}
@@ -10757,6 +10689,66 @@ packages:
     dependencies:
       safe-buffer: 5.2.1
     optional: true
+
+  /turbo-darwin-64@1.11.2:
+    resolution: {integrity: sha512-toFmRG/adriZY3hOps7nYCfqHAS+Ci6xqgX3fbo82kkLpC6OBzcXnleSwuPqjHVAaRNhVoB83L5njcE9Qwi2og==}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo-darwin-arm64@1.11.2:
+    resolution: {integrity: sha512-FCsEDZ8BUSFYEOSC3rrARQrj7x2VOrmVcfrMUIhexTxproRh4QyMxLfr6LALk4ymx6jbDCxWa6Szal8ckldFbA==}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo-linux-64@1.11.2:
+    resolution: {integrity: sha512-Vzda/o/QyEske5CxLf0wcu7UUS+7zB90GgHZV4tyN+WZtoouTvbwuvZ3V6b5Wgd3OJ/JwWR0CXDK7Sf4VEMr7A==}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo-linux-arm64@1.11.2:
+    resolution: {integrity: sha512-bRLwovQRz0yxDZrM4tQEAYV0fBHEaTzUF0JZ8RG1UmZt/CqtpnUrJpYb1VK8hj1z46z9YehARpYCwQ2K0qU4yw==}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo-windows-64@1.11.2:
+    resolution: {integrity: sha512-LgTWqkHAKgyVuLYcEPxZVGPInTjjeCnN5KQMdJ4uQZ+xMDROvMFS2rM93iQl4ieDJgidwHCxxCxaU9u8c3d/Kg==}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo-windows-arm64@1.11.2:
+    resolution: {integrity: sha512-829aVBU7IX0c/B4G7g1VI8KniAGutHhIupkYMgF6xPkYVev2G3MYe6DMS/vsLt9GGM9ulDtdWxWrH5P2ngK8IQ==}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo@1.11.2:
+    resolution: {integrity: sha512-jPC7LVQJzebs5gWf8FmEvsvXGNyKbN+O9qpvv98xpNaM59aS0/Irhd0H0KbcqnXfsz7ETlzOC3R+xFWthC4Z8A==}
+    hasBin: true
+    optionalDependencies:
+      turbo-darwin-64: 1.11.2
+      turbo-darwin-arm64: 1.11.2
+      turbo-linux-64: 1.11.2
+      turbo-linux-arm64: 1.11.2
+      turbo-windows-64: 1.11.2
+      turbo-windows-arm64: 1.11.2
+    dev: true
 
   /type-fest@0.21.3:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
