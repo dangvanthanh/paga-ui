@@ -13,6 +13,8 @@ import { pagination } from './pagination';
 import { pinInput } from './pin-input';
 import { popover } from './popover';
 import { pressable } from './pressable';
+import { progressCircular } from './progress-circular';
+import { progressLinear } from './progress-linear';
 import { radioGroup } from './radio-group';
 import { ratingGroup } from './rating-group';
 import { segmentedControl } from './segmented-control';
@@ -41,6 +43,8 @@ export const slotRecipes = {
   pinInput,
   popover,
   pressable,
+  progressLinear,
+  progressCircular,
   radioGroup,
   ratingGroup,
   segmentedControl,
