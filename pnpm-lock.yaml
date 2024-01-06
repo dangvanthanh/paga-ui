@@ -15,7 +15,7 @@ importers:
         specifier: workspace:*
         version: link:packages/typescript-config
       turbo:
-        specifier: latest
+        specifier: ^1.11.2
         version: 1.11.2
 
   apps/docs:
