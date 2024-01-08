@@ -1,4 +1,4 @@
-import { defineRecipe } from '@pandacss/dev';
+import { defineRecipe } from '@pandacss/dev'
 
 export const label = defineRecipe({
   className: 'label',
@@ -26,4 +26,4 @@ export const label = defineRecipe({
   defaultVariants: {
     size: 'md',
   },
-});
+})

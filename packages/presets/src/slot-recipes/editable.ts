@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const editable = defineSlotRecipe({
   className: 'editable',
@@ -31,4 +31,4 @@ export const editable = defineSlotRecipe({
       },
     },
   },
-});
+})

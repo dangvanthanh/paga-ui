@@ -1,19 +1,19 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const progressCircular = defineSlotRecipe({
   className: 'progressCircular',
   slots: ['root', 'circle', 'circleRange', 'circleTrack'],
   base: {
-    root: { display: 'flex', alignItems: 'center', w: 20, h: 20 },
+    root: { display: 'flex', alignItems: 'center' },
+    circle: {
+      '--size': '128px',
+      '--thickness': '12px',
+    },
     circleRange: {
-      background: 'gray.800',
-      h: 'full',
+      stroke: 'gray.800',
     },
     circleTrack: {
-      borderWidth: '1px',
-      overflow: 'hidden',
-      w: 'full',
-      h: 'full',
+      stroke: 'gray.100',
     },
   },
-});
+})

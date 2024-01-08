@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const tabs = defineSlotRecipe({
   className: 'tabs',
@@ -11,7 +11,7 @@ export const tabs = defineSlotRecipe({
     content: {
       textStyle: 'sm',
       color: 'gray.500',
-      py: 3
+      py: 3,
     },
     list: {
       display: 'flex',
@@ -20,7 +20,7 @@ export const tabs = defineSlotRecipe({
       overflow: 'auto',
       position: 'relative',
       borderBottomWidth: '1px',
-      borderColor: 'gray.300'
+      borderColor: 'gray.300',
     },
     trigger: {
       display: 'inline-flex',
@@ -34,12 +34,12 @@ export const tabs = defineSlotRecipe({
       _selected: {
         color: 'gray.900',
         borderBottomWidth: '2px',
-        borderColor: 'gray.900'
-      }
+        borderColor: 'gray.900',
+      },
     },
     indicator: {
       '--transition-duration': '0.2s',
-      '--transition-timing-function': 'ease-in-out'
+      '--transition-timing-function': 'ease-in-out',
     },
-  }
-});
+  },
+})

@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const accordion = defineSlotRecipe({
   className: 'accordion',
@@ -45,4 +45,4 @@ export const accordion = defineSlotRecipe({
       },
     },
   },
-});
+})

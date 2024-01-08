@@ -1,3 +1,3 @@
-import { defineTokens } from '@pandacss/dev';
+import { defineTokens } from '@pandacss/dev'
 
-export const sizes = defineTokens.sizes({});
+export const sizes = defineTokens.sizes({})

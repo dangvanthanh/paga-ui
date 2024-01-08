@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const pinInput = defineSlotRecipe({
   className: 'pinInput',
@@ -22,4 +22,4 @@ export const pinInput = defineSlotRecipe({
       textAlign: 'center',
     },
   },
-});
+})

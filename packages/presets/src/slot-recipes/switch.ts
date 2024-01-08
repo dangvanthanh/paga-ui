@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const switchRecipe = defineSlotRecipe({
   className: 'switch',
@@ -50,4 +50,4 @@ export const switchRecipe = defineSlotRecipe({
   defaultVariants: {
     size: 'sm',
   },
-});
+})

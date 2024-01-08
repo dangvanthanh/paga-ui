@@ -1,3 +1,3 @@
-import { defineTokens } from '@pandacss/dev';
+import { defineTokens } from '@pandacss/dev'
 
-export const radii = defineTokens.radii({});
+export const radii = defineTokens.radii({})

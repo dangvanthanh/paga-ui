@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 const thumb = {
   borderRadius: 'xl',
@@ -26,7 +26,7 @@ export const colorPicker = defineSlotRecipe({
     'channelSliderTrack',
     'channelSliderThumb',
     'swatchGroup',
-    'eyeDropperTrigger'
+    'eyeDropperTrigger',
   ],
   base: {
     root: {
@@ -50,7 +50,7 @@ export const colorPicker = defineSlotRecipe({
       py: 1.5,
       px: 3,
       h: 9,
-      w: 'full'
+      w: 'full',
     },
     control: {
       display: 'flex',
@@ -84,7 +84,7 @@ export const colorPicker = defineSlotRecipe({
       h: 'full',
     },
     areaThumb: {
-      ...thumb
+      ...thumb,
     },
     channelSlider: {
       borderRadius: 'sm',
@@ -94,7 +94,7 @@ export const colorPicker = defineSlotRecipe({
       h: 3,
     },
     channelSliderThumb: {
-      ...thumb
+      ...thumb,
     },
     swatchGroup: {
       display: 'grid',
@@ -107,7 +107,7 @@ export const colorPicker = defineSlotRecipe({
       borderColor: 'gray.300',
       p: 1.5,
       borderRadius: 'sm',
-      cursor: 'pointer'
-    }
+      cursor: 'pointer',
+    },
   },
-});
+})

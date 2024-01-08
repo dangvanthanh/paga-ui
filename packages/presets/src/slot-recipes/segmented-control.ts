@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const segmentedControl = defineSlotRecipe({
   className: 'segmentedControl',
@@ -9,12 +9,12 @@ export const segmentedControl = defineSlotRecipe({
       alignItems: 'center',
       borderBottomWidth: '1px',
       borderColor: 'gray.300',
-      pb: 3
+      pb: 3,
     },
     indicator: {
       borderColor: 'gray.700',
       borderBottomWidth: '2px',
-      transform: 'translateY(3px)'
+      transform: 'translateY(3px)',
     },
     radio: {
       color: 'gray.500',
@@ -26,7 +26,7 @@ export const segmentedControl = defineSlotRecipe({
       textStyle: 'sm',
       _checked: {
         color: 'gray.900',
-      }
-    }
-  }
-});
+      },
+    },
+  },
+})

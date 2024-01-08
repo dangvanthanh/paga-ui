@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const ratingGroup = defineSlotRecipe({
   className: 'ratingGroup',
@@ -6,11 +6,11 @@ export const ratingGroup = defineSlotRecipe({
   base: {
     root: {
       display: 'flex',
-      alignItems: 'center'
+      alignItems: 'center',
     },
     control: {
       display: 'flex',
-      alignItems: 'center'
+      alignItems: 'center',
     },
     rating: {
       outline: 'none',
@@ -19,8 +19,8 @@ export const ratingGroup = defineSlotRecipe({
       fill: 'gray.300',
       _highlighted: {
         color: 'gray.900',
-        fill: 'gray.900'
-      }
-    }
-  }
-});
+        fill: 'gray.900',
+      },
+    },
+  },
+})

@@ -1,11 +1,11 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const hoverCard = defineSlotRecipe({
   className: 'hoverCard',
   slots: ['trigger', 'content', 'arrow'],
   base: {
     trigger: {
-      textStyle: 'sm'
+      textStyle: 'sm',
     },
     content: {
       background: 'white',
@@ -28,4 +28,4 @@ export const hoverCard = defineSlotRecipe({
       '--arrow-background': 'white',
     },
   },
-});
+})

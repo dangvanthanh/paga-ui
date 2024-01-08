@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const checkbox = defineSlotRecipe({
   className: 'checkbox',
@@ -32,4 +32,4 @@ export const checkbox = defineSlotRecipe({
     },
     label: { color: 'gray.700', fontWeight: 500, textStyle: 'sm' },
   },
-});
+})

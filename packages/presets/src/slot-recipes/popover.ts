@@ -1,14 +1,14 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const popover = defineSlotRecipe({
   className: 'popover',
   slots: ['trigger', 'positioner', 'content', 'title', 'description', 'arrow', 'closeTrigger'],
   base: {
     trigger: {
-      textStyle: 'sm'
+      textStyle: 'sm',
     },
     positioner: {
-      pos: 'relative'
+      pos: 'relative',
     },
     content: {
       background: 'white',
@@ -21,12 +21,12 @@ export const popover = defineSlotRecipe({
       zIndex: 1,
       _open: {
         animation: 'fadeIn 0.2s ease-out',
-        display: 'flex'
+        display: 'flex',
       },
       closed: {
         animation: 'fadeOut 0.2s ease-out',
-        visibility: 'hidden'
-      }
+        visibility: 'hidden',
+      },
     },
     title: {
       fontWeight: 500,
@@ -45,6 +45,6 @@ export const popover = defineSlotRecipe({
       top: 0,
       right: 2,
       cursor: 'pointer',
-    }
-  }
-});
+    },
+  },
+})

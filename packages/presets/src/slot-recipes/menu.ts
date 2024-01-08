@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const menu = defineSlotRecipe({
   className: 'menu',
@@ -6,7 +6,7 @@ export const menu = defineSlotRecipe({
   base: {
     trigger: {
       outline: 'none',
-      textStyle: 'sm'
+      textStyle: 'sm',
     },
     content: {
       bg: 'white',
@@ -23,7 +23,7 @@ export const menu = defineSlotRecipe({
       },
       _closed: {
         animation: 'fadeOut 0.2s ease-out',
-        visibility: 'hidden'
+        visibility: 'hidden',
       },
     },
     item: {
@@ -49,4 +49,4 @@ export const menu = defineSlotRecipe({
       '--background-color': 'white',
     },
   },
-});
+})

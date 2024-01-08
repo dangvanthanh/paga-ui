@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const toggleGroup = defineSlotRecipe({
   className: 'toggleGroup',
@@ -7,7 +7,7 @@ export const toggleGroup = defineSlotRecipe({
     root: {
       display: 'flex',
       alignItems: 'center',
-      gap: 1
+      gap: 1,
     },
     item: {
       display: 'inline-flex',
@@ -30,6 +30,6 @@ export const toggleGroup = defineSlotRecipe({
       _hover: {
         bg: 'gray.100',
       },
-    }
-  }
-});
+    },
+  },
+})

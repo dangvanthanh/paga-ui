@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const dialog = defineSlotRecipe({
   className: 'dialog',
@@ -56,4 +56,4 @@ export const dialog = defineSlotRecipe({
       cursor: 'pointer',
     },
   },
-});
+})

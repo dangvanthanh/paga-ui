@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const progressLinear = defineSlotRecipe({
   className: 'progressLinear',
@@ -18,4 +18,4 @@ export const progressLinear = defineSlotRecipe({
       w: 'full',
     },
   },
-});
+})

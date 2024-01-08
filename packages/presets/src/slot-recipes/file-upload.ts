@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const fileUpload = defineSlotRecipe({
   className: 'fileUpload',
@@ -17,13 +17,13 @@ export const fileUpload = defineSlotRecipe({
       borderColor: 'gray.300',
       minH: 12,
       p: 3,
-      borderRadius: 'sm'
+      borderRadius: 'sm',
     },
     trigger: {
       textStyle: 'sm',
     },
     label: {
-      textStyle: 'sm'
+      textStyle: 'sm',
     },
     item: {
       display: 'flex',
@@ -31,14 +31,14 @@ export const fileUpload = defineSlotRecipe({
       gap: 2,
       w: 'full',
       maxW: 64,
-      mt: 2
+      mt: 2,
     },
     itemName: {
       textStyle: 'sm',
       flex: '1 1 0%',
       overflow: 'hidden',
       textOverflow: 'ellipsis',
-      whiteSpace: 'nowrap'
-    }
-  }
-});
+      whiteSpace: 'nowrap',
+    },
+  },
+})

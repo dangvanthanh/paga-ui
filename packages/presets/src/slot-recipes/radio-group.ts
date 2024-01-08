@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const radioGroup = defineSlotRecipe({
   className: 'radioGroup',
@@ -11,7 +11,7 @@ export const radioGroup = defineSlotRecipe({
     label: {
       display: 'flex',
       alignItems: 'center',
-      gap: 2
+      gap: 2,
     },
     item: {
       display: 'flex',
@@ -28,10 +28,10 @@ export const radioGroup = defineSlotRecipe({
       h: 4,
       _checked: {
         background: 'gray.900',
-      }
+      },
     },
     itemText: {
-      textStyle: 'sm'
-    }
-  }
-});
+      textStyle: 'sm',
+    },
+  },
+})

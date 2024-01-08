@@ -1,11 +1,11 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 const trigger = {
   display: 'inline-flex',
   alignItems: 'center',
   color: 'gray.600',
   justifyContent: 'center',
-  height: 4
+  height: 4,
 }
 
 export const numberInput = defineSlotRecipe({
@@ -32,7 +32,7 @@ export const numberInput = defineSlotRecipe({
       divideColor: 'gray.300',
       gridTemplateColumns: '1fr 32px',
       gridTemplateRows: '1fr 1fr',
-      overflow: 'hidden'
+      overflow: 'hidden',
     },
     input: {
       width: 'full',
@@ -40,7 +40,7 @@ export const numberInput = defineSlotRecipe({
       gridRow: '2',
       background: 'transparent',
       outline: 'none',
-      height: 9
+      height: 9,
     },
     incrementTrigger: {
       ...trigger,
@@ -50,5 +50,5 @@ export const numberInput = defineSlotRecipe({
       borderTopWidth: '1px',
       borderColor: 'gray.300',
     },
-  }
-});
+  },
+})

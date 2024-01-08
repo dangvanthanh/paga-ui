@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const slider = defineSlotRecipe({
   className: 'slider',
@@ -31,4 +31,4 @@ export const slider = defineSlotRecipe({
   defaultVariants: {
     size: 'sm',
   },
-});
+})

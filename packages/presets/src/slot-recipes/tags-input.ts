@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const tagsInput = defineSlotRecipe({
   className: 'tagsInput',
@@ -53,4 +53,4 @@ export const tagsInput = defineSlotRecipe({
       },
     },
   },
-});
+})

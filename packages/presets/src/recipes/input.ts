@@ -1,4 +1,4 @@
-import { defineRecipe } from '@pandacss/dev';
+import { defineRecipe } from '@pandacss/dev'
 
 export const input = defineRecipe({
   className: 'input',
@@ -33,4 +33,4 @@ export const input = defineRecipe({
   defaultVariants: {
     size: 'md',
   },
-});
+})

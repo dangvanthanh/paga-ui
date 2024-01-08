@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const tooltip = defineSlotRecipe({
   className: 'tooltip',
@@ -21,4 +21,4 @@ export const tooltip = defineSlotRecipe({
       },
     },
   },
-});
+})

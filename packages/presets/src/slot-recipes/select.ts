@@ -1,16 +1,8 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const select = defineSlotRecipe({
   className: 'select',
-  slots: [
-    'root',
-    'trigger',
-    'content',
-    'item',
-    'itemLabel',
-    'itemIndicator',
-    'label',
-  ],
+  slots: ['root', 'trigger', 'content', 'item', 'itemLabel', 'itemIndicator', 'label'],
   base: {
     root: {
       display: 'flex',
@@ -75,34 +67,34 @@ export const select = defineSlotRecipe({
       transitionProperty: 'background-color, color',
       transitionTimingFunction: 'ease-in-out',
       _hover: {
-        background: "gray.50",
+        background: 'gray.50',
       },
       _highlighted: {
-        background: "gray.200",
+        background: 'gray.200',
       },
       _checked: {
-        background: "gray.200",
-        cursor: "default",
-        pointerEvents: "none",
+        background: 'gray.200',
+        cursor: 'default',
+        pointerEvents: 'none',
       },
       _disabled: {
-        color: "gray.300",
-        cursor: "default",
-        pointerEvents: "none",
+        color: 'gray.300',
+        cursor: 'default',
+        pointerEvents: 'none',
         _hover: {
-          bg: "transparent",
+          bg: 'transparent',
         },
       },
     },
     itemLabel: {
-      textStyle: "sm",
+      textStyle: 'sm',
     },
     itemIndicator: {
-      color: "gray.500",
+      color: 'gray.500',
     },
     label: {
-      color: "gray.700",
+      color: 'gray.700',
       fontWeight: 500,
     },
   },
-});
+})

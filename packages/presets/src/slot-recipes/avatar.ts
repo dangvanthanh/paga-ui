@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@pandacss/dev';
+import { defineSlotRecipe } from '@pandacss/dev'
 
 export const avatar = defineSlotRecipe({
   className: 'avatar',
@@ -52,4 +52,4 @@ export const avatar = defineSlotRecipe({
   defaultVariants: {
     size: 'sm',
   },
-});
+})
