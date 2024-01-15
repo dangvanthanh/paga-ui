@@ -11,12 +11,12 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/check": "^0.3.4",
+		"@astrojs/check": "^0.4.1",
 		"@astrojs/react": "^3.0.9",
-		"@astrojs/solid-js": "^4.0.0",
-		"@astrojs/starlight": "^0.15.2",
-		"@astrojs/vercel": "^6.1.2",
-		"@astrojs/vue": "^4.0.7",
+		"@astrojs/solid-js": "^4.0.1",
+		"@astrojs/starlight": "^0.15.3",
+		"@astrojs/vercel": "^6.1.4",
+		"@astrojs/vue": "^4.0.8",
 		"@zag-js/accordion": "^0.32.0",
 		"@zag-js/avatar": "^0.32.0",
 		"@zag-js/checkbox": "^0.32.0",
@@ -43,18 +43,18 @@
 		"@zag-js/toggle-group": "^0.32.0",
 		"@zag-js/tooltip": "^0.32.0",
 		"@zag-js/vue": "^0.32.0",
-		"astro": "^4.1.0",
-		"lucide-vue-next": "^0.304.0",
+		"astro": "^4.1.2",
+		"lucide-vue-next": "^0.309.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"solid-js": "^1.8.8",
+		"solid-js": "^1.8.11",
 		"typescript": "^5.3.3",
-		"vue": "^3.4.5"
+		"vue": "^3.4.13"
 	},
 	"devDependencies": {
-		"@pandacss/astro": "^0.24.2",
-		"@pandacss/dev": "^0.24.2",
-		"@types/react": "^18.2.46",
+		"@pandacss/astro": "^0.25.0",
+		"@pandacss/dev": "^0.27.0",
+		"@types/react": "^18.2.48",
 		"@types/react-dom": "^18.2.18"
 	}
 }
