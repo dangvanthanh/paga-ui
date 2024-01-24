@@ -1,0 +1,32 @@
+---
+title: Getting Started
+---
+
+## Setup Guide
+
+### Prerequisite
+
+Before you start, ensure that your Panda project is set up and ready to go. If not, please refer to the Panda CSS Getting Started Guide and once you've completed that, come back to this guide.
+
+### Install Paga UI Presets
+
+The next package you will need is @paga/preset. This package contains all the recipes and tokens explicitly built for Paga UI components.
+
+```shell
+npm i @paga/preset -D
+```
+
+After you've installed the presets, you'll need to add it to your Panda configuration file along with your preferred jsxFramework like shown below:
+
+```javscript
+import { defineConfig } from '@pandacss/dev'
+
+export default defineConfig({
+  preflight: true,
+  presets: ['@pandacss/preset-base', '@paga/preset'],
+  include: ['./src/**/*.{js,jsx,ts,tsx,vue,astro}'],
+  exclude: [],
+  jsxFramework: 'vue' // react, solid or vue
+  outdir: 'styled-system',
+})
+```

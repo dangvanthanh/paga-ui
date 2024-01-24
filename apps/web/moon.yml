@@ -1,9 +1,0 @@
-tasks:
-  dev:
-    command: "nuxt dev"
-  build:
-    command: "nuxt build"
-  generate:
-    command: "nuxt generate"
-  preview:
-    command: "nuxt preview"
