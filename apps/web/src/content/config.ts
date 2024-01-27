@@ -1,22 +1,17 @@
-import { defineCollection, z } from "astro:content";
+import { componentSchema, overviewSchema } from './_schemas'
+import { defineCollection, z } from 'astro:content'
 
-const components = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-  }),
-});
+const componentsCollection = defineCollection({
+  type: 'content',
+  schema: componentSchema,
+})
 
-const overview = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-  }),
-});
+const overviewCollection = defineCollection({
+  type: 'content',
+  schema: overviewSchema,
+})
 
 export const collections = {
-  components,
-  overview
-};
+  components: componentsCollection,
+  overview: overviewCollection,
+}

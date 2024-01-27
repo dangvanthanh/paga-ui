@@ -18,8 +18,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
-    "@pandacss/dev": "^0.27.3",
-    "@pandacss/types": "^0.27.3",
+    "@pandacss/dev": "^0.28.0",
+    "@pandacss/types": "^0.28.0",
     "bun-types": "^1.0.25",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"

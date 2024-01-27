@@ -1,7 +1,13 @@
 ---
-import Layout from '../layouts/layout.astro'
+import Layout from '@/layouts/layout.astro'
+import { getCollection } from 'astro:content'
+
+const allOverview = await getCollection('overview')
+const allComponents = await getCollection('components')
+const collections = [...allOverview, ...allComponents]
 ---
 
 <Layout title="Home">
   <h1>Page UI</h1>
+  {collections.map((c) => <div>{c.data.title}</div>)}
 </Layout>
