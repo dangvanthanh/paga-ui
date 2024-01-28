@@ -1,14 +1,13 @@
 <script setup>
+import * as zagMenu from '@zag-js/menu'
+import { normalizeProps, useMachine } from '@zag-js/vue'
+import { computed } from 'vue'
+import { menu } from '@/styled-system/recipes'
 
-import * as zagMenu from '@zag-js/menu';
-import { normalizeProps, useMachine } from '@zag-js/vue';
-import { computed } from 'vue';
-import { menu } from '@styled-system/recipes';
+const menuClasses = menu()
 
-const menuClasses = menu();
-
-const [state, send] = useMachine(zagMenu.machine({ id: '1' }));
-const api = computed(() => zagMenu.connect(state.value, send, normalizeProps));
+const [state, send] = useMachine(zagMenu.machine({ id: '1' }))
+const api = computed(() => zagMenu.connect(state.value, send, normalizeProps))
 </script>
 
 <template>
@@ -21,9 +20,7 @@ const api = computed(() => zagMenu.connect(state.value, send, normalizeProps));
         <li v-bind="api.getItemProps({ id: 'edit' })" :class="menuClasses.item">Edit</li>
         <li v-bind="api.getItemProps({ id: 'duplicate' })" :class="menuClasses.item">Duplicate</li>
         <li v-bind="api.getItemProps({ id: 'delete' })" :class="menuClasses.item">Delete</li>
-        <li v-bind="api.getItemProps({ id: 'export' })" :class="menuClasses.item">
-          Export
-        </li>
+        <li v-bind="api.getItemProps({ id: 'export' })" :class="menuClasses.item">Export</li>
       </ul>
     </div>
   </div>

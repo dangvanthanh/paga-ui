@@ -1,6 +1,8 @@
 ---
 import { ViewTransitions } from 'astro:transitions'
-import '../index.css'
+import { flex } from 'styled-system/patterns'
+import '@/styles/panda.css'
+import '@/styles/global.css'
 
 interface Props {
   title: string
@@ -20,13 +22,9 @@ const { title, description } = Astro.props
     <meta name="keywords" content="Panda,Tailwind,CSS,Paga UI,Components,Library,React,Solid,Vue" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="sitemap" href="/sitemap.xml" />
-
-    <!-- Icons -->
     <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-icon.png" type="image/png" sizes="180x180" />
-
-    <!-- OpenGraph -->
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://paga-ui.com/opengraph-image.png" />
     <meta property="og:url" content="https://paga-ui.com" />
@@ -36,8 +34,6 @@ const { title, description } = Astro.props
       content="Beautifully designed components built with Zag.js and PandaCSS"
     />
     <meta property="og:locale" content="en_US" />
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="@grizzly_codes" />
     <meta property="twitter:title" content="Paga UI" />
@@ -46,10 +42,17 @@ const { title, description } = Astro.props
       content="Beautifully designed components built with Zag.js and PandaCSS"
     />
     <meta name="twitter:image" content="https://paga-ui.com/twitter-image.png" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <ViewTransitions />
   </head>
   <body>
-    <slot />
+    <div class={flex({ direction: 'column', minH: '100vh' })}>
+      <slot />
+    </div>
   </body>
 </html>

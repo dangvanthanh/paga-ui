@@ -1,5 +1,24 @@
 ---
+import { flex } from '@/styled-system/patterns'
+import ComponentPlayground from './component-playground.vue'
 
+interface Props {
+  id: string
+}
+
+const { id } = Astro.props
 ---
 
-Component Preview
+<div
+  class={flex({
+    bg: 'gray.50',
+    align: 'center',
+    justify: 'center',
+    p: 6,
+    borderWidth: '1px',
+    borderColor: 'gray.100',
+    minH: 48
+  })}
+>
+  <ComponentPlayground id={id} client:load />
+</div>

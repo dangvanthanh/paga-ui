@@ -1,15 +1,15 @@
 <script setup>
-import * as zagDialog from '@zag-js/dialog';
-import { normalizeProps, useMachine } from '@zag-js/vue';
-import { computed, Teleport } from 'vue';
-import { css, cx } from '@styled-system/css';
-import { flex } from '@styled-system/patterns';
-import { button, input, dialog } from '@styled-system/recipes';
+import * as zagDialog from '@zag-js/dialog'
+import { normalizeProps, useMachine } from '@zag-js/vue'
+import { computed, Teleport } from 'vue'
+import { css, cx } from '@/styled-system/css'
+import { flex } from '@/styled-system/patterns'
+import { button, input, dialog } from '@/styled-system/recipes'
 
-const dialogClasses = dialog();
+const dialogClasses = dialog()
 
-const [state, send] = useMachine(zagDialog.machine({ id: '1' }));
-const api = computed(() => zagDialog.connect(state.value, send, normalizeProps));
+const [state, send] = useMachine(zagDialog.machine({ id: '1' }))
+const api = computed(() => zagDialog.connect(state.value, send, normalizeProps))
 </script>
 
 <template>
@@ -28,7 +28,10 @@ const api = computed(() => zagDialog.connect(state.value, send, normalizeProps))
               <small>&#x2715;</small>
             </button>
             <div :class="css({ my: 3 })">
-              <input placeholder="Enter name..." :class="cx(css({ w: 'full' }), input({ size: 'sm' }))" />
+              <input
+                placeholder="Enter name..."
+                :class="cx(css({ w: 'full' }), input({ size: 'sm' }))"
+              />
             </div>
             <div :class="flex({ justify: 'end' })">
               <button :class="button()">Save Changes</button>

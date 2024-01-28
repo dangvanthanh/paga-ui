@@ -1,20 +1,18 @@
 <script setup>
-import * as zagSwitch from "@zag-js/switch";
-import { normalizeProps, useMachine } from "@zag-js/vue";
-import { computed } from "vue";
-import { switches } from "@styled-system/recipes";
+import * as zagSwitch from '@zag-js/switch'
+import { normalizeProps, useMachine } from '@zag-js/vue'
+import { computed } from 'vue'
+import { switches } from '@/styled-system/recipes'
 
 const props = defineProps({
-  label: String
+  label: String,
 })
 
-const switchClasses = switches({ size: "sm" });
+const switchClasses = switches({ size: 'sm' })
 
-const [state, send] = useMachine(zagSwitch.machine({ id: "10" }));
+const [state, send] = useMachine(zagSwitch.machine({ id: '10' }))
 
-const api = computed(() =>
-  zagSwitch.connect(state.value, send, normalizeProps)
-);
+const api = computed(() => zagSwitch.connect(state.value, send, normalizeProps))
 </script>
 
 <template>

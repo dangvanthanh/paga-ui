@@ -1,15 +1,15 @@
 <script setup>
-import * as zagPopover from '@zag-js/popover';
-import { normalizeProps, useMachine } from '@zag-js/vue';
-import { computed, Teleport } from 'vue';
-import { css, cx } from '@styled-system/css';
-import { flex } from '@styled-system/patterns'
-import { input, popover } from '@styled-system/recipes';
+import * as zagPopover from '@zag-js/popover'
+import { normalizeProps, useMachine } from '@zag-js/vue'
+import { computed, Teleport } from 'vue'
+import { css, cx } from '@/styled-system/css'
+import { flex } from '@/styled-system/patterns'
+import { input, popover } from '@/styled-system/recipes'
 
-const popoverClasses = popover();
+const popoverClasses = popover()
 
-const [state, send] = useMachine(zagPopover.machine({ id: '1' }));
-const api = computed(() => zagPopover.connect(state.value, send, normalizeProps));
+const [state, send] = useMachine(zagPopover.machine({ id: '1' }))
+const api = computed(() => zagPopover.connect(state.value, send, normalizeProps))
 </script>
 
 <template>

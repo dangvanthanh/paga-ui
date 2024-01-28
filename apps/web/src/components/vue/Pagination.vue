@@ -1,39 +1,27 @@
 <script setup>
-import * as zagPagination from "@zag-js/pagination";
-import { normalizeProps, useMachine } from "@zag-js/vue";
-import { computed } from "vue";
-import { pagination } from "@styled-system/recipes";
-import { ChevronLeft, ChevronRight } from "lucide-vue-next";
+import * as zagPagination from '@zag-js/pagination'
+import { normalizeProps, useMachine } from '@zag-js/vue'
+import { computed } from 'vue'
+import { pagination } from '@/styled-system/recipes'
+import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 
 const props = defineProps({
   count: Number,
   pageSize: Number,
-});
+})
 
-const paginationClasses = pagination();
+const paginationClasses = pagination()
 
-const [state, send] = useMachine(
-  zagPagination.machine({ id: "1", count: props.count || 5 })
-);
+const [state, send] = useMachine(zagPagination.machine({ id: '1', count: props.count || 5 }))
 
-const api = computed(() =>
-  zagPagination.connect(state.value, send, normalizeProps)
-);
+const api = computed(() => zagPagination.connect(state.value, send, normalizeProps))
 
-api.value.setPageSize(props.pageSize || 1);
+api.value.setPageSize(props.pageSize || 1)
 </script>
 
 <template>
-  <nav
-    v-if="api.totalPages > 1"
-    v-bind="api.rootProps"
-    :class="paginationClasses.root"
-  >
-    <a
-      href="#previous"
-      v-bind="api.prevTriggerProps"
-      :class="paginationClasses.prevTrigger"
-    >
+  <nav v-if="api.totalPages > 1" v-bind="api.rootProps" :class="paginationClasses.root">
+    <a href="#previous" v-bind="api.prevTriggerProps" :class="paginationClasses.prevTrigger">
       <ChevronLeft />
     </a>
     <template
@@ -41,27 +29,17 @@ api.value.setPageSize(props.pageSize || 1);
       :key="page.type === 'page' ? page.value : `ellipsis-${i}`"
     >
       <template v-if="page.type === 'page'">
-        <a
-          :href="`#${page.value}`"
-          v-bind="api.getItemProps(page)"
-          :class="paginationClasses.item"
-        >
+        <a :href="`#${page.value}`" v-bind="api.getItemProps(page)" :class="paginationClasses.item">
           {{ page.value }}
         </a>
       </template>
       <span v-else>
-        <span
-          v-bind="api.getEllipsisProps({ index: i })"
-          :class="paginationClasses.ellipsis"
+        <span v-bind="api.getEllipsisProps({ index: i })" :class="paginationClasses.ellipsis"
           >&#8230;</span
         >
       </span>
     </template>
-    <a
-      href="#next"
-      v-bind="api.nextTriggerProps"
-      :class="paginationClasses.nextTrigger"
-    >
+    <a href="#next" v-bind="api.nextTriggerProps" :class="paginationClasses.nextTrigger">
       <ChevronRight />
     </a>
   </nav>

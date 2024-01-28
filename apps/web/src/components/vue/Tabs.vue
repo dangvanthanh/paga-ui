@@ -2,7 +2,7 @@
 import * as zagTabs from '@zag-js/tabs';
 import { normalizeProps, useMachine } from '@zag-js/vue';
 import { computed } from 'vue';
-import { tabs } from '@styled-system/recipes'
+import { tabs } from '@/styled-system/recipes'
 
 const tabsClasses = tabs()
 

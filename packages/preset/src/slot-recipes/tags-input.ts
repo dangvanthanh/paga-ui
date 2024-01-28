@@ -48,9 +48,6 @@ export const tagsInput = defineSlotRecipe({
       _highlighted: {
         borderColor: 'gray.400',
       },
-      _hidden: {
-        display: 'none',
-      },
     },
   },
 })

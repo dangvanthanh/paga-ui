@@ -1,24 +1,26 @@
 <script setup>
-import * as zagCombobox from '@zag-js/combobox';
-import { normalizeProps, useMachine } from '@zag-js/vue';
-import { computed, ref } from 'vue';
-import { combobox } from '@styled-system/recipes';
+import * as zagCombobox from '@zag-js/combobox'
+import { normalizeProps, useMachine } from '@zag-js/vue'
+import { computed, ref } from 'vue'
+import { combobox } from '@/styled-system/recipes'
 
 const comboboxClasses = combobox()
 
 const countriesData = [
   { label: 'Vietnam', code: 'VN' },
   { label: 'Canada', code: 'CA' },
-  { label: 'USA', code: 'US' }
+  { label: 'USA', code: 'US' },
 ]
 
-const countries = ref(countriesData);
+const countries = ref(countriesData)
 
-const collectionRef = computed(() => zagCombobox.collection({
-  items: countries.value,
-  itemToValue: (item) => item.code,
-  itemToString: (item) => item.label
-}));
+const collectionRef = computed(() =>
+  zagCombobox.collection({
+    items: countries.value,
+    itemToValue: (item) => item.code,
+    itemToString: (item) => item.label,
+  }),
+)
 
 const [state, send] = useMachine(
   zagCombobox.machine({
@@ -30,15 +32,17 @@ const [state, send] = useMachine(
       countries.value = countriesData
     },
     onInputValueChange({ value }) {
-      const filtered = countriesData.filter(item => item.label.toLowerCase().includes(value.toLowerCase()))
-      countries.value = filtered.length > 0 ? filtered : countriesData;
-    }
+      const filtered = countriesData.filter((item) =>
+        item.label.toLowerCase().includes(value.toLowerCase()),
+      )
+      countries.value = filtered.length > 0 ? filtered : countriesData
+    },
   }),
   {
     context: computed(() => ({
       collection: collectionRef.value,
-    }))
-  }
+    })),
+  },
 )
 
 const api = computed(() => zagCombobox.connect(state.value, send, normalizeProps))
@@ -53,7 +57,12 @@ const api = computed(() => zagCombobox.connect(state.value, send, normalizeProps
   </div>
   <div v-bind="api.positionerProps">
     <ul v-if="countries.length > 0" v-bind="api.contentProps" :class="comboboxClasses.content">
-      <li v-for="item in countries" :key="item.code" v-bind="api.getItemProps({ item })" :class="comboboxClasses.item">
+      <li
+        v-for="item in countries"
+        :key="item.code"
+        v-bind="api.getItemProps({ item })"
+        :class="comboboxClasses.item"
+      >
         {{ item.label }}
       </li>
     </ul>

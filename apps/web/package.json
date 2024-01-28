@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "web",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -34,11 +34,13 @@
     "@zag-js/popover": "^0.33.2",
     "@zag-js/progress": "^0.33.2",
     "@zag-js/radio-group": "^0.33.2",
+    "@zag-js/rating-group": "^0.33.2",
     "@zag-js/react": "^0.33.2",
     "@zag-js/select": "^0.33.2",
     "@zag-js/slider": "^0.33.2",
     "@zag-js/solid": "^0.33.2",
     "@zag-js/splitter": "^0.33.2",
+    "@zag-js/switch": "^0.33.2",
     "@zag-js/tabs": "^0.33.2",
     "@zag-js/tags-input": "^0.33.2",
     "@zag-js/toast": "^0.33.2",
@@ -57,6 +59,7 @@
     "@biomejs/biome": "1.5.3",
     "@pandacss/astro": "^0.25.0",
     "@pandacss/dev": "^0.28.0",
+    "@pandacss/types": "^0.28.0",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "prettier": "^3.2.4",

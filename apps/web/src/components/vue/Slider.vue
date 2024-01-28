@@ -1,17 +1,13 @@
 <script setup>
-import * as zagSlider from "@zag-js/slider";
-import { normalizeProps, useMachine } from "@zag-js/vue";
-import { computed } from "vue";
-import { slider } from "@styled-system/recipes";
+import * as zagSlider from '@zag-js/slider'
+import { normalizeProps, useMachine } from '@zag-js/vue'
+import { computed } from 'vue'
+import { slider } from '@/styled-system/recipes'
 
-const sliderClasses = slider({ size: "sm" });
+const sliderClasses = slider({ size: 'sm' })
 
-const [state, send] = useMachine(
-  zagSlider.machine({ id: '1', value: [30], min: 0, max: 100 })
-);
-const api = computed(() =>
-  zagSlider.connect(state.value, send, normalizeProps)
-);
+const [state, send] = useMachine(zagSlider.machine({ id: '1', value: [30], min: 0, max: 100 }))
+const api = computed(() => zagSlider.connect(state.value, send, normalizeProps))
 </script>
 
 <template>

@@ -1,3 +1,29 @@
-<script setup lang="ts">
-import { ref } from 'vue'
+<script setup>
+import * as zagSplitter from '@zag-js/splitter'
+import { normalizeProps, useMachine } from '@zag-js/vue'
+import { computed } from 'vue'
+
+const [state, send] = useMachine(
+  zagSplitter.machine({
+    id: '1',
+    size: [
+      { id: 'a', size: 50 },
+      { id: 'b', size: 50 },
+    ],
+  }),
+)
+
+const api = computed(() => zagSplitter.connect(state.value, send, normalizeProps))
 </script>
+
+<template>
+  <div v-bind="api.rootProps">
+    <div v-bind="api.getPanelProps({ id: 'a' })">
+      <p>A</p>
+    </div>
+    <div v-bind="api.getResizeTriggerProps({ id: 'a:b' })" />
+    <div v-bind="api.getPanelProps({ id: 'b' })">
+      <p>B</p>
+    </div>
+  </div>
+</template>

@@ -2,8 +2,8 @@
 import * as zagCheckbox from '@zag-js/checkbox';
 import { normalizeProps, useMachine } from '@zag-js/vue';
 import { computed } from 'vue';
-import { css } from '@styled-system/css';
-import { checkbox } from '@styled-system/recipes';
+import { css } from '@/styled-system/css';
+import { checkbox } from '@/styled-system/recipes';
 import { Check } from 'lucide-vue-next';
 
 const checkboxClasses = checkbox()

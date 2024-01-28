@@ -1,0 +1,33 @@
+---
+import DocsLayout from '@/layouts/docs.layout.astro'
+import { type CollectionEntry, getCollection } from 'astro:content'
+import { css } from '@/styled-system/css'
+
+type Props = {
+  entry: CollectionEntry<'components'> | CollectionEntry<'overview'>
+}
+
+export async function getStaticPaths() {
+  const collections = await getCollection('overview')
+
+  return collections.map((entry) => ({
+    params: { slug: entry.slug.split('/')[0] },
+    props: { entry },
+  }))
+}
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+---
+
+<DocsLayout title={entry.data.title}>
+  <div class={css({ bg: 'gray.100', px: 6 })}>
+    <div class={css({ w: 'full', maxW: '3xl', mx: 'auto', py: 16 })}>
+      <h2 class={css({ fontSize: '3xl', fontWeight: 'semibold', mt: 4 })}>{entry.data.title}</h2>
+      <p class={css({ color: 'gray.500' })}>{entry.data.description}</p>
+    </div>
+  </div>
+  <div class={css({ w: 'full', maxW: '3xl', mx: 'auto', py: 8 })}>
+    <Content />
+  </div>
+</DocsLayout>

@@ -2,7 +2,7 @@
   "name": "Paga UI",
   "display": "standalone",
   "start_url": "https://paga-ui.com",
-  "description": "eautifully designed components built with Zagjs and Panda CSS.",
+  "description": "Beautifully designed components built with Zagjs and Panda CSS.",
   "icons": [
     {
       "src": "/icon-192.png",

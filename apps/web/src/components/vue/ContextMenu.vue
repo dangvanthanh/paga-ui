@@ -1,14 +1,14 @@
 <script setup>
-import * as zagMenu from '@zag-js/menu';
-import { normalizeProps, useMachine } from '@zag-js/vue';
-import { computed } from 'vue';
-import { menu } from '@styled-system/recipes';
+import * as zagMenu from '@zag-js/menu'
+import { normalizeProps, useMachine } from '@zag-js/vue'
+import { computed } from 'vue'
+import { menu } from '@/styled-system/recipes'
 
-const menuClasses = menu();
+const menuClasses = menu()
 
-const [state, send] = useMachine(zagMenu.machine({ id: '2', 'aria-label': 'File' }));
+const [state, send] = useMachine(zagMenu.machine({ id: '2', 'aria-label': 'File' }))
 
-const api = computed(() => zagMenu.connect(state.value, send, normalizeProps));
+const api = computed(() => zagMenu.connect(state.value, send, normalizeProps))
 </script>
 
 <template>

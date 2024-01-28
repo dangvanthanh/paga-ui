@@ -1,22 +1,26 @@
 <script setup>
-import * as zagHoverCard from '@zag-js/hover-card';
-import { normalizeProps, useMachine } from '@zag-js/vue';
-import { computed, Teleport } from 'vue';
-import { css } from '@styled-system/css';
-import { flex } from '@styled-system/patterns';
-import { hoverCard } from '@styled-system/recipes';
+import * as zagHoverCard from '@zag-js/hover-card'
+import { normalizeProps, useMachine } from '@zag-js/vue'
+import { computed, Teleport } from 'vue'
+import { css } from '@/styled-system/css'
+import { flex } from '@/styled-system/patterns'
+import { hoverCard } from '@/styled-system/recipes'
 import Avatar from './Avatar.vue'
 
-const hoverCardClasses = hoverCard();
+const hoverCardClasses = hoverCard()
 
-const [state, send] = useMachine(zagHoverCard.machine({ id: '1' }));
+const [state, send] = useMachine(zagHoverCard.machine({ id: '1' }))
 
-const api = computed(() => zagHoverCard.connect(state.value, send, normalizeProps));
+const api = computed(() => zagHoverCard.connect(state.value, send, normalizeProps))
 </script>
 
-
 <template>
-  <a href="https://twitter.com/dangvanthanh" target="_blank" v-bind="api.triggerProps" :class="hoverCardClasses.trigger">
+  <a
+    href="https://twitter.com/dangvanthanh"
+    target="_blank"
+    v-bind="api.triggerProps"
+    :class="hoverCardClasses.trigger"
+  >
     @dangvanthanh
   </a>
   <Teleport to="body" v-if="api.isOpen">

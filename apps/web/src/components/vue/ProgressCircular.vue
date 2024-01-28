@@ -2,7 +2,7 @@
 import * as zagProgress from '@zag-js/progress'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
-import { progressCircular } from '@styled-system/recipes'
+import { progressCircular } from '@/styled-system/recipes'
 
 const zagProgressClasses = progressCircular()
 
