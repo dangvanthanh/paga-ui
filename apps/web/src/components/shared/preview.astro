@@ -1,6 +1,6 @@
 ---
 import { flex } from '@/styled-system/patterns'
-import ComponentPlayground from './component-playground.vue'
+import Playground from './playground.vue'
 
 interface Props {
   id: string
@@ -16,9 +16,11 @@ const { id } = Astro.props
     justify: 'center',
     p: 6,
     borderWidth: '1px',
-    borderColor: 'gray.100',
-    minH: 48
+    borderColor: 'gray.50',
+    minH: 48,
   })}
 >
-  <ComponentPlayground id={id} client:load />
+  <div class={flex({ maxW: 'lg', minW: 'lg', mx: 'auto', align: 'center', justify: 'center' })}>
+    <Playground id={id} client:load />
+  </div>
 </div>

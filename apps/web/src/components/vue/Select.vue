@@ -7,9 +7,9 @@ import { select } from '@/styled-system/recipes'
 const selectClasses = select()
 
 const selectData = [
-  { label: 'Vietnam', value: 'VN' },
-  { label: 'Canada', value: 'CA' },
-  { label: 'USA', value: 'US' },
+  { label: 'React', value: 'react' },
+  { label: 'Solid', value: 'solid' },
+  { label: 'Vue', value: 'vue' },
 ]
 
 const [state, send] = useMachine(

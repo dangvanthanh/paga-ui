@@ -14,12 +14,13 @@
   "scripts": {
     "dev": "tsup src/index.ts --watch",
     "build": "tsup src/index.ts --format=esm,cjs",
+    "lint": "bun run biome lint ./src/**/*.ts --apply",
     "format": "bun run biome format ./src/**/*.ts --write"
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
-    "@pandacss/dev": "^0.28.0",
-    "@pandacss/types": "^0.28.0",
+    "@pandacss/dev": "^0.29.0",
+    "@pandacss/types": "^0.29.0",
     "bun-types": "^1.0.25",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"

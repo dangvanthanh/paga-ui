@@ -7,9 +7,9 @@ import { combobox } from '@/styled-system/recipes'
 const comboboxClasses = combobox()
 
 const countriesData = [
-  { label: 'Vietnam', code: 'VN' },
-  { label: 'Canada', code: 'CA' },
-  { label: 'USA', code: 'US' },
+  { label: 'React', code: 'react' },
+  { label: 'Solid', code: 'solid' },
+  { label: 'Vue', code: 'vue' },
 ]
 
 const countries = ref(countriesData)
@@ -26,7 +26,7 @@ const [state, send] = useMachine(
   zagCombobox.machine({
     id: '1',
     collection: collectionRef.value,
-    value: ['VN'],
+    value: ['react'],
     onOpenChange(details) {
       if (!details.open) return
       countries.value = countriesData

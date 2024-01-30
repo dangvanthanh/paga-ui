@@ -10,7 +10,7 @@ Before you start, ensure that your Panda project is set up and ready to go. If n
 
 ### Install Paga UI Presets
 
-The next package you will need is @paga/preset. This package contains all the recipes and tokens explicitly built for Paga UI components.
+The next package you will need is `@paga/preset`. This package contains all the recipes and tokens explicitly built for Paga UI components.
 
 ```shell
 npm i @paga/preset -D
@@ -26,7 +26,6 @@ export default defineConfig({
   presets: ['@pandacss/dev/presets', '@paga/preset'],
   include: ['./src/**/*.{js,jsx,ts,tsx,vue,astro}'],
   exclude: [],
-  jsxFramework: 'vue' // react, solid or vue
   outdir: 'styled-system',
 })
 ```

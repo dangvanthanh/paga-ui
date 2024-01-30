@@ -4,7 +4,7 @@ export const progressLinear = defineSlotRecipe({
   className: 'progressLinear',
   slots: ['root', 'range', 'track'],
   base: {
-    root: { display: 'flex', alignItems: 'center' },
+    root: { display: 'flex', alignItems: 'center', minW: 'md' },
     range: {
       background: 'gray.800',
       h: 'full',

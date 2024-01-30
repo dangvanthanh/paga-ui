@@ -1,21 +1,18 @@
 ---
-import { getCollection } from 'astro:content'
+import { type CollectionEntry } from 'astro:content'
 import Layout from './layout.astro'
 import { flex } from 'styled-system/patterns'
 import { css } from 'styled-system/css'
+import Hero from '@/components/shared/hero.astro'
+import Sidebar from '@/components/shared/sidebar.astro'
 
 interface Props {
   title: string
   description?: string
+  entry: CollectionEntry<'components'> | CollectionEntry<'overview'>
 }
 
-const { title } = Astro.props
-const allOverview = await getCollection('overview')
-const allComponents = await getCollection('components')
-const sidebars = [
-  { title: 'Overview', items: [...allOverview] },
-  { title: 'Components', items: [...allComponents] },
-]
+const { title, entry } = Astro.props
 ---
 
 <Layout title={title}>
@@ -49,55 +46,27 @@ const sidebars = [
       </a>
     </div>
   </header>
-  <div class={flex({})}>
+  <div class={flex({ h: 'full' })}>
     <aside
       class={flex({
         direction: 'column',
         p: 6,
         w: 64,
         overflow: 'auto',
-        height: 'calc(100vh - 64px)',
+        height: 'full',
+        pos: 'fixed',
       })}
     >
-      <div class={flex({ direction: 'column', gap: 2 })}>
-        {
-          sidebars.map((sidebar) => (
-            <div class={flex({ direction: 'column' })}>
-              <div class={css({ fontWeight: 500, py: 2 })}>{sidebar.title}</div>
-              <ul
-                class={flex({
-                  direction: 'column',
-                  pl: 3,
-                  borderLeftWidth: '1px',
-                  borderColor: 'gray.200',
-                })}
-              >
-                {sidebar.items.map((item) => (
-                  <li
-                    class={css({
-                      px: 2,
-                      py: 1.5,
-                      fontSize: 'sm',
-                      rounded: 'sm',
-                      _hover: { bg: 'gray.50' },
-                    })}
-                  >
-                    <a
-                      class={css({ display: 'block' })}
-                      href={`/${sidebar.title.toLowerCase()}/${item.slug}`}
-                    >
-                      {item.data.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))
-        }
-      </div>
+      <Sidebar />
     </aside>
-    <main role="main" class={css({ display: 'flex', flexDirection: 'column', flex: '1 1 0%' })}>
-      <slot />
+    <main
+      role="main"
+      class={css({ display: 'flex', flexDirection: 'column', flex: '1 1 0%', ml: 64 })}
+    >
+      <Hero entry={entry} />
+      <div class={css({ w: 'full', maxW: '3xl', mx: 'auto', py: 8 })}>
+        <slot />
+      </div>
     </main>
   </div>
 </Layout>
