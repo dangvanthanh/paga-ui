@@ -1,5 +1,5 @@
 import { componentSchema, overviewSchema } from './_schemas'
-import { defineCollection, z } from 'astro:content'
+import { defineCollection } from 'astro:content'
 
 const componentsCollection = defineCollection({
   type: 'content',

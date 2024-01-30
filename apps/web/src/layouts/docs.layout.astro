@@ -9,7 +9,7 @@ import Sidebar from '@/components/shared/sidebar.astro'
 interface Props {
   title: string
   description?: string
-  entry: CollectionEntry<'components'> | CollectionEntry<'overview'>
+  entry?: CollectionEntry<'components'> | CollectionEntry<'overview'>
 }
 
 const { title, entry } = Astro.props
@@ -63,7 +63,7 @@ const { title, entry } = Astro.props
       role="main"
       class={css({ display: 'flex', flexDirection: 'column', flex: '1 1 0%', ml: 64 })}
     >
-      <Hero entry={entry} />
+      {entry && <Hero entry={entry} />}
       <div class={css({ w: 'full', maxW: '3xl', mx: 'auto', py: 8 })}>
         <slot />
       </div>
