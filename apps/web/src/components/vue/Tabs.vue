@@ -4,7 +4,7 @@ import { normalizeProps, useMachine } from '@zag-js/vue';
 import { computed } from 'vue';
 import { tabs } from '@/styled-system/recipes'
 
-const tabsClasses = tabs()
+const styles = tabs()
 
 const data = [
   { value: 'item-1', label: 'React', content: 'React is the library for web and native user interfaces.' },
@@ -17,15 +17,15 @@ const api = computed(() => zagTabs.connect(state.value, send, normalizeProps));
 </script>
 
 <template>
-  <div ref="ref" v-bind="api.rootProps" :class="tabsClasses.root">
-    <div v-bind="api.tablistProps" :class="tabsClasses.list">
+  <div ref="ref" v-bind="api.rootProps" :class="styles.root">
+    <div v-bind="api.tablistProps" :class="styles.list">
       <button v-for="item in data" v-bind="api.getTriggerProps({ value: item.value })" :key="item.value"
-        :class="tabsClasses.trigger">
+        :class="styles.trigger">
         {{ item.label }}
       </button>
     </div>
     <div v-for="item in data" v-bind="api.getContentProps({ value: item.value })" key="{item.value}"
-      :class="tabsClasses.content">
+      :class="styles.content">
       <p>{{ item.content }}</p>
     </div>
   </div>

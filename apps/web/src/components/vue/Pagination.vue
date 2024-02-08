@@ -10,7 +10,7 @@ const props = defineProps({
   pageSize: Number,
 })
 
-const paginationClasses = pagination()
+const styles = pagination()
 
 const [state, send] = useMachine(zagPagination.machine({ id: '1', count: props.count || 5 }))
 
@@ -20,26 +20,21 @@ api.value.setPageSize(props.pageSize || 1)
 </script>
 
 <template>
-  <nav v-if="api.totalPages > 1" v-bind="api.rootProps" :class="paginationClasses.root">
-    <a href="#previous" v-bind="api.prevTriggerProps" :class="paginationClasses.prevTrigger">
+  <nav v-if="api.totalPages > 1" v-bind="api.rootProps" :class="styles.root">
+    <a href="#previous" v-bind="api.prevTriggerProps" :class="styles.prevTrigger">
       <ChevronLeft />
     </a>
-    <template
-      v-for="(page, i) in api.pages"
-      :key="page.type === 'page' ? page.value : `ellipsis-${i}`"
-    >
+    <template v-for="(page, i) in api.pages" :key="page.type === 'page' ? page.value : `ellipsis-${i}`">
       <template v-if="page.type === 'page'">
-        <a :href="`#${page.value}`" v-bind="api.getItemProps(page)" :class="paginationClasses.item">
+        <a :href="`#${page.value}`" v-bind="api.getItemProps(page)" :class="styles.item">
           {{ page.value }}
         </a>
       </template>
       <span v-else>
-        <span v-bind="api.getEllipsisProps({ index: i })" :class="paginationClasses.ellipsis"
-          >&#8230;</span
-        >
+        <span v-bind="api.getEllipsisProps({ index: i })" :class="styles.ellipsis">&#8230;</span>
       </span>
     </template>
-    <a href="#next" v-bind="api.nextTriggerProps" :class="paginationClasses.nextTrigger">
+    <a href="#next" v-bind="api.nextTriggerProps" :class="styles.nextTrigger">
       <ChevronRight />
     </a>
   </nav>

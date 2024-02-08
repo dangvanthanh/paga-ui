@@ -4,7 +4,7 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 import { radioGroup } from '@/styled-system/recipes'
 
-const radioGroupClasses = radioGroup()
+const styles = radioGroup()
 
 const items = [
   { id: 'svelte', label: 'Svelte' },
@@ -18,18 +18,11 @@ const api = computed(() => zagRadio.connect(state.value, send, normalizeProps))
 </script>
 
 <template>
-  <div v-bind="api.rootProps" :class="radioGroupClasses.root">
-    <div v-for="opt in items" :key="opt.id" :class="radioGroupClasses.item">
-      <label v-bind="api.getItemProps({ value: opt.id })" :class="radioGroupClasses.label">
-        <div
-          v-bind="api.getItemControlProps({ value: opt.id })"
-          :class="radioGroupClasses.itemControl"
-        />
-        <span
-          v-bind="api.getItemTextProps({ value: opt.id })"
-          :class="radioGroupClasses.itemText"
-          >{{ opt.label }}</span
-        >
+  <div v-bind="api.rootProps" :class="styles.root">
+    <div v-for="opt in items" :key="opt.id" :class="styles.item">
+      <label v-bind="api.getItemProps({ value: opt.id })" :class="styles.label">
+        <div v-bind="api.getItemControlProps({ value: opt.id })" :class="styles.itemControl" />
+        <span v-bind="api.getItemTextProps({ value: opt.id })" :class="styles.itemText">{{ opt.label }}</span>
         <input v-bind="api.getItemHiddenInputProps({ value: opt.id })" />
       </label>
     </div>

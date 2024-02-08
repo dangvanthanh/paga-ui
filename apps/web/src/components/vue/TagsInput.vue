@@ -4,7 +4,7 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 import { tagsInput } from '@/styled-system/recipes'
 
-const tagsInputClasses = tagsInput()
+const styles = tagsInput()
 
 const [state, send] = useMachine(
   zagTagsInput.machine({
@@ -16,18 +16,18 @@ const api = computed(() => zagTagsInput.connect(state.value, send, normalizeProp
 </script>
 
 <template>
-  <div ref="ref" v-bind="api.rootProps" :class="tagsInputClasses.root">
-    <div :class="tagsInputClasses.control">
+  <div ref="ref" v-bind="api.rootProps" :class="styles.root">
+    <div :class="styles.control">
       <span v-for="(value, index) in api.value" :key="index">
-        <div v-bind="api.getItemProps({ index, value })" :class="tagsInputClasses.tag">
+        <div v-bind="api.getItemProps({ index, value })" :class="styles.tag">
           <span>{{ value }}</span>
           <button v-bind="api.getItemDeleteTriggerProps({ index, value })">
             <small>&#x2715;</small>
           </button>
         </div>
-        <input v-bind="api.getItemInputProps({ index, value })" :class="tagsInputClasses.input" />
+        <input v-bind="api.getItemInputProps({ index, value })" :class="styles.input" />
       </span>
-      <input placeholder="Add tag..." v-bind="api.inputProps" :class="tagsInputClasses.input" />
+      <input placeholder="Add tag..." v-bind="api.inputProps" :class="styles.input" />
     </div>
   </div>
 </template>

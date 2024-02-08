@@ -2,6 +2,9 @@
 import * as zagSplitter from '@zag-js/splitter'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
+import { spliter } from '@/styled-system/recipes';
+
+const styles = spliter();
 
 const [state, send] = useMachine(
   zagSplitter.machine({
@@ -17,12 +20,12 @@ const api = computed(() => zagSplitter.connect(state.value, send, normalizeProps
 </script>
 
 <template>
-  <div v-bind="api.rootProps">
-    <div v-bind="api.getPanelProps({ id: 'a' })">
+  <div v-bind="api.rootProps" :class="styles.root">
+    <div v-bind="api.getPanelProps({ id: 'a' })" :class="styles.panel">
       <p>A</p>
     </div>
-    <div v-bind="api.getResizeTriggerProps({ id: 'a:b' })" />
-    <div v-bind="api.getPanelProps({ id: 'b' })">
+    <div v-bind="api.getResizeTriggerProps({ id: 'a:b' })" :class="styles.resizeTrigger" />
+    <div v-bind="api.getPanelProps({ id: 'b' })" :class="styles.panel">
       <p>B</p>
     </div>
   </div>

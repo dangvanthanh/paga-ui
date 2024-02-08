@@ -20,6 +20,7 @@ import { ratingGroup } from './rating-group'
 import { segmentedControl } from './segmented-control'
 import { select } from './select'
 import { slider } from './slider'
+import { spliter } from './splitter'
 import { switchRecipe } from './switch'
 import { tabs } from './tabs'
 import { tagsInput } from './tags-input'
@@ -50,6 +51,7 @@ export const slotRecipes = {
   segmentedControl,
   select,
   slider,
+  spliter,
   switches: switchRecipe,
   tabs,
   tagsInput,

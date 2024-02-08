@@ -4,7 +4,7 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, onMounted, Teleport } from 'vue'
 import { menu } from '@/styled-system/recipes'
 
-const menuClasses = menu()
+const styles = menu()
 
 const [fileMenuState, fileMenuSend, fileMenuMachine] = useMachine(zagMenu.machine({ id: '3' }))
 const fileMenuApi = computed(() =>
@@ -29,35 +29,35 @@ const shareMenuTriggerProps = computed(() =>
 </script>
 
 <template>
-  <button v-bind="fileMenuApi.triggerProps" :class="menuClasses.trigger">
+  <button v-bind="fileMenuApi.triggerProps" :class="styles.trigger">
     File <span aria-hidden>▾</span>
   </button>
   <Teleport to="body">
     <div v-bind="fileMenuApi.positionerProps">
-      <ul ref="fileMenuRef" v-bind="fileMenuApi.contentProps" :class="menuClasses.content">
-        <li v-bind="fileMenuApi.getItemProps({ id: 'new-file' })" :class="menuClasses.item">
+      <ul ref="fileMenuRef" v-bind="fileMenuApi.contentProps" :class="styles.content">
+        <li v-bind="fileMenuApi.getItemProps({ id: 'new-file' })" :class="styles.item">
           New file
         </li>
-        <li v-bind="fileMenuApi.getItemProps({ id: 'new-win' })" :class="menuClasses.item">
+        <li v-bind="fileMenuApi.getItemProps({ id: 'new-win' })" :class="styles.item">
           New window
         </li>
-        <li v-bind="shareMenuTriggerProps" :class="menuClasses.item">Share</li>
-        <li v-bind="fileMenuApi.getItemProps({ id: 'print' })" :class="menuClasses.item">Print</li>
-        <li v-bind="fileMenuApi.getItemProps({ id: 'help' })" :class="menuClasses.item">Help</li>
+        <li v-bind="shareMenuTriggerProps" :class="styles.item">Share</li>
+        <li v-bind="fileMenuApi.getItemProps({ id: 'print' })" :class="styles.item">Print</li>
+        <li v-bind="fileMenuApi.getItemProps({ id: 'help' })" :class="styles.item">Help</li>
       </ul>
     </div>
   </Teleport>
 
   <Teleport to="body">
     <div v-bind="shareMenuApi.positionerProps">
-      <ul ref="shareMenuRef" v-bind="shareMenuApi.contentProps" :class="menuClasses.content">
-        <li v-bind="shareMenuApi.getItemProps({ id: 'messages' })" :class="menuClasses.item">
+      <ul ref="shareMenuRef" v-bind="shareMenuApi.contentProps" :class="styles.content">
+        <li v-bind="shareMenuApi.getItemProps({ id: 'messages' })" :class="styles.item">
           Messages
         </li>
-        <li v-bind="shareMenuApi.getItemProps({ id: 'airdrop' })" :class="menuClasses.item">
+        <li v-bind="shareMenuApi.getItemProps({ id: 'airdrop' })" :class="styles.item">
           Airdrop
         </li>
-        <li v-bind="shareMenuApi.getItemProps({ id: 'whatsapp' })" :class="menuClasses.item">
+        <li v-bind="shareMenuApi.getItemProps({ id: 'whatsapp' })" :class="styles.item">
           WhatsApp
         </li>
       </ul>

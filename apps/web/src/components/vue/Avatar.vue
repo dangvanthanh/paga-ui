@@ -9,7 +9,7 @@ const props = defineProps({
   src: String,
 })
 
-const avatarClasses = avatar()
+const styles = avatar()
 
 const [state, send] = useMachine(zagAvatar.machine({ id: '1' }))
 
@@ -17,15 +17,10 @@ const api = computed(() => zagAvatar.connect(state.value, send, normalizeProps))
 </script>
 
 <template>
-  <div v-bind="api.rootProps" v-bind:class="avatarClasses.root">
-    <span v-bind="api.fallbackProps" v-bind:class="avatarClasses.fallback">{{
+  <div v-bind="api.rootProps" v-bind:class="styles.root">
+    <span v-bind="api.fallbackProps" v-bind:class="styles.fallback">{{
       props.fallback || 'PG'
     }}</span>
-    <img
-      v-bind:alt="props.fallback"
-      v-bind:src="props.src"
-      v-bind="api.imageProps"
-      v-bind:class="avatarClasses.image"
-    />
+    <img v-bind:alt="props.fallback" v-bind:src="props.src" v-bind="api.imageProps" v-bind:class="styles.image" />
   </div>
 </template>

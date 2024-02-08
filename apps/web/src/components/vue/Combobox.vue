@@ -4,7 +4,7 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, ref } from 'vue'
 import { combobox } from '@/styled-system/recipes'
 
-const comboboxClasses = combobox()
+const styles = combobox()
 
 const countriesData = [
   { label: 'React', code: 'react' },
@@ -49,20 +49,15 @@ const api = computed(() => zagCombobox.connect(state.value, send, normalizeProps
 </script>
 
 <template>
-  <div v-bind="api.rootProps" :class="comboboxClasses.root">
-    <div v-bind="api.controlProps" :class="comboboxClasses.control">
-      <input v-bind="api.inputProps" :class="comboboxClasses.input" />
-      <button v-bind="api.triggerProps" :class="comboboxClasses.trigger">▼</button>
+  <div v-bind="api.rootProps" :class="styles.root">
+    <div v-bind="api.controlProps" :class="styles.control">
+      <input v-bind="api.inputProps" :class="styles.input" />
+      <button v-bind="api.triggerProps" :class="styles.trigger">▼</button>
     </div>
   </div>
   <div v-bind="api.positionerProps">
-    <ul v-if="countries.length > 0" v-bind="api.contentProps" :class="comboboxClasses.content">
-      <li
-        v-for="item in countries"
-        :key="item.code"
-        v-bind="api.getItemProps({ item })"
-        :class="comboboxClasses.item"
-      >
+    <ul v-if="countries.length > 0" v-bind="api.contentProps" :class="styles.content">
+      <li v-for="item in countries" :key="item.code" v-bind="api.getItemProps({ item })" :class="styles.item">
         {{ item.label }}
       </li>
     </ul>

@@ -15,9 +15,9 @@
   "dependencies": {
     "@astrojs/check": "^0.4.1",
     "@astrojs/mdx": "^2.1.1",
-    "@astrojs/react": "^3.0.9",
+    "@astrojs/react": "^3.0.10",
     "@astrojs/solid-js": "^4.0.1",
-    "@astrojs/vercel": "^7.1.1",
+    "@astrojs/vercel": "^7.3.0",
     "@astrojs/vue": "^4.0.8",
     "@zag-js/accordion": "^0.34.0",
     "@zag-js/avatar": "^0.34.0",
@@ -49,13 +49,13 @@
     "@zag-js/toggle-group": "^0.34.0",
     "@zag-js/tooltip": "^0.34.0",
     "@zag-js/vue": "^0.34.0",
-    "astro": "^4.3.2",
+    "astro": "^4.3.5",
     "lucide-vue-next": "^0.323.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "solid-js": "^1.8.14",
     "typescript": "^5.3.3",
-    "vue": "^3.4.15"
+    "vue": "^3.4.16"
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
@@ -63,7 +63,7 @@
     "@pandacss/dev": "^0.30.1",
     "@pandacss/types": "^0.30.1",
     "@types/react": "^18.2.55",
-    "@types/react-dom": "^18.2.18",
+    "@types/react-dom": "^18.2.19",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0"
   }

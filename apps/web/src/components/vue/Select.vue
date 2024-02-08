@@ -4,7 +4,7 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, Teleport } from 'vue'
 import { select } from '@/styled-system/recipes'
 
-const selectClasses = select()
+const styles = select()
 
 const selectData = [
   { label: 'React', value: 'react' },
@@ -26,8 +26,8 @@ const api = computed(() => zagSelect.connect(state.value, send, normalizeProps))
 </script>
 
 <template>
-  <div :class="selectClasses.root">
-    <button v-bind="api.triggerProps" :class="selectClasses.trigger">
+  <div :class="styles.root">
+    <button v-bind="api.triggerProps" :class="styles.trigger">
       <span>{{ api.valueAsString || 'Select option' }}</span>
       <span>▼</span>
     </button>
@@ -35,17 +35,10 @@ const api = computed(() => zagSelect.connect(state.value, send, normalizeProps))
 
   <Teleport to="body">
     <div v-bind="api.positionerProps">
-      <ul v-bind="api.contentProps" :class="selectClasses.content">
-        <li
-          v-for="item in selectData"
-          :key="item.value"
-          v-bind="api.getItemProps({ item })"
-          :class="selectClasses.item"
-        >
-          <span :class="selectClasses.itemLabel">{{ item.label }}</span>
-          <span v-bind="api.getItemIndicatorProps({ item })" :class="selectClasses.itemIndicator"
-            >✓</span
-          >
+      <ul v-bind="api.contentProps" :class="styles.content">
+        <li v-for="item in selectData" :key="item.value" v-bind="api.getItemProps({ item })" :class="styles.item">
+          <span :class="styles.itemLabel">{{ item.label }}</span>
+          <span v-bind="api.getItemIndicatorProps({ item })" :class="styles.itemIndicator">✓</span>
         </li>
       </ul>
     </div>

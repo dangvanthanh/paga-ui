@@ -7,7 +7,7 @@ import { flex } from '@/styled-system/patterns'
 import { hoverCard } from '@/styled-system/recipes'
 import Avatar from './Avatar.vue'
 
-const hoverCardClasses = hoverCard()
+const styles = hoverCard()
 
 const [state, send] = useMachine(zagHoverCard.machine({ id: '1' }))
 
@@ -15,18 +15,13 @@ const api = computed(() => zagHoverCard.connect(state.value, send, normalizeProp
 </script>
 
 <template>
-  <a
-    href="https://twitter.com/dangvanthanh"
-    target="_blank"
-    v-bind="api.triggerProps"
-    :class="hoverCardClasses.trigger"
-  >
+  <a href="https://twitter.com/dangvanthanh" target="_blank" v-bind="api.triggerProps" :class="styles.trigger">
     @dangvanthanh
   </a>
   <Teleport to="body" v-if="api.isOpen">
     <div v-bind="api.positionerProps">
-      <div v-bind="api.contentProps" :class="hoverCardClasses.content">
-        <div v-bind="api.arrowProps" :class="hoverCardClasses.arrow">
+      <div v-bind="api.contentProps" :class="styles.content">
+        <div v-bind="api.arrowProps" :class="styles.arrow">
           <div v-bind="api.arrowTipProps"></div>
         </div>
         <div :class="flex({ align: 'flex-start', gap: 3 })">
