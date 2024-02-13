@@ -21,7 +21,7 @@
     "@biomejs/biome": "1.5.3",
     "@pandacss/dev": "^0.30.2",
     "@pandacss/types": "^0.30.2",
-    "tsup": "^8.0.1",
+    "tsup": "^8.0.2",
     "typescript": "^5.3.3"
   }
 }
