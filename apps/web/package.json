@@ -13,7 +13,7 @@
     "format": "pnpm dlx @biomejs/biome format ./src/**/*.ts --write"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.4",
+    "@astrojs/check": "^0.5.5",
     "@astrojs/mdx": "^2.1.1",
     "@astrojs/react": "^3.0.10",
     "@astrojs/solid-js": "^4.0.1",
@@ -50,7 +50,7 @@
     "@zag-js/tooltip": "^0.36.3",
     "@zag-js/vue": "^0.36.3",
     "astro": "^4.4.0",
-    "lucide-vue-next": "^0.331.0",
+    "lucide-vue-next": "^0.334.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "solid-js": "^1.8.15",
@@ -60,9 +60,9 @@
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
     "@pandacss/astro": "^0.25.0",
-    "@pandacss/dev": "^0.31.0",
-    "@pandacss/types": "^0.31.0",
-    "@types/react": "^18.2.56",
+    "@pandacss/dev": "^0.32.0",
+    "@pandacss/types": "^0.32.0",
+    "@types/react": "^18.2.57",
     "@types/react-dom": "^18.2.19",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0"
