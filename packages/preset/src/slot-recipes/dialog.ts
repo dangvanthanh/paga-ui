@@ -32,7 +32,7 @@ export const dialog = defineSlotRecipe({
       boxShadow: 'sm',
       minW: 'sm',
       position: 'relative',
-      p: 3,
+      p: 6,
       zIndex: 102,
       _open: {
         animation: 'dialogIn',

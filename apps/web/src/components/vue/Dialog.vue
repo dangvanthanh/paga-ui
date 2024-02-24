@@ -24,14 +24,12 @@ const api = computed(() => zagDialog.connect(state.value, send, normalizeProps))
             <p v-bind="api.descriptionProps" :class="styles.description">
               Make changes to your profile here. Click save when you are done.
             </p>
-            <button v-bind="api.closeTriggerProps" :class="styles.closeTrigger">
-              <small>&#x2715;</small>
-            </button>
-            <div :class="css({ my: 3 })">
+            <div :class="css({ my: 6 })">
               <input placeholder="Enter name..." :class="cx(css({ w: 'full' }), input({ size: 'sm' }))" />
             </div>
-            <div :class="flex({ justify: 'end' })">
-              <button :class="button()">Save Changes</button>
+            <div :class="flex({ justify: 'end', gap: 2 })">
+              <button :class="button({ variant: 'ghost' })" v-bind="api.closeTriggerProps">Cancel</button>
+              <button :class="button()">Save</button>
             </div>
           </div>
         </div>

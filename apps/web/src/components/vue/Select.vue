@@ -18,7 +18,7 @@ const [state, send] = useMachine(
     collection: zagSelect.collection({
       items: selectData,
     }),
-    value: ['VN'],
+    value: ['vue'],
   }),
 )
 

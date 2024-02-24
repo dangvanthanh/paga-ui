@@ -19,8 +19,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
-    "@pandacss/dev": "^0.32.0",
-    "@pandacss/types": "^0.32.0",
+    "@pandacss/dev": "^0.32.1",
+    "@pandacss/types": "^0.32.1",
     "tsup": "^8.0.2",
     "typescript": "^5.3.3"
   }
