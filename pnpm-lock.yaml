@@ -25,19 +25,19 @@ importers:
         version: 0.5.6(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)
       '@astrojs/mdx':
         specifier: ^2.1.1
-        version: 2.1.1(astro@4.4.6)
+        version: 2.1.1(astro@4.4.8)
       '@astrojs/react':
         specifier: ^3.0.10
-        version: 3.0.10(@types/react-dom@18.2.19)(@types/react@18.2.60)(react-dom@18.2.0)(react@18.2.0)(vite@5.1.4)
+        version: 3.0.10(@types/react-dom@18.2.19)(@types/react@18.2.61)(react-dom@18.2.0)(react@18.2.0)(vite@5.1.4)
       '@astrojs/solid-js':
         specifier: ^4.0.1
         version: 4.0.1(solid-js@1.8.15)(vite@5.1.4)
       '@astrojs/vercel':
         specifier: ^7.3.4
-        version: 7.3.4(astro@4.4.6)(react@18.2.0)
+        version: 7.3.4(astro@4.4.8)(react@18.2.0)
       '@astrojs/vue':
         specifier: ^4.0.8
-        version: 4.0.8(@babel/core@7.24.0)(astro@4.4.6)(vite@5.1.4)(vue@3.4.21)
+        version: 4.0.8(@babel/core@7.24.0)(astro@4.4.8)(vite@5.1.4)(vue@3.4.21)
       '@zag-js/accordion':
         specifier: ^0.38.0
         version: 0.38.0
@@ -129,11 +129,11 @@ importers:
         specifier: ^0.38.0
         version: 0.38.0(vue@3.4.21)
       astro:
-        specifier: ^4.4.6
-        version: 4.4.6(typescript@5.3.3)
+        specifier: ^4.4.8
+        version: 4.4.8(typescript@5.3.3)
       lucide-vue-next:
-        specifier: ^0.341.0
-        version: 0.341.0(vue@3.4.21)
+        specifier: ^0.344.0
+        version: 0.344.0(vue@3.4.21)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -155,7 +155,7 @@ importers:
         version: 1.5.3
       '@pandacss/astro':
         specifier: ^0.25.0
-        version: 0.25.0(astro@4.4.6)(postcss@8.4.35)(typescript@5.3.3)
+        version: 0.25.0(astro@4.4.8)(postcss@8.4.35)(typescript@5.3.3)
       '@pandacss/dev':
         specifier: ^0.33.0
         version: 0.33.0(typescript@5.3.3)
@@ -163,8 +163,8 @@ importers:
         specifier: ^0.33.0
         version: 0.33.0
       '@types/react':
-        specifier: ^18.2.60
-        version: 18.2.60
+        specifier: ^18.2.61
+        version: 18.2.61
       '@types/react-dom':
         specifier: ^18.2.19
         version: 18.2.19
@@ -197,12 +197,12 @@ importers:
 
 packages:
 
-  /@ampproject/remapping@2.2.1:
-    resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==}
+  /@ampproject/remapping@2.3.0:
+    resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.4
-      '@jridgewell/trace-mapping': 0.3.23
+      '@jridgewell/gen-mapping': 0.3.5
+      '@jridgewell/trace-mapping': 0.3.24
 
   /@astrojs/check@0.5.6(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3):
     resolution: {integrity: sha512-i7j5ogoSg/Bu2NV5zVvwCo9R4kGWXWsJDejxpCu9F7iNNlR333u8EwpP4bpeKASDtjOA1rXKo9ogUTEVlIAHqA==}
@@ -284,7 +284,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@astrojs/mdx@2.1.1(astro@4.4.6):
+  /@astrojs/mdx@2.1.1(astro@4.4.8):
     resolution: {integrity: sha512-AgGFdE7HOGmoFooGvMSatkA9FiSKwyVW7ImHot/bXJ6uAbFfu6iG2ht18Cf1pT22Hda/6iSCGWusFvBv0/EnKQ==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -293,7 +293,7 @@ packages:
       '@astrojs/markdown-remark': 4.2.1
       '@mdx-js/mdx': 3.0.1
       acorn: 8.11.3
-      astro: 4.4.6(typescript@5.3.3)
+      astro: 4.4.8(typescript@5.3.3)
       es-module-lexer: 1.4.1
       estree-util-visit: 2.0.0
       github-slugger: 2.0.0
@@ -316,7 +316,7 @@ packages:
     dependencies:
       prismjs: 1.29.0
 
-  /@astrojs/react@3.0.10(@types/react-dom@18.2.19)(@types/react@18.2.60)(react-dom@18.2.0)(react@18.2.0)(vite@5.1.4):
+  /@astrojs/react@3.0.10(@types/react-dom@18.2.19)(@types/react@18.2.61)(react-dom@18.2.0)(react@18.2.0)(vite@5.1.4):
     resolution: {integrity: sha512-uGRIwKMAn7tva2vxXMyoVIGxWFr0rjZ8ZWIlkTG/vIpnAjD2nM8Cz6B8j7yzj176jvl6gZ6xTbTVPm09aeK0Yw==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -325,7 +325,7 @@ packages:
       react: ^17.0.2 || ^18.0.0
       react-dom: ^17.0.2 || ^18.0.0
     dependencies:
-      '@types/react': 18.2.60
+      '@types/react': 18.2.61
       '@types/react-dom': 18.2.19
       '@vitejs/plugin-react': 4.2.1(vite@5.1.4)
       react: 18.2.0
@@ -364,7 +364,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@astrojs/vercel@7.3.4(astro@4.4.6)(react@18.2.0):
+  /@astrojs/vercel@7.3.4(astro@4.4.8)(react@18.2.0):
     resolution: {integrity: sha512-EiuTe51/5ERiA1UbZCn8G2NmfDgb3x2SdfyVpVszpttS43k7wpPxbMqYNi5DgEsisFPGCcsu818exRi3m52CXA==}
     peerDependencies:
       astro: ^4.2.0
@@ -372,7 +372,7 @@ packages:
       '@astrojs/internal-helpers': 0.2.1
       '@vercel/analytics': 1.2.2(react@18.2.0)
       '@vercel/nft': 0.24.4
-      astro: 4.4.6(typescript@5.3.3)
+      astro: 4.4.8(typescript@5.3.3)
       esbuild: 0.19.12
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -384,7 +384,7 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/vue@4.0.8(@babel/core@7.24.0)(astro@4.4.6)(vite@5.1.4)(vue@3.4.21):
+  /@astrojs/vue@4.0.8(@babel/core@7.24.0)(astro@4.4.8)(vite@5.1.4)(vue@3.4.21):
     resolution: {integrity: sha512-RnNA4wFy4HvQxU4vswH3c6sa7Br1F/JVzWdQvHYLP4CEe5OZ6yhEqxAUUo3LDkF+sNn23XznFLOPqZak6ziBwg==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -395,7 +395,7 @@ packages:
       '@vitejs/plugin-vue-jsx': 3.1.0(vite@5.1.4)(vue@3.4.21)
       '@vue/babel-plugin-jsx': 1.2.1(@babel/core@7.24.0)
       '@vue/compiler-sfc': 3.4.21
-      astro: 4.4.6(typescript@5.3.3)
+      astro: 4.4.8(typescript@5.3.3)
       vue: 3.4.21(typescript@5.3.3)
     transitivePeerDependencies:
       - '@babel/core'
@@ -418,7 +418,7 @@ packages:
     resolution: {integrity: sha512-fQfkg0Gjkza3nf0c7/w6Xf34BW4YvzNfACRLmmb7XRLa6XHdR+K9AlJlxneFfWYf6uhOzuzZVTjF/8KfndZANw==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@ampproject/remapping': 2.2.1
+      '@ampproject/remapping': 2.3.0
       '@babel/code-frame': 7.23.5
       '@babel/generator': 7.23.6
       '@babel/helper-compilation-targets': 7.23.6
@@ -441,8 +441,8 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/types': 7.24.0
-      '@jridgewell/gen-mapping': 0.3.4
-      '@jridgewell/trace-mapping': 0.3.23
+      '@jridgewell/gen-mapping': 0.3.5
+      '@jridgewell/trace-mapping': 0.3.24
       jsesc: 2.5.2
 
   /@babel/helper-annotate-as-pure@7.22.5:
@@ -1273,27 +1273,27 @@ packages:
       wrap-ansi-cjs: /wrap-ansi@7.0.0
     dev: true
 
-  /@jridgewell/gen-mapping@0.3.4:
-    resolution: {integrity: sha512-Oud2QPM5dHviZNn4y/WhhYKSXksv+1xLEIsNrAbGcFzUN3ubqWRFT5gwPchNc5NuzILOU4tPBDTZ4VwhL8Y7cw==}
+  /@jridgewell/gen-mapping@0.3.5:
+    resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      '@jridgewell/set-array': 1.1.2
+      '@jridgewell/set-array': 1.2.1
       '@jridgewell/sourcemap-codec': 1.4.15
-      '@jridgewell/trace-mapping': 0.3.23
+      '@jridgewell/trace-mapping': 0.3.24
 
   /@jridgewell/resolve-uri@3.1.2:
     resolution: {integrity: sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==}
     engines: {node: '>=6.0.0'}
 
-  /@jridgewell/set-array@1.1.2:
-    resolution: {integrity: sha512-xnkseuNADM0gt2bs+BvhO0p78Mk762YnZdsuzFV018NoG1Sj1SCQvpSqa7XUaTam5vAGasABV9qXASMKnFMwMw==}
+  /@jridgewell/set-array@1.2.1:
+    resolution: {integrity: sha512-R8gLRTZeyp03ymzP/6Lil/28tGeGEzhx1q2k703KGWRAI1VdvPIXdG70VJc2pAMw3NA6JKL5hhFu1sJX0Mnn/A==}
     engines: {node: '>=6.0.0'}
 
   /@jridgewell/sourcemap-codec@1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
 
-  /@jridgewell/trace-mapping@0.3.23:
-    resolution: {integrity: sha512-9/4foRoUKp8s96tSkh8DlAAc5A0Ty8vLXld+l9gjKKY6ckwI8G15f0hskGmuLZu78ZlGa1vtsfOa+lnB4vG6Jg==}
+  /@jridgewell/trace-mapping@0.3.24:
+    resolution: {integrity: sha512-+VaWXDa6+l6MhflBvVXjIEAzb59nQ2JUK3bwRp2zRpPtU+8TFRy9Gg/5oIcNlkEL5PGlBFGfemUVvIgLnTzq7Q==}
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
@@ -1346,8 +1346,8 @@ packages:
       - supports-color
     dev: false
 
-  /@medv/finder@3.1.0:
-    resolution: {integrity: sha512-ojkXjR3K0Zz3jnCR80tqPL+0yvbZk/lEodb6RIVjLz7W8RVA2wrw8ym/CzCpXO9SYVUIKHFUpc7jvf8UKfIM3w==}
+  /@medv/finder@3.2.0:
+    resolution: {integrity: sha512-JmU7JIBwyL8RAzefvzALT4sP2M0biGk8i2invAgpQmma/QgfsaqoHIvJ7S0YC8n9hUVG8X3Leul2nGa06PvhbQ==}
 
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1367,13 +1367,13 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
 
-  /@pandacss/astro@0.25.0(astro@4.4.6)(postcss@8.4.35)(typescript@5.3.3):
+  /@pandacss/astro@0.25.0(astro@4.4.8)(postcss@8.4.35)(typescript@5.3.3):
     resolution: {integrity: sha512-4CU0n+Rf/om7+BPrcd2dbUJjXrxUJ8KoCTCOprha8PYI9oPi8viEVNoKrEyjek3DXT9Sr+Dr9scvQVxqASdsWA==}
     peerDependencies:
       astro: '>=2.x'
     dependencies:
       '@pandacss/postcss': 0.25.0(typescript@5.3.3)
-      astro: 4.4.6(typescript@5.3.3)
+      astro: 4.4.8(typescript@5.3.3)
       postcss-load-config: 4.0.2(postcss@8.4.35)
     transitivePeerDependencies:
       - jsdom
@@ -1956,10 +1956,10 @@ packages:
   /@types/react-dom@18.2.19:
     resolution: {integrity: sha512-aZvQL6uUbIJpjZk4U8JZGbau9KDeAwMfmhyWorxgBkqDIEf6ROjRozcmPIicqsUwPUjbkDfHKgGee1Lq65APcA==}
     dependencies:
-      '@types/react': 18.2.60
+      '@types/react': 18.2.61
 
-  /@types/react@18.2.60:
-    resolution: {integrity: sha512-dfiPj9+k20jJrLGOu9Nf6eqxm2EyJRrq2NvwOFsfbb7sFExZ9WELPs67UImHj3Ayxg8ruTtKtNnbjaF8olPq0A==}
+  /@types/react@18.2.61:
+    resolution: {integrity: sha512-NURTN0qNnJa7O/k4XUkEW2yfygA+NxS0V5h1+kp9jPwhzZy95q3ADoGMP0+JypMhrZBTTgjKAUlTctde1zzeQA==}
     dependencies:
       '@types/prop-types': 15.7.11
       '@types/scheduler': 0.16.8
@@ -2999,8 +2999,8 @@ packages:
     hasBin: true
     dev: false
 
-  /astro@4.4.6(typescript@5.3.3):
-    resolution: {integrity: sha512-kns2TtiMYTyDPgcvtaQjMfBhY/F/2+O3eSX4XWH13FFQW1hp7AcTXfGwq8SvJ14JNoU4bsKeJbaB9CxUN9ZQlQ==}
+  /astro@4.4.8(typescript@5.3.3):
+    resolution: {integrity: sha512-jAAfzvgHOfuZmqJjnSDownVNuWKYmsGkrFqecEppHarMA/cZ5QIboW6GQHZ8eGZQdtYRCjON3h4i64XFZfuwSg==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -3014,7 +3014,7 @@ packages:
       '@babel/plugin-transform-react-jsx': 7.23.4(@babel/core@7.24.0)
       '@babel/traverse': 7.24.0
       '@babel/types': 7.24.0
-      '@medv/finder': 3.1.0
+      '@medv/finder': 3.2.0
       '@types/babel__core': 7.20.5
       acorn: 8.11.3
       aria-query: 5.3.0
@@ -3155,16 +3155,16 @@ packages:
   /balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
-  /bare-events@2.2.0:
-    resolution: {integrity: sha512-Yyyqff4PIFfSuthCZqLlPISTWHmnQxoPuAvkmgzsJEmG3CesdIv6Xweayl0JkCZJSB2yYIdJyEz97tpxNhgjbg==}
+  /bare-events@2.2.1:
+    resolution: {integrity: sha512-9GYPpsPFvrWBkelIhOhTWtkeZxVxZOdb3VnFTCzlOo3OjvmTvzLoZFUT8kNFACx0vJej6QPney1Cf9BvzCNE/A==}
     requiresBuild: true
     optional: true
 
-  /bare-fs@2.2.0:
-    resolution: {integrity: sha512-+VhW202E9eTVGkX7p+TNXtZC4RTzj9JfJW7PtfIbZ7mIQ/QT9uOafQTx7lx2n9ERmWsXvLHF4hStAFn4gl2mQw==}
+  /bare-fs@2.2.1:
+    resolution: {integrity: sha512-+CjmZANQDFZWy4PGbVdmALIwmt33aJg8qTkVjClU6X4WmZkTPBDxRHiBn7fpqEWEfF3AC2io++erpViAIQbSjg==}
     requiresBuild: true
     dependencies:
-      bare-events: 2.2.0
+      bare-events: 2.2.1
       bare-os: 2.2.0
       bare-path: 2.1.0
       streamx: 2.16.1
@@ -4636,8 +4636,8 @@ packages:
     dependencies:
       yallist: 4.0.0
 
-  /lucide-vue-next@0.341.0(vue@3.4.21):
-    resolution: {integrity: sha512-JmSfYVVxi/NhuE/xodVaa9vlRd9YyRDApbqguGJZ4P/MpGzFErS/zKtwI6ZibCXiqbBYJVYdltqlHX76BGcBnw==}
+  /lucide-vue-next@0.344.0(vue@3.4.21):
+    resolution: {integrity: sha512-YvexWTTzcRScmOKUvbQvexDmIK63x6NT8lV3Cot9TShQyy3PpFxfx5i2wZNhaZfV8bKqTMRXgCs372rnrtPYKQ==}
     peerDependencies:
       vue: '>=3.0.1'
     dependencies:
@@ -5754,8 +5754,8 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
-  /prebuild-install@7.1.1:
-    resolution: {integrity: sha512-jAXscXWMcCK8GgCoHOfIr0ODh5ai8mj63L2nWrjuAgXE6tDyYGnx4/8o/rCgU+B4JSyZBKbeZqzhtwtC3ovxjw==}
+  /prebuild-install@7.1.2:
+    resolution: {integrity: sha512-UnNke3IQb6sgarcZIDU3gbMeTp/9SSU1DAIkil7PrqG1vZlBtY5msYccSKSHDqa3hNg436IXK+SNImReuA1wEQ==}
     engines: {node: '>=10'}
     hasBin: true
     requiresBuild: true
@@ -6148,7 +6148,7 @@ packages:
       color: 4.2.3
       detect-libc: 2.0.2
       node-addon-api: 6.1.0
-      prebuild-install: 7.1.1
+      prebuild-install: 7.1.2
       semver: 7.6.0
       simple-get: 4.0.1
       tar-fs: 3.0.5
@@ -6263,7 +6263,7 @@ packages:
       fast-fifo: 1.3.2
       queue-tick: 1.0.1
     optionalDependencies:
-      bare-events: 2.2.0
+      bare-events: 2.2.1
     optional: true
 
   /string-width@4.2.3:
@@ -6361,7 +6361,7 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     hasBin: true
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.4
+      '@jridgewell/gen-mapping': 0.3.5
       commander: 4.1.1
       glob: 10.3.10
       lines-and-columns: 1.2.4
@@ -6410,7 +6410,7 @@ packages:
       pump: 3.0.0
       tar-stream: 3.1.7
     optionalDependencies:
-      bare-fs: 2.2.0
+      bare-fs: 2.2.1
       bare-path: 2.1.0
     optional: true
 
