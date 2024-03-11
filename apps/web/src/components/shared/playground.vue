@@ -1,7 +1,9 @@
 <script setup>
 import Accordion from '../vue/Accordion.vue'
 import Avatar from '../vue/Avatar.vue'
+import Carousel from '../vue/Carousel.vue'
 import Checkbox from '../vue/Checkbox.vue'
+import Clipboard from '../vue/Clipboard.vue'
 import ColorPicker from '../vue/ColorPicker.vue'
 import Combobox from '../vue/Combobox.vue'
 import ContextMenu from '../vue/ContextMenu.vue'
@@ -35,7 +37,9 @@ const props = defineProps(['id'])
 const components = {
   Accordion,
   Avatar,
+  Carousel,
   Checkbox,
+  Clipboard,
   ColorPicker,
   Combobox,
   ContextMenu,

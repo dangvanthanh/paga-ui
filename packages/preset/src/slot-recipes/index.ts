@@ -1,6 +1,9 @@
 import { accordion } from './accordion'
 import { avatar } from './avatar'
+import { carousel } from './carousel'
 import { checkbox } from './checkbox'
+import { clipboard } from './clipboard'
+import { collapsible } from './collapsible'
 import { colorPicker } from './color-picker'
 import { combobox } from './combobox'
 import { dialog } from './dialog'
@@ -31,7 +34,10 @@ import { tooltip } from './tooltip'
 export const slotRecipes = {
   accordion,
   avatar,
+  carousel,
   checkbox,
+  clipboard,
+  collapsible,
   colorPicker,
   combobox,
   dialog,

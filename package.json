@@ -6,7 +6,8 @@
 		"build": "turbo build",
 		"dev": "turbo dev",
 		"lint": "turbo lint",
-		"format": "turbo format"
+		"format": "turbo format",
+		"prepare": "husky"
 	},
 	"keywords": [
 		"Zagjs",
@@ -15,12 +16,21 @@
 	"author": "Dang Van Thanh",
 	"license": "MIT",
 	"devDependencies": {
+		"@biomejs/biome": "1.6.0",
 		"@paga/preset": "workspace:*",
 		"@paga/typescript-config": "workspace:*",
-		"turbo": "^1.12.4"
+		"husky": "^9.0.11",
+		"lint-staged": "^15.2.2",
+		"turbo": "^1.12.5"
 	},
 	"packageManager": "pnpm@8.9.0",
 	"engines": {
 		"node": ">=18"
+	},
+	"lint-staged": {
+		"*.{js,ts}": [
+			"pnpm run lint",
+			"pnpm run format"
+		]
 	}
 }
