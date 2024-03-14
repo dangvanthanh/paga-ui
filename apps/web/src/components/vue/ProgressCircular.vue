@@ -8,7 +8,9 @@ const styles = progressCircular()
 
 const [state, send] = useMachine(zagProgress.machine({ id: '1', value: 80 }))
 
-const api = computed(() => zagProgress.connect(state.value, send, normalizeProps))
+const api = computed(() =>
+	zagProgress.connect(state.value, send, normalizeProps),
+)
 </script>
 
 <template>

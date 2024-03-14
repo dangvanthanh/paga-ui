@@ -5,8 +5,8 @@ import { computed } from 'vue'
 import { avatar } from '@/styled-system/recipes'
 
 const props = defineProps({
-  fallback: String,
-  src: String,
+	fallback: String,
+	src: String,
 })
 
 const styles = avatar()

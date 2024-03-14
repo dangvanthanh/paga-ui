@@ -8,7 +8,9 @@ const styles = progressLinear()
 
 const [state, send] = useMachine(zagProgress.machine({ id: '1', value: 20 }))
 
-const api = computed(() => zagProgress.connect(state.value, send, normalizeProps))
+const api = computed(() =>
+	zagProgress.connect(state.value, send, normalizeProps),
+)
 </script>
 
 <template>

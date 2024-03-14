@@ -5,7 +5,7 @@ import { computed } from 'vue'
 import { switches } from '@/styled-system/recipes'
 
 const props = defineProps({
-  label: String,
+	label: String,
 })
 
 const styles = switches({ size: 'sm' })

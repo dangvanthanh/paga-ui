@@ -7,45 +7,47 @@ import { combobox } from '@/styled-system/recipes'
 const styles = combobox()
 
 const countriesData = [
-  { label: 'React', code: 'react' },
-  { label: 'Solid', code: 'solid' },
-  { label: 'Vue', code: 'vue' },
+	{ label: 'React', code: 'react' },
+	{ label: 'Solid', code: 'solid' },
+	{ label: 'Vue', code: 'vue' },
 ]
 
 const countries = ref(countriesData)
 
 const collectionRef = computed(() =>
-  zagCombobox.collection({
-    items: countries.value,
-    itemToValue: (item) => item.code,
-    itemToString: (item) => item.label,
-  }),
+	zagCombobox.collection({
+		items: countries.value,
+		itemToValue: (item) => item.code,
+		itemToString: (item) => item.label,
+	}),
 )
 
 const [state, send] = useMachine(
-  zagCombobox.machine({
-    id: '1',
-    collection: collectionRef.value,
-    value: ['react'],
-    onOpenChange(details) {
-      if (!details.open) return
-      countries.value = countriesData
-    },
-    onInputValueChange({ value }) {
-      const filtered = countriesData.filter((item) =>
-        item.label.toLowerCase().includes(value.toLowerCase()),
-      )
-      countries.value = filtered.length > 0 ? filtered : countriesData
-    },
-  }),
-  {
-    context: computed(() => ({
-      collection: collectionRef.value,
-    })),
-  },
+	zagCombobox.machine({
+		id: '1',
+		collection: collectionRef.value,
+		value: ['react'],
+		onOpenChange(details) {
+			if (!details.open) return
+			countries.value = countriesData
+		},
+		onInputValueChange({ value }) {
+			const filtered = countriesData.filter((item) =>
+				item.label.toLowerCase().includes(value.toLowerCase()),
+			)
+			countries.value = filtered.length > 0 ? filtered : countriesData
+		},
+	}),
+	{
+		context: computed(() => ({
+			collection: collectionRef.value,
+		})),
+	},
 )
 
-const api = computed(() => zagCombobox.connect(state.value, send, normalizeProps))
+const api = computed(() =>
+	zagCombobox.connect(state.value, send, normalizeProps),
+)
 </script>
 
 <template>

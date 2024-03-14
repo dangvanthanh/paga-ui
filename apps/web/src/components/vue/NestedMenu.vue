@@ -6,25 +6,29 @@ import { menu } from '@/styled-system/recipes'
 
 const styles = menu()
 
-const [fileMenuState, fileMenuSend, fileMenuMachine] = useMachine(zagMenu.machine({ id: '3' }))
+const [fileMenuState, fileMenuSend, fileMenuMachine] = useMachine(
+	zagMenu.machine({ id: '3' }),
+)
 const fileMenuApi = computed(() =>
-  zagMenu.connect(fileMenuState.value, fileMenuSend, normalizeProps),
+	zagMenu.connect(fileMenuState.value, fileMenuSend, normalizeProps),
 )
 
-const [shareMenuState, shareMenuSend, shareMenuMachine] = useMachine(zagMenu.machine({ id: '' }))
+const [shareMenuState, shareMenuSend, shareMenuMachine] = useMachine(
+	zagMenu.machine({ id: '' }),
+)
 const shareMenuApi = computed(() =>
-  zagMenu.connect(shareMenuState.value, shareMenuSend, normalizeProps),
+	zagMenu.connect(shareMenuState.value, shareMenuSend, normalizeProps),
 )
 
 onMounted(() => {
-  setTimeout(() => {
-    fileMenuApi.value.setChild(shareMenuMachine)
-    shareMenuApi.value.setParent(fileMenuMachine)
-  }, 1000)
+	setTimeout(() => {
+		fileMenuApi.value.setChild(shareMenuMachine)
+		shareMenuApi.value.setParent(fileMenuMachine)
+	}, 1000)
 })
 
 const shareMenuTriggerProps = computed(() =>
-  fileMenuApi.value.getTriggerItemProps(shareMenuApi.value),
+	fileMenuApi.value.getTriggerItemProps(shareMenuApi.value),
 )
 </script>
 

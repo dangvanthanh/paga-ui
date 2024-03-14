@@ -11,7 +11,9 @@ const styles = hoverCard()
 
 const [state, send] = useMachine(zagHoverCard.machine({ id: '1' }))
 
-const api = computed(() => zagHoverCard.connect(state.value, send, normalizeProps))
+const api = computed(() =>
+	zagHoverCard.connect(state.value, send, normalizeProps),
+)
 </script>
 
 <template>

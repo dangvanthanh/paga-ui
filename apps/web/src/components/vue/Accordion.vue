@@ -7,19 +7,24 @@ import { accordion } from '@/styled-system/recipes'
 const styles = accordion()
 
 const data = [
-  {
-    title: 'Solid',
-    content: 'Simple and performant reactivity for building user interfaces.',
-  },
-  {
-    title: 'Vue',
-    content: 'An approachable, performant and versatile famework for building web user interfaces.',
-  },
+	{
+		title: 'Solid',
+		content: 'Simple and performant reactivity for building user interfaces.',
+	},
+	{
+		title: 'Vue',
+		content:
+			'An approachable, performant and versatile famework for building web user interfaces.',
+	},
 ]
 
-const [state, send] = useMachine(zagAccordion.machine({ id: '1', value: ['Solid'] }))
+const [state, send] = useMachine(
+	zagAccordion.machine({ id: '1', value: ['Solid'] }),
+)
 
-const api = computed(() => zagAccordion.connect(state.value, send, normalizeProps))
+const api = computed(() =>
+	zagAccordion.connect(state.value, send, normalizeProps),
+)
 </script>
 
 <template>

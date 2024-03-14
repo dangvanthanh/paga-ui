@@ -6,8 +6,12 @@ import { editable } from '@/styled-system/recipes'
 
 const styles = editable()
 
-const [state, send] = useMachine(zagEditable.machine({ id: '1', value: 'Editable...' }))
-const api = computed(() => zagEditable.connect(state.value, send, normalizeProps))
+const [state, send] = useMachine(
+	zagEditable.machine({ id: '1', value: 'Editable...' }),
+)
+const api = computed(() =>
+	zagEditable.connect(state.value, send, normalizeProps),
+)
 </script>
 
 <template>

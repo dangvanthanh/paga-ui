@@ -6,15 +6,19 @@ import { pagination } from '@/styled-system/recipes'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 
 const props = defineProps({
-  count: Number,
-  pageSize: Number,
+	count: Number,
+	pageSize: Number,
 })
 
 const styles = pagination()
 
-const [state, send] = useMachine(zagPagination.machine({ id: '1', count: props.count || 5 }))
+const [state, send] = useMachine(
+	zagPagination.machine({ id: '1', count: props.count || 5 }),
+)
 
-const api = computed(() => zagPagination.connect(state.value, send, normalizeProps))
+const api = computed(() =>
+	zagPagination.connect(state.value, send, normalizeProps),
+)
 
 api.value.setPageSize(props.pageSize || 1)
 </script>

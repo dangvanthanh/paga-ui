@@ -8,7 +8,9 @@ const styles = fileUpload()
 
 const [state, send] = useMachine(zagFileUpload.machine({ id: '1' }))
 
-const api = computed(() => zagFileUpload.connect(state.value, send, normalizeProps))
+const api = computed(() =>
+	zagFileUpload.connect(state.value, send, normalizeProps),
+)
 </script>
 
 <template>

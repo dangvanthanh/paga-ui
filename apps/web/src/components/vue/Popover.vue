@@ -9,7 +9,9 @@ import { input, popover } from '@/styled-system/recipes'
 const styles = popover()
 
 const [state, send] = useMachine(zagPopover.machine({ id: '1' }))
-const api = computed(() => zagPopover.connect(state.value, send, normalizeProps))
+const api = computed(() =>
+	zagPopover.connect(state.value, send, normalizeProps),
+)
 </script>
 
 <template>

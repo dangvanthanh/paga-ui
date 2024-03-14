@@ -7,9 +7,9 @@ import { radioGroup } from '@/styled-system/recipes'
 const styles = radioGroup()
 
 const items = [
-  { id: 'svelte', label: 'Svelte' },
-  { id: 'solid', label: 'Solid' },
-  { id: 'vue', label: 'Vue' },
+	{ id: 'svelte', label: 'Svelte' },
+	{ id: 'solid', label: 'Solid' },
+	{ id: 'vue', label: 'Vue' },
 ]
 
 const [state, send] = useMachine(zagRadio.machine({ id: '1', value: 'vue' }))

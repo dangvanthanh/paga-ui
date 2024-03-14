@@ -6,8 +6,12 @@ import { numberInput } from '@/styled-system/recipes'
 
 const styles = numberInput()
 
-const [state, send] = useMachine(zagNumberInput.machine({ id: '1', value: '14' }))
-const api = computed(() => zagNumberInput.connect(state.value, send, normalizeProps))
+const [state, send] = useMachine(
+	zagNumberInput.machine({ id: '1', value: '14' }),
+)
+const api = computed(() =>
+	zagNumberInput.connect(state.value, send, normalizeProps),
+)
 </script>
 
 <template>

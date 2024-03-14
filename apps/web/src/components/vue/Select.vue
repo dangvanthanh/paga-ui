@@ -7,19 +7,19 @@ import { select } from '@/styled-system/recipes'
 const styles = select()
 
 const selectData = [
-  { label: 'React', value: 'react' },
-  { label: 'Solid', value: 'solid' },
-  { label: 'Vue', value: 'vue' },
+	{ label: 'React', value: 'react' },
+	{ label: 'Solid', value: 'solid' },
+	{ label: 'Vue', value: 'vue' },
 ]
 
 const [state, send] = useMachine(
-  zagSelect.machine({
-    id: '1',
-    collection: zagSelect.collection({
-      items: selectData,
-    }),
-    value: ['vue'],
-  }),
+	zagSelect.machine({
+		id: '1',
+		collection: zagSelect.collection({
+			items: selectData,
+		}),
+		value: ['vue'],
+	}),
 )
 
 const api = computed(() => zagSelect.connect(state.value, send, normalizeProps))

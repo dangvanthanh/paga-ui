@@ -1,15 +1,17 @@
 <script setup>
-import * as zagCheckbox from '@zag-js/checkbox';
-import { normalizeProps, useMachine } from '@zag-js/vue';
-import { computed } from 'vue';
-import { css } from '@/styled-system/css';
-import { checkbox } from '@/styled-system/recipes';
-import { Check } from 'lucide-vue-next';
+import * as zagCheckbox from '@zag-js/checkbox'
+import { normalizeProps, useMachine } from '@zag-js/vue'
+import { computed } from 'vue'
+import { css } from '@/styled-system/css'
+import { checkbox } from '@/styled-system/recipes'
+import { Check } from 'lucide-vue-next'
 
 const styles = checkbox()
 
-const [state, send] = useMachine(zagCheckbox.machine({ id: '1' }));
-const api = computed(() => zagCheckbox.connect(state.value, send, normalizeProps))
+const [state, send] = useMachine(zagCheckbox.machine({ id: '1' }))
+const api = computed(() =>
+	zagCheckbox.connect(state.value, send, normalizeProps),
+)
 </script>
 
 <template>

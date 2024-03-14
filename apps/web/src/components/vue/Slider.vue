@@ -6,7 +6,9 @@ import { slider } from '@/styled-system/recipes'
 
 const styles = slider({ size: 'sm' })
 
-const [state, send] = useMachine(zagSlider.machine({ id: '1', value: [30], min: 0, max: 100 }))
+const [state, send] = useMachine(
+	zagSlider.machine({ id: '1', value: [30], min: 0, max: 100 }),
+)
 const api = computed(() => zagSlider.connect(state.value, send, normalizeProps))
 </script>
 

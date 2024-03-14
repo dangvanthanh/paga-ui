@@ -3,16 +3,16 @@ import DocsLayout from '@/layouts/docs.layout.astro'
 import { type CollectionEntry, getCollection } from 'astro:content'
 
 type Props = {
-  entry: CollectionEntry<'components'> | CollectionEntry<'overview'>
+	entry: CollectionEntry<'components'> | CollectionEntry<'overview'>
 }
 
 export async function getStaticPaths() {
-  const collections = await getCollection('components')
+	const collections = await getCollection('components')
 
-  return collections.map((entry) => ({
-    params: { slug: entry.slug.split('/')[0] },
-    props: { entry },
-  }))
+	return collections.map((entry) => ({
+		params: { slug: entry.slug.split('/')[0] },
+		props: { entry },
+	}))
 }
 
 const { entry } = Astro.props

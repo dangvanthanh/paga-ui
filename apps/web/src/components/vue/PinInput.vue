@@ -7,7 +7,9 @@ import { pinInput } from '@/styled-system/recipes'
 const styles = pinInput()
 
 const [state, send] = useMachine(zagPinInput.machine({ id: '1' }))
-const api = computed(() => zagPinInput.connect(state.value, send, normalizeProps))
+const api = computed(() =>
+	zagPinInput.connect(state.value, send, normalizeProps),
+)
 </script>
 
 <template>

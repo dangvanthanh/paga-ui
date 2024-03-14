@@ -1,19 +1,32 @@
 <script setup>
-import * as zagTabs from '@zag-js/tabs';
-import { normalizeProps, useMachine } from '@zag-js/vue';
-import { computed } from 'vue';
+import * as zagTabs from '@zag-js/tabs'
+import { normalizeProps, useMachine } from '@zag-js/vue'
+import { computed } from 'vue'
 import { tabs } from '@/styled-system/recipes'
 
 const styles = tabs()
 
 const data = [
-  { value: 'item-1', label: 'React', content: 'React is the library for web and native user interfaces.' },
-  { value: 'item-2', label: 'Vue', content: 'An approachable, performant and versatile famework for building web user interfaces.' },
-  { value: 'item-3', label: 'Solid', content: 'Simple and performant reactivity for building user interfaces.' },
-];
+	{
+		value: 'item-1',
+		label: 'React',
+		content: 'React is the library for web and native user interfaces.',
+	},
+	{
+		value: 'item-2',
+		label: 'Vue',
+		content:
+			'An approachable, performant and versatile famework for building web user interfaces.',
+	},
+	{
+		value: 'item-3',
+		label: 'Solid',
+		content: 'Simple and performant reactivity for building user interfaces.',
+	},
+]
 
-const [state, send] = useMachine(zagTabs.machine({ id: '1', value: 'item-1' }));
-const api = computed(() => zagTabs.connect(state.value, send, normalizeProps));
+const [state, send] = useMachine(zagTabs.machine({ id: '1', value: 'item-1' }))
+const api = computed(() => zagTabs.connect(state.value, send, normalizeProps))
 </script>
 
 <template>

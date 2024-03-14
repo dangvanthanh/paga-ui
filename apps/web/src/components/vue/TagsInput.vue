@@ -7,12 +7,14 @@ import { tagsInput } from '@/styled-system/recipes'
 const styles = tagsInput()
 
 const [state, send] = useMachine(
-  zagTagsInput.machine({
-    id: '1',
-    value: ['React', 'Vue', 'Solid'],
-  }),
+	zagTagsInput.machine({
+		id: '1',
+		value: ['React', 'Vue', 'Solid'],
+	}),
 )
-const api = computed(() => zagTagsInput.connect(state.value, send, normalizeProps))
+const api = computed(() =>
+	zagTagsInput.connect(state.value, send, normalizeProps),
+)
 </script>
 
 <template>

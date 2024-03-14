@@ -7,7 +7,9 @@ import { tooltip } from '@/styled-system/recipes'
 const styles = tooltip()
 
 const [state, send] = useMachine(zagTooltip.machine({ id: '1' }))
-const api = computed(() => zagTooltip.connect(state.value, send, normalizeProps))
+const api = computed(() =>
+	zagTooltip.connect(state.value, send, normalizeProps),
+)
 </script>
 
 <template>

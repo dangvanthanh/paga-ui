@@ -13,7 +13,7 @@
   "author": "Dang Van Thanh",
   "license": "MIT",
   "devDependencies": {
-    "@biomejs/biome": "1.6.1",
+    "@paga/biome-config": "workspace:*",
     "@paga/preset": "workspace:*",
     "@paga/typescript-config": "workspace:*",
     "husky": "^9.0.11",

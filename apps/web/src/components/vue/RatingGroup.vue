@@ -7,7 +7,9 @@ import { ratingGroup } from '@/styled-system/recipes'
 
 const styles = ratingGroup()
 
-const [state, send] = useMachine(zagRating.machine({ id: '1', value: 3, allowHalf: true }))
+const [state, send] = useMachine(
+	zagRating.machine({ id: '1', value: 3, allowHalf: true }),
+)
 
 const api = computed(() => zagRating.connect(state.value, send, normalizeProps))
 </script>

@@ -7,12 +7,14 @@ import { segmentedControl } from '@/styled-system/recipes'
 const styles = segmentedControl()
 
 const items = [
-  { label: 'React', value: 'react-paga' },
-  { label: 'Vue', value: 'vue-paga' },
-  { label: 'Svelte', value: 'svelte-paga' },
+	{ label: 'React', value: 'react-paga' },
+	{ label: 'Vue', value: 'vue-paga' },
+	{ label: 'Svelte', value: 'svelte-paga' },
 ]
 
-const [state, send] = useMachine(zagRadio.machine({ id: '1', value: 'vue-paga' }))
+const [state, send] = useMachine(
+	zagRadio.machine({ id: '1', value: 'vue-paga' }),
+)
 
 const api = computed(() => zagRadio.connect(state.value, send, normalizeProps))
 </script>

@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
 import Layout from './layout.astro'
 import { flex } from 'styled-system/patterns'
 import { css } from 'styled-system/css'
@@ -7,9 +7,9 @@ import Hero from '@/components/shared/hero.astro'
 import Sidebar from '@/components/shared/sidebar.astro'
 
 interface Props {
-  title: string
-  description?: string
-  entry?: CollectionEntry<'components'> | CollectionEntry<'overview'>
+	title: string
+	description?: string
+	entry?: CollectionEntry<'components'> | CollectionEntry<'overview'>
 }
 
 const { title, entry } = Astro.props

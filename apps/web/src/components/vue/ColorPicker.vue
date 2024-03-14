@@ -10,15 +10,25 @@ import { colorPicker } from '@/styled-system/recipes'
 const styles = colorPicker()
 
 const [state, send] = useMachine(
-  zagColorPicker.machine({
-    id: '1',
-    value: zagColorPicker.parse('#202020'),
-  }),
+	zagColorPicker.machine({
+		id: '1',
+		value: zagColorPicker.parse('#202020'),
+	}),
 )
 
-const api = computed(() => zagColorPicker.connect(state.value, send, normalizeProps))
+const api = computed(() =>
+	zagColorPicker.connect(state.value, send, normalizeProps),
+)
 
-const presets = ref(['#202020', '#d13415', '#ca244d', '#c2298a', '#ffba18', '#b0e64c', '#7ce2fe'])
+const presets = ref([
+	'#202020',
+	'#d13415',
+	'#ca244d',
+	'#c2298a',
+	'#ffba18',
+	'#b0e64c',
+	'#7ce2fe',
+])
 </script>
 
 <template>

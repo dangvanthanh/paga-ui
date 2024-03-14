@@ -2,21 +2,23 @@
 import * as zagSplitter from '@zag-js/splitter'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
-import { spliter } from '@/styled-system/recipes';
+import { spliter } from '@/styled-system/recipes'
 
-const styles = spliter();
+const styles = spliter()
 
 const [state, send] = useMachine(
-  zagSplitter.machine({
-    id: '1',
-    size: [
-      { id: 'a', size: 50 },
-      { id: 'b', size: 50 },
-    ],
-  }),
+	zagSplitter.machine({
+		id: '1',
+		size: [
+			{ id: 'a', size: 50 },
+			{ id: 'b', size: 50 },
+		],
+	}),
 )
 
-const api = computed(() => zagSplitter.connect(state.value, send, normalizeProps))
+const api = computed(() =>
+	zagSplitter.connect(state.value, send, normalizeProps),
+)
 </script>
 
 <template>

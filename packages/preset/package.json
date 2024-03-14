@@ -1,27 +1,27 @@
 {
-  "name": "@paga/preset",
-  "private": true,
-  "version": "0.0.0",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    }
-  },
-  "scripts": {
-    "dev": "tsup src/index.ts --watch",
-    "build": "tsup src/index.ts --format=esm,cjs",
-    "lint": "pnpm dlx @biomejs/biome lint ./src/*/*.ts --apply",
-    "format": "pnpm dlx @biomejs/biome format ./src/**/*.ts --write"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.6.1",
-    "@pandacss/dev": "^0.34.3",
-    "@pandacss/types": "^0.34.3",
-    "tsup": "^8.0.2",
-    "typescript": "^5.4.2"
-  }
+	"name": "@paga/preset",
+	"private": true,
+	"version": "0.0.0",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
+		}
+	},
+	"scripts": {
+		"dev": "tsup src/index.ts --watch",
+		"build": "tsup src/index.ts --format=esm,cjs",
+		"lint": "pnpm dlx @biomejs/biome lint ./src --apply",
+		"format": "pnpm dlx @biomejs/biome format ./src --write"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.6.1",
+		"@pandacss/dev": "^0.34.3",
+		"@pandacss/types": "^0.34.3",
+		"tsup": "^8.0.2",
+		"typescript": "^5.4.2"
+	}
 }

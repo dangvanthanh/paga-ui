@@ -6,8 +6,8 @@ import { css } from 'styled-system/css'
 const allOverview = await getCollection('overview')
 const allComponents = await getCollection('components')
 const sidebars = [
-  { title: 'Overview', items: [...allOverview] },
-  { title: 'Components', items: [...allComponents] },
+	{ title: 'Overview', items: [...allOverview] },
+	{ title: 'Components', items: [...allComponents] },
 ]
 
 const { slug } = Astro.params
