@@ -4,12 +4,7 @@ export const combobox = defineSlotRecipe({
 	className: 'combobox',
 	slots: ['root', 'label', 'control', 'input', 'trigger', 'content', 'item'],
 	base: {
-		root: {
-			display: 'flex',
-			flexDirection: 'column',
-			gap: 1.5,
-			w: 'full',
-		},
+		root: {},
 		control: {
 			pos: 'relative',
 		},

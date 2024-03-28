@@ -1,7 +1,9 @@
 ---
 import DocsLayout from '@/layouts/docs.layout.astro'
-
-Astro.redirect('/overview/getting-started')
 ---
 
 <DocsLayout title="Home" />
+
+<script>
+  window.location.href = '/overview/getting-started'
+</script>
