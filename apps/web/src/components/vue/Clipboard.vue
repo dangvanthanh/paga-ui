@@ -8,14 +8,14 @@ import { clipboard } from '@/styled-system/recipes'
 const styles = clipboard()
 
 const [state, send] = useMachine(
-  zagClipboard.machine({
-    id: '1',
-    value: 'https://github.com/dangvanthanh/paga-ui',
-  }),
+	zagClipboard.machine({
+		id: '1',
+		value: 'https://github.com/dangvanthanh/paga-ui',
+	}),
 )
 
 const api = computed(() =>
-  zagClipboard.connect(state.value, send, normalizeProps),
+	zagClipboard.connect(state.value, send, normalizeProps),
 )
 </script>
 

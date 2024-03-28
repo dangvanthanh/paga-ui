@@ -4,19 +4,19 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 import { css } from '@/styled-system/css'
 import { carousel } from '@/styled-system/recipes'
-import { ChevronLeft, ChevronRight } from 'lucide-vue-next';
+import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 
 const styles = carousel()
 
 const items = [
-  'https://tinyurl.com/5b6ka8jd',
-  'https://tinyurl.com/7rmccdn5',
-  'https://tinyurl.com/59jxz9uu',
+	'https://tinyurl.com/5b6ka8jd',
+	'https://tinyurl.com/7rmccdn5',
+	'https://tinyurl.com/59jxz9uu',
 ]
 
 const [state, send] = useMachine(zagCarousel.machine({ id: '1' }))
 const api = computed(() =>
-  zagCarousel.connect(state.value, send, normalizeProps),
+	zagCarousel.connect(state.value, send, normalizeProps),
 )
 </script>
 
