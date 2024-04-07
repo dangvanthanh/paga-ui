@@ -9,10 +9,7 @@
 		"format": "turbo format",
 		"prepare": "husky"
 	},
-	"keywords": [
-		"Zagjs",
-		"PandaCSS"
-	],
+	"keywords": ["Zagjs", "PandaCSS"],
 	"author": "Dang Van Thanh",
 	"license": "MIT",
 	"devDependencies": {
@@ -23,14 +20,12 @@
 		"lint-staged": "^15.2.2",
 		"turbo": "^1.13.2"
 	},
-	"packageManager": "pnpm@8.9.0",
+	"packageManager": "bun@1.1.2",
 	"engines": {
 		"node": ">=18"
 	},
+	"workspaces": ["apps/*", "packages/*"],
 	"lint-staged": {
-		"*.{js,ts,tsx,vue}": [
-			"pnpm run lint",
-			"pnpm run format"
-		]
+		"*.{js,ts,tsx,vue}": ["pnpm run lint", "pnpm run format"]
 	}
 }

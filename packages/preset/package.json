@@ -14,11 +14,12 @@
 	"scripts": {
 		"dev": "tsup src/index.ts --watch",
 		"build": "tsup src/index.ts --format=esm,cjs",
-		"lint": "pnpm dlx @biomejs/biome lint ./src --apply",
-		"format": "pnpm dlx @biomejs/biome format ./src --write"
+		"lint": "bunx @biomejs/biome lint ./src --apply",
+		"format": "bunx @biomejs/biome format ./src --write",
+		"update": "bunx npm-check-updates -ui"
 	},
 	"devDependencies": {
-    "@paga/biome-config": "workspace:*",
+		"@paga/biome-config": "workspace:*",
 		"@pandacss/dev": "^0.37.1",
 		"@pandacss/types": "^0.37.1",
 		"tsup": "^8.0.2",
