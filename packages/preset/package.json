@@ -23,6 +23,6 @@
 		"@pandacss/dev": "^0.37.2",
 		"@pandacss/types": "^0.37.2",
 		"tsup": "^8.0.2",
-		"typescript": "^5.4.4"
+		"typescript": "^5.4.5"
 	}
 }
