@@ -15,6 +15,7 @@ import { numberInput } from './number-input'
 import { pagination } from './pagination'
 import { pinInput } from './pin-input'
 import { popover } from './popover'
+import { presence } from './presence'
 import { pressable } from './pressable'
 import { progressCircular } from './progress-circular'
 import { progressLinear } from './progress-linear'
@@ -22,6 +23,7 @@ import { radioGroup } from './radio-group'
 import { ratingGroup } from './rating-group'
 import { segmentedControl } from './segmented-control'
 import { select } from './select'
+import { signaturePad } from './signature-pad'
 import { slider } from './slider'
 import { spliter } from './splitter'
 import { switchRecipe } from './switch'
@@ -49,6 +51,7 @@ export const slotRecipes = {
 	pagination,
 	pinInput,
 	popover,
+	presence,
 	pressable,
 	progressLinear,
 	progressCircular,
@@ -56,6 +59,7 @@ export const slotRecipes = {
 	ratingGroup,
 	segmentedControl,
 	select,
+	signaturePad,
 	slider,
 	spliter,
 	switches: switchRecipe,
