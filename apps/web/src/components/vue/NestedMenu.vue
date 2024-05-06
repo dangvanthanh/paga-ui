@@ -1,13 +1,15 @@
 <script setup>
+import { useId } from '@/hooks/useId'
+import { menu } from '@/styled-system/recipes'
 import * as zagMenu from '@zag-js/menu'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed, onMounted, Teleport } from 'vue'
-import { menu } from '@/styled-system/recipes'
+import { Teleport, computed, onMounted } from 'vue'
 
 const styles = menu()
+const id = useId('nestedMenu')
 
 const [fileMenuState, fileMenuSend, fileMenuMachine] = useMachine(
-	zagMenu.machine({ id: '3' }),
+	zagMenu.machine({ id }),
 )
 const fileMenuApi = computed(() =>
 	zagMenu.connect(fileMenuState.value, fileMenuSend, normalizeProps),

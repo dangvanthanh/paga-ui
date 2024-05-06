@@ -1,12 +1,14 @@
 <script setup>
+import { useId } from '@/hooks/useId'
+import { menu } from '@/styled-system/recipes'
 import * as zagMenu from '@zag-js/menu'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
-import { menu } from '@/styled-system/recipes'
 
 const styles = menu()
+const id = useId('menu')
 
-const [state, send] = useMachine(zagMenu.machine({ id: '1' }))
+const [state, send] = useMachine(zagMenu.machine({ id }))
 const api = computed(() => zagMenu.connect(state.value, send, normalizeProps))
 </script>
 

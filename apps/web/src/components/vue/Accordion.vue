@@ -1,10 +1,12 @@
 <script setup>
+import { useId } from '@/hooks/useId'
+import { accordion } from '@/styled-system/recipes'
 import * as zagAccordion from '@zag-js/accordion'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
-import { accordion } from '@/styled-system/recipes'
 
 const styles = accordion()
+const id = useId('accordion')
 
 const data = [
 	{
@@ -19,7 +21,7 @@ const data = [
 ]
 
 const [state, send] = useMachine(
-	zagAccordion.machine({ id: '1', value: ['Solid'] }),
+	zagAccordion.machine({ id, value: ['Solid'] }),
 )
 
 const api = computed(() =>

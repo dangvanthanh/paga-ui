@@ -1,14 +1,16 @@
 <script setup>
+import { useId } from '@/hooks/useId'
+import { tagsInput } from '@/styled-system/recipes'
 import * as zagTagsInput from '@zag-js/tags-input'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
-import { tagsInput } from '@/styled-system/recipes'
 
 const styles = tagsInput()
+const id = useId('tagsInput')
 
 const [state, send] = useMachine(
 	zagTagsInput.machine({
-		id: '1',
+		id,
 		value: ['React', 'Vue', 'Solid'],
 	}),
 )

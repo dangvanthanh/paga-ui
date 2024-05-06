@@ -1,10 +1,10 @@
 <script setup>
-import * as zagHoverCard from '@zag-js/hover-card'
-import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed, Teleport } from 'vue'
 import { css } from '@/styled-system/css'
 import { flex } from '@/styled-system/patterns'
 import { hoverCard } from '@/styled-system/recipes'
+import * as zagHoverCard from '@zag-js/hover-card'
+import { normalizeProps, useMachine } from '@zag-js/vue'
+import { Teleport, computed } from 'vue'
 import Avatar from './Avatar.vue'
 
 const styles = hoverCard()
@@ -20,7 +20,7 @@ const api = computed(() =>
   <a href="https://twitter.com/dangvanthanh" target="_blank" v-bind="api.triggerProps" :class="styles.trigger">
     @dangvanthanh
   </a>
-  <Teleport to="body" v-if="api.isOpen">
+  <Teleport to="body" v-if="api.open">
     <div v-bind="api.positionerProps">
       <div v-bind="api.contentProps" :class="styles.content">
         <div v-bind="api.arrowProps" :class="styles.arrow">

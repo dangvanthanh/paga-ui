@@ -1,12 +1,14 @@
 <script setup>
-import * as zagCarousel from '@zag-js/carousel'
-import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed } from 'vue'
+import { useId } from '@/hooks/useId'
 import { css } from '@/styled-system/css'
 import { carousel } from '@/styled-system/recipes'
+import * as zagCarousel from '@zag-js/carousel'
+import { normalizeProps, useMachine } from '@zag-js/vue'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import { computed } from 'vue'
 
 const styles = carousel()
+const id = useId('carousel')
 
 const items = [
 	'https://tinyurl.com/5b6ka8jd',
@@ -14,7 +16,7 @@ const items = [
 	'https://tinyurl.com/59jxz9uu',
 ]
 
-const [state, send] = useMachine(zagCarousel.machine({ id: '1' }))
+const [state, send] = useMachine(zagCarousel.machine({ id }))
 const api = computed(() =>
 	zagCarousel.connect(state.value, send, normalizeProps),
 )

@@ -9,9 +9,7 @@ const { present, unmountOnExit } = defineProps<{
 }>()
 const emit = defineEmits<(e: 'exit-complete') => void>()
 
-const [state, send] = useMachine(zagPresence.machine({ present }), {
-	context: { present, onExitComplete: () => emit('exit-complete') },
-})
+const [state, send] = useMachine(zagPresence.machine({ present }))
 
 const api = computed(() =>
 	zagPresence.connect(state.value, send, normalizeProps),

@@ -1,10 +1,10 @@
 <script setup>
-import * as zagDialog from '@zag-js/dialog'
-import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed, Teleport } from 'vue'
 import { css, cx } from '@/styled-system/css'
 import { flex } from '@/styled-system/patterns'
-import { button, input, dialog } from '@/styled-system/recipes'
+import { button, dialog, input } from '@/styled-system/recipes'
+import * as zagDialog from '@zag-js/dialog'
+import { normalizeProps, useMachine } from '@zag-js/vue'
+import { Teleport, computed } from 'vue'
 
 const styles = dialog()
 
@@ -16,7 +16,7 @@ const api = computed(() => zagDialog.connect(state.value, send, normalizeProps))
   <div>
     <button v-bind="api.triggerProps" :class="css({ textStyle: 'sm' })">Open Dialog</button>
     <Teleport to="body">
-      <div v-if="api.isOpen" :class="styles.root">
+      <div v-if="api.open" :class="styles.root">
         <div v-bind="api.backdropProps" :class="styles.backdrop" />
         <div v-bind="api.positionerProps">
           <div v-bind="api.contentProps" :class="styles.content">

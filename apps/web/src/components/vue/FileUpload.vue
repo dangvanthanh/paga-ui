@@ -1,12 +1,14 @@
 <script setup>
+import { useId } from '@/hooks/useId'
+import { fileUpload } from '@/styled-system/recipes'
 import * as zagFileUpload from '@zag-js/file-upload'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
-import { fileUpload } from '@/styled-system/recipes'
 
 const styles = fileUpload()
+const id = useId('fileUpload')
 
-const [state, send] = useMachine(zagFileUpload.machine({ id: '1' }))
+const [state, send] = useMachine(zagFileUpload.machine({ id }))
 
 const api = computed(() =>
 	zagFileUpload.connect(state.value, send, normalizeProps),

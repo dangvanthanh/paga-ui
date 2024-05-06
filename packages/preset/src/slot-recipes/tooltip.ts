@@ -2,8 +2,11 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const tooltip = defineSlotRecipe({
 	className: 'tooltip',
-	slots: ['content', 'arrow', 'trigger'],
+	slots: ['root', 'content', 'arrow', 'trigger'],
 	base: {
+    root: {
+      pos: 'relative'
+    },
 		content: {
 			background: 'gray.900',
 			color: 'white',

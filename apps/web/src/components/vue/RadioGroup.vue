@@ -1,10 +1,12 @@
 <script setup>
+import { useId } from '@/hooks/useId'
+import { radioGroup } from '@/styled-system/recipes'
 import * as zagRadio from '@zag-js/radio-group'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
-import { radioGroup } from '@/styled-system/recipes'
 
 const styles = radioGroup()
+const id = useId('radioGroup')
 
 const items = [
 	{ id: 'svelte', label: 'Svelte' },
@@ -12,7 +14,7 @@ const items = [
 	{ id: 'vue', label: 'Vue' },
 ]
 
-const [state, send] = useMachine(zagRadio.machine({ id: '1', value: 'vue' }))
+const [state, send] = useMachine(zagRadio.machine({ id, value: 'vue' }))
 
 const api = computed(() => zagRadio.connect(state.value, send, normalizeProps))
 </script>

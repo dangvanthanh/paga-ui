@@ -9,7 +9,7 @@ const preset: Preset = definePreset({
 		extend: {
 			keyframes,
 			recipes,
-			slotRecipes,
+			slotRecipes
 		},
 	},
 })

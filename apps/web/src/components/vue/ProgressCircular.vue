@@ -1,12 +1,14 @@
 <script setup>
+import { useId } from '@/hooks/useId'
+import { progressCircular } from '@/styled-system/recipes'
 import * as zagProgress from '@zag-js/progress'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
-import { progressCircular } from '@/styled-system/recipes'
 
 const styles = progressCircular()
+const id = useId('progressCircular')
 
-const [state, send] = useMachine(zagProgress.machine({ id: '1', value: 80 }))
+const [state, send] = useMachine(zagProgress.machine({ id, value: 80 }))
 
 const api = computed(() =>
 	zagProgress.connect(state.value, send, normalizeProps),

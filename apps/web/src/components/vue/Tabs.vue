@@ -1,10 +1,12 @@
 <script setup>
+import { useId } from '@/hooks/useId'
+import { tabs } from '@/styled-system/recipes'
 import * as zagTabs from '@zag-js/tabs'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
-import { tabs } from '@/styled-system/recipes'
 
 const styles = tabs()
+const id = useId('tabs')
 
 const data = [
 	{
@@ -25,7 +27,7 @@ const data = [
 	},
 ]
 
-const [state, send] = useMachine(zagTabs.machine({ id: '1', value: 'item-1' }))
+const [state, send] = useMachine(zagTabs.machine({ id, value: 'item-1' }))
 const api = computed(() => zagTabs.connect(state.value, send, normalizeProps))
 </script>
 

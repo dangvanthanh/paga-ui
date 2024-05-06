@@ -1,13 +1,15 @@
 <script setup>
+import { useId } from '@/hooks/useId'
+import { editable } from '@/styled-system/recipes'
 import * as zagEditable from '@zag-js/editable'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
-import { editable } from '@/styled-system/recipes'
 
 const styles = editable()
+const id = useId('editable')
 
 const [state, send] = useMachine(
-	zagEditable.machine({ id: '1', value: 'Editable...' }),
+	zagEditable.machine({ id, value: 'Editable...' }),
 )
 const api = computed(() =>
 	zagEditable.connect(state.value, send, normalizeProps),

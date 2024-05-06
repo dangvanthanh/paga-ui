@@ -1,10 +1,12 @@
 <script setup>
+import { useId } from '@/hooks/useId'
+import { combobox } from '@/styled-system/recipes'
 import * as zagCombobox from '@zag-js/combobox'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, ref } from 'vue'
-import { combobox } from '@/styled-system/recipes'
 
 const styles = combobox()
+const id = useId('combobox')
 
 const countriesData = [
 	{ label: 'React', code: 'react' },
