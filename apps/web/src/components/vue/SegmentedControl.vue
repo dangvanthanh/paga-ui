@@ -14,9 +14,7 @@ const items = [
 	{ label: 'Svelte', value: 'svelte-paga' },
 ]
 
-const [state, send] = useMachine(
-	zagRadio.machine({ id, value: 'vue-paga' }),
-)
+const [state, send] = useMachine(zagRadio.machine({ id, value: 'vue-paga' }))
 
 const api = computed(() => zagRadio.connect(state.value, send, normalizeProps))
 </script>

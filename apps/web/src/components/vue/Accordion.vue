@@ -20,9 +20,7 @@ const data = [
 	},
 ]
 
-const [state, send] = useMachine(
-	zagAccordion.machine({ id, value: ['Solid'] }),
-)
+const [state, send] = useMachine(zagAccordion.machine({ id, value: ['Solid'] }))
 
 const api = computed(() =>
 	zagAccordion.connect(state.value, send, normalizeProps),

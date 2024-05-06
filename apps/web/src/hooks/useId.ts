@@ -1,4 +1,4 @@
-import { onBeforeUnmount, onMounted } from "vue"
+import { onBeforeUnmount, onMounted } from 'vue'
 
 const cacheId: { [key in string]: string[] } = {}
 

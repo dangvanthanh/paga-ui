@@ -4,9 +4,9 @@ export const tooltip = defineSlotRecipe({
 	className: 'tooltip',
 	slots: ['root', 'content', 'arrow', 'trigger'],
 	base: {
-    root: {
-      pos: 'relative'
-    },
+		root: {
+			pos: 'relative',
+		},
 		content: {
 			background: 'gray.900',
 			color: 'white',
