@@ -7,12 +7,9 @@ import { Star, StarHalf } from 'lucide-vue-next'
 import { computed } from 'vue'
 
 const styles = ratingGroup()
-const id = useId('ratingGroup')
-
 const [state, send] = useMachine(
-	zagRating.machine({ id, value: 3, allowHalf: true }),
+	zagRating.machine({ id: useId('ratingGroup'), value: 3, allowHalf: true }),
 )
-
 const api = computed(() => zagRating.connect(state.value, send, normalizeProps))
 </script>
 

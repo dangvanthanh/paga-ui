@@ -8,9 +8,7 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { Teleport, computed } from 'vue'
 
 const styles = popover()
-const id = useId('popover')
-
-const [state, send] = useMachine(zagPopover.machine({ id }))
+const [state, send] = useMachine(zagPopover.machine({ id: useId('popover') }))
 const api = computed(() =>
 	zagPopover.connect(state.value, send, normalizeProps),
 )
@@ -21,7 +19,7 @@ const api = computed(() =>
     <button v-bind="api.triggerProps" :class="styles.trigger">
       Dimensions <span aria-hidden>▾</span>
     </button>
-    <Teleport to="body">
+    <Teleport to="body" :disabled="!api.portalled">
       <div v-bind="api.positionerProps" :class="styles.positioner">
         <div v-bind="api.contentProps" :class="styles.content">
           <div v-bind="api.titleProps" :class="styles.title">Dimensions</div>

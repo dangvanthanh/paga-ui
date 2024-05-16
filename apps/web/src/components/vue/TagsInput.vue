@@ -6,11 +6,9 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 
 const styles = tagsInput()
-const id = useId('tagsInput')
-
 const [state, send] = useMachine(
 	zagTagsInput.machine({
-		id,
+		id: useId('tagsInput'),
 		value: ['React', 'Vue', 'Solid'],
 	}),
 )

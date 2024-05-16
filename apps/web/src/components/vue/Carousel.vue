@@ -8,7 +8,6 @@ import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import { computed } from 'vue'
 
 const styles = carousel()
-const id = useId('carousel')
 
 const items = [
 	'https://tinyurl.com/5b6ka8jd',
@@ -16,7 +15,7 @@ const items = [
 	'https://tinyurl.com/59jxz9uu',
 ]
 
-const [state, send] = useMachine(zagCarousel.machine({ id }))
+const [state, send] = useMachine(zagCarousel.machine({ id: useId('carousel') }))
 const api = computed(() =>
 	zagCarousel.connect(state.value, send, normalizeProps),
 )

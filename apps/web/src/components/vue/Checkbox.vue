@@ -8,9 +8,8 @@ import { Check } from 'lucide-vue-next'
 import { computed } from 'vue'
 
 const styles = checkbox()
-const id = useId('checkbox')
 
-const [state, send] = useMachine(zagCheckbox.machine({ id }))
+const [state, send] = useMachine(zagCheckbox.machine({ id: useId('checkbox') }))
 const api = computed(() =>
 	zagCheckbox.connect(state.value, send, normalizeProps),
 )
@@ -19,13 +18,13 @@ const api = computed(() =>
 <template>
   <label v-bind="api.rootProps" :class="styles.root">
     <div v-bind="api.controlProps" :class="styles.control">
-      <span v-if="api.isChecked">
+      <span v-if="api.checked">
         <Check :class="css({ w: 4, h: 4, color: 'gray.900' })" />
       </span>
     </div>
     <input v-bind="api.hiddenInputProps" />
     <span v-bind="api.labelProps" :class="styles.label">
-      <span v-if="api.isChecked"> Checked</span>
+      <span v-if="api.checked"> Checked</span>
       <span v-else> Unchecked</span>
     </span>
   </label>

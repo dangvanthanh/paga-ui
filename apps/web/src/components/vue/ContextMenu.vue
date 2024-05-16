@@ -6,9 +6,10 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 
 const styles = menu()
-const id = useId('contextMenu')
 
-const [state, send] = useMachine(zagMenu.machine({ id, 'aria-label': 'File' }))
+const [state, send] = useMachine(
+	zagMenu.machine({ id: useId('contextMenu'), 'aria-label': 'File' }),
+)
 
 const api = computed(() => zagMenu.connect(state.value, send, normalizeProps))
 </script>

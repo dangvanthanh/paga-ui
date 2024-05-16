@@ -12,12 +12,9 @@ const props = defineProps({
 })
 
 const styles = pagination()
-const id = useId('pagination')
-
 const [state, send] = useMachine(
-	zagPagination.machine({ id, count: props.count || 5 }),
+	zagPagination.machine({ id: useId('pagination'), count: props.count || 5 }),
 )
-
 const api = computed(() =>
 	zagPagination.connect(state.value, send, normalizeProps),
 )

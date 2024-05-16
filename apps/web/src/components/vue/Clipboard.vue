@@ -7,11 +7,10 @@ import { ClipboardCheck, ClipboardCopyIcon } from 'lucide-vue-next'
 import { computed } from 'vue'
 
 const styles = clipboard()
-const id = useId('clipboard')
 
 const [state, send] = useMachine(
 	zagClipboard.machine({
-		id,
+		id: useId('clipboard'),
 		value: 'https://github.com/dangvanthanh/paga-ui',
 	}),
 )

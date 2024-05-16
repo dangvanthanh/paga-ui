@@ -6,11 +6,12 @@ import * as zagHoverCard from '@zag-js/hover-card'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { Teleport, computed } from 'vue'
 import Avatar from './Avatar.vue'
+import { useId } from '@/hooks/useId'
 
 const styles = hoverCard()
-
-const [state, send] = useMachine(zagHoverCard.machine({ id: '1' }))
-
+const [state, send] = useMachine(
+	zagHoverCard.machine({ id: useId('hoverCard') }),
+)
 const api = computed(() =>
 	zagHoverCard.connect(state.value, send, normalizeProps),
 )

@@ -6,10 +6,9 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 
 const styles = progressCircular()
-const id = useId('progressCircular')
-
-const [state, send] = useMachine(zagProgress.machine({ id, value: 80 }))
-
+const [state, send] = useMachine(
+	zagProgress.machine({ id: useId('progressCircular'), value: 80 }),
+)
 const api = computed(() =>
 	zagProgress.connect(state.value, send, normalizeProps),
 )

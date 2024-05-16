@@ -6,9 +6,7 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 
 const styles = pinInput()
-const id = useId('pinInput')
-
-const [state, send] = useMachine(zagPinInput.machine({ id }))
+const [state, send] = useMachine(zagPinInput.machine({ id: useId('pinInput') }))
 const api = computed(() =>
 	zagPinInput.connect(state.value, send, normalizeProps),
 )

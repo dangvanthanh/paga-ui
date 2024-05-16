@@ -6,10 +6,9 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 
 const styles = fileUpload()
-const id = useId('fileUpload')
-
-const [state, send] = useMachine(zagFileUpload.machine({ id }))
-
+const [state, send] = useMachine(
+	zagFileUpload.machine({ id: useId('fileUpload') }),
+)
 const api = computed(() =>
 	zagFileUpload.connect(state.value, send, normalizeProps),
 )

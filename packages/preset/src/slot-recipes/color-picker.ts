@@ -33,6 +33,7 @@ export const colorPicker = defineSlotRecipe({
 			display: 'flex',
 			flexDirection: 'column',
 			zIndex: 1,
+			pos: 'relative',
 		},
 		transparencyGrid: {
 			borderRadius: 'sm',

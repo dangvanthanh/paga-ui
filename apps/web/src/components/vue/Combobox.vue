@@ -6,19 +6,18 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, ref } from 'vue'
 
 const styles = combobox()
-const id = useId('combobox')
 
-const countriesData = [
+const comboboxData = [
 	{ label: 'React', code: 'react' },
 	{ label: 'Solid', code: 'solid' },
 	{ label: 'Vue', code: 'vue' },
 ]
 
-const countries = ref(countriesData)
+const options = ref(comboboxData)
 
 const collectionRef = computed(() =>
 	zagCombobox.collection({
-		items: countries.value,
+		items: options.value,
 		itemToValue: (item) => item.code,
 		itemToString: (item) => item.label,
 	}),
@@ -26,18 +25,18 @@ const collectionRef = computed(() =>
 
 const [state, send] = useMachine(
 	zagCombobox.machine({
-		id: '1',
+		id: useId('combobox'),
 		collection: collectionRef.value,
 		value: ['react'],
 		onOpenChange(details) {
 			if (!details.open) return
-			countries.value = countriesData
+			options.value = comboboxData
 		},
-		onInputValueChange({ value }) {
-			const filtered = countriesData.filter((item) =>
-				item.label.toLowerCase().includes(value.toLowerCase()),
+		onInputValueChange({ inputValue }) {
+			const filtered = comboboxData.filter((item) =>
+				item.label.toLowerCase().includes(inputValue.toLowerCase()),
 			)
-			countries.value = filtered.length > 0 ? filtered : countriesData
+			options.value = filtered.length > 0 ? filtered : comboboxData
 		},
 	}),
 	{
@@ -56,12 +55,12 @@ const api = computed(() =>
   <div v-bind="api.rootProps" :class="styles.root">
     <div v-bind="api.controlProps" :class="styles.control">
       <input v-bind="api.inputProps" :class="styles.input" />
-      <button v-bind="api.triggerProps" :class="styles.trigger">▼</button>
+      <button v-bind="api.getTriggerProps()" :class="styles.trigger">▼</button>
     </div>
   </div>
   <div v-bind="api.positionerProps">
-    <ul v-if="countries.length > 0" v-bind="api.contentProps" :class="styles.content">
-      <li v-for="item in countries" :key="item.code" v-bind="api.getItemProps({ item })" :class="styles.item">
+    <ul v-if="options.length > 0" v-bind="api.contentProps" :class="styles.content">
+      <li v-for="item in options" :key="item.code" v-bind="api.getItemProps({ item })" :class="styles.item">
         {{ item.label }}
       </li>
     </ul>

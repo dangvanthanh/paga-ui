@@ -6,7 +6,6 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 
 const styles = accordion()
-const id = useId('accordion')
 
 const data = [
 	{
@@ -20,7 +19,9 @@ const data = [
 	},
 ]
 
-const [state, send] = useMachine(zagAccordion.machine({ id, value: ['Solid'] }))
+const [state, send] = useMachine(
+	zagAccordion.machine({ id: useId('accordion'), value: ['Solid'] }),
+)
 
 const api = computed(() =>
 	zagAccordion.connect(state.value, send, normalizeProps),

@@ -15,6 +15,9 @@ export const avatar = defineSlotRecipe({
 			height: 'full',
 			borderRadius: 'inherit',
 			objectFit: 'cover',
+			_hidden: {
+				display: 'none',
+			},
 		},
 		fallback: {
 			display: 'flex',

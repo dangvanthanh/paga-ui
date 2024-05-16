@@ -7,7 +7,7 @@
 		"dev": "turbo dev",
 		"lint": "turbo lint",
 		"format": "turbo format",
-		"prepare": "husky"
+		"prepare": "git config core.hooksPath .hooks"
 	},
 	"keywords": ["Zagjs", "PandaCSS"],
 	"author": "Dang Van Thanh",
@@ -16,7 +16,6 @@
 		"@paga/biome-config": "workspace:*",
 		"@paga/preset": "workspace:*",
 		"@paga/typescript-config": "workspace:*",
-		"husky": "^9.0.11",
 		"lint-staged": "^15.2.2",
 		"turbo": "^1.13.3"
 	},

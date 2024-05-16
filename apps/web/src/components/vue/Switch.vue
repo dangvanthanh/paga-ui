@@ -10,10 +10,7 @@ const props = defineProps({
 })
 
 const styles = switches({ size: 'sm' })
-const id = useId('switch')
-
-const [state, send] = useMachine(zagSwitch.machine({ id }))
-
+const [state, send] = useMachine(zagSwitch.machine({ id: useId('switch') }))
 const api = computed(() => zagSwitch.connect(state.value, send, normalizeProps))
 </script>
 
@@ -24,7 +21,7 @@ const api = computed(() => zagSwitch.connect(state.value, send, normalizeProps))
       <span v-bind="api.thumbProps" :class="styles.thumb"></span>
     </span>
     <span v-if="props.label" v-bind="api.labelProps" :class="styles.label">
-      <span v-if="api.isChecked">{{ props.label }}</span>
+      <span v-if="api.checked">{{ props.label }}</span>
       <span v-else>{{ props.label }}</span>
     </span>
   </label>

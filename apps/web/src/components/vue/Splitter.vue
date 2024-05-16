@@ -6,18 +6,15 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 
 const styles = spliter()
-const id = useId('splitter')
-
 const [state, send] = useMachine(
 	zagSplitter.machine({
-		id,
+		id: useId('splitter'),
 		size: [
 			{ id: 'a', size: 50 },
 			{ id: 'b', size: 50 },
 		],
 	}),
 )
-
 const api = computed(() =>
 	zagSplitter.connect(state.value, send, normalizeProps),
 )

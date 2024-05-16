@@ -6,10 +6,8 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 
 const styles = editable()
-const id = useId('editable')
-
 const [state, send] = useMachine(
-	zagEditable.machine({ id, value: 'Editable...' }),
+	zagEditable.machine({ id: useId('editable'), value: 'Editable...' }),
 )
 const api = computed(() =>
 	zagEditable.connect(state.value, send, normalizeProps),

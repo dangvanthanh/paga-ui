@@ -9,11 +9,10 @@ import { Pipette } from 'lucide-vue-next'
 import { computed, ref } from 'vue'
 
 const styles = colorPicker()
-const id = useId('colorPicker')
 
 const [state, send] = useMachine(
 	zagColorPicker.machine({
-		id,
+		id: useId('colorPicker'),
 		value: zagColorPicker.parse('#202020'),
 	}),
 )
@@ -44,7 +43,6 @@ const presets = ref([
       <input v-bind="api.getChannelInputProps({ channel: 'hex' })" :class="styles.input" />
       <input v-bind="api.getChannelInputProps({ channel: 'alpha' })" :class="styles.input" />
     </div>
-
     <div v-bind="api.positionerProps">
       <div v-bind="api.contentProps" :class="styles.content">
         <div v-bind="api.getAreaProps()" :class="styles.area">

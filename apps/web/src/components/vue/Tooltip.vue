@@ -6,9 +6,7 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 
 const styles = tooltip()
-const id = useId('tooltip')
-
-const [state, send] = useMachine(zagTooltip.machine({ id }))
+const [state, send] = useMachine(zagTooltip.machine({ id: useId('tooltip') }))
 const api = computed(() =>
 	zagTooltip.connect(state.value, send, normalizeProps),
 )

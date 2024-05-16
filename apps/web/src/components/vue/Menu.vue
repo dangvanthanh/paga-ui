@@ -6,9 +6,7 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 
 const styles = menu()
-const id = useId('menu')
-
-const [state, send] = useMachine(zagMenu.machine({ id }))
+const [state, send] = useMachine(zagMenu.machine({ id: useId('menu') }))
 const api = computed(() => zagMenu.connect(state.value, send, normalizeProps))
 </script>
 

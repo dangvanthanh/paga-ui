@@ -6,8 +6,6 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { Teleport, computed } from 'vue'
 
 const styles = select()
-const id = useId('select')
-
 const selectData = [
 	{ label: 'React', value: 'react' },
 	{ label: 'Solid', value: 'solid' },
@@ -16,7 +14,7 @@ const selectData = [
 
 const [state, send] = useMachine(
 	zagSelect.machine({
-		id,
+		id: useId('select'),
 		collection: zagSelect.collection({
 			items: selectData,
 		}),
