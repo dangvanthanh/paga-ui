@@ -6,15 +6,15 @@ import { computed } from 'vue'
 import { flex } from '@/styled-system/patterns'
 
 const [state, send] = useMachine(
-  timer.machine({
-    id: useId('timer'),
-    countdown: true,
-    autoStart: true,
-    startMs: timer.parse({ days: 2, seconds: 10 }),
-    onComplete() {
-      console.log('Timer completed')
-    },
-  }),
+	timer.machine({
+		id: useId('timer'),
+		countdown: true,
+		autoStart: true,
+		startMs: timer.parse({ days: 2, seconds: 10 }),
+		onComplete() {
+			console.log('Timer completed')
+		},
+	}),
 )
 
 const api = computed(() => timer.connect(state.value, send, normalizeProps))

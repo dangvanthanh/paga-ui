@@ -8,26 +8,26 @@ import { computed } from 'vue'
 const styles = tabs()
 
 const data = [
-  {
-    value: 'react',
-    label: 'React',
-    content: 'React is the library for web and native user interfaces.',
-  },
-  {
-    value: 'vue',
-    label: 'Vue',
-    content:
-      'An approachable, performant and versatile famework for building web user interfaces.',
-  },
-  {
-    value: 'solid',
-    label: 'Solid',
-    content: 'Simple and performant reactivity for building user interfaces.',
-  },
+	{
+		value: 'react',
+		label: 'React',
+		content: 'React is the library for web and native user interfaces.',
+	},
+	{
+		value: 'vue',
+		label: 'Vue',
+		content:
+			'An approachable, performant and versatile famework for building web user interfaces.',
+	},
+	{
+		value: 'solid',
+		label: 'Solid',
+		content: 'Simple and performant reactivity for building user interfaces.',
+	},
 ]
 
 const [state, send] = useMachine(
-  zagTabs.machine({ id: useId('tabs'), value: 'react' }),
+	zagTabs.machine({ id: useId('tabs'), value: 'react' }),
 )
 const api = computed(() => zagTabs.connect(state.value, send, normalizeProps))
 </script>
