@@ -21,11 +21,11 @@ const api = computed(() =>
 </script>
 
 <template>
-  <div v-bind="api.rootProps">
-    <div v-bind="api.controlProps" :class="styles.control">
-      <input v-bind="api.inputProps" :class="styles.input" />
-      <button v-bind="api.triggerProps" :class="styles.trigger">
-        <ClipboardCheck v-if="api.isCopied" />
+  <div v-bind="api.getRootProps()">
+    <div v-bind="api.getControlProps()" :class="styles.control">
+      <input v-bind="api.getInputProps()" :class="styles.input" />
+      <button v-bind="api.getTriggerProps()" :class="styles.trigger">
+        <ClipboardCheck v-if="api.copied" />
         <ClipboardCopyIcon v-else />
       </button>
     </div>

@@ -15,10 +15,10 @@ const api = computed(() =>
 </script>
 
 <template>
-  <div v-bind="api.rootProps" :class="styles.root">
-    <div v-bind="api.areaProps" :class="styles.area">
-      <input v-bind="api.inputProps" :class="styles.input" />
-      <span v-bind="api.previewProps" />
+  <div v-bind="api.getRootProps()" :class="styles.root">
+    <div v-bind="api.getAreaProps()" :class="styles.area">
+      <input v-bind="api.getInputProps()" :class="styles.input" />
+      <span v-bind="api.getPreviewProps()" />
     </div>
   </div>
 </template>

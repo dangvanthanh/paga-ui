@@ -16,14 +16,14 @@ const api = computed(() =>
 
 <template>
   <div>
-    <button v-bind="api.triggerProps" :class="styles.trigger">
+    <button v-bind="api.getTriggerProps()" :class="styles.trigger">
       Dimensions <span aria-hidden>▾</span>
     </button>
     <Teleport to="body" :disabled="!api.portalled">
-      <div v-bind="api.positionerProps" :class="styles.positioner">
-        <div v-bind="api.contentProps" :class="styles.content">
-          <div v-bind="api.titleProps" :class="styles.title">Dimensions</div>
-          <div v-bind="api.descriptionProps" :class="styles.description">
+      <div v-bind="api.getPositionerProps()" :class="styles.positioner">
+        <div v-bind="api.getContentProps()" :class="styles.content">
+          <div v-bind="api.getTitleProps()" :class="styles.title">Dimensions</div>
+          <div v-bind="api.getDescriptionProps()" :class="styles.description">
             <div :class="flex({ align: 'center', gap: 2, mt: 2 })">
               <span :class="css({ w: 16 })">Width</span>
               <input value="100%" :class="cx(input({ size: 'sm' }), css({ w: 'full' }))" />
@@ -41,7 +41,7 @@ const api = computed(() =>
               <input value="20px" :class="cx(input({ size: 'sm' }), css({ w: 'full' }))" />
             </div>
           </div>
-          <button v-bind="api.closeTriggerProps" :class="styles.closeTrigger">
+          <button v-bind="api.getCloseTriggerProps()" :class="styles.closeTrigger">
             <small>&#x2715;</small>
           </button>
         </div>

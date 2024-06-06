@@ -13,7 +13,7 @@ const api = computed(() => zagToggle.connect(state.value, send, normalizeProps))
 </script>
 
 <template>
-  <div v-bind="api.rootProps" :class="styles.root">
+  <div v-bind="api.getRootProps()" :class="styles.root">
     <button v-bind="api.getItemProps({ value: 'bold' })" :class="styles.item">B</button>
     <button v-bind="api.getItemProps({ value: 'italic' })" :class="styles.item">
       I

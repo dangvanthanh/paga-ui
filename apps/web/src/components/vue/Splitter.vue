@@ -21,7 +21,7 @@ const api = computed(() =>
 </script>
 
 <template>
-  <div v-bind="api.rootProps" :class="styles.root">
+  <div v-bind="api.getRootProps()" :class="styles.root">
     <div v-bind="api.getPanelProps({ id: 'a' })" :class="styles.panel">
       <p>A</p>
     </div>

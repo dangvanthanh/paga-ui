@@ -15,14 +15,14 @@ const api = computed(() =>
 </script>
 
 <template>
-  <div v-bind="api.rootProps" :class="styles.root">
-    <div v-bind="api.controlProps" :class="styles.control">
-      <svg v-bind="api.segmentProps">
+  <div v-bind="api.getRootProps()" :class="styles.root">
+    <div v-bind="api.getControlProps()" :class="styles.control">
+      <svg v-bind="api.getSegmentProps()">
         <path v-for="(path, i) of api.paths" :key="i" v-bind="api.getSegmentPathProps({ path })" />
         <path v-if="api.currentPath" v-bind="api.getSegmentPathProps({ path: api.currentPath })" />
       </svg>
-      <button v-bind="api.clearTriggerProps" :class="styles.clearTrigger">&times;</button>
-      <div v-bind="api.guideProps" :class="styles.guide" />
+      <button v-bind="api.getClearTriggerProps()" :class="styles.clearTrigger">&times;</button>
+      <div v-bind="api.getGuideProps()" :class="styles.guide" />
     </div>
   </div>
 </template>

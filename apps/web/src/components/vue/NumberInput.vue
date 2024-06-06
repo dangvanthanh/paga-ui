@@ -15,13 +15,13 @@ const api = computed(() =>
 </script>
 
 <template>
-  <div v-bind="api.rootProps" :class="styles.root">
+  <div v-bind="api.getRootProps()" :class="styles.root">
     <div :class="styles.control">
-      <input v-bind="api.inputProps" :class="styles.input" />
-      <button v-bind="api.incrementTriggerProps" :class="styles.incrementTrigger">
+      <input v-bind="api.getInputProps()" :class="styles.input" />
+      <button v-bind="api.getIncrementTriggerProps()" :class="styles.incrementTrigger">
         +
       </button>
-      <button v-bind="api.decrementTriggerProps" :class="styles.decrementTrigger">
+      <button v-bind="api.getDecrementTriggerProps()" :class="styles.decrementTrigger">
         -
       </button>
     </div>

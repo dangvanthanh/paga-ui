@@ -52,14 +52,14 @@ const api = computed(() =>
 </script>
 
 <template>
-  <div v-bind="api.rootProps" :class="styles.root">
-    <div v-bind="api.controlProps" :class="styles.control">
-      <input v-bind="api.inputProps" :class="styles.input" />
+  <div v-bind="api.getRootProps()" :class="styles.root">
+    <div v-bind="api.getControlProps()" :class="styles.control">
+      <input v-bind="api.getInputProps()" :class="styles.input" />
       <button v-bind="api.getTriggerProps()" :class="styles.trigger">▼</button>
     </div>
   </div>
-  <div v-bind="api.positionerProps">
-    <ul v-if="options.length > 0" v-bind="api.contentProps" :class="styles.content">
+  <div v-bind="api.getPositionerProps()">
+    <ul v-if="options.length > 0" v-bind="api.getContentProps()" :class="styles.content">
       <li v-for="item in options" :key="item.code" v-bind="api.getItemProps({ item })" :class="styles.item">
         {{ item.label }}
       </li>

@@ -15,12 +15,12 @@ const api = computed(() => zagSwitch.connect(state.value, send, normalizeProps))
 </script>
 
 <template>
-  <label v-bind="api.rootProps" :class="styles.root">
-    <input v-bind="api.hiddenInputProps" />
-    <span v-bind="api.controlProps" :class="styles.control">
-      <span v-bind="api.thumbProps" :class="styles.thumb"></span>
+  <label v-bind="api.getRootProps()" :class="styles.root">
+    <input v-bind="api.getHiddenInputProps()" />
+    <span v-bind="api.getControlProps()" :class="styles.control">
+      <span v-bind="api.getThumbProps()" :class="styles.thumb"></span>
     </span>
-    <span v-if="props.label" v-bind="api.labelProps" :class="styles.label">
+    <span v-if="props.label" v-bind="api.getLabelProps()" :class="styles.label">
       <span v-if="api.checked">{{ props.label }}</span>
       <span v-else>{{ props.label }}</span>
     </span>

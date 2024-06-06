@@ -28,33 +28,33 @@ onMounted(() => {
 	}, 500)
 })
 
-const shareMenuTriggerProps = computed(() =>
+const shareMenuTrigger = computed(() =>
 	fileMenu.value.getTriggerItemProps(shareMenu.value),
 )
 </script>
 
 <template>
-  <button v-bind="fileMenu.triggerProps" :class="styles.trigger">
+  <button v-bind="fileMenu.getTriggerProps()" :class="styles.trigger">
     File <span aria-hidden>▾</span>
   </button>
   <Teleport to="body">
-    <div v-bind="fileMenu.positionerProps">
-      <ul v-bind="fileMenu.contentProps" :class="styles.content">
+    <div v-bind="fileMenu.getPositionerProps()">
+      <ul v-bind="fileMenu.getContentProps()" :class="styles.content">
         <li v-bind="fileMenu.getItemProps({ id: 'new-file' })" :class="styles.item">
           New file
         </li>
         <li v-bind="fileMenu.getItemProps({ id: 'new-win' })" :class="styles.item">
           New window
         </li>
-        <li v-bind="shareMenuTriggerProps" :class="styles.item">Share</li>
+        <li v-bind="shareMenuTrigger" :class="styles.item">Share</li>
         <li v-bind="fileMenu.getItemProps({ id: 'print' })" :class="styles.item">Print</li>
         <li v-bind="fileMenu.getItemProps({ id: 'help' })" :class="styles.item">Help</li>
       </ul>
     </div>
   </Teleport>
   <Teleport to="body">
-    <div v-bind="shareMenu.positionerProps">
-      <ul v-bind="shareMenu.contentProps" :class="styles.content">
+    <div v-bind="shareMenu.getPositionerProps()">
+      <ul v-bind="shareMenu.getContentProps()" :class="styles.content">
         <li v-bind="shareMenu.getItemProps({ id: 'messages' })" :class="styles.item">
           Messages
         </li>

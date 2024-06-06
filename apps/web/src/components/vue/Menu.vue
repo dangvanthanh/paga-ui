@@ -12,11 +12,11 @@ const api = computed(() => zagMenu.connect(state.value, send, normalizeProps))
 
 <template>
   <div>
-    <button v-bind="api.triggerProps" :class="styles.trigger">
+    <button v-bind="api.getTriggerProps()" :class="styles.trigger">
       Actions <span aria-hidden>▾</span>
     </button>
-    <div v-bind="api.positionerProps">
-      <ul v-bind="api.contentProps" :class="styles.content">
+    <div v-bind="api.getPositionerProps()">
+      <ul v-bind="api.getContentProps()" :class="styles.content">
         <li v-bind="api.getItemProps({ id: 'edit' })" :class="styles.item">Edit</li>
         <li v-bind="api.getItemProps({ id: 'duplicate' })" :class="styles.item">Duplicate</li>
         <li v-bind="api.getItemProps({ id: 'delete' })" :class="styles.item">Delete</li>

@@ -33,18 +33,18 @@ const presets = ref([
 </script>
 
 <template>
-  <div v-bind="api.rootProps" :class="styles.root">
-    <input v-bind="api.hiddenInputProps" />
-    <div v-bind="api.controlProps" :class="styles.control">
-      <button v-bind="api.triggerProps" :class="styles.trigger">
+  <div v-bind="api.getRootProps()" :class="styles.root">
+    <input v-bind="api.getHiddenInputProps()" />
+    <div v-bind="api.getControlProps()" :class="styles.control">
+      <button v-bind="api.getTriggerProps()" :class="styles.trigger">
         <div v-bind="api.getTransparencyGridProps({ size: '10px' })" :class="styles.transparencyGrid" />
         <div v-bind="api.getSwatchProps({ value: api.value })" :class="styles.swatch" />
       </button>
       <input v-bind="api.getChannelInputProps({ channel: 'hex' })" :class="styles.input" />
       <input v-bind="api.getChannelInputProps({ channel: 'alpha' })" :class="styles.input" />
     </div>
-    <div v-bind="api.positionerProps">
-      <div v-bind="api.contentProps" :class="styles.content">
+    <div v-bind="api.getPositionerProps()">
+      <div v-bind="api.getContentProps()" :class="styles.content">
         <div v-bind="api.getAreaProps()" :class="styles.area">
           <div v-bind="api.getAreaBackgroundProps()" :class="styles.areaBackground" />
           <div v-bind="api.getAreaThumbProps()" />
@@ -63,7 +63,7 @@ const presets = ref([
               <div v-bind="api.getChannelSliderThumbProps({ channel: 'alpha' })" :class="styles.channelSliderThumb" />
             </div>
           </div>
-          <button v-bind="api.eyeDropperTriggerProps" :class="styles.eyeDropperTrigger">
+          <button v-bind="api.getEyeDropperTriggerProps()" :class="styles.eyeDropperTrigger">
             <Pipette />
           </button>
         </div>
@@ -97,7 +97,7 @@ const presets = ref([
         </template>
 
         <div :class="css({ fontWeight: 600 })">Swatches</div>
-        <div v-bind="api.swatchGroupProps" :class="styles.swatchGroup">
+        <div v-bind="api.getSwatchGroupProps()" :class="styles.swatchGroup">
           <template v-for="preset in presets">
             <button v-bind="api.getSwatchTriggerProps({ value: preset })">
               <div v-bind="api.getTransparencyGridProps()" :class="styles.transparencyGrid" />

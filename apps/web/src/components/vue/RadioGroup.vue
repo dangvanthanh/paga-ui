@@ -18,7 +18,7 @@ const api = computed(() => zagRadio.connect(state.value, send, normalizeProps))
 </script>
 
 <template>
-  <div v-bind="api.rootProps" :class="styles.root">
+  <div v-bind="api.getRootProps()" :class="styles.root">
     <div v-for="opt in items" :key="opt.id" :class="styles.item">
       <label v-bind="api.getItemProps({ value: opt.id })" :class="styles.label">
         <div v-bind="api.getItemControlProps({ value: opt.id })" :class="styles.itemControl" />

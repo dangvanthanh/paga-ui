@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useId } from '@/hooks/useId'
+import { flex } from '@/styled-system/patterns'
 import * as timer from '@zag-js/timer'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
-import { flex } from '@/styled-system/patterns'
 
 const [state, send] = useMachine(
 	timer.machine({
@@ -22,19 +22,19 @@ const api = computed(() => timer.connect(state.value, send, normalizeProps))
 
 <template>
   <div>
-    <div v-bind="api.rootProps" :class="flex({ gap: 2, justify: 'center' })">
+    <div v-bind="api.getRootProps()" :class="flex({ gap: 2, justify: 'center' })">
       <div v-bind="api.getSegmentProps({ type: 'days' })">
         {{ api.formattedTime.days }}
       </div>
-      <div v-bind="api.separatorProps">:</div>
+      <div v-bind="api.getSeparatorProps()">:</div>
       <div v-bind="api.getSegmentProps({ type: 'hours' })">
         {{ api.formattedTime.hours }}
       </div>
-      <div v-bind="api.separatorProps">:</div>
+      <div v-bind="api.getSeparatorProps()">:</div>
       <div v-bind="api.getSegmentProps({ type: 'minutes' })">
         {{ api.formattedTime.minutes }}
       </div>
-      <div v-bind="api.separatorProps">:</div>
+      <div v-bind="api.getSeparatorProps()">:</div>
       <div v-bind="api.getSegmentProps({ type: 'seconds' })">
         {{ api.formattedTime.seconds }}
       </div>

@@ -16,14 +16,14 @@ const api = computed(() =>
 </script>
 
 <template>
-  <label v-bind="api.rootProps" :class="styles.root">
-    <div v-bind="api.controlProps" :class="styles.control">
+  <label v-bind="api.getRootProps()" :class="styles.root">
+    <div v-bind="api.getControlProps()" :class="styles.control">
       <span v-if="api.checked">
         <Check :class="css({ w: 4, h: 4, color: 'gray.900' })" />
       </span>
     </div>
-    <input v-bind="api.hiddenInputProps" />
-    <span v-bind="api.labelProps" :class="styles.label">
+    <input v-bind="api.getHiddenInputProps()" />
+    <span v-bind="api.getLabelProps()" :class="styles.label">
       <span v-if="api.checked"> Checked</span>
       <span v-else> Unchecked</span>
     </span>

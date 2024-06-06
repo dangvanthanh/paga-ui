@@ -15,9 +15,9 @@ const api = computed(() =>
 </script>
 
 <template>
-  <div v-bind="api.rootProps" :class="styles.root">
-    <div v-bind="api.trackProps" :class="styles.track">
-      <div v-bind="api.rangeProps" :class="styles.range" />
+  <div v-bind="api.getRootProps()" :class="styles.root">
+    <div v-bind="api.getTrackProps()" :class="styles.track">
+      <div v-bind="api.getRangeProps()" :class="styles.range" />
     </div>
   </div>
 </template>

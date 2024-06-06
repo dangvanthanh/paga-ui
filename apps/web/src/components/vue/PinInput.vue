@@ -13,7 +13,7 @@ const api = computed(() =>
 </script>
 
 <template>
-  <div ref="ref" v-bind="api.rootProps" :class="styles.root">
+  <div ref="ref" v-bind="api.getRootProps()" :class="styles.root">
     <input v-bind="api.getInputProps({ index: 0 })" :class="styles.input" />
     <input v-bind="api.getInputProps({ index: 1 })" :class="styles.input" />
     <input v-bind="api.getInputProps({ index: 2 })" :class="styles.input" />

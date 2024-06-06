@@ -1,4 +1,5 @@
 <script setup>
+import { useId } from '@/hooks/useId'
 import { css } from '@/styled-system/css'
 import { flex } from '@/styled-system/patterns'
 import { hoverCard } from '@/styled-system/recipes'
@@ -6,7 +7,6 @@ import * as zagHoverCard from '@zag-js/hover-card'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { Teleport, computed } from 'vue'
 import Avatar from './Avatar.vue'
-import { useId } from '@/hooks/useId'
 
 const styles = hoverCard()
 const [state, send] = useMachine(
@@ -18,14 +18,14 @@ const api = computed(() =>
 </script>
 
 <template>
-  <a href="https://twitter.com/dangvanthanh" target="_blank" v-bind="api.triggerProps" :class="styles.trigger">
+  <a href="https://twitter.com/dangvanthanh" target="_blank" v-bind="api.getTriggerProps()" :class="styles.trigger">
     @dangvanthanh
   </a>
   <Teleport to="body" v-if="api.open">
-    <div v-bind="api.positionerProps">
-      <div v-bind="api.contentProps" :class="styles.content">
-        <div v-bind="api.arrowProps" :class="styles.arrow">
-          <div v-bind="api.arrowTipProps"></div>
+    <div v-bind="api.getPositionerProps()">
+      <div v-bind="api.getContentProps()" :class="styles.content">
+        <div v-bind="api.getArrowProps()" :class="styles.arrow">
+          <div v-bind="api.getArrowTipProps()"></div>
         </div>
         <div :class="flex({ align: 'flex-start', gap: 3 })">
           <div :class="css({ mt: 1 })">

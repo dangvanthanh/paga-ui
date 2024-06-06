@@ -22,15 +22,15 @@ const api = computed(() =>
 </script>
 
 <template>
-  <div ref="ref" v-bind="api.rootProps" :class="styles.root">
-    <button v-bind="api.prevTriggerProps" :class="styles.prevTrigger">
+  <div ref="ref" v-bind="api.getRootProps()" :class="styles.root">
+    <button v-bind="api.getPrevTriggerProps()" :class="styles.prevTrigger">
       <ChevronLeft :class="css({ w: 6, h: 6 })" />
     </button>
-    <button v-bind="api.nextTriggerProps" :class="styles.nextTrigger">
+    <button v-bind="api.getNextTriggerProps()" :class="styles.nextTrigger">
       <ChevronRight :class="css({ w: 6, h: 6 })" />
     </button>
-    <div v-bind="api.viewportProps" :class="styles.viewport">
-      <div v-bind="api.itemGroupProps">
+    <div v-bind="api.getViewportProps()" :class="styles.viewport">
+      <div v-bind="api.getItemGroupProps()">
         <div v-for="(image, index) in items" :key="index" v-bind="api.getItemProps({ index: index })">
           <img :src="image" alt="" :style="{
     height: '300px',

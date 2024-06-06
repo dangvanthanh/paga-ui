@@ -18,7 +18,7 @@ const api = computed(() =>
 </script>
 
 <template>
-  <div ref="ref" v-bind="api.rootProps" :class="styles.root">
+  <div ref="ref" v-bind="api.getRootProps()" :class="styles.root">
     <div :class="styles.control">
       <span v-for="(value, index) in api.value" :key="index">
         <div v-bind="api.getItemProps({ index, value })" :class="styles.tag">
@@ -29,7 +29,7 @@ const api = computed(() =>
         </div>
         <input v-bind="api.getItemInputProps({ index, value })" :class="styles.input" />
       </span>
-      <input placeholder="Add tag..." v-bind="api.inputProps" :class="styles.input" />
+      <input placeholder="Add tag..." v-bind="api.getInputProps()" :class="styles.input" />
     </div>
   </div>
 </template>

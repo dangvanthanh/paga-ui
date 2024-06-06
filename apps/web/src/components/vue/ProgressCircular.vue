@@ -15,10 +15,10 @@ const api = computed(() =>
 </script>
 
 <template>
-  <div v-bind="api.rootProps" :class="styles.root">
-    <svg v-bind="api.circleProps" :class="styles.circle">
-      <circle v-bind="api.circleTrackProps" :class="styles.circleTrack" />
-      <circle v-bind="api.circleRangeProps" :class="styles.circleRange" />
+  <div v-bind="api.getRootProps()" :class="styles.root">
+    <svg v-bind="api.getCircleProps()" :class="styles.circle">
+      <circle v-bind="api.getCircleTrackProps()" :class="styles.circleTrack" />
+      <circle v-bind="api.getCircleRangeProps()" :class="styles.circleRange" />
     </svg>
   </div>
 </template>

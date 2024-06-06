@@ -18,10 +18,10 @@ const api = computed(() => zagAvatar.connect(state.value, send, normalizeProps))
 </script>
 
 <template>
-  <div v-bind="api.rootProps" :class="styles.root">
-    <span v-bind="api.fallbackProps" :class="styles.fallback">
+  <div v-bind="api.getRootProps()" :class="styles.root">
+    <span v-bind="api.getFallbackProps()" :class="styles.fallback">
       {{ props.fallback || 'PG' }}
     </span>
-    <img :alt="props.fallback" :src="props.src" v-bind="api.imageProps" :class="styles.image" />
+    <img :alt="props.fallback" :src="props.src" v-bind="api.getImageProps()" :class="styles.image" />
   </div>
 </template>
