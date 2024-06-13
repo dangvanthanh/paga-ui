@@ -23,19 +23,19 @@ const api = computed(() => timer.connect(state.value, send, normalizeProps))
 <template>
   <div>
     <div v-bind="api.getRootProps()" :class="flex({ gap: 2, justify: 'center' })">
-      <div v-bind="api.getSegmentProps({ type: 'days' })">
+      <div v-bind="api.getItemProps({ type: 'days' })">
         {{ api.formattedTime.days }}
       </div>
       <div v-bind="api.getSeparatorProps()">:</div>
-      <div v-bind="api.getSegmentProps({ type: 'hours' })">
+      <div v-bind="api.getItemProps({ type: 'hours' })">
         {{ api.formattedTime.hours }}
       </div>
       <div v-bind="api.getSeparatorProps()">:</div>
-      <div v-bind="api.getSegmentProps({ type: 'minutes' })">
+      <div v-bind="api.getItemProps({ type: 'minutes' })">
         {{ api.formattedTime.minutes }}
       </div>
       <div v-bind="api.getSeparatorProps()">:</div>
-      <div v-bind="api.getSegmentProps({ type: 'seconds' })">
+      <div v-bind="api.getItemProps({ type: 'seconds' })">
         {{ api.formattedTime.seconds }}
       </div>
     </div>
