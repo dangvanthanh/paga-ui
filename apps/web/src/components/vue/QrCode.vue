@@ -6,10 +6,10 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 
 const [state, send] = useMachine(
-  zagQrCode.machine({
-    id: useId('qrcode'),
-    value: 'https://github.com/dangvanthanh/paga-ui',
-  }),
+	zagQrCode.machine({
+		id: useId('qrcode'),
+		value: 'https://github.com/dangvanthanh/paga-ui',
+	}),
 )
 
 const api = computed(() => zagQrCode.connect(state.value, send, normalizeProps))

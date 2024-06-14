@@ -29,9 +29,9 @@ const { slug } = Astro.params
           {sidebar.items.map((item) => (
             <li
               class={css({
-                bg: slug === item.slug ? 'gray.100' : '',
-                cursor: slug === item.slug ? 'default': 'cursor',
-                pointerEvents: slug === item.slug ? 'none': 'auto',
+                bg: slug === item.slug ? 'blue.100' : '',
+                cursor: slug === item.slug ? 'default' : 'cursor',
+                pointerEvents: slug === item.slug ? 'none' : 'auto',
                 px: 2,
                 py: 1.5,
                 fontSize: 'sm',
