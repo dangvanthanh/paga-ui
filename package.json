@@ -17,9 +17,9 @@
 		"@paga/preset": "workspace:*",
 		"@paga/typescript-config": "workspace:*",
 		"lint-staged": "^15.2.6",
-		"turbo": "^2.0.3"
+		"turbo": "^2.0.4"
 	},
-	"packageManager": "bun@1.1.2",
+	"packageManager": "bun@1.1.5",
 	"engines": {
 		"node": ">=18"
 	},
