@@ -26,6 +26,7 @@ import { select } from './select'
 import { signaturePad } from './signature-pad'
 import { slider } from './slider'
 import { spliter } from './splitter'
+import { steps } from './steps'
 import { switchRecipe } from './switch'
 import { tabs } from './tabs'
 import { tagsInput } from './tags-input'
@@ -62,6 +63,7 @@ export const slotRecipes = {
 	signaturePad,
 	slider,
 	spliter,
+	steps,
 	switches: switchRecipe,
 	tabs,
 	tagsInput,
