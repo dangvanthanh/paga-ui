@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useId } from '@/hooks/useId'
-import { css } from '@/styled-system/css'
 import * as zagQrCode from '@zag-js/qr-code'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
@@ -16,7 +15,7 @@ const api = computed(() => zagQrCode.connect(state.value, send, normalizeProps))
 </script>
 
 <template>
-  <div v-bind="api.getRootProps()" :class="css({ w: 32, h: 32 })">
+  <div v-bind="api.getRootProps()">
     <svg v-bind="api.getFrameProps()">
       <path v-bind="api.getPatternProps()" />
     </svg>

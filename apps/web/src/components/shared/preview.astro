@@ -21,6 +21,6 @@ const { id } = Astro.props
   })}
 >
   <div class={flex({ maxW: 'lg', minW: 'lg', mx: 'auto', align: 'center', justify: 'center' })}>
-    <Playground id={id} client:load />
+    <Playground id={id} client:load client:only="vue" />
   </div>
 </div>

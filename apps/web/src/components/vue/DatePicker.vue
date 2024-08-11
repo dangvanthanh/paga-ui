@@ -8,13 +8,13 @@ import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-vue-next'
 import { computed } from 'vue'
 
 const [stateDatepicker, sendDatepicker] = useMachine(
-	zagDatepicker.machine({
-		id: useId('datepicker'),
-		view: 'day',
-	}),
+  zagDatepicker.machine({
+    id: useId('datepicker'),
+    view: 'day',
+  }),
 )
 const apiDatepicker = computed(() =>
-	zagDatepicker.connect(stateDatepicker.value, sendDatepicker, normalizeProps),
+  zagDatepicker.connect(stateDatepicker.value, sendDatepicker, normalizeProps),
 )
 </script>
 
@@ -31,7 +31,8 @@ const apiDatepicker = computed(() =>
         <div v-bind="apiDatepicker.getContentProps()"
           :class="css({ bg: 'white', shadow: 'xs', zIndex: 100, p: 2, borderWidth: 1, borderColor: 'slate.300', px: 2, py: 1.5, rounded: 'xs' })">
           <div v-show="apiDatepicker.view === 'day'">
-            <div v-bind="apiDatepicker.getViewControlProps({ view: 'year' })" :class="flex({ align: 'center', justify: 'space-between', mb: 2, gap: 6 })">
+            <div v-bind="apiDatepicker.getViewControlProps({ view: 'year' })"
+              :class="flex({ align: 'center', justify: 'space-between', mb: 2, gap: 6 })">
               <button v-bind="apiDatepicker.getPrevTriggerProps()" :class="css({ p: 2 })">
                 <ChevronLeftIcon :size="16" />
               </button>
@@ -57,7 +58,8 @@ const apiDatepicker = computed(() =>
                   <tr v-bind="apiDatepicker.getTableRowProps({ view: 'day' })">
                     <template v-for="(value) in week">
                       <td v-bind="apiDatepicker.getDayTableCellProps({ value })">
-                        <div v-bind="apiDatepicker.getDayTableCellTriggerProps({ value })" :class="css({ p: 2, rounded: 'xs', textAlign: 'center', _hover: { bg: 'gray.100' }, '&[data-disabled]': { visibility: 'hidden' } })">
+                        <div v-bind="apiDatepicker.getDayTableCellTriggerProps({ value })"
+                          :class="css({ p: 2, rounded: 'xs', textAlign: 'center', _hover: { bg: 'gray.100' }, '&[data-disabled]': { visibility: 'hidden' } })">
                           {{ value.day }}
                         </div>
                       </td>
