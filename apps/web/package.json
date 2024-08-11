@@ -9,8 +9,8 @@
 		"build": "astro check && astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"lint": "bunx @biomejs/biome lint ./src --write",
-		"format": "bunx @biomejs/biome format ./src --write",
+		"lint": "biome lint ./src --write",
+		"format": "biome format ./src --write",
 		"update": "bunx npm-check-updates -ui"
 	},
 	"dependencies": {
