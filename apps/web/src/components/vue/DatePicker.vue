@@ -8,13 +8,13 @@ import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-vue-next'
 import { computed } from 'vue'
 
 const [stateDatepicker, sendDatepicker] = useMachine(
-  zagDatepicker.machine({
-    id: useId('datepicker'),
-    view: 'day',
-  }),
+	zagDatepicker.machine({
+		id: useId('datepicker'),
+		view: 'day',
+	}),
 )
 const apiDatepicker = computed(() =>
-  zagDatepicker.connect(stateDatepicker.value, sendDatepicker, normalizeProps),
+	zagDatepicker.connect(stateDatepicker.value, sendDatepicker, normalizeProps),
 )
 </script>
 
