@@ -58,12 +58,12 @@
 		"@zag-js/toggle-group": "^0.65.0",
 		"@zag-js/tooltip": "^0.65.0",
 		"@zag-js/vue": "^0.65.0",
-		"astro": "^4.13.3",
-		"lucide-vue-next": "^0.427.0",
+		"astro": "^4.14.2",
+		"lucide-vue-next": "^0.428.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"solid-js": "^1.8.20",
-		"vue": "^3.4.37"
+		"solid-js": "^1.8.21",
+		"vue": "^3.4.38"
 	},
 	"devDependencies": {
 		"@paga/biome-config": "workspace:*",

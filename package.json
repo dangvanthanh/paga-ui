@@ -16,10 +16,10 @@
 		"@paga/biome-config": "workspace:*",
 		"@paga/preset": "workspace:*",
 		"@paga/typescript-config": "workspace:*",
-		"lint-staged": "^15.2.7",
-		"turbo": "^2.0.12"
+		"lint-staged": "^15.2.9",
+		"turbo": "^2.0.14"
 	},
-	"packageManager": "bun@1.1.5",
+	"packageManager": "bun@1.1.25",
 	"engines": {
 		"node": ">=18"
 	},
