@@ -21,7 +21,7 @@
 		"@paga/biome-config": "workspace:*",
 		"@pandacss/dev": "^0.41.0",
 		"@pandacss/types": "^0.41.0",
-		"tsup": "^8.2.4",
+		"tsup": "^8.3.0",
 		"typescript": "^5.6.2"
 	}
 }
