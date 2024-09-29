@@ -10,10 +10,10 @@ export default defineConfig({
 		react({
 			include: ['**/react/*'],
 		}),
-		vue(),
 		solidJs({
 			include: ['**/solid/*'],
 		}),
+		vue(),
 		mdx(),
 	],
 })
