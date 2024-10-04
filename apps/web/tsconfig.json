@@ -2,7 +2,7 @@
 	"extends": "astro/tsconfigs/strict",
 	"compilerOptions": {
 		"jsx": "preserve",
-		"jsxImportSource": "solid-js",
+		"jsxImportSource": "react-jsx",
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"],
