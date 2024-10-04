@@ -3,6 +3,7 @@ import { defineConfig } from '@pandacss/dev'
 
 export default defineConfig({
 	preflight: true,
+	lightningcss: true,
 	presets: ['@pandacss/dev/presets', pagaPreset],
 	include: ['./src/**/*.{js,jsx,ts,tsx,vue,astro}'],
 	exclude: [],
