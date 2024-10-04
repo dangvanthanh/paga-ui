@@ -1,6 +1,6 @@
 {
 	"name": "@paga/preset",
-	"version": "0.0.1",
+	"version": "0.0.0",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"exports": {

@@ -1,5 +1,5 @@
-import pagaPreset from '@paga/preset'
 import { defineConfig } from '@pandacss/dev'
+import pagaPreset from '../../packages/preset/dist/index'
 
 export default defineConfig({
 	preflight: true,
