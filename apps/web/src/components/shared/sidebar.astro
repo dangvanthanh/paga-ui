@@ -1,13 +1,13 @@
 ---
 import { getCollection } from 'astro:content'
-import { css } from '@/styled-system/css'
-import { flex } from '@/styled-system/patterns'
+import { css } from 'styled-system/css'
+import { flex } from 'styled-system/patterns'
 
 const allOverview = await getCollection('overview')
 const allComponents = await getCollection('components')
 const sidebars = [
-	{ title: 'Overview', items: [...allOverview] },
-	{ title: 'Components', items: [...allComponents] },
+  { title: 'Overview', items: [...allOverview] },
+  { title: 'Components', items: [...allComponents] },
 ]
 
 const { slug } = Astro.params
