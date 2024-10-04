@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
 import { css } from '@/styled-system/css'
 import { carousel } from '@/styled-system/recipes'

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
 import { css } from '@/styled-system/css'
 import { flex } from '@/styled-system/patterns'

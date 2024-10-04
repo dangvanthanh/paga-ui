@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
 import { tabs } from '@/styled-system/recipes'
 import * as zagTabs from '@zag-js/tabs'

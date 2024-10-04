@@ -1,7 +1,7 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
-import * as zagSteps from '@zag-js/steps'
 import { button, steps } from '@/styled-system/recipes'
+import * as zagSteps from '@zag-js/steps'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 

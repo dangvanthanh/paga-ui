@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
 import { progressLinear } from '@/styled-system/recipes'
 import * as zagProgress from '@zag-js/progress'

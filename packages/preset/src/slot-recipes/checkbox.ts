@@ -6,11 +6,11 @@ export const checkbox = defineSlotRecipe({
 	base: {
 		root: { display: 'flex', alignItems: 'center', gap: 2 },
 		control: {
-			background: 'white',
+			bg: 'white',
 			display: 'flex',
 			alignItems: 'center',
 			justifyContent: 'center',
-			borderWidth: '1px',
+			borderWidth: 1,
 			borderColor: 'gray.300',
 			cursor: 'pointer',
 			transitionDuration: 'normal',
@@ -18,15 +18,15 @@ export const checkbox = defineSlotRecipe({
 			transitionTimingFunction: 'default',
 			w: 5,
 			h: 5,
-			borderRadius: 'sm',
+			rounded: 'sm',
 			_hover: {
-				background: 'gray.50',
+				bg: 'gray.50',
 			},
 			_checked: {
-				background: 'grey.200',
+				bg: 'grey.200',
 				borderColor: 'gray.300',
 				_hover: {
-					background: 'gray.50',
+					bg: 'gray.50',
 				},
 			},
 		},

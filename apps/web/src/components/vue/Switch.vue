@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
 import { switches } from '@/styled-system/recipes'
 import * as zagSwitch from '@zag-js/switch'

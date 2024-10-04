@@ -1,12 +1,12 @@
 import { defineSlotRecipe } from '@pandacss/dev'
 
 const thumb = {
-	borderRadius: 'xl',
+	rounded: 'xl',
 	h: 5,
 	w: 5,
 	outline: 'none',
 	transform: 'translate(-50%,-50%)',
-	boxShadow: '0 0 0 1px #d1d5db, 0 0 0 2px white inset',
+	shadow: '0 0 0 1px #d1d5db, 0 0 0 2px white inset',
 }
 
 export const colorPicker = defineSlotRecipe({
@@ -36,18 +36,18 @@ export const colorPicker = defineSlotRecipe({
 			pos: 'relative',
 		},
 		transparencyGrid: {
-			borderRadius: 'sm',
+			rounded: 'sm',
 		},
 		swatch: {
 			w: 'full',
 			minW: 9,
 			h: 9,
-			borderRadius: 'sm',
+			rounded: 'sm',
 		},
 		input: {
 			borderColor: 'gray.300',
-			borderWidth: '1px',
-			borderRadius: 'sm',
+			borderWidth: 1,
+			rounded: 'sm',
 			py: 1.5,
 			px: 3,
 			h: 9,
@@ -61,9 +61,9 @@ export const colorPicker = defineSlotRecipe({
 		content: {
 			display: 'flex',
 			flexDirection: 'column',
-			background: 'white',
-			borderRadius: 'sm',
-			boxShadow: 'sm',
+			bg: 'white',
+			rounded: 'sm',
+			shadow: 'sm',
 			minW: 'xs',
 			p: 3,
 			gap: 3,
@@ -78,7 +78,7 @@ export const colorPicker = defineSlotRecipe({
 		},
 		area: {
 			height: 36,
-			borderRadius: 'sm',
+			rounded: 'sm',
 			overflow: 'hidden',
 		},
 		areaBackground: {
@@ -88,10 +88,10 @@ export const colorPicker = defineSlotRecipe({
 			...thumb,
 		},
 		channelSlider: {
-			borderRadius: 'sm',
+			rounded: 'sm',
 		},
 		channelSliderTrack: {
-			borderRadius: 'sm',
+			rounded: 'sm',
 			h: 3,
 		},
 		channelSliderThumb: {
@@ -104,10 +104,10 @@ export const colorPicker = defineSlotRecipe({
 		},
 		eyeDropperTrigger: {
 			display: 'flex',
-			borderWidth: '1px',
+			borderWidth: 1,
 			borderColor: 'gray.300',
 			p: 1.5,
-			borderRadius: 'sm',
+			rounded: 'sm',
 			cursor: 'pointer',
 		},
 	},

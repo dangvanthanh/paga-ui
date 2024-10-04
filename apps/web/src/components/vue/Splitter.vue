@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
 import { spliter } from '@/styled-system/recipes'
 import * as zagSplitter from '@zag-js/splitter'

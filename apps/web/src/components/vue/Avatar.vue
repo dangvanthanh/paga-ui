@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
 import { avatar } from '@/styled-system/recipes'
 import * as zagAvatar from '@zag-js/avatar'

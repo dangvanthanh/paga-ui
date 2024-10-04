@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
 import { toggleGroup } from '@/styled-system/recipes'
 import * as zagToggle from '@zag-js/toggle-group'

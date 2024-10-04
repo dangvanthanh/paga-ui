@@ -4,12 +4,12 @@ export const input = defineRecipe({
 	className: 'input',
 	base: {
 		appearance: 'none',
-		background: 'white',
+		bg: 'white',
 		borderColor: 'gray.300',
-		borderRadius: 'sm',
-		borderWidth: '1px',
+		rounded: 'sm',
+		borderWidth: 1,
 		outline: 0,
-		position: 'relative',
+		pos: 'relative',
 		transitionDuration: 'normal',
 		transitionProperty: 'box-shadow, border-color',
 		transitionTimingFunction: 'default',
@@ -19,7 +19,7 @@ export const input = defineRecipe({
 		},
 		_focus: {
 			borderColor: 'gray.800',
-			boxShadow: 'sm',
+			shadow: 'sm',
 		},
 	},
 	variants: {

@@ -13,18 +13,18 @@ export const toggleGroup = defineSlotRecipe({
 			display: 'inline-flex',
 			justifyContent: 'center',
 			alignItems: 'center',
-			borderWidth: '1px',
+			borderWidth: 1,
 			borderColor: 'gray.300',
-			borderRadius: 'sm',
+			rounded: 'sm',
 			height: 9,
-			minWidth: 9,
+			minW: 9,
 			textStyle: 'sm',
 			paddingInline: 3.5,
 			'&[data-state="on"]': {
-				background: 'gray.900',
+				bg: 'gray.900',
 				color: 'white',
 				_hover: {
-					background: 'gray.800',
+					bg: 'gray.800',
 				},
 			},
 			_hover: {

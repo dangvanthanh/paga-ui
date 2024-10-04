@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
 import { pinInput } from '@/styled-system/recipes'
 import * as zagPinInput from '@zag-js/pin-input'

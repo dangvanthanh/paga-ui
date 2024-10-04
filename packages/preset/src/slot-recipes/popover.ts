@@ -19,9 +19,9 @@ export const popover = defineSlotRecipe({
 			pos: 'relative',
 		},
 		content: {
-			background: 'white',
-			borderRadius: 'sm',
-			boxShadow: 'sm',
+			bg: 'white',
+			rounded: 'sm',
+			shadow: 'sm',
 			flexDirection: 'column',
 			minW: 'xs',
 			p: 3,

@@ -9,10 +9,10 @@ export const switchRecipe = defineSlotRecipe({
 			bg: 'gray.200',
 			display: 'flex',
 			alignItems: 'center',
-			borderWidth: '1px',
-			borderRadius: 'sm',
+			borderWidth: 1,
+			rounded: 'sm',
 			padding: '0.5',
-			position: 'relative',
+			pos: 'relative',
 			borderColor: 'gray.100',
 			_checked: {
 				bg: 'gray.800',
@@ -24,8 +24,8 @@ export const switchRecipe = defineSlotRecipe({
 		},
 		thumb: {
 			bg: 'white',
-			position: 'relative',
-			borderRadius: 'sm',
+			pos: 'relative',
+			rounded: 'sm',
 			transition: 'transform .14s cubic-bezier(.45,.05,.55,.95)',
 			_checked: {
 				transform: 'translateX(105%)',

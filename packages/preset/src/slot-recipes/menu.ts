@@ -10,8 +10,8 @@ export const menu = defineSlotRecipe({
 		},
 		content: {
 			bg: 'white',
-			borderRadius: 'sm',
-			boxShadow: 'sm',
+			rounded: 'sm',
+			shadow: 'sm',
 			display: 'flex',
 			flexDirection: 'column',
 			outline: 'none',

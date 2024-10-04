@@ -1,10 +1,10 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import Layout from './layout.astro'
-import { flex } from 'styled-system/patterns'
-import { css } from 'styled-system/css'
 import Hero from '@/components/shared/hero.astro'
 import Sidebar from '@/components/shared/sidebar.astro'
+import { css } from 'styled-system/css'
+import { flex } from 'styled-system/patterns'
+import Layout from './layout.astro'
 
 interface Props {
 	title: string
@@ -54,7 +54,7 @@ const { title, entry } = Astro.props
         class={flex({
           direction: 'column',
           p: 6,
-          w: 72,
+          w: 64,
           overflow: 'auto',
           height: 'calc(100vh - 3rem)',
           pos: 'fixed',

@@ -11,7 +11,7 @@ export const clipboard = defineSlotRecipe({
 		input: {
 			py: 1.5,
 			px: 3,
-			borderWidth: '1px',
+			borderWidth: 1,
 			rounded: 'sm',
 			borderColor: 'gray.300',
 			w: 'full',
@@ -20,8 +20,7 @@ export const clipboard = defineSlotRecipe({
 		trigger: {
 			p: 2,
 			h: 9,
-			borderWidth: '1px',
-			borderRadius: 'sm',
+			borderWidth: 1,
 			borderColor: 'gray.300',
 			bg: 'gray.900',
 			color: 'white',

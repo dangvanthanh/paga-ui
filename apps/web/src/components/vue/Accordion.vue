@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
 import { accordion } from '@/styled-system/recipes'
 import * as zagAccordion from '@zag-js/accordion'

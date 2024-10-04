@@ -8,13 +8,13 @@ export const hoverCard = defineSlotRecipe({
 			textStyle: 'sm',
 		},
 		content: {
-			background: 'white',
-			borderRadius: 'sm',
-			boxShadow: 'sm',
+			bg: 'white',
+			rounded: 'sm',
+			shadow: 'sm',
 			maxW: 'lg',
 			minW: 'xs',
 			p: 3,
-			position: 'relative',
+			pos: 'relative',
 			textStyle: 'sm',
 			_open: {
 				animation: 'fadeIn 0.25s ease-out',

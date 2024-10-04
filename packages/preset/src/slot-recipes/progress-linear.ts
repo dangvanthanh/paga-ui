@@ -6,12 +6,12 @@ export const progressLinear = defineSlotRecipe({
 	base: {
 		root: { display: 'flex', alignItems: 'center', minW: 'md' },
 		range: {
-			background: 'gray.800',
+			bg: 'gray.800',
 			h: 'full',
 		},
 		track: {
-			background: 'white',
-			borderWidth: '1px',
+			bg: 'white',
+			borderWidth: 1,
 			overflow: 'hidden',
 			height: 8,
 			borderColor: 'gray.100',

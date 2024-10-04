@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
 import { combobox } from '@/styled-system/recipes'
 import * as zagCombobox from '@zag-js/combobox'

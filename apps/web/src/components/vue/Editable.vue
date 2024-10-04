@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
 import { editable } from '@/styled-system/recipes'
 import * as zagEditable from '@zag-js/editable'

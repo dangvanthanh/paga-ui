@@ -9,8 +9,8 @@ export const button = defineRecipe({
 		userSelect: 'none',
 		verticalAlign: 'top',
 		cursor: 'pointer',
-		borderRadius: 'sm',
-		borderWidth: '1px',
+		rounded: 'sm',
+		borderWidth: 1,
 		_focusVisible: {
 			outlineOffset: '2px',
 			outline: '2px solid',
@@ -26,17 +26,17 @@ export const button = defineRecipe({
 		variant: {
 			primary: {
 				borderColor: 'gray.100',
-				background: 'gray.800',
+				bg: 'gray.800',
 				color: 'white',
 				_hover: {
-					background: 'gray.900',
+					bg: 'gray.900',
 				},
 			},
 			ghost: {
 				borderColor: 'gray.300',
-				background: 'gray.100',
+				bg: 'gray.100',
 				_hover: {
-					background: 'gray.50',
+					bg: 'gray.50',
 				},
 			},
 		},

@@ -12,8 +12,8 @@ export const combobox = defineSlotRecipe({
 			pl: 3,
 			pr: 6,
 			py: 1.5,
-			borderRadius: 'sm',
-			boxShadow: 'sm',
+			rounded: 'sm',
+			shadow: 'sm',
 			w: 'full',
 			textStyle: 'sm',
 		},
@@ -24,9 +24,9 @@ export const combobox = defineSlotRecipe({
 			bottom: 0,
 		},
 		content: {
-			background: 'white',
-			borderRadius: 'sm',
-			boxShadow: 'sm',
+			bg: 'white',
+			rounded: 'sm',
+			shadow: 'sm',
 			display: 'flex',
 			flexDirection: 'column',
 			_open: {
@@ -54,13 +54,13 @@ export const combobox = defineSlotRecipe({
 			transitionProperty: 'background-color, color',
 			transitionTimingFunction: 'ease-in-out',
 			_hover: {
-				background: 'gray.200',
+				bg: 'gray.200',
 			},
 			_highlighted: {
-				background: 'gray.200',
+				bg: 'gray.200',
 			},
 			_checked: {
-				background: 'gray.200',
+				bg: 'gray.200',
 				cursor: 'default',
 				pointerEvents: 'none',
 			},

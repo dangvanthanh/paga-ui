@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
 import { segmentedControl } from '@/styled-system/recipes'
 import * as zagRadio from '@zag-js/radio-group'

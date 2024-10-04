@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
 import { numberInput } from '@/styled-system/recipes'
 import * as zagNumberInput from '@zag-js/number-input'

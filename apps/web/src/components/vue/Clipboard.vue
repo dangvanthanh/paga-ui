@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
 import { clipboard } from '@/styled-system/recipes'
 import * as zagClipboard from '@zag-js/clipboard'

@@ -18,7 +18,7 @@ export const tabs = defineSlotRecipe({
 			flexShrink: 0,
 			flexDirection: 'row',
 			overflow: 'auto',
-			position: 'relative',
+			pos: 'relative',
 			borderBottomWidth: '1px',
 			borderColor: 'gray.300',
 		},

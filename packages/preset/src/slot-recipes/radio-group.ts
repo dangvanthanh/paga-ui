@@ -19,15 +19,15 @@ export const radioGroup = defineSlotRecipe({
 			cursor: 'pointer',
 		},
 		itemControl: {
-			background: 'white',
-			borderRadius: '100%',
+			bg: 'white',
+			rounded: '100%',
 			borderColor: 'gray.300',
-			borderWidth: '1px',
-			boxShadow: 'sm',
+			borderWidth: 1,
+			shadow: 'sm',
 			w: 4,
 			h: 4,
 			_checked: {
-				background: 'gray.900',
+				bg: 'gray.900',
 			},
 		},
 		itemText: {

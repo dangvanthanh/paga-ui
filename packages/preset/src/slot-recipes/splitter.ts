@@ -14,7 +14,7 @@ export const spliter = defineSlotRecipe({
 			alignItems: 'center',
 			justifyContent: 'center',
 			bg: 'gray.50',
-			borderWidth: '1px',
+			borderWidth: 1,
 			borderColor: 'gray.300',
 			h: 'full',
 			minH: 32,
@@ -22,7 +22,7 @@ export const spliter = defineSlotRecipe({
 		resizeTrigger: {
 			bg: 'gray.300',
 			display: 'flex',
-			borderRadius: 'md',
+			rounded: 'md',
 			margin: 2,
 			w: 2,
 			h: 24,

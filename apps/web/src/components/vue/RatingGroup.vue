@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useId } from '@/hooks/useId'
 import { ratingGroup } from '@/styled-system/recipes'
 import * as zagRating from '@zag-js/rating-group'
