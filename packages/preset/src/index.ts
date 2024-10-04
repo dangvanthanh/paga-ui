@@ -5,7 +5,7 @@ import { recipes } from './recipes'
 import { slotRecipes } from './slot-recipes'
 
 const preset: Preset = definePreset({
-  name: 'paga-preset',
+	name: 'paga-preset',
 	theme: {
 		extend: {
 			keyframes,
