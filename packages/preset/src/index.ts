@@ -15,4 +15,4 @@ const pagaPreset: Preset = definePreset({
 	},
 })
 
-export { pagaPreset as default }
+export default pagaPreset
