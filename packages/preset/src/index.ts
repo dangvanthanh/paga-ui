@@ -4,8 +4,8 @@ import { keyframes } from './keyframes'
 import { recipes } from './recipes'
 import { slotRecipes } from './slot-recipes'
 
-const preset: Preset = definePreset({
-	name: 'paga-preset',
+const pagaPreset: Preset = definePreset({
+	name: '@paga/preset',
 	theme: {
 		extend: {
 			keyframes,
@@ -15,4 +15,4 @@ const preset: Preset = definePreset({
 	},
 })
 
-export default preset
+export { pagaPreset as default }

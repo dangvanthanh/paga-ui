@@ -11,14 +11,15 @@
 		}
 	},
 	"scripts": {
-		"dev": "tsup src/index.ts --watch",
-		"build": "tsup src/index.ts --format=esm,cjs",
+		"dev": "tsup --watch",
+		"build": "tsup",
 		"lint": "biome lint ./src --write",
 		"format": "biome format ./src --write",
 		"update": "bunx npm-check-updates -ui"
 	},
 	"devDependencies": {
 		"@paga/biome-config": "workspace:*",
+		"@paga/typescript-config": "workspace:*",
 		"@pandacss/dev": "^0.46.1",
 		"@pandacss/types": "^0.46.1",
 		"tsup": "^8.3.0",
