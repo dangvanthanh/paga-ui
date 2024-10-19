@@ -1,6 +1,6 @@
 {
 	"name": "@paga/preset",
-  "private": true,
+	"private": true,
 	"version": "0.0.0",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
