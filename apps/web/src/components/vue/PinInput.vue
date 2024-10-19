@@ -14,8 +14,8 @@ const api = computed(() =>
 
 <template>
   <div ref="ref" v-bind="api.getRootProps()" :class="styles.root">
-    <input v-bind="api.getInputProps({ index: 0 })" :class="styles.input" />
-    <input v-bind="api.getInputProps({ index: 1 })" :class="styles.input" />
-    <input v-bind="api.getInputProps({ index: 2 })" :class="styles.input" />
+    <template v-for="item in Array.from({ length: 6 }).map((_, i) => i)">
+      <input v-bind="api.getInputProps({ index: item })" :class="styles.input" />
+    </template>
   </div>
 </template>
