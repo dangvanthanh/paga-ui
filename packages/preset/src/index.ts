@@ -4,15 +4,19 @@ import { keyframes } from './keyframes'
 import { recipes } from './recipes'
 import { slotRecipes } from './slot-recipes'
 
-const pagaPreset: Preset = definePreset({
-	name: '@paga/preset',
-	theme: {
-		extend: {
-			keyframes,
-			recipes,
-			slotRecipes,
+const createPreset = (): Preset => {
+	return definePreset({
+		name: '@paga/preset',
+		theme: {
+			extend: {
+				keyframes,
+				recipes,
+				slotRecipes,
+			},
 		},
-	},
-})
+	})
+}
 
-export default pagaPreset
+const pagaPreset = createPreset()
+
+export { createPreset, pagaPreset as default }

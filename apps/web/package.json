@@ -14,7 +14,6 @@
 		"update": "bunx npm-check-updates -ui"
 	},
 	"dependencies": {
-		"@paga/preset": "workspace:*",
 		"@astrojs/check": "^0.9.4",
 		"@astrojs/mdx": "^3.1.8",
 		"@astrojs/react": "^3.6.2",
@@ -67,6 +66,7 @@
 		"vue": "^3.5.12"
 	},
 	"devDependencies": {
+    "@paga/preset": "workspace:*",
 		"@paga/biome-config": "workspace:*",
 		"@pandacss/dev": "^0.47.0",
 		"@pandacss/types": "^0.47.0",

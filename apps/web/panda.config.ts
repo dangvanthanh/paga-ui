@@ -1,11 +1,9 @@
-import pagaPreset from '@paga/preset'
 import { defineConfig } from '@pandacss/dev'
-import pandaPresets from '@pandacss/dev/presets'
 
 export default defineConfig({
 	preflight: true,
 	lightningcss: true,
-	presets: [pandaPresets, pagaPreset],
+	presets: ['@pandacss/dev/presets', '@paga/preset'],
 	include: ['./src/**/*.{js,jsx,ts,tsx,vue,astro}'],
 	exclude: [],
 	theme: {

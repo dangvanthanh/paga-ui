@@ -14,7 +14,6 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@paga/biome-config": "workspace:*",
-		"@paga/preset": "workspace:*",
 		"@paga/typescript-config": "workspace:*",
 		"lint-staged": "^15.2.10",
 		"turbo": "^2.2.0"
