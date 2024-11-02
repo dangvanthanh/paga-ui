@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { progressLinear } from '@/styled-system/recipes'
 import * as zagProgress from '@zag-js/progress'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed } from 'vue'
+import { computed, useId } from 'vue'
 
 const styles = progressLinear()
 const [state, send] = useMachine(
-	zagProgress.machine({ id: useId('progressLinear'), value: 20 }),
+	zagProgress.machine({ id: useId(), value: 20 }),
 )
 const api = computed(() =>
 	zagProgress.connect(state.value, send, normalizeProps),

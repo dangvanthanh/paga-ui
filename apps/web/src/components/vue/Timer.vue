@@ -1,23 +1,21 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { flex } from '@/styled-system/patterns'
-import * as timer from '@zag-js/timer'
+import * as zagTimer from '@zag-js/timer'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed } from 'vue'
+import { computed, useId } from 'vue'
 
 const [state, send] = useMachine(
-	timer.machine({
-		id: useId('timer'),
+	zagTimer.machine({
+		id: useId(),
 		countdown: true,
 		autoStart: true,
-		startMs: timer.parse({ days: 2, seconds: 10 }),
+		startMs: zagTimer.parse({ days: 2, seconds: 10 }),
 		onComplete() {
 			console.log('Timer completed')
 		},
 	}),
 )
-
-const api = computed(() => timer.connect(state.value, send, normalizeProps))
+const api = computed(() => zagTimer.connect(state.value, send, normalizeProps))
 </script>
 
 <template>

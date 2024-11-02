@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { select } from '@/styled-system/recipes'
 import * as zagSelect from '@zag-js/select'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { Teleport, computed } from 'vue'
+import { Teleport, computed, useId } from 'vue'
 
 const styles = select()
 const selectData = [
@@ -14,7 +13,7 @@ const selectData = [
 
 const [state, send] = useMachine(
 	zagSelect.machine({
-		id: useId('select'),
+		id: useId(),
 		collection: zagSelect.collection({
 			items: selectData,
 		}),

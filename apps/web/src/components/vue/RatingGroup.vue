@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { ratingGroup } from '@/styled-system/recipes'
 import * as zagRating from '@zag-js/rating-group'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { Star, StarHalf } from 'lucide-vue-next'
-import { computed } from 'vue'
+import { computed, useId } from 'vue'
 
 const styles = ratingGroup()
 const [state, send] = useMachine(
-	zagRating.machine({ id: useId('ratingGroup'), value: 3, allowHalf: true }),
+	zagRating.machine({ id: useId(), value: 3, allowHalf: true }),
 )
 const api = computed(() => zagRating.connect(state.value, send, normalizeProps))
 </script>

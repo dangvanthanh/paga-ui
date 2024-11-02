@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { tabs } from '@/styled-system/recipes'
 import * as zagTabs from '@zag-js/tabs'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed } from 'vue'
+import { computed, useId } from 'vue'
 
 const styles = tabs()
 
@@ -27,7 +26,7 @@ const data = [
 ]
 
 const [state, send] = useMachine(
-	zagTabs.machine({ id: useId('tabs'), value: 'react' }),
+	zagTabs.machine({ id: useId(), value: 'react' }),
 )
 const api = computed(() => zagTabs.connect(state.value, send, normalizeProps))
 </script>

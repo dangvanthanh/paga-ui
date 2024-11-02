@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { css, cx } from '@/styled-system/css'
 import { flex } from '@/styled-system/patterns'
 import { input, popover } from '@/styled-system/recipes'
 import * as zagPopover from '@zag-js/popover'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { Teleport, computed } from 'vue'
+import { Teleport, computed, useId } from 'vue'
 
 const styles = popover()
-const [state, send] = useMachine(zagPopover.machine({ id: useId('popover') }))
+const [state, send] = useMachine(zagPopover.machine({ id: useId() }))
 const api = computed(() =>
 	zagPopover.connect(state.value, send, normalizeProps),
 )

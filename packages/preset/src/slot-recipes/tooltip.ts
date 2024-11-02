@@ -23,5 +23,8 @@ export const tooltip = defineSlotRecipe({
 				animation: 'fadeOut 0.2s ease-out',
 			},
 		},
+		trigger: {
+			fontSize: 'sm',
+		},
 	},
 })

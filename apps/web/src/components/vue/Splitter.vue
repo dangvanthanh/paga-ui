@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { spliter } from '@/styled-system/recipes'
 import * as zagSplitter from '@zag-js/splitter'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed } from 'vue'
+import { computed, useId } from 'vue'
 
 const styles = spliter()
+
 const [state, send] = useMachine(
 	zagSplitter.machine({
-		id: useId('splitter'),
+		id: useId(),
 		size: [
 			{ id: 'a', size: 50 },
 			{ id: 'b', size: 50 },

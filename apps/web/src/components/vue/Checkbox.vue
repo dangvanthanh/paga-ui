@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { css } from '@/styled-system/css'
 import { checkbox } from '@/styled-system/recipes'
 import * as zagCheckbox from '@zag-js/checkbox'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { Check } from 'lucide-vue-next'
-import { computed } from 'vue'
+import { computed, useId } from 'vue'
 
 const styles = checkbox()
 
-const [state, send] = useMachine(zagCheckbox.machine({ id: useId('checkbox') }))
+const [state, send] = useMachine(zagCheckbox.machine({ id: useId() }))
 const api = computed(() =>
 	zagCheckbox.connect(state.value, send, normalizeProps),
 )

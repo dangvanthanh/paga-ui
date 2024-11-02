@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { combobox } from '@/styled-system/recipes'
 import * as zagCombobox from '@zag-js/combobox'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed, ref } from 'vue'
+import { computed, ref, useId } from 'vue'
 
 const styles = combobox()
 
@@ -25,7 +24,7 @@ const collectionRef = computed(() =>
 
 const [state, send] = useMachine(
 	zagCombobox.machine({
-		id: useId('combobox'),
+		id: useId(),
 		collection: collectionRef.value,
 		value: ['react'],
 		onOpenChange(details) {

@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { button, steps } from '@/styled-system/recipes'
 import * as zagSteps from '@zag-js/steps'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed } from 'vue'
+import { computed, useId } from 'vue'
 
 const styles = steps()
 
@@ -15,7 +14,7 @@ const stepsData = [
 
 const [state, send] = useMachine(
 	zagSteps.machine({
-		id: useId('steps'),
+		id: useId(),
 		count: stepsData.length,
 	}),
 )
@@ -38,9 +37,6 @@ const api = computed(() => zagSteps.connect(state.value, send, normalizeProps))
     <div v-for="(step, index) in stepsData" :key="index" v-bind="api.getContentProps({ index })"
       :class="styles.content">
       {{ step.title }}
-      <template v-if="step.description">
-        - {{ step.description }}
-      </template>
     </div>
 
     <div v-bind="api.getContentProps({ index: stepsData.length })" :class="styles.content">

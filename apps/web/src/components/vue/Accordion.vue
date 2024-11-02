@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { accordion } from '@/styled-system/recipes'
 import * as zagAccordion from '@zag-js/accordion'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed } from 'vue'
+import { computed, useId } from 'vue'
 
 const styles = accordion()
 
@@ -20,9 +19,8 @@ const data = [
 ]
 
 const [state, send] = useMachine(
-	zagAccordion.machine({ id: useId('accordion'), value: ['Solid'] }),
+	zagAccordion.machine({ id: useId(), value: ['Solid'] }),
 )
-
 const api = computed(() =>
 	zagAccordion.connect(state.value, send, normalizeProps),
 )

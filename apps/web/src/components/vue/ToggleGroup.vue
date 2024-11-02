@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { toggleGroup } from '@/styled-system/recipes'
 import * as zagToggle from '@zag-js/toggle-group'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed } from 'vue'
+import { computed, useId } from 'vue'
 
 const styles = toggleGroup()
+
 const [state, send] = useMachine(
-	zagToggle.machine({ id: useId('toggleGroup'), multiple: true }),
+	zagToggle.machine({ id: useId(), multiple: true }),
 )
 const api = computed(() => zagToggle.connect(state.value, send, normalizeProps))
 </script>

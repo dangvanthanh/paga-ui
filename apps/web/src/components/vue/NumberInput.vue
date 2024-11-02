@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { numberInput } from '@/styled-system/recipes'
 import * as zagNumberInput from '@zag-js/number-input'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed } from 'vue'
+import { computed, useId } from 'vue'
 
 const styles = numberInput()
 const [state, send] = useMachine(
-	zagNumberInput.machine({ id: useId('numberInput'), value: '14' }),
+	zagNumberInput.machine({ id: useId(), value: '14' }),
 )
 const api = computed(() =>
 	zagNumberInput.connect(state.value, send, normalizeProps),

@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { avatar } from '@/styled-system/recipes'
 import * as zagAvatar from '@zag-js/avatar'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed } from 'vue'
+import { computed, useId } from 'vue'
 
 const props = defineProps({
 	fallback: String,
@@ -12,8 +11,7 @@ const props = defineProps({
 
 const styles = avatar()
 
-const [state, send] = useMachine(zagAvatar.machine({ id: useId('avatar') }))
-
+const [state, send] = useMachine(zagAvatar.machine({ id: useId() }))
 const api = computed(() => zagAvatar.connect(state.value, send, normalizeProps))
 </script>
 

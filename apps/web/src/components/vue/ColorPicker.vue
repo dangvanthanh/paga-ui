@@ -1,18 +1,17 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { css, cx } from '@/styled-system/css'
 import { flex, grid } from '@/styled-system/patterns'
 import { colorPicker } from '@/styled-system/recipes'
 import * as zagColorPicker from '@zag-js/color-picker'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { Pipette } from 'lucide-vue-next'
-import { computed, ref } from 'vue'
+import { computed, ref, useId } from 'vue'
 
 const styles = colorPicker()
 
 const [state, send] = useMachine(
 	zagColorPicker.machine({
-		id: useId('colorPicker'),
+		id: useId(),
 		value: zagColorPicker.parse('#202020'),
 	}),
 )

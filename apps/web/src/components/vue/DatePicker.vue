@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { css } from '@/styled-system/css'
 import { flex } from '@/styled-system/patterns'
 import * as zagDatepicker from '@zag-js/date-picker'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-vue-next'
-import { computed } from 'vue'
+import { computed, useId } from 'vue'
 
 const [stateDatepicker, sendDatepicker] = useMachine(
 	zagDatepicker.machine({
-		id: useId('datepicker'),
+		id: useId(),
 		view: 'day',
 	}),
 )

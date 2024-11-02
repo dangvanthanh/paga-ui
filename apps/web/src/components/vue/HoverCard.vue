@@ -1,16 +1,15 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { css } from '@/styled-system/css'
 import { flex } from '@/styled-system/patterns'
 import { hoverCard } from '@/styled-system/recipes'
 import * as zagHoverCard from '@zag-js/hover-card'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { Teleport, computed } from 'vue'
+import { Teleport, computed, useId } from 'vue'
 import Avatar from './Avatar.vue'
 
 const styles = hoverCard()
 const [state, send] = useMachine(
-	zagHoverCard.machine({ id: useId('hoverCard') }),
+	zagHoverCard.machine({ id: useId() }),
 )
 const api = computed(() =>
 	zagHoverCard.connect(state.value, send, normalizeProps),
@@ -32,8 +31,8 @@ const api = computed(() =>
             <Avatar id="DT" fallback="DT" />
           </div>
           <div :class="css({ flex: '1 1 0%' })">
-            <p :class="css({ color: 'gray.900', fontWeight: 600 })">Dang Van Thanh</p>
-            <p :class="css({ color: 'gray.600' })">Front-end Enginner</p>
+            <div :class="css({ color: 'gray.900', fontWeight: 600, mb: 1 })">Dang Van Thanh</div>
+            <div :class="css({ color: 'gray.600' })">Front-end Enginner</div>
           </div>
         </div>
       </div>

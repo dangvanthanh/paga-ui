@@ -19,6 +19,7 @@ import { presence } from './presence'
 import { pressable } from './pressable'
 import { progressCircular } from './progress-circular'
 import { progressLinear } from './progress-linear'
+import { qrCode } from './qr-code'
 import { radioGroup } from './radio-group'
 import { ratingGroup } from './rating-group'
 import { segmentedControl } from './segmented-control'
@@ -33,6 +34,7 @@ import { tagsInput } from './tags-input'
 import { toast } from './toast'
 import { toggleGroup } from './toggle-group'
 import { tooltip } from './tooltip'
+import { tour } from './tour'
 
 export const slotRecipes = {
 	accordion,
@@ -54,8 +56,9 @@ export const slotRecipes = {
 	popover,
 	presence,
 	pressable,
-	progressLinear,
 	progressCircular,
+	progressLinear,
+	qrCode,
 	radioGroup,
 	ratingGroup,
 	segmentedControl,
@@ -70,4 +73,5 @@ export const slotRecipes = {
 	toast,
 	toggleGroup,
 	tooltip,
+	tour,
 }

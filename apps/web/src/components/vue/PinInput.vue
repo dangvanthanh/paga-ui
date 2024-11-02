@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { pinInput } from '@/styled-system/recipes'
 import * as zagPinInput from '@zag-js/pin-input'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed } from 'vue'
+import { computed, useId } from 'vue'
 
 const styles = pinInput()
-const [state, send] = useMachine(zagPinInput.machine({ id: useId('pinInput') }))
+const [state, send] = useMachine(zagPinInput.machine({ id: useId() }))
 const api = computed(() =>
 	zagPinInput.connect(state.value, send, normalizeProps),
 )

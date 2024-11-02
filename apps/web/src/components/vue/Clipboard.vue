@@ -1,16 +1,15 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { clipboard } from '@/styled-system/recipes'
 import * as zagClipboard from '@zag-js/clipboard'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { ClipboardCheck, ClipboardCopyIcon } from 'lucide-vue-next'
-import { computed } from 'vue'
+import { computed, useId } from 'vue'
 
 const styles = clipboard()
 
 const [state, send] = useMachine(
 	zagClipboard.machine({
-		id: useId('clipboard'),
+		id: useId(),
 		value: 'https://github.com/dangvanthanh/paga-ui',
 	}),
 )

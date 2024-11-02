@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { signaturePad } from '@/styled-system/recipes'
 import * as zagSignaturePad from '@zag-js/signature-pad'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed } from 'vue'
+import { computed, useId } from 'vue'
 
 const styles = signaturePad()
 const [state, send] = useMachine(
-	zagSignaturePad.machine({ id: useId('signaturePad') }),
+	zagSignaturePad.machine({ id: useId() }),
 )
 const api = computed(() =>
 	zagSignaturePad.connect(state.value, send, normalizeProps),

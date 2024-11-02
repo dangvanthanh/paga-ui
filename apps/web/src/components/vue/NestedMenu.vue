@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { menu } from '@/styled-system/recipes'
 import * as zagMenu from '@zag-js/menu'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { Teleport, computed, onMounted } from 'vue'
+import { Teleport, computed, onMounted, useId } from 'vue'
 
 const styles = menu()
 const [fileMenuState, fileMenuSend, fileMenuMachine] = useMachine(
-	zagMenu.machine({ id: useId('fileMenu'), 'aria-label': 'File' }),
+	zagMenu.machine({ id: useId(), 'aria-label': 'File' }),
 )
 const fileMenu = computed(() =>
 	zagMenu.connect(fileMenuState.value, fileMenuSend, normalizeProps),
 )
 
 const [shareMenuState, shareMenuSend, shareMenuMachine] = useMachine(
-	zagMenu.machine({ id: useId('shareMenu'), 'aria-label': 'Menu' }),
+	zagMenu.machine({ id: useId(), 'aria-label': 'Menu' }),
 )
 
 const shareMenu = computed(() =>

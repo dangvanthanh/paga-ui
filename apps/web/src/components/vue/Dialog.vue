@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { css, cx } from '@/styled-system/css'
 import { flex } from '@/styled-system/patterns'
 import { button, dialog, input } from '@/styled-system/recipes'
 import * as zagDialog from '@zag-js/dialog'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { Teleport, computed } from 'vue'
+import { Teleport, computed, useId } from 'vue'
 
 const styles = dialog()
-const [state, send] = useMachine(zagDialog.machine({ id: useId('dialog') }))
+const [state, send] = useMachine(zagDialog.machine({ id: useId() }))
 const api = computed(() => zagDialog.connect(state.value, send, normalizeProps))
 </script>
 

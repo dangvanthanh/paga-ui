@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { useId } from '@/hooks/useId'
 import { pagination } from '@/styled-system/recipes'
 import * as zagPagination from '@zag-js/pagination'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
-import { computed } from 'vue'
+import { computed, useId } from 'vue'
 
 const props = defineProps({
 	count: Number,
@@ -13,7 +12,7 @@ const props = defineProps({
 
 const styles = pagination()
 const [state, send] = useMachine(
-	zagPagination.machine({ id: useId('pagination'), count: props.count || 5 }),
+	zagPagination.machine({ id: useId(), count: props.count || 5 }),
 )
 const api = computed(() =>
 	zagPagination.connect(state.value, send, normalizeProps),
