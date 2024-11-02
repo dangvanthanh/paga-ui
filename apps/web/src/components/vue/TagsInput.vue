@@ -7,13 +7,13 @@ import { computed, useId } from 'vue'
 const styles = tagsInput()
 
 const [state, send] = useMachine(
-  zagTagsInput.machine({
-    id: useId(),
-    value: ['React', 'Vue', 'Solid'],
-  }),
+	zagTagsInput.machine({
+		id: useId(),
+		value: ['React', 'Vue', 'Solid'],
+	}),
 )
 const api = computed(() =>
-  zagTagsInput.connect(state.value, send, normalizeProps),
+	zagTagsInput.connect(state.value, send, normalizeProps),
 )
 </script>
 

@@ -8,9 +8,7 @@ import { Teleport, computed, useId } from 'vue'
 import Avatar from './Avatar.vue'
 
 const styles = hoverCard()
-const [state, send] = useMachine(
-	zagHoverCard.machine({ id: useId() }),
-)
+const [state, send] = useMachine(zagHoverCard.machine({ id: useId() }))
 const api = computed(() =>
 	zagHoverCard.connect(state.value, send, normalizeProps),
 )
