@@ -6,15 +6,15 @@ import { css } from '@/styled-system/css'
 import { treeView } from '@/styled-system/recipes'
 
 interface Node {
-  id: string
-  name: string
-  children?: Node[]
+	id: string
+	name: string
+	children?: Node[]
 }
 
 interface Props {
-  node: Node
-  indexPath: number[]
-  api: Api
+	node: Node
+	indexPath: number[]
+	api: Api
 }
 
 const styles = treeView()
@@ -22,8 +22,8 @@ const styles = treeView()
 const props = defineProps<Props>()
 
 const nodeProps = computed(() => ({
-  indexPath: props.indexPath,
-  node: props.node,
+	indexPath: props.indexPath,
+	node: props.node,
 }))
 
 const nodeState = computed(() => props.api.getNodeState(nodeProps.value))
