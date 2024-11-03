@@ -35,6 +35,7 @@ import { toast } from './toast'
 import { toggleGroup } from './toggle-group'
 import { tooltip } from './tooltip'
 import { tour } from './tour'
+import { treeView } from './tree-view'
 
 export const slotRecipes = {
 	accordion,
@@ -74,4 +75,5 @@ export const slotRecipes = {
 	toggleGroup,
 	tooltip,
 	tour,
+	treeView,
 }
