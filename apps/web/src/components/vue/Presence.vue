@@ -1,38 +1,15 @@
 <script setup lang="ts">
-import * as zagPresence from '@zag-js/presence'
-import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed, ref, watch } from 'vue'
+import { css } from '@/styled-system/css'
+import { ref } from 'vue'
+import AnimatePresence from './AnimatePresence.vue'
 
-const { present, unmountOnExit } = defineProps<{
-	present: boolean
-	unmountOnExit?: boolean
-}>()
-
-const emit = defineEmits<(e: 'exit-complete') => void>()
-
-const [state, send] = useMachine(zagPresence.machine({ present }), {
-	context: {
-		present,
-		onExitComplete: () => {
-			emit('exit-complete')
-		},
-	},
-})
-
-const api = computed(() =>
-	zagPresence.connect(state.value, send, normalizeProps),
-)
-
-const nodeRef = ref<HTMLElement | null>(null)
-
-watch(nodeRef, () => {
-	api.value.setNode(nodeRef.value)
-})
-
-const unmount = computed(() => !api.value.present && unmountOnExit)
+const open = ref(true)
+const unmouted = ref(false)
 </script>
 
 <template>
-  <div v-show="!unmount" :hidden="!api.present" :data-state="api.skip ? undefined : present ? 'open' : 'closed'"
-    ref="nodeRef" v-bind="$attrs" />
+  <button type="button" @click="open = !open" :class="css({ fontSize: 'sm' })">Toggle</button>
+  <AnimatePresence :present="open" unmountOnExit @exit-complete="unmouted = true">
+    <div>Content</div>
+  </AnimatePresence>
 </template>

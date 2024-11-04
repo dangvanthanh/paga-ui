@@ -4,6 +4,7 @@ const baseSchema = z.object({
 	id: z.string(),
 	title: z.string(),
 	description: z.string(),
+	status: z.optional(z.string()),
 })
 
 export const componentSchema = baseSchema.extend({})

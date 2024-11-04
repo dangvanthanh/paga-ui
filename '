@@ -47,15 +47,12 @@ const { slug } = Astro.params
                 {item.data.status ? <span 
                   class={css({
                     fontSize: 'xs',
-                    bg: 'red.50',
+                    bg: 'violet.50',
                     borderWidth: 1, 
-                    borderColor: 'red.300', 
-                    color: 'red.700',
+                    borderColor: 'violet.300', 
+                    color: 'violet.700',
                     py: .5,
-                    px: 1,
-                    rounded: 'sm',
-                    ml: 1,
-                    textTransform: 'capitalize',
+                    px: 1
                   })}
                 >
                   {item.data.status}
