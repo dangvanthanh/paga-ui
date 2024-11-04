@@ -8,30 +8,30 @@ import { Teleport, computed, useId } from 'vue'
 const styles = tour()
 
 const steps: zagTour.StepDetails[] = [
-  {
-    type: 'dialog',
-    id: 'start',
-    title: 'Ready to go for a ride',
-    description: "Let's take the tour component for a ride and have some fun!",
-    actions: [{ label: "Let's go!", action: 'next' }],
-  },
-  {
-    type: 'dialog',
-    id: 'logic',
-    title: 'Statechart',
-    description: `As an engineer, you'll learn about the internal statechart that powers the tour.`,
-    actions: [
-      { label: 'Prev', action: 'prev' },
-      { label: 'Next', action: 'next' },
-    ],
-  },
-  {
-    type: 'dialog',
-    id: 'end',
-    title: 'Amazing! You got to the end',
-    description: 'Like what you see? Now go ahead and use it in your project.',
-    actions: [{ label: 'Finish', action: 'dismiss' }],
-  },
+	{
+		type: 'dialog',
+		id: 'start',
+		title: 'Ready to go for a ride',
+		description: "Let's take the tour component for a ride and have some fun!",
+		actions: [{ label: "Let's go!", action: 'next' }],
+	},
+	{
+		type: 'dialog',
+		id: 'logic',
+		title: 'Statechart',
+		description: `As an engineer, you'll learn about the internal statechart that powers the tour.`,
+		actions: [
+			{ label: 'Prev', action: 'prev' },
+			{ label: 'Next', action: 'next' },
+		],
+	},
+	{
+		type: 'dialog',
+		id: 'end',
+		title: 'Amazing! You got to the end',
+		description: 'Like what you see? Now go ahead and use it in your project.',
+		actions: [{ label: 'Finish', action: 'dismiss' }],
+	},
 ]
 
 const [state, send] = useMachine(zagTour.machine({ id: useId(), steps }))
