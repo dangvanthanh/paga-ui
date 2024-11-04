@@ -20,7 +20,7 @@ const api = computed(() =>
     </div>
 
     <ul v-bind="api.getItemGroupProps()">
-      <li v-for="file in api.files" :key="file.name" v-bind="api.getItemProps({ file })" :class="styles.item">
+      <li v-for="file in api.acceptedFiles" :key="file.name" v-bind="api.getItemProps({ file })" :class="styles.item">
         <div v-bind="api.getItemNameProps({ file })" :class="styles.itemName">
           {{ file.name }}
         </div>

@@ -11,6 +11,7 @@ const props = defineProps({
 const styles = switches({ size: 'sm' })
 
 const [state, send] = useMachine(zagSwitch.machine({ id: useId() }))
+
 const api = computed(() => zagSwitch.connect(state.value, send, normalizeProps))
 </script>
 

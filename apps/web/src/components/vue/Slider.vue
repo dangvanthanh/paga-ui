@@ -9,6 +9,7 @@ const styles = slider({ size: 'sm' })
 const [state, send] = useMachine(
 	zagSlider.machine({ id: useId(), value: [30], min: 0, max: 100 }),
 )
+
 const api = computed(() => zagSlider.connect(state.value, send, normalizeProps))
 </script>
 

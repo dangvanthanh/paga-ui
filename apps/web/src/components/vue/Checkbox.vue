@@ -9,6 +9,7 @@ import { computed, useId } from 'vue'
 const styles = checkbox()
 
 const [state, send] = useMachine(zagCheckbox.machine({ id: useId() }))
+
 const api = computed(() =>
 	zagCheckbox.connect(state.value, send, normalizeProps),
 )

@@ -7,7 +7,9 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { Teleport, computed, useId } from 'vue'
 
 const styles = dialog()
+
 const [state, send] = useMachine(zagDialog.machine({ id: useId() }))
+
 const api = computed(() => zagDialog.connect(state.value, send, normalizeProps))
 </script>
 

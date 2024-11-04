@@ -28,6 +28,7 @@ const data = [
 const [state, send] = useMachine(
 	zagTabs.machine({ id: useId(), value: 'react' }),
 )
+
 const api = computed(() => zagTabs.connect(state.value, send, normalizeProps))
 </script>
 

@@ -5,14 +5,17 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
 
 const styles = radioGroup()
+
 const items = [
 	{ id: 'svelte', label: 'Svelte' },
 	{ id: 'solid', label: 'Solid' },
 	{ id: 'vue', label: 'Vue' },
 ]
+
 const [state, send] = useMachine(
 	zagRadio.machine({ id: useId(), value: 'vue' }),
 )
+
 const api = computed(() => zagRadio.connect(state.value, send, normalizeProps))
 </script>
 

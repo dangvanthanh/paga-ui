@@ -5,9 +5,11 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
 
 const styles = progressLinear()
+
 const [state, send] = useMachine(
 	zagProgress.machine({ id: useId(), value: 20 }),
 )
+
 const api = computed(() =>
 	zagProgress.connect(state.value, send, normalizeProps),
 )

@@ -5,6 +5,7 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { Teleport, computed, useId } from 'vue'
 
 const styles = select()
+
 const selectData = [
 	{ label: 'React', value: 'react' },
 	{ label: 'Solid', value: 'solid' },

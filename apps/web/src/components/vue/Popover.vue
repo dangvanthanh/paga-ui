@@ -7,7 +7,9 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { Teleport, computed, useId } from 'vue'
 
 const styles = popover()
+
 const [state, send] = useMachine(zagPopover.machine({ id: useId() }))
+
 const api = computed(() =>
 	zagPopover.connect(state.value, send, normalizeProps),
 )

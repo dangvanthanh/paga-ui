@@ -5,7 +5,9 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
 
 const styles = menu()
+
 const [state, send] = useMachine(zagMenu.machine({ id: useId() }))
+
 const api = computed(() => zagMenu.connect(state.value, send, normalizeProps))
 </script>
 
@@ -16,10 +18,10 @@ const api = computed(() => zagMenu.connect(state.value, send, normalizeProps))
     </button>
     <div v-bind="api.getPositionerProps()">
       <ul v-bind="api.getContentProps()" :class="styles.content">
-        <li v-bind="api.getItemProps({ id: 'edit' })" :class="styles.item">Edit</li>
-        <li v-bind="api.getItemProps({ id: 'duplicate' })" :class="styles.item">Duplicate</li>
-        <li v-bind="api.getItemProps({ id: 'delete' })" :class="styles.item">Delete</li>
-        <li v-bind="api.getItemProps({ id: 'export' })" :class="styles.item">Export</li>
+        <li v-bind="api.getItemProps({ value: 'edit' })" :class="styles.item">Edit</li>
+        <li v-bind="api.getItemProps({ value: 'duplicate' })" :class="styles.item">Duplicate</li>
+        <li v-bind="api.getItemProps({ value: 'delete' })" :class="styles.item">Delete</li>
+        <li v-bind="api.getItemProps({ value: 'export' })" :class="styles.item">Export</li>
       </ul>
     </div>
   </div>

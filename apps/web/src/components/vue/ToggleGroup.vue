@@ -9,6 +9,7 @@ const styles = toggleGroup()
 const [state, send] = useMachine(
 	zagToggle.machine({ id: useId(), multiple: true }),
 )
+
 const api = computed(() => zagToggle.connect(state.value, send, normalizeProps))
 </script>
 

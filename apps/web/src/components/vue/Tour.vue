@@ -35,7 +35,9 @@ const steps: zagTour.StepDetails[] = [
 ]
 
 const [state, send] = useMachine(zagTour.machine({ id: useId(), steps }))
+
 const api = computed(() => zagTour.connect(state.value, send, normalizeProps))
+
 const open = computed(() => api.value.open && api.value.step)
 </script>
 

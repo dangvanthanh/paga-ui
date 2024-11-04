@@ -12,6 +12,7 @@ const [state, send] = useMachine(
 		value: 'https://github.com/dangvanthanh/paga-ui',
 	}),
 )
+
 const api = computed(() => zagQrCode.connect(state.value, send, normalizeProps))
 </script>
 

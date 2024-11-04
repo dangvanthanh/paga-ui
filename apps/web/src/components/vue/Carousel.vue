@@ -15,6 +15,7 @@ const items = [
 ]
 
 const [state, send] = useMachine(zagCarousel.machine({ id: useId() }))
+
 const api = computed(() =>
 	zagCarousel.connect(state.value, send, normalizeProps),
 )
@@ -32,10 +33,10 @@ const api = computed(() =>
       <div v-bind="api.getItemGroupProps()">
         <div v-for="(image, index) in items" :key="index" v-bind="api.getItemProps({ index: index })">
           <img :src="image" alt="" :style="{
-    height: '300px',
-    width: '100%',
-    objectFit: 'cover',
-  }" />
+            height: '300px',
+            width: '100%',
+            objectFit: 'cover',
+          }" />
         </div>
       </div>
     </div>

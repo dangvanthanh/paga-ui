@@ -5,14 +5,17 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
 
 const styles = segmentedControl()
+
 const items = [
 	{ label: 'React', value: 'react-paga' },
 	{ label: 'Vue', value: 'vue-paga' },
 	{ label: 'Svelte', value: 'svelte-paga' },
 ]
+
 const [state, send] = useMachine(
 	zagRadio.machine({ id: useId(), value: 'vue-paga' }),
 )
+
 const api = computed(() => zagRadio.connect(state.value, send, normalizeProps))
 </script>
 

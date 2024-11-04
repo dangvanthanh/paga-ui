@@ -53,6 +53,7 @@ const collection = zagTree.collection<Node>({
 })
 
 const [state, send] = useMachine(zagTree.machine({ id: useId(), collection }))
+
 const api = computed(() => zagTree.connect(state.value, send, normalizeProps))
 </script>
 

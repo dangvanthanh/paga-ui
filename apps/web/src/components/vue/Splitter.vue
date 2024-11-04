@@ -15,6 +15,7 @@ const [state, send] = useMachine(
 		],
 	}),
 )
+
 const api = computed(() =>
 	zagSplitter.connect(state.value, send, normalizeProps),
 )

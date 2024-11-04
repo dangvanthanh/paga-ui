@@ -20,10 +20,10 @@ const api = computed(() => zagMenu.connect(state.value, send, normalizeProps))
     </button>
     <div v-bind="api.getPositionerProps()">
       <ul v-bind="api.getContentProps()" :class="styles.content">
-        <li v-bind="api.getItemProps({ id: 'cut' })" :class="styles.item">Cut</li>
-        <li v-bind="api.getItemProps({ id: 'copy' })" :class="styles.item">Copy</li>
-        <li v-bind="api.getItemProps({ id: 'copy-as' })" :class="styles.item">Copy As</li>
-        <li v-bind="api.getItemProps({ id: 'paste' })" :class="styles.item">Paste</li>
+        <li v-bind="api.getItemProps({ value: 'cut' })" :class="styles.item">Cut</li>
+        <li v-bind="api.getItemProps({ value: 'copy' })" :class="styles.item">Copy</li>
+        <li v-bind="api.getItemProps({ value: 'copy-as' })" :class="styles.item">Copy As</li>
+        <li v-bind="api.getItemProps({ value: 'paste' })" :class="styles.item">Paste</li>
       </ul>
     </div>
   </div>

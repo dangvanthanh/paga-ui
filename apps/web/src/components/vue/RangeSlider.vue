@@ -5,6 +5,7 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
 
 const styles = slider({ size: 'sm' })
+
 const [state, send] = useMachine(
 	zagSlider.machine({
 		id: useId(),
@@ -13,6 +14,7 @@ const [state, send] = useMachine(
 		max: 100,
 	}),
 )
+
 const api = computed(() => zagSlider.connect(state.value, send, normalizeProps))
 </script>
 

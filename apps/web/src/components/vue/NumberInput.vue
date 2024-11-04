@@ -5,9 +5,11 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
 
 const styles = numberInput()
+
 const [state, send] = useMachine(
 	zagNumberInput.machine({ id: useId(), value: '14' }),
 )
+
 const api = computed(() =>
 	zagNumberInput.connect(state.value, send, normalizeProps),
 )

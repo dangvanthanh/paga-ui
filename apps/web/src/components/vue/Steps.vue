@@ -18,6 +18,7 @@ const [state, send] = useMachine(
 		count: stepsData.length,
 	}),
 )
+
 const api = computed(() => zagSteps.connect(state.value, send, normalizeProps))
 </script>
 

@@ -4,12 +4,20 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, ref, watch } from 'vue'
 
 const { present, unmountOnExit } = defineProps<{
-	present?: boolean
+	present: boolean
 	unmountOnExit?: boolean
 }>()
+
 const emit = defineEmits<(e: 'exit-complete') => void>()
 
-const [state, send] = useMachine(zagPresence.machine({ present }))
+const [state, send] = useMachine(zagPresence.machine({ present }), {
+	context: {
+		present,
+		onExitComplete: () => {
+			emit('exit-complete')
+		},
+	},
+})
 
 const api = computed(() =>
 	zagPresence.connect(state.value, send, normalizeProps),

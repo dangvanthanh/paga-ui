@@ -12,6 +12,7 @@ const props = defineProps({
 const styles = avatar()
 
 const [state, send] = useMachine(zagAvatar.machine({ id: useId() }))
+
 const api = computed(() => zagAvatar.connect(state.value, send, normalizeProps))
 </script>
 

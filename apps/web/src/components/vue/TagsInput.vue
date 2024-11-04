@@ -12,6 +12,7 @@ const [state, send] = useMachine(
 		value: ['React', 'Vue', 'Solid'],
 	}),
 )
+
 const api = computed(() =>
 	zagTagsInput.connect(state.value, send, normalizeProps),
 )
