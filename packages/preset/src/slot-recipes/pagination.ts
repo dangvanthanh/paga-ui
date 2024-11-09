@@ -10,7 +10,7 @@ export const pagination = defineSlotRecipe({
 			justifyContent: 'center',
 			alignItems: 'center',
 			borderWidth: 1,
-			borderColor: 'gray.300',
+			borderColor: 'gray.200',
 			rounded: 'sm',
 			height: 9,
 			minW: 9,

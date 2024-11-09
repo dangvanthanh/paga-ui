@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from 'vue'
 
-const props = defineProps(['id'])
+const { id } = defineProps<{ id: string }>()
 
-const component = defineAsyncComponent(() => import(`../vue/${props.id}.vue`))
+const component = defineAsyncComponent(() => import(`../vue/${id}.vue`))
 </script>
 
 <template>

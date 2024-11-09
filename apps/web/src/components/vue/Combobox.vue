@@ -2,6 +2,7 @@
 import { combobox } from '@/styled-system/recipes'
 import * as zagCombobox from '@zag-js/combobox'
 import { normalizeProps, useMachine } from '@zag-js/vue'
+import { ChevronsUpDown } from 'lucide-vue-next'
 import { computed, ref, useId } from 'vue'
 
 const styles = combobox()
@@ -52,9 +53,12 @@ const api = computed(() =>
 
 <template>
   <div v-bind="api.getRootProps()" :class="styles.root">
+    <label v-bind="api.getLabelProps()" :class="styles.label">Framework</label>
     <div v-bind="api.getControlProps()" :class="styles.control">
       <input v-bind="api.getInputProps()" :class="styles.input" />
-      <button v-bind="api.getTriggerProps()" :class="styles.trigger">▼</button>
+      <button v-bind="api.getTriggerProps()" :class="styles.trigger">
+        <ChevronsUpDown :size="16" />
+      </button>
     </div>
   </div>
   <div v-bind="api.getPositionerProps()">

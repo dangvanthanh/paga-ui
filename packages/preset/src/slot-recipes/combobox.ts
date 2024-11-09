@@ -4,18 +4,27 @@ export const combobox = defineSlotRecipe({
 	className: 'combobox',
 	slots: ['root', 'label', 'control', 'input', 'trigger', 'content', 'item'],
 	base: {
-		root: {},
+		root: {
+			display: 'flex',
+			flexDirection: 'column',
+			gap: 1.5,
+			w: 'full',
+		},
+		label: {
+			textStyle: 'sm',
+		},
 		control: {
 			pos: 'relative',
 		},
 		input: {
 			pl: 3,
 			pr: 6,
-			py: 1.5,
+			py: 2,
 			rounded: 'sm',
-			shadow: 'sm',
 			w: 'full',
 			textStyle: 'sm',
+			borderWidth: 1,
+			borderColor: 'gray.200',
 		},
 		trigger: {
 			pos: 'absolute',

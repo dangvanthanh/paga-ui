@@ -8,7 +8,7 @@ export const segmentedControl = defineSlotRecipe({
 			display: 'flex',
 			alignItems: 'center',
 			borderBottomWidth: '1px',
-			borderColor: 'gray.300',
+			borderColor: 'gray.200',
 			pb: 3,
 		},
 		indicator: {

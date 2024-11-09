@@ -8,8 +8,8 @@ const [state, send] = useMachine(
 	zagTimer.machine({
 		id: useId(),
 		countdown: true,
-		autoStart: true,
-		startMs: zagTimer.parse({ days: 2, seconds: 10 }),
+		autoStart: false,
+		startMs: zagTimer.parse({ days: 2, seconds: 0 }),
 		onComplete() {
 			console.log('Timer completed')
 		},
@@ -39,10 +39,10 @@ const api = computed(() => zagTimer.connect(state.value, send, normalizeProps))
       </div>
     </div>
     <div :class="flex({ gap: 2, fontSize: 'sm' })">
-      <button @click="api.start">START</button>
-      <button @click="api.pause">PAUSE</button>
-      <button @click="api.resume">RESUME</button>
-      <button @click="api.reset">RESET</button>
+      <button @click="api.start" v-show="!api.running && !api.paused">START</button>
+      <button @click="api.pause" v-show="api.running">PAUSE</button>
+      <button @click="api.resume" v-show="api.paused">RESUME</button>
+      <button @click="api.reset" v-show="api.running || api.paused">RESET</button>
     </div>
   </div>
 </template>

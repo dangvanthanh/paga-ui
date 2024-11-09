@@ -33,6 +33,7 @@ const presets = ref([
 
 <template>
   <div v-bind="api.getRootProps()" :class="styles.root">
+    <label v-bind="api.getLabelProps()" :class="styles.label">Color Picker</label>
     <input v-bind="api.getHiddenInputProps()" />
     <div v-bind="api.getControlProps()" :class="styles.control">
       <button v-bind="api.getTriggerProps()" :class="styles.trigger">

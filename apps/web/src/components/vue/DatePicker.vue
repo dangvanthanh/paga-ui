@@ -20,14 +20,15 @@ const api = computed(() =>
 
 
 <template>
-  <div :class="css({ pos: 'relative' })">
+  <div :class="flex({ direction: 'column', gap: 1.5 })">
+    <label v-bind="api.getLabelProps()" :class="css({ textStyle: 'sm' })">Date Picker</label>
     <div v-bind="api.getControlProps()"
       :class="flex({ borderWidth: 1, borderColor: 'slate.300', px: 2, py: 1.5, rounded: 'xs' })">
       <input v-bind="api.getInputProps()" :class="css({ w: 'full', px: 2, outline: 'none' })" />
       <button v-bind="api.getTriggerProps()">🗓</button>
     </div>
     <Teleport to="body">
-      <div v-bind="api.getPositionerProps()">
+      <div v-bind="api.getPositionerProps() ">
         <div v-bind="api.getContentProps()"
           :class="css({ bg: 'white', shadow: 'xs', zIndex: 100, p: 2, borderWidth: 1, borderColor: 'slate.300', px: 2, py: 1.5, rounded: 'xs' })">
           <div v-show="api.view === 'day'">
@@ -44,7 +45,7 @@ const api = computed(() =>
               </button>
             </div>
             <table v-bind="api.getTableProps({ view: 'day' })">
-              <thead v-bind="api.getTableHeaderProps({ view: 'day' })">
+              <thead v-bind="api.getTableHeaderProps({ view: 'day' }) ">
                 <tr v-bind="api.getTableRowProps({ view: 'day' })">
                   <template v-for="(day) in api.weekDays">
                     <th scope="col" :aria-label="day.long">

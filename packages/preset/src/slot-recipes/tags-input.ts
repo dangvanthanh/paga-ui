@@ -18,7 +18,7 @@ export const tagsInput = defineSlotRecipe({
 			alignItems: 'center',
 			borderWidth: 1,
 			rounded: 'sm',
-			borderColor: 'gray.300',
+			borderColor: 'gray.200',
 			outline: 'none',
 			transitionDuration: 'normal',
 			transitionProperty: 'border-color, box-shadow',
@@ -35,7 +35,7 @@ export const tagsInput = defineSlotRecipe({
 			bg: 'transparent',
 		},
 		tag: {
-			borderColor: 'gray.300',
+			borderColor: 'gray.200',
 			borderWidth: 1,
 			rounded: 'sm',
 			color: 'gray.900',

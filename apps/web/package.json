@@ -61,8 +61,8 @@
 		"@zag-js/tour": "^0.77.0",
 		"@zag-js/tree-view": "^0.77.0",
 		"@zag-js/vue": "^0.77.0",
-		"astro": "^4.16.9",
-		"lucide-vue-next": "^0.454.0",
+		"astro": "^4.16.10",
+		"lucide-vue-next": "^0.456.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"solid-js": "^1.9.3",
@@ -70,8 +70,8 @@
 	},
 	"devDependencies": {
 		"@paga/biome-config": "workspace:*",
-		"@pandacss/dev": "^0.47.0",
-		"@pandacss/types": "^0.47.0",
+		"@pandacss/dev": "^0.47.1",
+		"@pandacss/types": "^0.47.1",
 		"@types/react": "^18.3.12",
 		"@types/react-dom": "^18.3.1",
 		"typescript": "^5.6.3"

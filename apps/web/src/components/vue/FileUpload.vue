@@ -2,10 +2,28 @@
 import { fileUpload } from '@/styled-system/recipes'
 import * as zagFileUpload from '@zag-js/file-upload'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { computed, useId } from 'vue'
+import { computed, ref, useId } from 'vue'
+import { humanFileSize } from '@/lib'
 
 const styles = fileUpload()
-const [state, send] = useMachine(zagFileUpload.machine({ id: useId() }))
+
+const src = ref()
+
+const [state, send] = useMachine(
+	zagFileUpload.machine({
+		id: useId(),
+		accept: 'image/*',
+		onFileChange(details) {
+			const reader = new FileReader()
+			reader.onload = (event) => {
+				const image = event.target?.result
+				src.value = image
+			}
+			reader.readAsDataURL(details.acceptedFiles[0])
+		},
+	}),
+)
+
 const api = computed(() =>
 	zagFileUpload.connect(state.value, send, normalizeProps),
 )
@@ -21,8 +39,10 @@ const api = computed(() =>
 
     <ul v-bind="api.getItemGroupProps()">
       <li v-for="file in api.acceptedFiles" :key="file.name" v-bind="api.getItemProps({ file })" :class="styles.item">
+        <img :src="src" alt="" :class="styles.itemPreview" />
         <div v-bind="api.getItemNameProps({ file })" :class="styles.itemName">
-          {{ file.name }}
+          <span>{{ file.name }}</span>
+          <span>{{ humanFileSize(file.size, true) }}</span>
         </div>
         <button v-bind="api.getItemDeleteTriggerProps({ file })">
           <small>&#x2715;</small>

@@ -13,6 +13,7 @@ export const colorPicker = defineSlotRecipe({
 	className: 'colorPicker',
 	slots: [
 		'root',
+		'label',
 		'trigger',
 		'transparencyGrid',
 		'swatch',
@@ -34,6 +35,10 @@ export const colorPicker = defineSlotRecipe({
 			flexDirection: 'column',
 			zIndex: 1,
 			pos: 'relative',
+			gap: 1.5,
+		},
+		label: {
+			textStyle: 'sm',
 		},
 		transparencyGrid: {
 			rounded: 'sm',
@@ -45,7 +50,7 @@ export const colorPicker = defineSlotRecipe({
 			rounded: 'sm',
 		},
 		input: {
-			borderColor: 'gray.300',
+			borderColor: 'gray.200',
 			borderWidth: 1,
 			rounded: 'sm',
 			py: 1.5,
@@ -63,11 +68,12 @@ export const colorPicker = defineSlotRecipe({
 			flexDirection: 'column',
 			bg: 'white',
 			rounded: 'sm',
-			shadow: 'sm',
 			minW: 'xs',
 			p: 3,
 			gap: 3,
 			maxW: 'md',
+			borderWidth: 1,
+			borderColor: 'gray.200',
 			_open: {
 				animation: 'fadeIn 0.2s ease-in-out',
 			},
@@ -105,7 +111,7 @@ export const colorPicker = defineSlotRecipe({
 		eyeDropperTrigger: {
 			display: 'flex',
 			borderWidth: 1,
-			borderColor: 'gray.300',
+			borderColor: 'gray.200',
 			p: 1.5,
 			rounded: 'sm',
 			cursor: 'pointer',

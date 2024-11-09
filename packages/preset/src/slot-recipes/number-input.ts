@@ -32,7 +32,7 @@ export const numberInput = defineSlotRecipe({
 			h: 9,
 			ps: 3,
 			borderWidth: 1,
-			borderColor: 'gray.300',
+			borderColor: 'gray.200',
 			rounded: 'sm',
 			display: 'grid',
 			divideX: '1px',
@@ -55,7 +55,7 @@ export const numberInput = defineSlotRecipe({
 		decrementTrigger: {
 			...trigger,
 			borderTopWidth: '1px',
-			borderColor: 'gray.300',
+			borderColor: 'gray.200',
 		},
 	},
 })

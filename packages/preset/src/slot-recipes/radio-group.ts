@@ -21,7 +21,7 @@ export const radioGroup = defineSlotRecipe({
 		itemControl: {
 			bg: 'white',
 			rounded: '100%',
-			borderColor: 'gray.300',
+			borderColor: 'gray.200',
 			borderWidth: 1,
 			shadow: 'sm',
 			w: 4,

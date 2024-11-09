@@ -20,7 +20,7 @@ export const tabs = defineSlotRecipe({
 			overflow: 'auto',
 			pos: 'relative',
 			borderBottomWidth: '1px',
-			borderColor: 'gray.300',
+			borderColor: 'gray.200',
 		},
 		trigger: {
 			display: 'inline-flex',

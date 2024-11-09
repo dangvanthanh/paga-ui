@@ -11,13 +11,14 @@ export const menu = defineSlotRecipe({
 		content: {
 			bg: 'white',
 			rounded: 'sm',
-			shadow: 'sm',
 			display: 'flex',
 			flexDirection: 'column',
 			outline: 'none',
 			py: 1,
 			gap: 1,
 			width: 'calc(100% + 2rem)',
+			borderWidth: 1,
+			borderColor: 'gray.200',
 			_open: {
 				animation: 'fadeIn 0.25s ease-out',
 			},
@@ -34,6 +35,9 @@ export const menu = defineSlotRecipe({
 			h: 8,
 			px: 1.5,
 			mx: 1,
+			_hover: {
+				bg: 'gray.50',
+			},
 		},
 		optionItem: {
 			display: 'flex',

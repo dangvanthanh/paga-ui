@@ -12,7 +12,7 @@ export const accordion = defineSlotRecipe({
 			flexDirection: 'column',
 		},
 		item: {
-			py: 1,
+			py: 2,
 		},
 		trigger: {
 			display: 'flex',

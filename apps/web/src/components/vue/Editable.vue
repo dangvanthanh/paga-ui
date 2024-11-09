@@ -19,7 +19,7 @@ const api = computed(() =>
   <div v-bind="api.getRootProps()" :class="styles.root">
     <div v-bind="api.getAreaProps()" :class="styles.area">
       <input v-bind="api.getInputProps()" :class="styles.input" />
-      <span v-bind="api.getPreviewProps()" />
+      <span v-bind="api.getPreviewProps()" :class="styles.preview" />
     </div>
   </div>
 </template>

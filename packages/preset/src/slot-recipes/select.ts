@@ -24,7 +24,7 @@ export const select = defineSlotRecipe({
 			appearance: 'none',
 			alignItems: 'center',
 			borderWidth: 1,
-			borderColor: 'gray.300',
+			borderColor: 'gray.200',
 			rounded: 'sm',
 			cursor: 'pointer',
 			display: 'inline-flex',

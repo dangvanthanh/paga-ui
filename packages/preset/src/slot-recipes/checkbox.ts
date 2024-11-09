@@ -11,7 +11,7 @@ export const checkbox = defineSlotRecipe({
 			alignItems: 'center',
 			justifyContent: 'center',
 			borderWidth: 1,
-			borderColor: 'gray.300',
+			borderColor: 'gray.200',
 			cursor: 'pointer',
 			transitionDuration: 'normal',
 			transitionProperty: 'border-color, background',
@@ -23,8 +23,7 @@ export const checkbox = defineSlotRecipe({
 				bg: 'gray.50',
 			},
 			_checked: {
-				bg: 'grey.200',
-				borderColor: 'gray.300',
+				borderColor: 'gray.200',
 				_hover: {
 					bg: 'gray.50',
 				},

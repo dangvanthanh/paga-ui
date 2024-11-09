@@ -4,9 +4,7 @@ import * as zagSwitch from '@zag-js/switch'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
 
-const props = defineProps({
-	label: String,
-})
+const props = defineProps<{ label: string }>()
 
 const styles = switches({ size: 'sm' })
 
