@@ -11,7 +11,7 @@ const styles = popover()
 const [state, send] = useMachine(zagPopover.machine({ id: useId() }))
 
 const api = computed(() =>
-  zagPopover.connect(state.value, send, normalizeProps),
+	zagPopover.connect(state.value, send, normalizeProps),
 )
 </script>
 

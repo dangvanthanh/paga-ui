@@ -10,15 +10,15 @@ import { computed, useId } from 'vue'
 const styles = timer()
 
 const [state, send] = useMachine(
-  zagTimer.machine({
-    id: useId(),
-    countdown: true,
-    autoStart: false,
-    startMs: zagTimer.parse({ days: 2, seconds: 0 }),
-    onComplete() {
-      console.log('Timer completed')
-    },
-  }),
+	zagTimer.machine({
+		id: useId(),
+		countdown: true,
+		autoStart: false,
+		startMs: zagTimer.parse({ days: 2, seconds: 0 }),
+		onComplete() {
+			console.log('Timer completed')
+		},
+	}),
 )
 
 const api = computed(() => zagTimer.connect(state.value, send, normalizeProps))

@@ -31,6 +31,7 @@ import { steps } from './steps'
 import { switchRecipe } from './switch'
 import { tabs } from './tabs'
 import { tagsInput } from './tags-input'
+import { timer } from './timer'
 import { toast } from './toast'
 import { toggleGroup } from './toggle-group'
 import { tooltip } from './tooltip'
@@ -71,6 +72,7 @@ export const slotRecipes = {
 	switches: switchRecipe,
 	tabs,
 	tagsInput,
+	timer,
 	toast,
 	toggleGroup,
 	tooltip,

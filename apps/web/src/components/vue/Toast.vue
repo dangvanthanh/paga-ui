@@ -7,22 +7,22 @@ import { Teleport, useId } from 'vue'
 import AnimateToast from './AnimateToast.vue'
 
 const [state, send] = useMachine(
-  zagToast.group.machine({ id: useId(), placement: 'bottom-end', gap: 24 }),
+	zagToast.group.machine({ id: useId(), placement: 'bottom-end', gap: 24 }),
 )
 
 const api = zagToast.group.connect(state.value, send, normalizeProps)
 
 const topRightToast = () =>
-  api.create({
-    title: 'Hello World',
-    description: 'This is a toast',
-  })
+	api.create({
+		title: 'Hello World',
+		description: 'This is a toast',
+	})
 
 const bottomRightToast = () => {
-  api.create({
-    title: 'Data submitted!',
-    description: 'Thank you for your submission',
-  })
+	api.create({
+		title: 'Data submitted!',
+		description: 'Thank you for your submission',
+	})
 }
 </script>
 

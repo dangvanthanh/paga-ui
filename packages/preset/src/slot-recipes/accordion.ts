@@ -13,10 +13,16 @@ export const accordion = defineSlotRecipe({
 		},
 		item: {
 			py: 2,
+			'&[data-state="open"]': {
+				'& button svg': {
+					transform: 'rotate(180deg)',
+				},
+			},
 		},
 		trigger: {
 			display: 'flex',
 			alignItems: 'center',
+			justifyContent: 'space-between',
 			cursor: 'pointer',
 			textStyle: 'sm',
 			w: 'full',

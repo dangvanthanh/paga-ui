@@ -10,7 +10,7 @@ const styles = signaturePad()
 const [state, send] = useMachine(zagSignaturePad.machine({ id: useId() }))
 
 const api = computed(() =>
-  zagSignaturePad.connect(state.value, send, normalizeProps),
+	zagSignaturePad.connect(state.value, send, normalizeProps),
 )
 </script>
 
