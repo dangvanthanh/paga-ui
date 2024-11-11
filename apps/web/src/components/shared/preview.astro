@@ -1,5 +1,4 @@
 ---
-import { css } from '@/styled-system/css'
 import { flex } from '@/styled-system/patterns'
 import Playground from './playground.vue'
 
@@ -11,11 +10,13 @@ const { id } = Astro.props
 ---
 
 <div
-  class={css({
+  class={flex({
+    align: 'center',
+    justify: 'center',
     p: 6,
+    minH: 48,
     borderWidth: 1,
     borderColor: 'gray.200',
-    minH: 24
   })}
 >
   <div class={flex({ flex: 1})}>
