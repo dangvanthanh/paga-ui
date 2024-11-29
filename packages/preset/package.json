@@ -17,9 +17,9 @@
 	"devDependencies": {
 		"@paga/biome-config": "workspace:*",
 		"@paga/typescript-config": "workspace:*",
-		"@pandacss/dev": "^0.47.1",
-		"@pandacss/types": "^0.47.1",
+		"@pandacss/dev": "^0.48.0",
+		"@pandacss/types": "^0.48.0",
 		"tsup": "^8.3.5",
-		"typescript": "^5.6.3"
+		"typescript": "^5.7.2"
 	}
 }

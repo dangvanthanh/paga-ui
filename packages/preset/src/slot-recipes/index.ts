@@ -1,4 +1,5 @@
 import { accordion } from './accordion'
+import { angleSlider } from './angle-slider'
 import { avatar } from './avatar'
 import { carousel } from './carousel'
 import { checkbox } from './checkbox'
@@ -40,6 +41,7 @@ import { treeView } from './tree-view'
 
 export const slotRecipes = {
 	accordion,
+	angleSlider,
 	avatar,
 	carousel,
 	checkbox,
