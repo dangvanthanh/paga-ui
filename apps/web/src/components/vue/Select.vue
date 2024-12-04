@@ -2,7 +2,7 @@
 import { select } from '@/styled-system/recipes'
 import * as zagSelect from '@zag-js/select'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { Teleport, computed, useId } from 'vue'
+import { computed, useId } from 'vue'
 
 const styles = select()
 
@@ -32,7 +32,6 @@ const api = computed(() => zagSelect.connect(state.value, send, normalizeProps))
       <span>▼</span>
     </button>
   </div>
-
   <Teleport to="body">
     <div v-bind="api.getPositionerProps()">
       <ul v-bind="api.getContentProps()" :class="styles.content">

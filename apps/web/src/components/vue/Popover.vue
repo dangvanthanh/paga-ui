@@ -4,14 +4,14 @@ import { flex } from '@/styled-system/patterns'
 import { input, popover } from '@/styled-system/recipes'
 import * as zagPopover from '@zag-js/popover'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { Teleport, computed, useId } from 'vue'
+import { computed, useId } from 'vue'
 
 const styles = popover()
 
 const [state, send] = useMachine(zagPopover.machine({ id: useId() }))
 
 const api = computed(() =>
-	zagPopover.connect(state.value, send, normalizeProps),
+  zagPopover.connect(state.value, send, normalizeProps),
 )
 </script>
 

@@ -4,7 +4,7 @@ import { flex } from '@/styled-system/patterns'
 import { hoverCard } from '@/styled-system/recipes'
 import * as zagHoverCard from '@zag-js/hover-card'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { Teleport, computed, useId } from 'vue'
+import { computed, useId } from 'vue'
 import Avatar from './Avatar.vue'
 
 const styles = hoverCard()

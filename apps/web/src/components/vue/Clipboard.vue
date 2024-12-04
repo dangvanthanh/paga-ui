@@ -21,7 +21,6 @@ const api = computed(() =>
 
 <template>
   <div v-bind="api.getRootProps()" :class="styles.root">
-    <label v-bind="api.getLabelProps()" :class="styles.label">Copy This Link</label>
     <div v-bind="api.getControlProps()" :class="styles.control">
       <input v-bind="api.getInputProps()" :class="styles.input" />
       <button v-bind="api.getTriggerProps()" :class="styles.trigger">

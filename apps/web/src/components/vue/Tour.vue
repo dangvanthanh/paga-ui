@@ -3,7 +3,7 @@ import { css } from '@/styled-system/css'
 import { tour } from '@/styled-system/recipes'
 import * as zagTour from '@zag-js/tour'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { Teleport, computed, useId } from 'vue'
+import { computed, useId } from 'vue'
 
 const styles = tour()
 
@@ -45,7 +45,6 @@ const open = computed(() => api.value.open && api.value.step)
   <div>
     <button @click="api.start()" :class="css({ fontSize: 'sm' })">Start Tour</button>
   </div>
-
   <Teleport to="body" v-if="open">
     <div v-if="api.step?.backdrop" v-bind="api.getBackdropProps()" :class="styles.backdrop" />
     <div v-bind="api.getSpotlightProps()" />

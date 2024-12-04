@@ -2,7 +2,7 @@
 import { menu } from '@/styled-system/recipes'
 import * as zagMenu from '@zag-js/menu'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { Teleport, computed, onMounted, useId } from 'vue'
+import { computed, onMounted, useId } from 'vue'
 
 const styles = menu()
 const [fileMenuState, fileMenuSend, fileMenuMachine] = useMachine(

@@ -3,7 +3,7 @@ import { flex } from '@/styled-system/patterns'
 import { button } from '@/styled-system/recipes'
 import * as zagToast from '@zag-js/toast'
 import { normalizeProps, useMachine } from '@zag-js/vue'
-import { Teleport, useId } from 'vue'
+import { useId } from 'vue'
 import AnimateToast from './AnimateToast.vue'
 
 const [state, send] = useMachine(
