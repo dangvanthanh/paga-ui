@@ -14,10 +14,7 @@ const [state, send] = useMachine(
 		id: useId(),
 		countdown: true,
 		autoStart: false,
-		startMs: zagTimer.parse({ days: 2, seconds: 0 }),
-		onComplete() {
-			console.log('Timer completed')
-		},
+		startMs: zagTimer.parse({ days: 1, seconds: 0 }),
 	}),
 )
 

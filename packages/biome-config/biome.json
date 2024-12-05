@@ -13,8 +13,7 @@
 		"formatter": {
 			"quoteStyle": "single",
 			"semicolons": "asNeeded"
-		},
-		"globals": ["Astro"]
+		}
 	},
 	"files": {
 		"ignore": ["./.turbo/**", "./styled-system/**"]

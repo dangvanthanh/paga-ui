@@ -1,6 +1,7 @@
 {
 	"extends": "astro/tsconfigs/strict",
 	"compilerOptions": {
+		"strictNullChecks": true,
 		"jsx": "preserve",
 		"jsxImportSource": "react-jsx",
 		"baseUrl": ".",
@@ -9,5 +10,6 @@
 			"@/styled-system/*": ["./styled-system/*"]
 		}
 	},
-	"include": ["src", "styled-system"]
+	"include": [".astro/types.d.ts", "styled-system", "**/*"],
+	"exclude": ["dist"]
 }

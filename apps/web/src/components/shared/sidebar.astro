@@ -4,13 +4,15 @@ import { css } from '@/styled-system/css'
 import { flex } from '@/styled-system/patterns'
 
 const allOverview = await getCollection('overview')
-const allComponents = await getCollection('components')
+const allComponents = (await getCollection('components')).sort((a, b) =>
+	a.id.localeCompare(b.id),
+)
 const sidebars = [
 	{ title: 'Overview', items: [...allOverview] },
 	{ title: 'Components', items: [...allComponents] },
 ]
 
-const { slug } = Astro.params
+const { id } = Astro.params
 ---
 
 <div class={flex({ direction: 'column', gap: 2, pb: 8 })}>
@@ -29,9 +31,9 @@ const { slug } = Astro.params
           {sidebar.items.map((item) => (
             <li
               class={css({
-                bg: slug === item.slug ? 'blue.100' : '',
-                cursor: slug === item.slug ? 'default' : 'cursor',
-                pointerEvents: slug === item.slug ? 'none' : 'auto',
+                bg: id === item.id ? 'blue.100' : '',
+                cursor: id === item.id ? 'default' : 'cursor',
+                pointerEvents: id === item.id ? 'none' : 'auto',
                 px: 2,
                 py: 1.5,
                 fontSize: 'sm',
@@ -41,7 +43,7 @@ const { slug } = Astro.params
             >
               <a
                 class={css({ display: 'block' })}
-                href={`/${sidebar.title.toLowerCase()}/${item.slug}`}
+                href={`/${sidebar.title.toLowerCase()}/${item.id}`}
               >
                 {item.data.title}
                 {item.data.status ? <span 
