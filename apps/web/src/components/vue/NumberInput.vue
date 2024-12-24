@@ -19,12 +19,14 @@ const api = computed(() =>
   <div v-bind="api.getRootProps()" :class="styles.root">
     <div :class="styles.control">
       <input v-bind="api.getInputProps()" :class="styles.input" />
-      <button v-bind="api.getIncrementTriggerProps()" :class="styles.incrementTrigger">
-        +
-      </button>
-      <button v-bind="api.getDecrementTriggerProps()" :class="styles.decrementTrigger">
-        -
-      </button>
+      <div>
+        <button v-bind="api.getIncrementTriggerProps()" :class="styles.incrementTrigger">
+          +
+        </button>
+        <button v-bind="api.getDecrementTriggerProps()" :class="styles.decrementTrigger">
+          -
+        </button>
+      </div>
     </div>
   </div>
 </template>

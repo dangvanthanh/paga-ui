@@ -4,7 +4,6 @@ export const carousel = defineSlotRecipe({
 	className: 'carousel',
 	slots: [
 		'root',
-		'viewport',
 		'item',
 		'prevTrigger',
 		'nextTrigger',
@@ -13,10 +12,6 @@ export const carousel = defineSlotRecipe({
 	],
 	base: {
 		root: { pos: 'relative' },
-		viewport: {
-			overflowX: 'hidden',
-			pos: 'relative',
-		},
 		prevTrigger: {
 			pos: 'absolute',
 			top: '50%',
@@ -45,6 +40,30 @@ export const carousel = defineSlotRecipe({
 				opacity: 0.5,
 				cursor: 'default',
 				pointerEvents: 'none',
+			},
+		},
+		indicatorGroup: {
+			bg: 'white',
+			borderWidth: 1,
+			borderColor: 'white',
+			py: 1.5,
+			px: 2,
+			display: 'flex',
+			alignItems: 'center',
+			gap: 1.5,
+			pos: 'absolute',
+			left: '50%',
+			bottom: 4,
+			transform: 'translateX(-50%)',
+		},
+		indicator: {
+			w: 3,
+			h: 3,
+			rounded: 'full',
+			cursor: 'pointer',
+			bg: 'gray.600',
+			'&[data-current]': {
+				bg: 'green.600',
 			},
 		},
 	},

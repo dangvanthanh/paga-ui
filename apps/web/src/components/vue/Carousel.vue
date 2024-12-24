@@ -15,7 +15,6 @@ const items = [
 ]
 
 const [state, send] = useMachine(zagCarousel.machine({ id: useId() }))
-
 const api = computed(() =>
 	zagCarousel.connect(state.value, send, normalizeProps),
 )
@@ -29,16 +28,18 @@ const api = computed(() =>
     <button v-bind="api.getNextTriggerProps()" :class="styles.nextTrigger">
       <ChevronRight :class="css({ w: 6, h: 6 })" />
     </button>
-    <div v-bind="api.getViewportProps()" :class="styles.viewport">
-      <div v-bind="api.getItemGroupProps()">
-        <div v-for="(image, index) in items" :key="index" v-bind="api.getItemProps({ index: index })">
-          <img :src="image" alt="" :style="{
-            height: '300px',
-            width: '100%',
-            objectFit: 'cover',
-          }" />
-        </div>
+    <div v-bind="api.getItemGroupProps()">
+      <div v-for="(image, index) in items" :key="index" v-bind="api.getItemProps({ index: index })">
+        <img :src="image" alt="" :style="{
+          height: '300px',
+          width: '100%',
+          objectFit: 'cover',
+        }" />
       </div>
+    </div>
+    <div v-bind="api.getIndicatorGroupProps()" :class="styles.indicatorGroup">
+      <button v-for="(_, index) in api.pageSnapPoints" :key="index" v-bind="api.getIndicatorProps({ index })"
+        :class="styles.indicator"></button>
     </div>
   </div>
 </template>

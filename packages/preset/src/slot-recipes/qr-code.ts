@@ -12,12 +12,12 @@ export const qrCode = defineSlotRecipe({
 			pos: 'relative',
 		},
 		frame: {
-			w: 48,
-			h: 48,
+			w: 310,
+			h: 310,
 		},
 		overlay: {
-			w: 8,
-			h: 8,
+			w: 16,
+			h: 16,
 		},
 	},
 })
