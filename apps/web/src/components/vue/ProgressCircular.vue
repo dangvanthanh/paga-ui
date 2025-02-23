@@ -6,20 +6,15 @@ import { computed, useId } from 'vue'
 
 const styles = progressCircular()
 
-const [state, send] = useMachine(
-	zagProgress.machine({ id: useId(), value: 80 }),
-)
-
-const api = computed(() =>
-	zagProgress.connect(state.value, send, normalizeProps),
-)
+const service = useMachine(zagProgress.machine, { id: useId(), value: 50 })
+const api = computed(() => zagProgress.connect(service, normalizeProps))
 </script>
 
 <template>
-  <div v-bind="api.getRootProps()" :class="styles.root">
-    <svg v-bind="api.getCircleProps()" :class="styles.circle">
-      <circle v-bind="api.getCircleTrackProps()" :class="styles.circleTrack" />
-      <circle v-bind="api.getCircleRangeProps()" :class="styles.circleRange" />
-    </svg>
-  </div>
+	<div v-bind="api.getRootProps()" :class="styles.root">
+		<svg v-bind="api.getCircleProps()" :class="styles.circle">
+			<circle v-bind="api.getCircleTrackProps()" :class="styles.circleTrack" />
+			<circle v-bind="api.getCircleRangeProps()" :class="styles.circleRange" />
+		</svg>
+	</div>
 </template>

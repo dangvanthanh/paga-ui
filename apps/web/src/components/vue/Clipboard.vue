@@ -7,26 +7,21 @@ import { computed, useId } from 'vue'
 
 const styles = clipboard()
 
-const [state, send] = useMachine(
-	zagClipboard.machine({
-		id: useId(),
-		value: 'https://github.com/dangvanthanh/paga-ui',
-	}),
-)
-
-const api = computed(() =>
-	zagClipboard.connect(state.value, send, normalizeProps),
-)
+const service = useMachine(zagClipboard.machine, {
+	id: useId(),
+	value: 'https://github.com/dangvanthanh/paga-ui',
+})
+const api = computed(() => zagClipboard.connect(service, normalizeProps))
 </script>
 
 <template>
-  <div v-bind="api.getRootProps()" :class="styles.root">
-    <div v-bind="api.getControlProps()" :class="styles.control">
-      <input v-bind="api.getInputProps()" :class="styles.input" />
-      <button v-bind="api.getTriggerProps()" :class="styles.trigger">
-        <ClipboardCheck v-if="api.copied" />
-        <ClipboardCopyIcon v-else />
-      </button>
-    </div>
-  </div>
+	<div v-bind="api.getRootProps()" :class="styles.root">
+		<div v-bind="api.getControlProps()" :class="styles.control">
+			<input v-bind="api.getInputProps()" :class="styles.input" />
+			<button v-bind="api.getTriggerProps()" :class="styles.trigger">
+				<ClipboardCheck v-if="api.copied" />
+				<ClipboardCopyIcon v-else />
+			</button>
+		</div>
+	</div>
 </template>

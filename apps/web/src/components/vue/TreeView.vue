@@ -52,19 +52,18 @@ const collection = zagTree.collection<Node>({
 	},
 })
 
-const [state, send] = useMachine(zagTree.machine({ id: useId(), collection }))
-
-const api = computed(() => zagTree.connect(state.value, send, normalizeProps))
+const service = useMachine(zagTree.machine, { id: useId(), collection })
+const api = computed(() => zagTree.connect(service, normalizeProps))
 </script>
 
 <template>
-  <main class="tree-view">
-    <div v-bind="api.getRootProps()">
-      <h3 v-bind="api.getLabelProps()">My Documents</h3>
-      <div v-bind="api.getTreeProps()" :class="styles.tree">
-        <TreeNode v-for="(node, index) in api.collection.rootNode.children" :key="node.id" :node="node"
-          :index-path="[index]" :api="api" />
-      </div>
-    </div>
-  </main>
+	<main class="tree-view">
+		<div v-bind="api.getRootProps()">
+			<h3 v-bind="api.getLabelProps()">My Documents</h3>
+			<div v-bind="api.getTreeProps()" :class="styles.tree">
+				<TreeNode v-for="(node, index) in api.collection.rootNode.children" :key="node.id" :node="node"
+					:index-path="[index]" :api="api" />
+			</div>
+		</div>
+	</main>
 </template>

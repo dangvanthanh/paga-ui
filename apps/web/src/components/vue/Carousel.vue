@@ -14,10 +14,8 @@ const items = [
 	'https://tinyurl.com/59jxz9uu',
 ]
 
-const [state, send] = useMachine(zagCarousel.machine({ id: useId() }))
-const api = computed(() =>
-	zagCarousel.connect(state.value, send, normalizeProps),
-)
+const service = useMachine(zagCarousel.machine, { id: useId() })
+const api = computed(() => zagCarousel.connect(service, normalizeProps))
 </script>
 
 <template>

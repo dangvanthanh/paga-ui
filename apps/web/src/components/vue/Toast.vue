@@ -6,24 +6,21 @@ import { normalizeProps, useMachine } from '@zag-js/vue'
 import { useId } from 'vue'
 import AnimateToast from './AnimateToast.vue'
 
-const [state, send] = useMachine(
-	zagToast.group.machine({ id: useId(), placement: 'bottom-end', gap: 24 }),
-)
+const toaster = zagToast.createStore({
+	placement: 'top-end',
+	overlap: true,
+})
 
-const api = zagToast.group.connect(state.value, send, normalizeProps)
+const service = useMachine(zagToast.group.machine, {
+	id: useId(),
+	store: toaster,
+})
+const api = zagToast.group.connect(service, normalizeProps)
 
-const topRightToast = () =>
-	api.create({
-		title: 'Hello World',
-		description: 'This is a toast',
-	})
+const topRightToast = () => toaster.create({ title: 'Hello' })
 
-const bottomRightToast = () => {
-	api.create({
-		title: 'Data submitted!',
-		description: 'Thank you for your submission',
-	})
-}
+const bottomRightToast = () =>
+	toaster.create({ title: 'Data submitted!', type: 'success' })
 </script>
 
 <template>
@@ -36,10 +33,14 @@ const bottomRightToast = () => {
     </button>
   </div>
   <Teleport to="body">
-    <div v-for="placement in api.getPlacements()">
-      <div :key="placement" v-bind="api.getGroupProps({ placement })">
-        <AnimateToast v-for="toast in api.getToastsByPlacement(placement)" :key="toast.id" :actor="toast" />
-      </div>
-    </div>
+    <div v-bind="api.getGroupProps()">
+    <AnimateToast
+      v-for="(toast, index) in api.getToasts()"
+      :key="toast.id"
+      :toast="toast"
+      :index="index"
+      :parent="service"
+    />
+  </div>
   </Teleport>
 </template>

@@ -11,16 +11,15 @@ const props = defineProps({
 
 const styles = avatar()
 
-const [state, send] = useMachine(zagAvatar.machine({ id: useId() }))
-
-const api = computed(() => zagAvatar.connect(state.value, send, normalizeProps))
+const service = useMachine(zagAvatar.machine, { id: useId() })
+const api = computed(() => zagAvatar.connect(service, normalizeProps))
 </script>
 
 <template>
-  <div v-bind="api.getRootProps()" :class="styles.root">
-    <span v-bind="api.getFallbackProps()" :class="styles.fallback">
-      {{ props.fallback || 'PG' }}
-    </span>
-    <img :alt="props.fallback" :src="props.src" v-bind="api.getImageProps()" :class="styles.image" />
-  </div>
+	<div v-bind="api.getRootProps()" :class="styles.root">
+		<span v-bind="api.getFallbackProps()" :class="styles.fallback">
+			{{ props.fallback || 'PG' }}
+		</span>
+		<img :alt="props.fallback" :src="props.src" v-bind="api.getImageProps()" :class="styles.image" />
+	</div>
 </template>

@@ -6,17 +6,14 @@ import { computed, useId } from 'vue'
 
 const styles = pinInput()
 
-const [state, send] = useMachine(zagPinInput.machine({ id: useId() }))
-
-const api = computed(() =>
-	zagPinInput.connect(state.value, send, normalizeProps),
-)
+const service = useMachine(zagPinInput.machine, { id: useId() })
+const api = computed(() => zagPinInput.connect(service, normalizeProps))
 </script>
 
 <template>
-  <div ref="ref" v-bind="api.getRootProps()" :class="styles.root">
-    <template v-for="item in Array.from({ length: 6 }).map((_, i) => i)">
-      <input v-bind="api.getInputProps({ index: item })" :class="styles.input" />
-    </template>
-  </div>
+	<div ref="ref" v-bind="api.getRootProps()" :class="styles.root">
+		<template v-for="item in Array.from({ length: 6 }).map((_, i) => i)">
+			<input v-bind="api.getInputProps({ index: item })" :class="styles.input" />
+		</template>
+	</div>
 </template>

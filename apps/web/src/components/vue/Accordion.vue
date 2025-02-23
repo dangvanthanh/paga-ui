@@ -20,25 +20,23 @@ const data = [
 	{ title: 'React', content: 'The library for web and native user interfaces' },
 ]
 
-const [state, send] = useMachine(
-	zagAccordion.machine({ id: useId(), value: ['Solid'] }),
-)
-
-const api = computed(() =>
-	zagAccordion.connect(state.value, send, normalizeProps),
-)
+const service = useMachine(zagAccordion.machine, {
+	id: useId(),
+	defaultValue: ['Solid'],
+})
+const api = computed(() => zagAccordion.connect(service, normalizeProps))
 </script>
 
 <template>
-  <div :class="styles.root">
-    <div v-for="item in data" :key="item.title" v-bind="api.getItemProps({ value: item.title })" :class="styles.item">
-      <button :class="styles.trigger" v-bind="api.getItemTriggerProps({ value: item.title })">
-        <span>{{ item.title }}</span>
-        <ChevronDown :size="16" />
-      </button>
-      <div v-bind="api.getItemContentProps({ value: item.title })" :class="styles.content">
-        <div>{{ item.content }}</div>
-      </div>
-    </div>
-  </div>
+	<div :class="styles.root">
+		<div v-for="item in data" :key="item.title" v-bind="api.getItemProps({ value: item.title })" :class="styles.item">
+			<button :class="styles.trigger" v-bind="api.getItemTriggerProps({ value: item.title })">
+				<span>{{ item.title }}</span>
+				<ChevronDown :size="16" />
+			</button>
+			<div v-bind="api.getItemContentProps({ value: item.title })" :class="styles.content">
+				<div>{{ item.content }}</div>
+			</div>
+		</div>
+	</div>
 </template>

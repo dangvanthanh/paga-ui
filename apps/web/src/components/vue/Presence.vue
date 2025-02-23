@@ -5,10 +5,14 @@ import AnimatePresence from './AnimatePresence.vue'
 
 const open = ref(true)
 const unmouted = ref(false)
+
+const handleOpen = () => {
+	open.value = !open.value
+}
 </script>
 
 <template>
-  <button type="button" @click="open = !open" :class="css({ fontSize: 'sm' })">Toggle</button>
+  <button type="button" @click="handleOpen" :class="css({ fontSize: 'sm' })">Toggle</button>
   <AnimatePresence :present="open" unmountOnExit @exit-complete="unmouted = true">
     <div>Content</div>
   </AnimatePresence>

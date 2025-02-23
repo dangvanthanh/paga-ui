@@ -12,21 +12,21 @@ const items = [
 	{ id: 'vue', label: 'Vue' },
 ]
 
-const [state, send] = useMachine(
-	zagRadio.machine({ id: useId(), value: 'vue' }),
-)
-
-const api = computed(() => zagRadio.connect(state.value, send, normalizeProps))
+const service = useMachine(zagRadio.machine, {
+	id: useId(),
+	defaultValue: 'vue',
+})
+const api = computed(() => zagRadio.connect(service, normalizeProps))
 </script>
 
 <template>
-  <div v-bind="api.getRootProps()" :class="styles.root">
-    <div v-for="opt in items" :key="opt.id" :class="styles.item">
-      <label v-bind="api.getItemProps({ value: opt.id })" :class="styles.label">
-        <div v-bind="api.getItemControlProps({ value: opt.id })" :class="styles.itemControl" />
-        <span v-bind="api.getItemTextProps({ value: opt.id })" :class="styles.itemText">{{ opt.label }}</span>
-        <input v-bind="api.getItemHiddenInputProps({ value: opt.id })" />
-      </label>
-    </div>
-  </div>
+	<div v-bind="api.getRootProps()" :class="styles.root">
+		<div v-for="opt in items" :key="opt.id" :class="styles.item">
+			<label v-bind="api.getItemProps({ value: opt.id })" :class="styles.label">
+				<div v-bind="api.getItemControlProps({ value: opt.id })" :class="styles.itemControl" />
+				<span v-bind="api.getItemTextProps({ value: opt.id })" :class="styles.itemText">{{ opt.label }}</span>
+				<input v-bind="api.getItemHiddenInputProps({ value: opt.id })" />
+			</label>
+		</div>
+	</div>
 </template>

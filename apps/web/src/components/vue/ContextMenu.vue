@@ -15,27 +15,27 @@ const items = [
 	{ name: 'Paste', value: 'paste', icon: ClipboardPaste },
 ]
 
-const [state, send] = useMachine(
-	zagMenu.machine({ id: useId(), 'aria-label': 'File' }),
-)
-
-const api = computed(() => zagMenu.connect(state.value, send, normalizeProps))
+const service = useMachine(zagMenu.machine, {
+	id: useId(),
+	'aria-label': 'File',
+})
+const api = computed(() => zagMenu.connect(service, normalizeProps))
 </script>
 
 <template>
-  <div>
-    <button v-bind="api.getContextTriggerProps()" :class="styles.trigger">
-      <div>Open context menu</div>
-    </button>
-    <div v-bind="api.getPositionerProps()">
-      <ul v-bind="api.getContentProps()" :class="styles.content">
-        <template v-for="item in items">
-          <li v-bind="api.getItemProps({ value: item.value })" :class="styles.item">
-            <component :is="item.icon" :size="16" />
-            <span :class="css({ ml: 2 })">{{ item.name }}</span>
-          </li>
-        </template>
-      </ul>
-    </div>
-  </div>
+	<div>
+		<button v-bind="api.getContextTriggerProps()" :class="styles.trigger">
+			<div>Open context menu</div>
+		</button>
+		<div v-bind="api.getPositionerProps()">
+			<ul v-bind="api.getContentProps()" :class="styles.content">
+				<template v-for="item in items">
+					<li v-bind="api.getItemProps({ value: item.value })" :class="styles.item">
+						<component :is="item.icon" :size="16" />
+						<span :class="css({ ml: 2 })">{{ item.name }}</span>
+					</li>
+				</template>
+			</ul>
+		</div>
+	</div>
 </template>

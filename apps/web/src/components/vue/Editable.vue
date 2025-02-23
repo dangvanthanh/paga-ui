@@ -6,20 +6,18 @@ import { computed, useId } from 'vue'
 
 const styles = editable()
 
-const [state, send] = useMachine(
-	zagEditable.machine({ id: useId(), value: 'Editable...' }),
-)
-
-const api = computed(() =>
-	zagEditable.connect(state.value, send, normalizeProps),
-)
+const service = useMachine(zagEditable.machine, {
+	id: useId(),
+	defaultValue: 'Editable...',
+})
+const api = computed(() => zagEditable.connect(service, normalizeProps))
 </script>
 
 <template>
-  <div v-bind="api.getRootProps()" :class="styles.root">
-    <div v-bind="api.getAreaProps()" :class="styles.area">
-      <input v-bind="api.getInputProps()" :class="styles.input" />
-      <span v-bind="api.getPreviewProps()" :class="styles.preview" />
-    </div>
-  </div>
+	<div v-bind="api.getRootProps()" :class="styles.root">
+		<div v-bind="api.getAreaProps()" :class="styles.area">
+			<input v-bind="api.getInputProps()" :class="styles.input" />
+			<span v-bind="api.getPreviewProps()" :class="styles.preview" />
+		</div>
+	</div>
 </template>
