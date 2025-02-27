@@ -14,7 +14,10 @@ const items = [
 	'https://tinyurl.com/59jxz9uu',
 ]
 
-const service = useMachine(zagCarousel.machine, { id: useId() })
+const service = useMachine(zagCarousel.machine, {
+	id: useId(),
+	slideCount: items.length,
+})
 const api = computed(() => zagCarousel.connect(service, normalizeProps))
 </script>
 

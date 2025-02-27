@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { css } from '@/styled-system/css'
+import { cx, css } from '@/styled-system/css'
+import { button } from '@/styled-system/recipes'
 import { ref } from 'vue'
 import AnimatePresence from './AnimatePresence.vue'
 
@@ -12,8 +13,13 @@ const handleOpen = () => {
 </script>
 
 <template>
-  <button type="button" @click="handleOpen" :class="css({ fontSize: 'sm' })">Toggle</button>
-  <AnimatePresence :present="open" unmountOnExit @exit-complete="unmouted = true">
-    <div>Content</div>
-  </AnimatePresence>
+	<div>
+		<button type="button" @click="handleOpen"
+			:class="cx(button({ variant: 'ghost', size: 'sm' }), css({ mb: 4 }))">Toggle</button>
+		<div :class="css({ w: 'full' })">
+			<AnimatePresence :present="open" unmountOnExit @exit-complete="unmouted = true">
+				<div :class="css({ fontSize: 'sm', borderWidth: 1, borderColor: 'gray.200', p: 2 })">Content</div>
+			</AnimatePresence>
+		</div>
+	</div>
 </template>
