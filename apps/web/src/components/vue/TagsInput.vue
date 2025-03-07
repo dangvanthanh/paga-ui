@@ -8,20 +8,22 @@ const styles = tagsInput()
 
 const service = useMachine(zagTagsInput.machine, {
 	id: useId(),
-	value: ['React', 'Vue', 'Solid'],
+	defaultValue: ['React', 'Vue', 'Solid'],
 })
 const api = computed(() => zagTagsInput.connect(service, normalizeProps))
 </script>
 
 <template>
-	<div ref="ref" v-bind="api.getRootProps()" :class="styles.root">
+	<div v-bind="api.getRootProps()" :class="styles.root">
 		<div :class="styles.control">
 			<span v-for="(value, index) in api.value" :key="index">
 				<div v-bind="api.getItemProps({ index, value })" :class="styles.tag">
-					<span>{{ value }}</span>
-					<button v-bind="api.getItemDeleteTriggerProps({ index, value })">
-						<small>&#x2715;</small>
-					</button>
+					<div v-bind="api.getItemPreviewProps({ index, value })">
+						<span>{{ value }}</span>
+						<button v-bind="api.getItemDeleteTriggerProps({ index, value })">
+							<small>&#x2715;</small>
+						</button>
+					</div>
 				</div>
 				<input v-bind="api.getItemInputProps({ index, value })" :class="styles.input" />
 			</span>
