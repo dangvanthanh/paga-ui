@@ -8,9 +8,10 @@ const styles = spliter()
 
 const service = useMachine(zagSplitter.machine, {
 	id: useId(),
-	size: [
-		{ id: 'a', size: 50 },
-		{ id: 'b', size: 50 },
+	defaultSize: [50, 50],
+	panels: [
+		{ id: 'a', minSize: 30 },
+		{ id: 'b', minSize: 30 },
 	],
 })
 const api = computed(() => zagSplitter.connect(service, normalizeProps))
