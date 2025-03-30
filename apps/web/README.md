@@ -21,7 +21,7 @@
 - [x] Pagination
 - [x] Pin Input
 - [x] Popover
-- [] Presence
+- [x] Presence
 - [x] Progress Circular
 - [x] Progress Linear
 - [x] QR Code
@@ -38,7 +38,7 @@
 - [x] Tabs
 - [x] Tags Input
 - [x] Timer
-- [] Toast
+- [x] Toast
 - [x] Toggle Group
 - [x] Tooltip
 - [x] Tour
