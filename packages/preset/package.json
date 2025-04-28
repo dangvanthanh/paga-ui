@@ -8,18 +8,17 @@
 		".": "./dist/index.js"
 	},
 	"scripts": {
-		"dev": "tsup --watch",
-		"build": "tsup",
+		"dev": "tsdown --watch",
+		"build": "tsdown",
 		"lint": "biome lint ./src --write",
-		"format": "biome format ./src --write",
-		"update": "bunx npm-check-updates -ui"
+		"format": "biome format ./src --write"
 	},
 	"devDependencies": {
 		"@paga/biome-config": "workspace:*",
 		"@paga/typescript-config": "workspace:*",
 		"@pandacss/dev": "^0.53.4",
 		"@pandacss/types": "^0.53.4",
-		"tsup": "^8.4.0",
+		"tsdown": "^0.10.0",
 		"typescript": "^5.8.3"
 	}
 }
