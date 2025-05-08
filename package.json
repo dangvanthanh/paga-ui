@@ -15,10 +15,10 @@
 	"devDependencies": {
 		"@paga/biome-config": "workspace:*",
 		"@paga/typescript-config": "workspace:*",
-		"lint-staged": "^15.5.1",
-		"turbo": "^2.5.2"
+		"lint-staged": "^15.5.2",
+		"turbo": "^2.5.3"
 	},
-	"packageManager": "bun@1.2.10",
+	"packageManager": "bun@1.2.12",
 	"engines": {
 		"node": ">=20"
 	},
