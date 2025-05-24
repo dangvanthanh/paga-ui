@@ -18,7 +18,7 @@
 		"lint-staged": "^16.0.0",
 		"turbo": "^2.5.3"
 	},
-	"packageManager": "bun@1.2.13",
+	"packageManager": "bun@1.2.14",
 	"engines": {
 		"node": ">=20"
 	},
