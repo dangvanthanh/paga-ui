@@ -61,7 +61,7 @@
 		"@zag-js/tour": "^1.15.0",
 		"@zag-js/tree-view": "^1.15.0",
 		"@zag-js/vue": "^1.15.0",
-		"astro": "5.9.0",
+		"astro": "5.9.1",
 		"lucide-vue-next": "^0.513.0",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
