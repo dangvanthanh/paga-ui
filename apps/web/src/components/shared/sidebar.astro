@@ -49,10 +49,10 @@ const { id } = Astro.params
                 {item.data.status ? <span 
                   class={css({
                     fontSize: 'xs',
-                    bg: 'red.50',
+                    bg: item.data.status === 'new' ? 'green.50' : 'red.50',
                     borderWidth: 1, 
-                    borderColor: 'red.300', 
-                    color: 'red.700',
+                    borderColor: item.data.status === 'new' ? 'green.300' : 'red.300', 
+                    color: item.data.status === 'new' ? 'green.700' : 'red.700',
                     py: .5,
                     px: 1,
                     rounded: 'sm',

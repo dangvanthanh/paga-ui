@@ -14,6 +14,7 @@ import { hoverCard } from './hover-card'
 import { menu } from './menu'
 import { numberInput } from './number-input'
 import { pagination } from './pagination'
+import { passwordInput } from './password-input'
 import { pinInput } from './pin-input'
 import { popover } from './popover'
 import { presence } from './presence'
@@ -56,6 +57,7 @@ export const slotRecipes = {
 	menu,
 	numberInput,
 	pagination,
+	passwordInput,
 	pinInput,
 	popover,
 	presence,
