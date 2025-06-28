@@ -2,9 +2,9 @@
 	"extends": [
 		"@paga/biome-config/biome"
 	],
-	"linter": {
-		"includes": [
-			"!**/*.vue"
-		]
+	"html": {
+		"formatter": {
+			"enabled": true
+		}
 	}
 }

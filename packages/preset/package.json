@@ -18,7 +18,7 @@
 		"@paga/typescript-config": "workspace:*",
 		"@pandacss/dev": "^0.54.0",
 		"@pandacss/types": "^0.54.0",
-		"tsdown": "^0.12.7",
+		"tsdown": "^0.12.9",
 		"typescript": "^5.8.3"
 	}
 }

@@ -48,7 +48,7 @@ function createContext<ContextValue>(
 		if (context) return context
 
 		if (context === null)
-			// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+			// biome-ignore lint: no explicity any
 			return context as any
 
 		throw new Error(
@@ -80,7 +80,8 @@ export function useId(
 	if (deterministicId) return deterministicId
 
 	const { useId } = injectConfigProviderContext({ useId: undefined })
-	if (useId && typeof useId === 'function') return `${prefix}-${useId()}`
+	if (useId && typeof useId === 'function')
+		return `${prefix}-${crypto.randomUUID()}`
 
 	return `${prefix}-${++count}`
 }

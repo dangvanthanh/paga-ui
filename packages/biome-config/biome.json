@@ -1,5 +1,6 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
+	"root": false,
+	"$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
 	"vcs": {
 		"enabled": false,
 		"clientKind": "git",
@@ -63,7 +64,8 @@
 					},
 					"correctness": {
 						"noUnusedVariables": "off",
-						"noUnusedImports": "off"
+						"noUnusedImports": "off",
+						"useHookAtTopLevel": "off"
 					}
 				}
 			}
