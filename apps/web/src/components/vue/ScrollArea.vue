@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import * as zagScrollArea from "@zag-js/scroll-area"
+import * as zagScrollArea from '@zag-js/scroll-area'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
 import { css } from 'styled-system/css'
