@@ -46,6 +46,7 @@
 		"@zag-js/radio-group": "^1.21.6",
 		"@zag-js/rating-group": "^1.21.6",
 		"@zag-js/react": "^1.21.6",
+		"@zag-js/scroll-area": "^1.21.6",
 		"@zag-js/select": "^1.21.6",
 		"@zag-js/signature-pad": "^1.21.6",
 		"@zag-js/slider": "^1.21.6",

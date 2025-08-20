@@ -47,6 +47,7 @@
         "@zag-js/radio-group": "^1.21.6",
         "@zag-js/rating-group": "^1.21.6",
         "@zag-js/react": "^1.21.6",
+        "@zag-js/scroll-area": "^1.21.6",
         "@zag-js/select": "^1.21.6",
         "@zag-js/signature-pad": "^1.21.6",
         "@zag-js/slider": "^1.21.6",
@@ -707,6 +708,8 @@
     "@zag-js/rect-utils": ["@zag-js/rect-utils@1.21.6", "", {}, "sha512-OSz+jfcAJyjC24ZUG8ylMd2S9BtlKK6wXsi7M69mXVp9dpclX4RtoRp8Z0wK2/QS4/5GbKSgdQUfcuNt9fsveQ=="],
 
     "@zag-js/remove-scroll": ["@zag-js/remove-scroll@1.21.6", "", { "dependencies": { "@zag-js/dom-query": "1.21.6" } }, "sha512-3iEkkn2MSV+qISwOaIgJFeLRBbFxU67BZ9XOaTs7pQAz+gbjf2lBI+aCWPXy9Fg7nTdaO4S4T0HzZqaweOrcUQ=="],
+
+    "@zag-js/scroll-area": ["@zag-js/scroll-area@1.21.6", "", { "dependencies": { "@zag-js/anatomy": "1.21.6", "@zag-js/core": "1.21.6", "@zag-js/dom-query": "1.21.6", "@zag-js/types": "1.21.6", "@zag-js/utils": "1.21.6" } }, "sha512-CC2Tvp9vKNBb6fhzZk6gvCawTan0RcvJk2NKk7H1pZnb340t7MJlQL2DzSVnUfXLLk4JF86zzgka2ryzYK6k6A=="],
 
     "@zag-js/scroll-snap": ["@zag-js/scroll-snap@1.21.6", "", { "dependencies": { "@zag-js/dom-query": "1.21.6" } }, "sha512-liqOTdbrVidjUjGWuWkYrer/m01nxp8rlHRNPSEDzktzvXsgGMuAdnWQCm4vSdUoIH/mF6EQVjgObUR33VaGyg=="],
 
