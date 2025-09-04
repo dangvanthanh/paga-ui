@@ -15,7 +15,7 @@
 	"devDependencies": {
 		"@paga/biome-config": "workspace:*",
 		"@paga/typescript-config": "workspace:*",
-		"lint-staged": "^16.1.5",
+		"lint-staged": "^16.1.6",
 		"turbo": "^2.5.6"
 	},
 	"packageManager": "bun@1.2.21",
