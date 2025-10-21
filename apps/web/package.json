@@ -9,11 +9,11 @@
 		"build": "astro check && astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"lint": "biome lint ./src",
-		"format": "biome format ./src --write"
+		"lint": "biome lint --write ./src",
+		"format": "biome format --write ./src"
 	},
 	"dependencies": {
-		"@astrojs/check": "^0.9.4",
+		"@astrojs/check": "^0.9.5",
 		"@astrojs/mdx": "^4.3.7",
 		"@astrojs/react": "^4.4.0",
 		"@astrojs/solid-js": "^5.1.1",
@@ -63,7 +63,7 @@
 		"@zag-js/tour": "^1.26.3",
 		"@zag-js/tree-view": "^1.26.3",
 		"@zag-js/vue": "^1.26.3",
-		"astro": "5.14.6",
+		"astro": "5.14.7",
 		"lucide-vue-next": "^0.546.0",
 		"react": "^19.2.0",
 		"react-dom": "^19.2.0",
