@@ -64,7 +64,7 @@
 		"@zag-js/tree-view": "^1.26.4",
 		"@zag-js/vue": "^1.26.4",
 		"astro": "5.15.1",
-		"lucide-vue-next": "^0.546.0",
+		"lucide-vue-next": "^0.548.0",
 		"react": "^19.2.0",
 		"react-dom": "^19.2.0",
 		"solid-js": "^1.9.9",
