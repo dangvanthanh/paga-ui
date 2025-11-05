@@ -35,13 +35,21 @@ const api = computed(() => zagTabs.connect(service, normalizeProps))
 <template>
 	<div ref="ref" v-bind="api.getRootProps()" :class="styles.root">
 		<div v-bind="api.getListProps()" :class="styles.list">
-			<button v-for="item in data" v-bind="api.getTriggerProps({ value: item.value })" :key="item.value"
-				:class="styles.trigger">
+			<button
+				v-for="item in data"
+				v-bind="api.getTriggerProps({ value: item.value })"
+				:key="item.value"
+				:class="styles.trigger"
+			>
 				{{ item.label }}
 			</button>
 		</div>
-		<div v-for="item in data" v-bind="api.getContentProps({ value: item.value })" :key="item.value"
-			:class="styles.content">
+		<div
+			v-for="item in data"
+			v-bind="api.getContentProps({ value: item.value })"
+			:key="item.value"
+			:class="styles.content"
+		>
 			<p>{{ item.content }}</p>
 		</div>
 	</div>

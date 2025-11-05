@@ -16,10 +16,10 @@ const api = computed(() => zagCheckbox.connect(service, normalizeProps))
 	<label v-bind="api.getRootProps()" :class="styles.root">
 		<div v-bind="api.getControlProps()" :class="styles.control">
 			<span v-if="api.checked">
-				<Check :class="css({ w: 4, h: 4, color: 'gray.900' })" />
+				<Check :class="css({ w: 4, h: 4, color: 'gray.900' })"/>
 			</span>
 		</div>
-		<input v-bind="api.getHiddenInputProps()" />
+		<input v-bind="api.getHiddenInputProps()">
 		<span v-bind="api.getLabelProps()" :class="styles.label">
 			<span v-if="api.checked"> Checked</span>
 			<span v-else> Unchecked</span>

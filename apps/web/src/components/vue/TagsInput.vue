@@ -25,9 +25,16 @@ const api = computed(() => zagTagsInput.connect(service, normalizeProps))
 						</button>
 					</div>
 				</div>
-				<input v-bind="api.getItemInputProps({ index, value })" :class="styles.input" />
+				<input
+					v-bind="api.getItemInputProps({ index, value })"
+					:class="styles.input"
+				>
 			</span>
-			<input placeholder="Add tag..." v-bind="api.getInputProps()" :class="styles.input" />
+			<input
+				placeholder="Add tag..."
+				v-bind="api.getInputProps()"
+				:class="styles.input"
+			>
 		</div>
 	</div>
 </template>

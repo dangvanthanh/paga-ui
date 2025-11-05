@@ -1,7 +1,4 @@
 ---
-
-
-
 import { flex } from '@/styled-system/patterns'
 import '@/styles/panda.css'
 import '@/styles/global.css'
@@ -13,47 +10,54 @@ interface Props {
 
 const { title, description } = Astro.props
 ---
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>{title} | Paga UI</title>
-    <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="Panda,Tailwind,CSS,Paga UI,Components,Library,React,Solid,Vue" />
-    <link rel="manifest" href="/manifest.webmanifest" />
-    <link rel="sitemap" href="/sitemap.xml" />
-    <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="32x32" />
-    <link rel="apple-touch-icon" href="/apple-icon.png" type="image/png" sizes="180x180" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://paga-ui.com/opengraph-image.png" />
-    <meta property="og:url" content="https://paga-ui.com" />
-    <meta property="og:title" content="Paga UI" />
-    <meta
-      property="og:description"
-      content="Beautifully designed components built with Zag.js and PandaCSS"
-    />
-    <meta property="og:locale" content="en_US" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="@grizzly_codes" />
-    <meta property="twitter:title" content="Paga UI" />
-    <meta
-      name="twitter:description"
-      content="Beautifully designed components built with Zag.js and PandaCSS"
-    />
-    <meta name="twitter:image" content="https://paga-ui.com/twitter-image.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class={flex({ direction: 'column', minH: '100vh' })}>
-      <slot />
-    </div>
-  </body>
+	<head>
+		<meta charset="utf-8">
+		<title>{title}| Paga UI</title>
+		<meta name="description" content={description}>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta
+			name="keywords"
+			content="Panda,Tailwind,CSS,Paga UI,Components,Library,React,Solid,Vue"
+		>
+		<link rel="manifest" href="/manifest.webmanifest">
+		<link rel="sitemap" href="/sitemap.xml">
+		<link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="32x32">
+		<link
+			rel="apple-touch-icon"
+			href="/apple-icon.png"
+			type="image/png"
+			sizes="180x180"
+		>
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://paga-ui.com/opengraph-image.png">
+		<meta property="og:url" content="https://paga-ui.com">
+		<meta property="og:title" content="Paga UI">
+		<meta
+			property="og:description"
+			content="Beautifully designed components built with Zag.js and PandaCSS"
+		>
+		<meta property="og:locale" content="en_US">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:creator" content="@grizzly_codes">
+		<meta property="twitter:title" content="Paga UI">
+		<meta
+			name="twitter:description"
+			content="Beautifully designed components built with Zag.js and PandaCSS"
+		>
+		<meta name="twitter:image" content="https://paga-ui.com/twitter-image.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		>
+	</head>
+	<body>
+		<div class={flex({ direction: 'column', minH: '100vh' })}>
+			<slot/>
+		</div>
+	</body>
 </html>

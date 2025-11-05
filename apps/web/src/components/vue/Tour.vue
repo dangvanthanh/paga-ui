@@ -41,28 +41,45 @@ const open = computed(() => api.value.open && api.value.step)
 
 <template>
 	<div>
-		<button @click="api.start()" :class="css({ fontSize: 'sm' })">Start Tour</button>
+		<button @click="api.start()" :class="css({ fontSize: 'sm' })">
+			Start Tour
+		</button>
 	</div>
 	<Teleport to="body" v-if="open">
-		<div v-if="api.step?.backdrop" v-bind="api.getBackdropProps()" :class="styles.backdrop" />
-		<div v-bind="api.getSpotlightProps()" />
+		<div
+			v-if="api.step?.backdrop"
+			v-bind="api.getBackdropProps()"
+			:class="styles.backdrop"
+		/>
+		<div v-bind="api.getSpotlightProps()"/>
 		<div v-bind="api.getPositionerProps()" :class="styles.positioner">
 			<div v-bind="api.getContentProps()" :class="styles.content">
 				<div v-if="api.step?.arrow" v-bind="api.getArrowProps()">
-					<div v-bind="api.getArrowTipProps()" />
+					<div v-bind="api.getArrowTipProps()"/>
 				</div>
 				<div v-bind="api.getProgressTextProps()" :class="styles.progressText">
 					{{ api.getProgressText() }}
 				</div>
-				<p v-bind="api.getTitleProps()" :class="styles.title">{{ api.step?.title }}</p>
-				<div v-bind="api.getDescriptionProps()" :class="styles.description">{{ api.step?.description }}</div>
+				<p v-bind="api.getTitleProps()" :class="styles.title">
+					{{ api.step?.title }}
+				</p>
+				<div v-bind="api.getDescriptionProps()" :class="styles.description">
+					{{ api.step?.description }}
+				</div>
 				<div v-if="api.step?.actions" :class="styles.actions">
-					<button v-for="action in api.step.actions" :key="action.label" v-bind="api.getActionTriggerProps({ action })"
-						:class="styles.actionTrigger">
+					<button
+						v-for="action in api.step.actions"
+						:key="action.label"
+						v-bind="api.getActionTriggerProps({ action })"
+						:class="styles.actionTrigger"
+					>
 						{{ action.label }}
 					</button>
 				</div>
-				<button v-bind="api.getCloseTriggerProps()" :class="styles.closeTrigger">
+				<button
+					v-bind="api.getCloseTriggerProps()"
+					:class="styles.closeTrigger"
+				>
 					<small>&#x2715;</small>
 				</button>
 			</div>

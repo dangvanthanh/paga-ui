@@ -19,10 +19,18 @@ const api = computed(() => zagRating.connect(service, normalizeProps))
 	<div v-bind="api.getRootProps()" :class="styles.root">
 		<div v-bind="api.getControlProps()" :class="styles.control">
 			<template v-for="index in api.items" :key="index">
-				<StarHalf v-if="api.getItemState({ index }).half" :class="styles.rating" v-bind="api.getItemProps({ index })" />
-				<Star v-else :class="styles.rating" v-bind="api.getItemProps({ index })" />
+				<StarHalf
+					v-if="api.getItemState({ index }).half"
+					:class="styles.rating"
+					v-bind="api.getItemProps({ index })"
+				/>
+				<Star
+					v-else
+					:class="styles.rating"
+					v-bind="api.getItemProps({ index })"
+				/>
 			</template>
 		</div>
-		<input v-bind="api.getHiddenInputProps()" />
+		<input v-bind="api.getHiddenInputProps()">
 	</div>
 </template>

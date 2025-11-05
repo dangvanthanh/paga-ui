@@ -7,5 +7,5 @@ const component = defineAsyncComponent(() => import(`../vue/${id}.vue`))
 </script>
 
 <template>
-  <component :is="component" />
+	<component :is="component"/>
 </template>

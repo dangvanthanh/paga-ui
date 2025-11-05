@@ -16,12 +16,18 @@ const api = computed(() => zagNumberInput.connect(service, normalizeProps))
 <template>
 	<div v-bind="api.getRootProps()" :class="styles.root">
 		<div :class="styles.control">
-			<input v-bind="api.getInputProps()" :class="styles.input" />
+			<input v-bind="api.getInputProps()" :class="styles.input">
 			<div>
-				<button v-bind="api.getIncrementTriggerProps()" :class="styles.incrementTrigger">
+				<button
+					v-bind="api.getIncrementTriggerProps()"
+					:class="styles.incrementTrigger"
+				>
 					+
 				</button>
-				<button v-bind="api.getDecrementTriggerProps()" :class="styles.decrementTrigger">
+				<button
+					v-bind="api.getDecrementTriggerProps()"
+					:class="styles.decrementTrigger"
+				>
 					-
 				</button>
 			</div>

@@ -14,11 +14,24 @@ const handleOpen = () => {
 
 <template>
 	<div>
-		<button type="button" @click="handleOpen"
-			:class="cx(button({ variant: 'ghost', size: 'sm' }), css({ mb: 4 }))">Toggle</button>
+		<button
+			type="button"
+			@click="handleOpen"
+			:class="cx(button({ variant: 'ghost', size: 'sm' }), css({ mb: 4 }))"
+		>
+			Toggle
+		</button>
 		<div :class="css({ w: 'full' })">
-			<AnimatePresence :present="open" unmountOnExit @exit-complete="unmouted = true">
-				<div :class="css({ fontSize: 'sm', borderWidth: 1, borderColor: 'gray.200', p: 2 })">Content</div>
+			<AnimatePresence
+				:present="open"
+				unmountOnExit
+				@exit-complete="unmouted = true"
+			>
+				<div
+					:class="css({ fontSize: 'sm', borderWidth: 1, borderColor: 'gray.200', p: 2 })"
+				>
+					Content
+				</div>
 			</AnimatePresence>
 		</div>
 	</div>

@@ -16,8 +16,8 @@ const api = computed(() => zagEditable.connect(service, normalizeProps))
 <template>
 	<div v-bind="api.getRootProps()" :class="styles.root">
 		<div v-bind="api.getAreaProps()" :class="styles.area">
-			<input v-bind="api.getInputProps()" :class="styles.input" />
-			<span v-bind="api.getPreviewProps()" :class="styles.preview" />
+			<input v-bind="api.getInputProps()" :class="styles.input">
+			<span v-bind="api.getPreviewProps()" :class="styles.preview"/>
 		</div>
 	</div>
 </template>

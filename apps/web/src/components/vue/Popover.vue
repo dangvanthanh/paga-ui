@@ -20,26 +20,43 @@ const api = computed(() => zagPopover.connect(service, normalizeProps))
 		<Teleport to="body" :disabled="!api.portalled">
 			<div v-bind="api.getPositionerProps()" :class="styles.positioner">
 				<div v-bind="api.getContentProps()" :class="styles.content">
-					<div v-bind="api.getTitleProps()" :class="styles.title">Dimensions</div>
+					<div v-bind="api.getTitleProps()" :class="styles.title">
+						Dimensions
+					</div>
 					<div v-bind="api.getDescriptionProps()" :class="styles.description">
 						<div :class="flex({ align: 'center', gap: 2, mt: 2 })">
 							<span :class="css({ w: 16 })">Width</span>
-							<input value="100%" :class="cx(input({ size: 'sm' }), css({ w: 'full' }))" />
+							<input
+								value="100%"
+								:class="cx(input({ size: 'sm' }), css({ w: 'full' }))"
+							>
 						</div>
 						<div :class="flex({ align: 'center', gap: 2, mt: 2 })">
 							<span :class="css({ w: 16 })">Height</span>
-							<input value="20vh" :class="cx(input({ size: 'sm' }), css({ w: 'full' }))" />
+							<input
+								value="20vh"
+								:class="cx(input({ size: 'sm' }), css({ w: 'full' }))"
+							>
 						</div>
 						<div :class="flex({ align: 'center', gap: 2, mt: 2 })">
 							<span :class="css({ w: 16 })">Margin</span>
-							<input value="20px" :class="cx(input({ size: 'sm' }), css({ w: 'full' }))" />
+							<input
+								value="20px"
+								:class="cx(input({ size: 'sm' }), css({ w: 'full' }))"
+							>
 						</div>
 						<div :class="flex({ align: 'center', gap: 2, mt: 2 })">
 							<span :class="css({ w: 16 })">Pading</span>
-							<input value="20px" :class="cx(input({ size: 'sm' }), css({ w: 'full' }))" />
+							<input
+								value="20px"
+								:class="cx(input({ size: 'sm' }), css({ w: 'full' }))"
+							>
 						</div>
 					</div>
-					<button v-bind="api.getCloseTriggerProps()" :class="styles.closeTrigger">
+					<button
+						v-bind="api.getCloseTriggerProps()"
+						:class="styles.closeTrigger"
+					>
 						<small>&#x2715;</small>
 					</button>
 				</div>

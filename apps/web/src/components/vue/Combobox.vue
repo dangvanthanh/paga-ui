@@ -45,15 +45,24 @@ const api = computed(() => zagCombobox.connect(service, normalizeProps))
 	<div v-bind="api.getRootProps()" :class="styles.root">
 		<label v-bind="api.getLabelProps()" :class="styles.label">Framework</label>
 		<div v-bind="api.getControlProps()" :class="styles.control">
-			<input v-bind="api.getInputProps()" :class="styles.input" />
+			<input v-bind="api.getInputProps()" :class="styles.input">
 			<button v-bind="api.getTriggerProps()" :class="styles.trigger">
-				<ChevronsUpDown :size="16" />
+				<ChevronsUpDown :size="16"/>
 			</button>
 		</div>
 	</div>
 	<div v-bind="api.getPositionerProps()">
-		<ul v-if="options.length > 0" v-bind="api.getContentProps()" :class="styles.content">
-			<li v-for="item in options" :key="item.code" v-bind="api.getItemProps({ item })" :class="styles.item">
+		<ul
+			v-if="options.length > 0"
+			v-bind="api.getContentProps()"
+			:class="styles.content"
+		>
+			<li
+				v-for="item in options"
+				:key="item.code"
+				v-bind="api.getItemProps({ item })"
+				:class="styles.item"
+			>
 				{{ item.label }}
 			</li>
 		</ul>

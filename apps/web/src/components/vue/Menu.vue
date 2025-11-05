@@ -17,10 +17,21 @@ const api = computed(() => zagMenu.connect(service, normalizeProps))
 		</button>
 		<div v-bind="api.getPositionerProps()">
 			<ul v-bind="api.getContentProps()" :class="styles.content">
-				<li v-bind="api.getItemProps({ value: 'edit' })" :class="styles.item">Edit</li>
-				<li v-bind="api.getItemProps({ value: 'duplicate' })" :class="styles.item">Duplicate</li>
-				<li v-bind="api.getItemProps({ value: 'delete' })" :class="styles.item">Delete</li>
-				<li v-bind="api.getItemProps({ value: 'export' })" :class="styles.item">Export</li>
+				<li v-bind="api.getItemProps({ value: 'edit' })" :class="styles.item">
+					Edit
+				</li>
+				<li
+					v-bind="api.getItemProps({ value: 'duplicate' })"
+					:class="styles.item"
+				>
+					Duplicate
+				</li>
+				<li v-bind="api.getItemProps({ value: 'delete' })" :class="styles.item">
+					Delete
+				</li>
+				<li v-bind="api.getItemProps({ value: 'export' })" :class="styles.item">
+					Export
+				</li>
 			</ul>
 		</div>
 	</div>

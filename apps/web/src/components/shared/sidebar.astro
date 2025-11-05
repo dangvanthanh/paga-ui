@@ -1,7 +1,4 @@
 ---
-
-
-
 import { getCollection } from 'astro:content'
 import { css } from '@/styled-system/css'
 import { flex } from '@/styled-system/patterns'
@@ -17,9 +14,8 @@ const sidebars = [
 
 const { id } = Astro.params
 ---
-
 <div class={flex({ direction: 'column', gap: 2, pb: 8 })}>
-  {
+	{
     sidebars.map((sidebar) => (
       <div class={flex({ direction: 'column' })}>
         <div class={css({ fontWeight: 500, py: 2 })}>{sidebar.title}</div>

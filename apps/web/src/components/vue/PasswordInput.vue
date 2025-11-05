@@ -17,10 +17,13 @@ const api = computed(() => zagPasswordInput.connect(service, normalizeProps))
 		<label v-bind="api.getLabelProps()" :class="styles.label">Password</label>
 		<div v-bind="api.getControlProps()" :class="styles.control">
 			<input v-bind="api.getInputProps()" :class="styles.input">
-			<button v-bind="api.getVisibilityTriggerProps()" :class="styles.visibilityTrigger">
+			<button
+				v-bind="api.getVisibilityTriggerProps()"
+				:class="styles.visibilityTrigger"
+			>
 				<span v-bind="api.getIndicatorProps()">
-					<EyeIcon v-if="api.visible" />
-					<EyeOffIcon v-else />
+					<EyeIcon v-if="api.visible"/>
+					<EyeOffIcon v-else/>
 				</span>
 			</button>
 		</div>

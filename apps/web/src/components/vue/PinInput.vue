@@ -13,7 +13,7 @@ const api = computed(() => zagPinInput.connect(service, normalizeProps))
 <template>
 	<div ref="ref" v-bind="api.getRootProps()" :class="styles.root">
 		<template v-for="item in Array.from({ length: 6 }).map((_, i) => i)">
-			<input v-bind="api.getInputProps({ index: item })" :class="styles.input" />
+			<input v-bind="api.getInputProps({ index: item })" :class="styles.input">
 		</template>
 	</div>
 </template>

@@ -24,23 +24,23 @@ const bottomRightToast = () =>
 </script>
 
 <template>
-  <div :class="flex({ gap: 2 })">
-    <button @click="topRightToast" :class="button()">
-      Show Top Right Toast
-    </button>
-    <button @click="bottomRightToast" :class="button()">
-      Show Bottom Right toast
-    </button>
-  </div>
-  <Teleport to="body">
-    <div v-bind="api.getGroupProps()">
-    <AnimateToast
-      v-for="(toast, index) in api.getToasts()"
-      :key="toast.id"
-      :toast="toast"
-      :index="index"
-      :parent="service"
-    />
-  </div>
-  </Teleport>
+	<div :class="flex({ gap: 2 })">
+		<button @click="topRightToast" :class="button()">
+			Show Top Right Toast
+		</button>
+		<button @click="bottomRightToast" :class="button()">
+			Show Bottom Right toast
+		</button>
+	</div>
+	<Teleport to="body">
+		<div v-bind="api.getGroupProps()">
+			<AnimateToast
+				v-for="(toast, index) in api.getToasts()"
+				:key="toast.id"
+				:toast="toast"
+				:index="index"
+				:parent="service"
+			/>
+		</div>
+	</Teleport>
 </template>

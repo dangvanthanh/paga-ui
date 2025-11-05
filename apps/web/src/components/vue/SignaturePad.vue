@@ -15,13 +15,20 @@ const api = computed(() => zagSignaturePad.connect(service, normalizeProps))
 	<div v-bind="api.getRootProps()" :class="styles.root">
 		<div v-bind="api.getControlProps()" :class="styles.control">
 			<svg v-bind="api.getSegmentProps()">
-				<path v-for="(path, i) of api.paths" :key="i" v-bind="api.getSegmentPathProps({ path })" />
-				<path v-if="api.currentPath" v-bind="api.getSegmentPathProps({ path: api.currentPath })" />
+				<path
+					v-for="(path, i) of api.paths"
+					:key="i"
+					v-bind="api.getSegmentPathProps({ path })"
+				/>
+				<path
+					v-if="api.currentPath"
+					v-bind="api.getSegmentPathProps({ path: api.currentPath })"
+				/>
 			</svg>
 			<button v-bind="api.getClearTriggerProps()" :class="styles.clearTrigger">
-				<Eraser :size="16" />
+				<Eraser :size="16"/>
 			</button>
-			<div v-bind="api.getGuideProps()" :class="styles.guide" />
+			<div v-bind="api.getGuideProps()" :class="styles.guide"/>
 		</div>
 	</div>
 </template>

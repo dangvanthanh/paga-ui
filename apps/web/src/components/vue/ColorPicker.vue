@@ -28,65 +28,119 @@ const api = computed(() => zagColorPicker.connect(service, normalizeProps))
 
 <template>
 	<div v-bind="api.getRootProps()" :class="styles.root">
-		<label v-bind="api.getLabelProps()" :class="styles.label">Color Picker</label>
-		<input v-bind="api.getHiddenInputProps()" />
+		<label v-bind="api.getLabelProps()" :class="styles.label">
+			Color Picker
+		</label>
+		<input v-bind="api.getHiddenInputProps()">
 		<div v-bind="api.getControlProps()" :class="styles.control">
 			<button v-bind="api.getTriggerProps()" :class="styles.trigger">
-				<div v-bind="api.getTransparencyGridProps({ size: '10px' })" :class="styles.transparencyGrid" />
-				<div v-bind="api.getSwatchProps({ value: api.value })" :class="styles.swatch" />
+				<div
+					v-bind="api.getTransparencyGridProps({ size: '10px' })"
+					:class="styles.transparencyGrid"
+				/>
+				<div
+					v-bind="api.getSwatchProps({ value: api.value })"
+					:class="styles.swatch"
+				/>
 			</button>
-			<input v-bind="api.getChannelInputProps({ channel: 'hex' })" :class="styles.input" />
-			<input v-bind="api.getChannelInputProps({ channel: 'alpha' })" :class="styles.input" />
+			<input
+				v-bind="api.getChannelInputProps({ channel: 'hex' })"
+				:class="styles.input"
+			>
+			<input
+				v-bind="api.getChannelInputProps({ channel: 'alpha' })"
+				:class="styles.input"
+			>
 		</div>
 		<div v-bind="api.getPositionerProps()">
 			<div v-bind="api.getContentProps()" :class="styles.content">
 				<div v-bind="api.getAreaProps()" :class="styles.area">
-					<div v-bind="api.getAreaBackgroundProps()" :class="styles.areaBackground" />
-					<div v-bind="api.getAreaThumbProps()" />
+					<div
+						v-bind="api.getAreaBackgroundProps()"
+						:class="styles.areaBackground"
+					/>
+					<div v-bind="api.getAreaThumbProps()"/>
 				</div>
 
 				<div :class="flex({ align: 'center', gap: 5 })">
 					<div :class="css({ flex: '1 1 0%' })">
-						<div v-bind="api.getChannelSliderProps({ channel: 'hue' })" :class="styles.channelSlider">
-							<div v-bind="api.getChannelSliderTrackProps({ channel: 'hue' })" :class="styles.channelSliderTrack" />
-							<div v-bind="api.getChannelSliderThumbProps({ channel: 'hue' })" :class="styles.channelSliderThumb" />
+						<div
+							v-bind="api.getChannelSliderProps({ channel: 'hue' })"
+							:class="styles.channelSlider"
+						>
+							<div
+								v-bind="api.getChannelSliderTrackProps({ channel: 'hue' })"
+								:class="styles.channelSliderTrack"
+							/>
+							<div
+								v-bind="api.getChannelSliderThumbProps({ channel: 'hue' })"
+								:class="styles.channelSliderThumb"
+							/>
 						</div>
 						<div :class="css({ my: 3 })"></div>
-						<div v-bind="api.getChannelSliderProps({ channel: 'alpha' })" :class="styles.channelSlider">
-							<div v-bind="api.getTransparencyGridProps({ size: '12px' })" />
-							<div v-bind="api.getChannelSliderTrackProps({ channel: 'alpha' })" :class="styles.channelSliderTrack" />
-							<div v-bind="api.getChannelSliderThumbProps({ channel: 'alpha' })" :class="styles.channelSliderThumb" />
+						<div
+							v-bind="api.getChannelSliderProps({ channel: 'alpha' })"
+							:class="styles.channelSlider"
+						>
+							<div v-bind="api.getTransparencyGridProps({ size: '12px' })"/>
+							<div
+								v-bind="api.getChannelSliderTrackProps({ channel: 'alpha' })"
+								:class="styles.channelSliderTrack"
+							/>
+							<div
+								v-bind="api.getChannelSliderThumbProps({ channel: 'alpha' })"
+								:class="styles.channelSliderThumb"
+							/>
 						</div>
 					</div>
-					<button v-bind="api.getEyeDropperTriggerProps()" :class="styles.eyeDropperTrigger">
-						<Pipette />
+					<button
+						v-bind="api.getEyeDropperTriggerProps()"
+						:class="styles.eyeDropperTrigger"
+					>
+						<Pipette/>
 					</button>
 				</div>
 
 				<template v-if="api.format === 'rgba'">
 					<div :class="grid({ columns: 4 })">
 						<div :class="flex({ direction: 'column', gap: 1 })">
-							<input v-bind="api.getChannelInputProps({ channel: 'red' })"
-								:class="cx(styles.input, css({ textAlign: 'center' }))" />
-							<span :class="css({ display: 'block', textAlign: 'center' })">R</span>
+							<input
+								v-bind="api.getChannelInputProps({ channel: 'red' })"
+								:class="cx(styles.input, css({ textAlign: 'center' }))"
+							>
+							<span :class="css({ display: 'block', textAlign: 'center' })"
+								>R</span
+							>
 						</div>
 
 						<div :class="flex({ direction: 'column', gap: 1 })">
-							<input v-bind="api.getChannelInputProps({ channel: 'green' })"
-								:class="cx(styles.input, css({ textAlign: 'center' }))" />
-							<span :class="css({ display: 'block', textAlign: 'center' })">G</span>
+							<input
+								v-bind="api.getChannelInputProps({ channel: 'green' })"
+								:class="cx(styles.input, css({ textAlign: 'center' }))"
+							>
+							<span :class="css({ display: 'block', textAlign: 'center' })"
+								>G</span
+							>
 						</div>
 
 						<div :class="flex({ direction: 'column', gap: 1 })">
-							<input v-bind="api.getChannelInputProps({ channel: 'blue' })"
-								:class="cx(styles.input, css({ textAlign: 'center' }))" />
-							<span :class="css({ display: 'block', textAlign: 'center' })">B</span>
+							<input
+								v-bind="api.getChannelInputProps({ channel: 'blue' })"
+								:class="cx(styles.input, css({ textAlign: 'center' }))"
+							>
+							<span :class="css({ display: 'block', textAlign: 'center' })"
+								>B</span
+							>
 						</div>
 
 						<div :class="flex({ direction: 'column', gap: 1 })">
-							<input v-bind="api.getChannelInputProps({ channel: 'alpha' })"
-								:class="cx(styles.input, css({ textAlign: 'center' }))" />
-							<span :class="css({ display: 'block', textAlign: 'center' })">A</span>
+							<input
+								v-bind="api.getChannelInputProps({ channel: 'alpha' })"
+								:class="cx(styles.input, css({ textAlign: 'center' }))"
+							>
+							<span :class="css({ display: 'block', textAlign: 'center' })"
+								>A</span
+							>
 						</div>
 					</div>
 				</template>
@@ -95,8 +149,14 @@ const api = computed(() => zagColorPicker.connect(service, normalizeProps))
 				<div v-bind="api.getSwatchGroupProps()" :class="styles.swatchGroup">
 					<template v-for="preset in presets">
 						<button v-bind="api.getSwatchTriggerProps({ value: preset })">
-							<div v-bind="api.getTransparencyGridProps()" :class="styles.transparencyGrid" />
-							<div v-bind="api.getSwatchProps({ value: preset })" :class="styles.swatch" />
+							<div
+								v-bind="api.getTransparencyGridProps()"
+								:class="styles.transparencyGrid"
+							/>
+							<div
+								v-bind="api.getSwatchProps({ value: preset })"
+								:class="styles.swatch"
+							/>
 						</button>
 					</template>
 				</div>

@@ -22,22 +22,41 @@ const api = computed(() => zagSteps.connect(service, normalizeProps))
 <template>
 	<div v-bind="api.getRootProps()" :class="styles.root">
 		<div v-bind="api.getListProps()" :class="styles.list">
-			<div v-for="(step, index) in stepsData" :key="index" v-bind="api.getItemProps({ index })" :class="styles.item">
+			<div
+				v-for="(step, index) in stepsData"
+				:key="index"
+				v-bind="api.getItemProps({ index })"
+				:class="styles.item"
+			>
 				<button v-bind="api.getTriggerProps({ index })" :class="styles.trigger">
-					<div v-bind="api.getIndicatorProps({ index })" :class="styles.indicator">
-						{{ index + 1 }}</div>
+					<div
+						v-bind="api.getIndicatorProps({ index })"
+						:class="styles.indicator"
+					>
+						{{ index + 1 }}
+					</div>
 					<span>{{ step.title }}</span>
 				</button>
-				<div v-bind="api.getSeparatorProps({ index })" :class="styles.separator" />
+				<div
+					v-bind="api.getSeparatorProps({ index })"
+					:class="styles.separator"
+				/>
 			</div>
 		</div>
 
-		<div v-for="(step, index) in stepsData" :key="index" v-bind="api.getContentProps({ index })"
-			:class="styles.content">
+		<div
+			v-for="(step, index) in stepsData"
+			:key="index"
+			v-bind="api.getContentProps({ index })"
+			:class="styles.content"
+		>
 			{{ step.title }}
 		</div>
 
-		<div v-bind="api.getContentProps({ index: stepsData.length })" :class="styles.content">
+		<div
+			v-bind="api.getContentProps({ index: stepsData.length })"
+			:class="styles.content"
+		>
 			Steps Complete - Thank you for filling out the form!
 		</div>
 

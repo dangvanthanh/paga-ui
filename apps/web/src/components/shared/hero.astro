@@ -1,7 +1,4 @@
 ---
-
-
-
 import type { CollectionEntry } from 'astro:content'
 import { css } from '@/styled-system/css'
 
@@ -11,10 +8,11 @@ interface Props {
 
 const { entry } = Astro.props
 ---
-
 <section class={css({ bg: 'gray.50', px: 6 })}>
-  <div class={css({ w: 'full', maxW: '3xl', mx: 'auto', py: 16 })}>
-    <h2 class={css({ fontSize: '3xl', fontWeight: 'semibold', mt: 4 })}>{entry.data.title}</h2>
-    <p class={css({ color: 'gray.500' })}>{entry.data.description}</p>
-  </div>
+	<div class={css({ w: 'full', maxW: '3xl', mx: 'auto', py: 16 })}>
+		<h2 class={css({ fontSize: '3xl', fontWeight: 'semibold', mt: 4 })}>
+			{entry.data.title}
+		</h2>
+		<p class={css({ color: 'gray.500' })}>{entry.data.description}</p>
+	</div>
 </section>

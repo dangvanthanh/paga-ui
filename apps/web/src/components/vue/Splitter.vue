@@ -22,7 +22,10 @@ const api = computed(() => zagSplitter.connect(service, normalizeProps))
 		<div v-bind="api.getPanelProps({ id: 'a' })" :class="styles.panel">
 			<p>A</p>
 		</div>
-		<div v-bind="api.getResizeTriggerProps({ id: 'a:b' })" :class="styles.resizeTrigger" />
+		<div
+			v-bind="api.getResizeTriggerProps({ id: 'a:b' })"
+			:class="styles.resizeTrigger"
+		/>
 		<div v-bind="api.getPanelProps({ id: 'b' })" :class="styles.panel">
 			<p>B</p>
 		</div>

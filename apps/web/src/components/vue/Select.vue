@@ -32,9 +32,18 @@ const api = computed(() => zagSelect.connect(service, normalizeProps))
 	<Teleport to="body">
 		<div v-bind="api.getPositionerProps()">
 			<ul v-bind="api.getContentProps()" :class="styles.content">
-				<li v-for="item in selectData" :key="item.value" v-bind="api.getItemProps({ item })" :class="styles.item">
+				<li
+					v-for="item in selectData"
+					:key="item.value"
+					v-bind="api.getItemProps({ item })"
+					:class="styles.item"
+				>
 					<span :class="styles.itemLabel">{{ item.label }}</span>
-					<span v-bind="api.getItemIndicatorProps({ item })" :class="styles.itemIndicator">✓</span>
+					<span
+						v-bind="api.getItemIndicatorProps({ item })"
+						:class="styles.itemIndicator"
+						>✓</span
+					>
 				</li>
 			</ul>
 		</div>

@@ -61,8 +61,13 @@ const api = computed(() => zagTree.connect(service, normalizeProps))
 		<div v-bind="api.getRootProps()">
 			<h3 v-bind="api.getLabelProps()">My Documents</h3>
 			<div v-bind="api.getTreeProps()" :class="styles.tree">
-				<TreeNode v-for="(node, index) in api.collection.rootNode.children" :key="node.id" :node="node"
-					:index-path="[index]" :api="api" />
+				<TreeNode
+					v-for="(node, index) in api.collection.rootNode.children"
+					:key="node.id"
+					:node="node"
+					:index-path="[index]"
+					:api="api"
+				/>
 			</div>
 		</div>
 	</main>

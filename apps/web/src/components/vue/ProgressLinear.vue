@@ -16,7 +16,7 @@ const api = computed(() => zagProgress.connect(service, normalizeProps))
 <template>
 	<div v-bind="api.getRootProps()" :class="styles.root">
 		<div v-bind="api.getTrackProps()" :class="styles.track">
-			<div v-bind="api.getRangeProps()" :class="styles.range" />
+			<div v-bind="api.getRangeProps()" :class="styles.range"/>
 		</div>
 	</div>
 </template>

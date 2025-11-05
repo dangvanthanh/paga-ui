@@ -14,7 +14,7 @@ const api = computed(() => zagSwitch.connect(service, normalizeProps))
 
 <template>
 	<label v-bind="api.getRootProps()" :class="styles.root">
-		<input v-bind="api.getHiddenInputProps()" />
+		<input v-bind="api.getHiddenInputProps()">
 		<span v-bind="api.getControlProps()" :class="styles.control">
 			<span v-bind="api.getThumbProps()" :class="styles.thumb"></span>
 		</span>
