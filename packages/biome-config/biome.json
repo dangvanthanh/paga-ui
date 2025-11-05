@@ -1,6 +1,6 @@
 {
 	"root": false,
-	"$schema": "https://biomejs.dev/schemas/2.3.2/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.3/schema.json",
 	"vcs": {
 		"enabled": false,
 		"clientKind": "git",
@@ -48,6 +48,17 @@
 		"formatter": {
 			"quoteStyle": "single",
 			"semicolons": "asNeeded"
+		}
+	},
+	"html": {
+		"formatter": {
+			"enabled": true
+		},
+		"experimentalFullSupportEnabled": true
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
 		}
 	},
 	"overrides": [
