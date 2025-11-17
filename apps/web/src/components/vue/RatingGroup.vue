@@ -25,8 +25,7 @@ const api = computed(() => zagRating.connect(service, normalizeProps))
 					v-bind="api.getItemProps({ index })"
 				/>
 				<Star
-					v-else
-					:class="styles.rating"
+					v-else:class="styles.rating"
 					v-bind="api.getItemProps({ index })"
 				/>
 			</template>
