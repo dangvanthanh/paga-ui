@@ -1,6 +1,6 @@
 {
 	"root": false,
-	"$schema": "https://biomejs.dev/schemas/2.3.5/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
 	"vcs": {
 		"enabled": false,
 		"clientKind": "git",
@@ -8,11 +8,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": [
-			"**",
-			"!.turbo/**",
-			"!styled-system/**"
-		]
+		"includes": ["**", "!.turbo/**", "!styled-system/**"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -63,11 +59,7 @@
 	},
 	"overrides": [
 		{
-			"includes": [
-				"**/*.svelte",
-				"**/*.astro",
-				"**/*.vue"
-			],
+			"includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],
 			"linter": {
 				"rules": {
 					"style": {

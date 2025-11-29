@@ -25,5 +25,12 @@
 	"workspaces": ["apps/*", "packages/*"],
 	"lint-staged": {
 		"*.{js,ts,tsx,vue}": ["pnpm run lint", "pnpm run format"]
+	},
+	"dependencies": {
+		"@zag-js/floating-panel": "^1.30.0",
+		"@zag-js/image-cropper": "^1.30.0",
+		"@zag-js/listbox": "^1.30.0",
+		"@zag-js/marquee": "^1.30.0",
+		"@zag-js/navigation-menu": "^1.30.0"
 	}
 }
