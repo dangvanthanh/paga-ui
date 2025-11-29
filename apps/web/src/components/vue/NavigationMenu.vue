@@ -10,7 +10,6 @@ const api = computed(() => navigationMenu.connect(service, normalizeProps))
 <template>
 	<nav v-bind="api.getRootProps()">
 		<ul v-bind="api.getListProps()">
-
 			<li v-bind="api.getItemProps({ value: 'products' })">
 				<button v-bind="api.getTriggerProps({ value: 'products' })">
 					Products
@@ -24,7 +23,6 @@ const api = computed(() => navigationMenu.connect(service, normalizeProps))
 					</a>
 				</div>
 			</li>
-
 
 			<li v-bind="api.getItemProps({ value: 'pricing' })">
 				<a v-bind="api.getLinkProps({ value: 'pricing' })" href="#">
