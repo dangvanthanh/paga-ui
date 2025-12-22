@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import * as zagTree from '@zag-js/tree-view'
 import { normalizeProps, useMachine } from '@zag-js/vue'
+import { computed, useId } from 'vue'
 import { treeView } from '@/styled-system/recipes'
-import { useId, computed } from 'vue'
 import TreeNode from './TreeNode.vue'
 
 interface Node {

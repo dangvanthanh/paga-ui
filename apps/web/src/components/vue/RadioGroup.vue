@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { radioGroup } from '@/styled-system/recipes'
 import * as zagRadio from '@zag-js/radio-group'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { radioGroup } from '@/styled-system/recipes'
 
 const styles = radioGroup()
 

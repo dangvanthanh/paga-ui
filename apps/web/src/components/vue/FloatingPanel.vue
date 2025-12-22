@@ -1,8 +1,8 @@
 <script setup>
 import * as floatingPanel from '@zag-js/floating-panel'
-import { useMachine, normalizeProps } from '@zag-js/vue'
+import { normalizeProps, useMachine } from '@zag-js/vue'
+import { ArrowDownLeft, Maximize2, Minus, XIcon } from 'lucide-vue-next'
 import { computed, useId } from 'vue'
-import { Minus, Maximize2, ArrowDownLeft, XIcon } from 'lucide-vue-next'
 
 const service = useMachine(floatingPanel.machine, { id: useId() })
 

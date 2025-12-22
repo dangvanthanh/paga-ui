@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { clipboard } from '@/styled-system/recipes'
 import * as zagClipboard from '@zag-js/clipboard'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { ClipboardCheck, ClipboardCopyIcon } from 'lucide-vue-next'
 import { computed, useId } from 'vue'
+import { clipboard } from '@/styled-system/recipes'
 
 const styles = clipboard()
 

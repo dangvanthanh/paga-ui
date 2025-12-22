@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import * as listbox from '@zag-js/listbox'
-import { useMachine, normalizeProps } from '@zag-js/vue'
+import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
 
 const data = [

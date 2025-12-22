@@ -1,6 +1,6 @@
 <script setup>
 import * as marquee from '@zag-js/marquee'
-import { useMachine, normalizeProps } from '@zag-js/vue'
+import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 
 const logos = [

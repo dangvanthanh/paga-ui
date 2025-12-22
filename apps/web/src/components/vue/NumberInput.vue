@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { numberInput } from '@/styled-system/recipes'
 import * as zagNumberInput from '@zag-js/number-input'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { numberInput } from '@/styled-system/recipes'
 
 const styles = numberInput()
 

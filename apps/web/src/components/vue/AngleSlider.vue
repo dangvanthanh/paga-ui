@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { css } from '@/styled-system/css'
-import { angleSlider } from '@/styled-system/recipes'
 import * as zagAngleSlider from '@zag-js/angle-slider'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { css } from '@/styled-system/css'
+import { angleSlider } from '@/styled-system/recipes'
 
 const styles = angleSlider()
 

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { avatar } from '@/styled-system/recipes'
 import * as zagAvatar from '@zag-js/avatar'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { avatar } from '@/styled-system/recipes'
 
 const props = defineProps({
 	fallback: String,

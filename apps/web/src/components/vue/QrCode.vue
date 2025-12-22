@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { qrCode } from '@/styled-system/recipes'
 import * as zagQrCode from '@zag-js/qr-code'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { qrCode } from '@/styled-system/recipes'
 
 const styles = qrCode()
 

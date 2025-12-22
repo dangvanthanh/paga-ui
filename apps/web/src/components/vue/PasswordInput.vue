@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { passwordInput } from '@/styled-system/recipes'
 import * as zagPasswordInput from '@zag-js/password-input'
-import { useMachine, normalizeProps } from '@zag-js/vue'
-import { computed, useId } from 'vue'
+import { normalizeProps, useMachine } from '@zag-js/vue'
 import { EyeIcon, EyeOffIcon } from 'lucide-vue-next'
+import { computed, useId } from 'vue'
+import { passwordInput } from '@/styled-system/recipes'
 
 const styles = passwordInput()
 

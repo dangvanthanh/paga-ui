@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { progressLinear } from '@/styled-system/recipes'
 import * as zagProgress from '@zag-js/progress'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { progressLinear } from '@/styled-system/recipes'
 
 const styles = progressLinear()
 

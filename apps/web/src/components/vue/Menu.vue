@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { menu } from '@/styled-system/recipes'
 import * as zagMenu from '@zag-js/menu'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { menu } from '@/styled-system/recipes'
 
 const styles = menu()
 

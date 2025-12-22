@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import * as navigationMenu from '@zag-js/navigation-menu'
-import { useMachine, normalizeProps } from '@zag-js/vue'
+import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed } from 'vue'
 
 const service = useMachine(navigationMenu.machine, { id: 'nav' })

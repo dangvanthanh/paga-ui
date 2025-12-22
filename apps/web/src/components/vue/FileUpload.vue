@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { fileUpload } from '@/styled-system/recipes'
 import * as zagFileUpload from '@zag-js/file-upload'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, ref, useId } from 'vue'
 import { humanFileSize } from '@/lib'
+import { fileUpload } from '@/styled-system/recipes'
 
 const styles = fileUpload()
 

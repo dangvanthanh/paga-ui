@@ -1,4 +1,4 @@
-import { type InjectionKey, type Ref, inject, provide } from 'vue'
+import { type InjectionKey, inject, provide, type Ref } from 'vue'
 
 let count = 0
 type Direction = 'ltr' | 'rtl'

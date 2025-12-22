@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { button, steps } from '@/styled-system/recipes'
 import * as zagSteps from '@zag-js/steps'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { button, steps } from '@/styled-system/recipes'
 
 const styles = steps()
 

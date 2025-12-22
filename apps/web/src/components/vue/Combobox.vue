@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { combobox } from '@/styled-system/recipes'
 import * as zagCombobox from '@zag-js/combobox'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { ChevronsUpDown } from 'lucide-vue-next'
 import { computed, ref, useId } from 'vue'
+import { combobox } from '@/styled-system/recipes'
 
 const styles = combobox()
 

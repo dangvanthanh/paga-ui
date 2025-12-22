@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Api } from '@zag-js/tree-view'
-import { FileIcon, FolderIcon, ChevronRightIcon } from 'lucide-vue-next'
+import { ChevronRightIcon, FileIcon, FolderIcon } from 'lucide-vue-next'
 import { computed } from 'vue'
 import { css } from '@/styled-system/css'
 import { treeView } from '@/styled-system/recipes'

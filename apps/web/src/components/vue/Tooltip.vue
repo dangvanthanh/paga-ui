@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { tooltip } from '@/styled-system/recipes'
 import * as zagTooltip from '@zag-js/tooltip'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { tooltip } from '@/styled-system/recipes'
 
 const styles = tooltip()
 

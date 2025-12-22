@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { css } from '@/styled-system/css'
-import { carousel } from '@/styled-system/recipes'
 import * as zagCarousel from '@zag-js/carousel'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import { computed, useId } from 'vue'
+import { css } from '@/styled-system/css'
+import { carousel } from '@/styled-system/recipes'
 
 const styles = carousel()
 

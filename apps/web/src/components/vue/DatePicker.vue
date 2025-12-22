@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { css } from '@/styled-system/css'
-import { flex } from '@/styled-system/patterns'
 import * as zagDatepicker from '@zag-js/date-picker'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-vue-next'
 import { computed, useId } from 'vue'
+import { css } from '@/styled-system/css'
+import { flex } from '@/styled-system/patterns'
 
 const service = useMachine(zagDatepicker.machine, {
 	id: useId(),

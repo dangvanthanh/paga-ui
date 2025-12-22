@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { flex } from '@/styled-system/patterns'
-import { button } from '@/styled-system/recipes'
 import * as zagToast from '@zag-js/toast'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { useId } from 'vue'
+import { flex } from '@/styled-system/patterns'
+import { button } from '@/styled-system/recipes'
 import AnimateToast from './AnimateToast.vue'
 
 const toaster = zagToast.createStore({

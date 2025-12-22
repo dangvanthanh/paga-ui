@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { spliter } from '@/styled-system/recipes'
 import * as zagSplitter from '@zag-js/splitter'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { spliter } from '@/styled-system/recipes'
 
 const styles = spliter()
 

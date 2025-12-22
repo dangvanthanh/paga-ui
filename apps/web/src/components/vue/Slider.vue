@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { slider } from '@/styled-system/recipes'
 import * as zagSlider from '@zag-js/slider'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { slider } from '@/styled-system/recipes'
 
 const styles = slider({ size: 'sm' })
 

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { tagsInput } from '@/styled-system/recipes'
 import * as zagTagsInput from '@zag-js/tags-input'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { tagsInput } from '@/styled-system/recipes'
 
 const styles = tagsInput()
 

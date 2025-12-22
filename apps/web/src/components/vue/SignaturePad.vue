@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { signaturePad } from '@/styled-system/recipes'
 import * as zagSignaturePad from '@zag-js/signature-pad'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { Eraser } from 'lucide-vue-next'
 import { computed, useId } from 'vue'
+import { signaturePad } from '@/styled-system/recipes'
 
 const styles = signaturePad()
 

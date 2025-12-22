@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { select } from '@/styled-system/recipes'
 import * as zagSelect from '@zag-js/select'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { select } from '@/styled-system/recipes'
 
 const styles = select()
 

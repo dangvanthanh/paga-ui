@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { css } from '@/styled-system/css'
-import { tour } from '@/styled-system/recipes'
 import * as zagTour from '@zag-js/tour'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { css } from '@/styled-system/css'
+import { tour } from '@/styled-system/recipes'
 
 const styles = tour()
 

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { pagination } from '@/styled-system/recipes'
 import * as zagPagination from '@zag-js/pagination'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import { computed, useId } from 'vue'
+import { pagination } from '@/styled-system/recipes'
 
 const props = defineProps({
 	count: Number,

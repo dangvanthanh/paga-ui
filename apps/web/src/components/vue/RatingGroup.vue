@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ratingGroup } from '@/styled-system/recipes'
 import * as zagRating from '@zag-js/rating-group'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { Star, StarHalf } from 'lucide-vue-next'
 import { computed, useId } from 'vue'
+import { ratingGroup } from '@/styled-system/recipes'
 
 const styles = ratingGroup()
 

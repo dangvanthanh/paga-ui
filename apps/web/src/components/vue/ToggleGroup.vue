@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { toggleGroup } from '@/styled-system/recipes'
 import * as zagToggle from '@zag-js/toggle-group'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { toggleGroup } from '@/styled-system/recipes'
 
 const styles = toggleGroup()
 

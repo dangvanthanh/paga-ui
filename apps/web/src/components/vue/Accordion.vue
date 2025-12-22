@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { accordion } from '@/styled-system/recipes'
 import * as zagAccordion from '@zag-js/accordion'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { ChevronDown } from 'lucide-vue-next'
 import { computed, useId } from 'vue'
+import { accordion } from '@/styled-system/recipes'
 
 const styles = accordion()
 

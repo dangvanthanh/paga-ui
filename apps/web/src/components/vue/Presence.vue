@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { cx, css } from '@/styled-system/css'
-import { button } from '@/styled-system/recipes'
 import { ref } from 'vue'
+import { css, cx } from '@/styled-system/css'
+import { button } from '@/styled-system/recipes'
 import AnimatePresence from './AnimatePresence.vue'
 
 const open = ref(true)

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { css, cx } from '@/styled-system/css'
-import { flex } from '@/styled-system/patterns'
-import { input, popover } from '@/styled-system/recipes'
 import * as zagPopover from '@zag-js/popover'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { css, cx } from '@/styled-system/css'
+import { flex } from '@/styled-system/patterns'
+import { input, popover } from '@/styled-system/recipes'
 
 const styles = popover()
 

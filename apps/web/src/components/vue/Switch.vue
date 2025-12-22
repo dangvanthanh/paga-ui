@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { switches } from '@/styled-system/recipes'
 import * as zagSwitch from '@zag-js/switch'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { switches } from '@/styled-system/recipes'
 
 const props = defineProps<{ label: string }>()
 

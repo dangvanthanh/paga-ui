@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { css, cx } from '@/styled-system/css'
-import { button } from '@/styled-system/recipes'
 import * as zagCollapsible from '@zag-js/collapsible'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { css, cx } from '@/styled-system/css'
+import { button } from '@/styled-system/recipes'
 
 const service = useMachine(zagCollapsible.machine, { id: useId() })
 const api = computed(() => zagCollapsible.connect(service, normalizeProps))

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { editable } from '@/styled-system/recipes'
 import * as zagEditable from '@zag-js/editable'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { editable } from '@/styled-system/recipes'
 
 const styles = editable()
 

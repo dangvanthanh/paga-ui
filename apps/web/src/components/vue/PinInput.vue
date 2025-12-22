@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { pinInput } from '@/styled-system/recipes'
 import * as zagPinInput from '@zag-js/pin-input'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { computed, useId } from 'vue'
+import { pinInput } from '@/styled-system/recipes'
 
 const styles = pinInput()
 

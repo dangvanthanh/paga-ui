@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { css } from '@/styled-system/css'
-import { checkbox } from '@/styled-system/recipes'
 import * as zagCheckbox from '@zag-js/checkbox'
 import { normalizeProps, useMachine } from '@zag-js/vue'
 import { Check } from 'lucide-vue-next'
 import { computed, useId } from 'vue'
+import { css } from '@/styled-system/css'
+import { checkbox } from '@/styled-system/recipes'
 
 const styles = checkbox()
 
