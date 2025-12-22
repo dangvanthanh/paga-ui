@@ -9,13 +9,15 @@ interface Props {
 }
 
 const { title, description } = Astro.props
+
+const newTitle = `${title} - Paga UI`
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>{title} - Page UI</title>
+		<title>{newTitle}</title>
 		<meta name="description" content={description}>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta
