@@ -38,6 +38,7 @@
         "@zag-js/floating-panel": "^1.31.1",
         "@zag-js/hover-card": "^1.31.1",
         "@zag-js/image-cropper": "^1.31.1",
+        "@zag-js/marquee": "^1.31.1",
         "@zag-js/menu": "^1.31.1",
         "@zag-js/number-input": "^1.31.1",
         "@zag-js/pagination": "^1.31.1",
@@ -691,6 +692,8 @@
     "@zag-js/interact-outside": ["@zag-js/interact-outside@1.31.1", "", { "dependencies": { "@zag-js/dom-query": "1.31.1", "@zag-js/utils": "1.31.1" } }, "sha512-oxBAlBqcatlxGUmhwUCRYTADIBrVoyxM1YrFzR1R8jhvVR/QCaxoLAyKwcA3mWXlZ8+NlXb7n5ELE11BZb/rEg=="],
 
     "@zag-js/live-region": ["@zag-js/live-region@1.31.1", "", {}, "sha512-RBx8jk1dgvkEUuFs77SBZn0WwvEkeZgVawVu6XUAy4ENfhP0D/qkvwNk+Els8InKmr1gWKajD7sh+g8M40Ex6A=="],
+
+    "@zag-js/marquee": ["@zag-js/marquee@1.31.1", "", { "dependencies": { "@zag-js/anatomy": "1.31.1", "@zag-js/core": "1.31.1", "@zag-js/dom-query": "1.31.1", "@zag-js/types": "1.31.1", "@zag-js/utils": "1.31.1" } }, "sha512-Rt7+zy7CDOxXm0PqaTcmuWxcrZOPOpZY4T6IxOZk4ZcOXJQ2v7CkF3EK0pdI9PyI6Zpk/YIwQkENjidT55db0A=="],
 
     "@zag-js/menu": ["@zag-js/menu@1.31.1", "", { "dependencies": { "@zag-js/anatomy": "1.31.1", "@zag-js/core": "1.31.1", "@zag-js/dismissable": "1.31.1", "@zag-js/dom-query": "1.31.1", "@zag-js/popper": "1.31.1", "@zag-js/rect-utils": "1.31.1", "@zag-js/types": "1.31.1", "@zag-js/utils": "1.31.1" } }, "sha512-eJPRM8tlauRTsAoJXchDBzMzL2RhXYSHmHak2IJCDMApCV51p0MqGYP8Er3DbMSQTPUFuTq779uUIarDqW+zmA=="],
 
