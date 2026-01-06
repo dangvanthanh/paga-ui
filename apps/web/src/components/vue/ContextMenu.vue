@@ -34,7 +34,7 @@ const api = computed(() => zagMenu.connect(service, normalizeProps))
 						v-bind="api.getItemProps({ value: item.value })"
 						:class="styles.item"
 					>
-						<component :is="item.icon" :size="16"/>
+						<component :is="item.icon" :size="16" />
 						<span :class="css({ ml: 2 })">{{ item.name }}</span>
 					</li>
 				</template>

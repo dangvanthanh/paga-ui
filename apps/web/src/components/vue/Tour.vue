@@ -51,11 +51,11 @@ const open = computed(() => api.value.open && api.value.step)
 			v-bind="api.getBackdropProps()"
 			:class="styles.backdrop"
 		/>
-		<div v-bind="api.getSpotlightProps()"/>
+		<div v-bind="api.getSpotlightProps()" />
 		<div v-bind="api.getPositionerProps()" :class="styles.positioner">
 			<div v-bind="api.getContentProps()" :class="styles.content">
 				<div v-if="api.step?.arrow" v-bind="api.getArrowProps()">
-					<div v-bind="api.getArrowTipProps()"/>
+					<div v-bind="api.getArrowTipProps()" />
 				</div>
 				<div v-bind="api.getProgressTextProps()" :class="styles.progressText">
 					{{ api.getProgressText() }}

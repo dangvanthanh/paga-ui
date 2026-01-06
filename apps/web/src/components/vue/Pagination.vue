@@ -32,7 +32,7 @@ api.value.setPageSize(props.pageSize || 1)
 			v-bind="api.getPrevTriggerProps()"
 			:class="styles.prevTrigger"
 		>
-			<ChevronLeft/>
+			<ChevronLeft />
 		</a>
 		<template
 			v-for="(page, i) in api.pages"
@@ -60,7 +60,7 @@ api.value.setPageSize(props.pageSize || 1)
 			v-bind="api.getNextTriggerProps()"
 			:class="styles.nextTrigger"
 		>
-			<ChevronRight/>
+			<ChevronRight />
 		</a>
 	</nav>
 </template>

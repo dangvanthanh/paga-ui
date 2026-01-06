@@ -55,7 +55,7 @@ const api = computed(() => zagTimer.connect(service, normalizeProps))
 				v-show="!api.running && !api.paused"
 				:class="button({ variant: 'ghost' })"
 			>
-				<Play :size="16"/>
+				<Play :size="16" />
 				Start
 			</button>
 			<button
@@ -63,7 +63,7 @@ const api = computed(() => zagTimer.connect(service, normalizeProps))
 				v-show="api.running"
 				:class="button({ variant: 'ghost' })"
 			>
-				<Pause :size="16"/>
+				<Pause :size="16" />
 				Pause
 			</button>
 			<button
@@ -71,7 +71,7 @@ const api = computed(() => zagTimer.connect(service, normalizeProps))
 				v-show="api.paused"
 				:class="button({ variant: 'ghost' })"
 			>
-				<Play :size="16"/>
+				<Play :size="16" />
 				Resume
 			</button>
 			<button
@@ -79,7 +79,7 @@ const api = computed(() => zagTimer.connect(service, normalizeProps))
 				v-show="api.running || api.paused"
 				:class="button({ variant: 'ghost' })"
 			>
-				<RotateCcw :size="16"/>
+				<RotateCcw :size="16" />
 				Reset
 			</button>
 		</div>

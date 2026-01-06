@@ -25,7 +25,7 @@ const api = computed(() => imageCropper.connect(service, normalizeProps))
 					:key="position"
 					v-bind="api.getHandleProps({ position })"
 				>
-					<span/>
+					<span />
 				</div>
 			</div>
 		</div>

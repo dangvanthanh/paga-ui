@@ -59,7 +59,7 @@ const api = computed(() => zagColorPicker.connect(service, normalizeProps))
 						v-bind="api.getAreaBackgroundProps()"
 						:class="styles.areaBackground"
 					/>
-					<div v-bind="api.getAreaThumbProps()"/>
+					<div v-bind="api.getAreaThumbProps()" />
 				</div>
 
 				<div :class="flex({ align: 'center', gap: 5 })">
@@ -82,7 +82,7 @@ const api = computed(() => zagColorPicker.connect(service, normalizeProps))
 							v-bind="api.getChannelSliderProps({ channel: 'alpha' })"
 							:class="styles.channelSlider"
 						>
-							<div v-bind="api.getTransparencyGridProps({ size: '12px' })"/>
+							<div v-bind="api.getTransparencyGridProps({ size: '12px' })" />
 							<div
 								v-bind="api.getChannelSliderTrackProps({ channel: 'alpha' })"
 								:class="styles.channelSliderTrack"
@@ -97,7 +97,7 @@ const api = computed(() => zagColorPicker.connect(service, normalizeProps))
 						v-bind="api.getEyeDropperTriggerProps()"
 						:class="styles.eyeDropperTrigger"
 					>
-						<Pipette/>
+						<Pipette />
 					</button>
 				</div>
 

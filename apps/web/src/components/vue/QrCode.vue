@@ -16,7 +16,7 @@ const api = computed(() => zagQrCode.connect(service, normalizeProps))
 <template>
 	<div v-bind="api.getRootProps()" :class="styles.root">
 		<svg v-bind="api.getFrameProps()" :class="styles.frame">
-			<path v-bind="api.getPatternProps()"/>
+			<path v-bind="api.getPatternProps()" />
 		</svg>
 		<div v-bind="api.getOverlayProps()" :class="styles.overlay">
 			<img

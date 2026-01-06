@@ -36,7 +36,7 @@ const nodeState = computed(() => props.api.getNodeState(nodeProps.value))
 				v-bind="api.getBranchControlProps(nodeProps)"
 				:class="styles.branchControl"
 			>
-				<FolderIcon :class="css({ w: 4, h: 4 })"/>
+				<FolderIcon :class="css({ w: 4, h: 4 })" />
 				<span
 					v-bind="api.getBranchTextProps(nodeProps)"
 					:class="styles.branchText"
@@ -46,11 +46,11 @@ const nodeState = computed(() => props.api.getNodeState(nodeProps.value))
 					v-bind="api.getBranchIndicatorProps(nodeProps)"
 					:class="styles.branchIndicator"
 				>
-					<ChevronRightIcon :class="css({ w: 4, h: 4 })"/>
+					<ChevronRightIcon :class="css({ w: 4, h: 4 })" />
 				</span>
 			</div>
 			<div v-bind="api.getBranchContentProps(nodeProps)" :class="styles.branch">
-				<div v-bind="api.getBranchIndentGuideProps(nodeProps)"/>
+				<div v-bind="api.getBranchIndentGuideProps(nodeProps)" />
 				<TreeNode
 					v-for="(childNode, index) in node.children"
 					:key="childNode.id"
@@ -63,7 +63,7 @@ const nodeState = computed(() => props.api.getNodeState(nodeProps.value))
 	</template>
 	<template v-else>
 		<div v-bind="api.getItemProps(nodeProps)" :class="styles.item">
-			<FileIcon :class="css({ w: 4, h: 4 })"/>
+			<FileIcon :class="css({ w: 4, h: 4 })" />
 			{{ node.name }}
 		</div>
 	</template>

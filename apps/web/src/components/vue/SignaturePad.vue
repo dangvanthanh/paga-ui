@@ -26,9 +26,9 @@ const api = computed(() => zagSignaturePad.connect(service, normalizeProps))
 				/>
 			</svg>
 			<button v-bind="api.getClearTriggerProps()" :class="styles.clearTrigger">
-				<Eraser :size="16"/>
+				<Eraser :size="16" />
 			</button>
-			<div v-bind="api.getGuideProps()" :class="styles.guide"/>
+			<div v-bind="api.getGuideProps()" :class="styles.guide" />
 		</div>
 	</div>
 </template>

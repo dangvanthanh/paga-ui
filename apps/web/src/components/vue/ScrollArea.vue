@@ -19,12 +19,12 @@ const api = computed(() => zagScrollArea.connect(service, normalizeProps))
 					:key="index"
 					:class="css({border: 1, borderColor: 'gray.300', borderStyle: 'solid', py: 3, px: 2,  mb: 1})"
 				>
-					Item {{ index}}
+					Item {{ index }}
 				</div>
 			</div>
 		</div>
 		<div v-bind="api.getScrollbarProps()">
-			<div v-bind="api.getThumbProps()"/>
+			<div v-bind="api.getThumbProps()" />
 		</div>
 	</div>
 </template>

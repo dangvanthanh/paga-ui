@@ -70,7 +70,7 @@ const { title, entry } = Astro.props
           pos: 'fixed',
         })}
 			>
-				<Sidebar/>
+				<Sidebar />
 			</aside>
 			<main
 				role="main"
@@ -78,7 +78,7 @@ const { title, entry } = Astro.props
 			>
 				{entry && <Hero entry={entry} />}
 				<div class={css({ w: 'full', maxW: '3xl', mx: 'auto', py: 8 })}>
-					<slot/>
+					<slot />
 				</div>
 			</main>
 		</div>

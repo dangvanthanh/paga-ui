@@ -16,8 +16,7 @@ const { id } = Astro.params
 ---
 
 <div class={flex({ direction: 'column', gap: 2, pb: 8 })}>
-	{
-    sidebars.map((sidebar) => (
+	{sidebars.map((sidebar) => (
       <div class={flex({ direction: 'column' })}>
         <div class={css({ fontWeight: 500, py: 2 })}>{sidebar.title}</div>
         <ul
@@ -67,6 +66,5 @@ const { id } = Astro.params
           ))}
         </ul>
       </div>
-    ))
-  }
+    ))}
 </div>

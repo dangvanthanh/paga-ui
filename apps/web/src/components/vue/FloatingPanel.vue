@@ -18,16 +18,16 @@ const api = computed(() => floatingPanel.connect(service, normalizeProps))
 					<p v-bind="api.getTitleProps()">Floating Panel</p>
 					<div v-bind="api.getControlProps()">
 						<button v-bind="api.getStageTriggerProps({ stage: 'minimized' })">
-							<Minus/>
+							<Minus />
 						</button>
 						<button v-bind="api.getStageTriggerProps({ stage: 'maximized' })">
-							<Maximize2/>
+							<Maximize2 />
 						</button>
 						<button v-bind="api.getStageTriggerProps({ stage: 'default' })">
-							<ArrowDownLeft/>
+							<ArrowDownLeft />
 						</button>
 						<button v-bind="api.getCloseTriggerProps()">
-							<XIcon/>
+							<XIcon />
 						</button>
 					</div>
 				</div>
@@ -36,14 +36,14 @@ const api = computed(() => floatingPanel.connect(service, normalizeProps))
 				<p>Some content</p>
 			</div>
 
-			<div v-bind="api.getResizeTriggerProps({ axis: 'n' })"/>
-			<div v-bind="api.getResizeTriggerProps({ axis: 'e' })"/>
-			<div v-bind="api.getResizeTriggerProps({ axis: 'w' })"/>
-			<div v-bind="api.getResizeTriggerProps({ axis: 's' })"/>
-			<div v-bind="api.getResizeTriggerProps({ axis: 'ne' })"/>
-			<div v-bind="api.getResizeTriggerProps({ axis: 'se' })"/>
-			<div v-bind="api.getResizeTriggerProps({ axis: 'sw' })"/>
-			<div v-bind="api.getResizeTriggerProps({ axis: 'nw' })"/>
+			<div v-bind="api.getResizeTriggerProps({ axis: 'n' })" />
+			<div v-bind="api.getResizeTriggerProps({ axis: 'e' })" />
+			<div v-bind="api.getResizeTriggerProps({ axis: 'w' })" />
+			<div v-bind="api.getResizeTriggerProps({ axis: 's' })" />
+			<div v-bind="api.getResizeTriggerProps({ axis: 'ne' })" />
+			<div v-bind="api.getResizeTriggerProps({ axis: 'se' })" />
+			<div v-bind="api.getResizeTriggerProps({ axis: 'sw' })" />
+			<div v-bind="api.getResizeTriggerProps({ axis: 'nw' })" />
 		</div>
 	</div>
 </template>

@@ -21,7 +21,7 @@ const api = computed(() => marquee.connect(service, normalizeProps))
 <template>
 	<div v-bind="api.getRootProps()">
 		<!-- Optional: Add fade gradient at start -->
-		<div v-bind="api.getEdgeProps({ side: 'start' })"/>
+		<div v-bind="api.getEdgeProps({ side: 'start' })" />
 
 		<div v-bind="api.getViewportProps()">
 			<!-- Render content (original + clones) -->
@@ -38,6 +38,6 @@ const api = computed(() => marquee.connect(service, normalizeProps))
 		</div>
 
 		<!-- Optional: Add fade gradient at end -->
-		<div v-bind="api.getEdgeProps({ side: 'end' })"/>
+		<div v-bind="api.getEdgeProps({ side: 'end' })" />
 	</div>
 </template>

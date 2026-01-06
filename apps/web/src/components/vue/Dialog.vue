@@ -18,7 +18,7 @@ const api = computed(() => zagDialog.connect(service, normalizeProps))
 	</button>
 	<Teleport to="body">
 		<div v-if="api.open" :class="styles.root">
-			<div v-bind="api.getBackdropProps()" :class="styles.backdrop"/>
+			<div v-bind="api.getBackdropProps()" :class="styles.backdrop" />
 			<div v-bind="api.getPositionerProps()">
 				<div v-bind="api.getContentProps()" :class="styles.content">
 					<h2 v-bind="api.getTitleProps()" :class="styles.title">

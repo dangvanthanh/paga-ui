@@ -19,8 +19,8 @@ const api = computed(() => zagClipboard.connect(service, normalizeProps))
 		<div v-bind="api.getControlProps()" :class="styles.control">
 			<input v-bind="api.getInputProps()" :class="styles.input">
 			<button v-bind="api.getTriggerProps()" :class="styles.trigger">
-				<ClipboardCheck v-if="api.copied"/>
-				<ClipboardCopyIcon v-else/>
+				<ClipboardCheck v-if="api.copied" />
+				<ClipboardCopyIcon v-else />
 			</button>
 		</div>
 	</div>

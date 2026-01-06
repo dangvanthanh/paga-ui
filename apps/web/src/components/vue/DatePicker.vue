@@ -40,13 +40,13 @@ const api = computed(() => zagDatepicker.connect(service, normalizeProps))
 							:class="flex({ align: 'center', justify: 'space-between', mb: 2, gap: 6 })"
 						>
 							<button v-bind="api.getPrevTriggerProps()" :class="css({ p: 2 })">
-								<ChevronLeftIcon :size="16"/>
+								<ChevronLeftIcon :size="16" />
 							</button>
 							<button v-bind="api.getViewTriggerProps()">
 								{{ api.visibleRangeText.start }}
 							</button>
 							<button v-bind="api.getNextTriggerProps()" :class="css({ p: 2 })">
-								<ChevronRightIcon :size="16"/>
+								<ChevronRightIcon :size="16" />
 							</button>
 						</div>
 						<table v-bind="api.getTableProps({ view: 'day' })">

@@ -22,8 +22,8 @@ const api = computed(() => zagPasswordInput.connect(service, normalizeProps))
 				:class="styles.visibilityTrigger"
 			>
 				<span v-bind="api.getIndicatorProps()">
-					<EyeIcon v-if="api.visible"/>
-					<EyeOffIcon v-else/>
+					<EyeIcon v-if="api.visible" />
+					<EyeOffIcon v-else />
 				</span>
 			</button>
 		</div>

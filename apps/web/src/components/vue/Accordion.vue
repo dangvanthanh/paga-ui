@@ -40,7 +40,7 @@ const api = computed(() => zagAccordion.connect(service, normalizeProps))
 				v-bind="api.getItemTriggerProps({ value: item.title })"
 			>
 				<span>{{ item.title }}</span>
-				<ChevronDown :size="16"/>
+				<ChevronDown :size="16" />
 			</button>
 			<div
 				v-bind="api.getItemContentProps({ value: item.title })"

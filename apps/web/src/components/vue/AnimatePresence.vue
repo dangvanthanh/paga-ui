@@ -28,6 +28,6 @@ const unmount = computed(() => !api.value.present && props.unmountOnExit)
 		:data-state="api.skip ? undefined : present ? 'open' : 'closed'"
 		v-bind="$attrs"
 	>
-		<slot/>
+		<slot />
 	</div>
 </template>

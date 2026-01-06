@@ -24,10 +24,10 @@ const api = computed(() => zagCarousel.connect(service, normalizeProps))
 <template>
 	<div ref="ref" v-bind="api.getRootProps()" :class="styles.root">
 		<button v-bind="api.getPrevTriggerProps()" :class="styles.prevTrigger">
-			<ChevronLeft :class="css({ w: 6, h: 6 })"/>
+			<ChevronLeft :class="css({ w: 6, h: 6 })" />
 		</button>
 		<button v-bind="api.getNextTriggerProps()" :class="styles.nextTrigger">
-			<ChevronRight :class="css({ w: 6, h: 6 })"/>
+			<ChevronRight :class="css({ w: 6, h: 6 })" />
 		</button>
 		<div v-bind="api.getItemGroupProps()">
 			<div
