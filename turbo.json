@@ -7,10 +7,12 @@
 			"outputs": [".astro/**", "dist/**"]
 		},
 		"lint": {
-			"dependsOn": ["^lint"]
+			"dependsOn": ["^lint"],
+			"cache": false
 		},
 		"format": {
-			"dependsOn": ["^format"]
+			"dependsOn": ["^format"],
+			"cache": false
 		},
 		"dev": {
 			"cache": false,
