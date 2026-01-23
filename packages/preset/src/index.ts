@@ -19,4 +19,4 @@ const createPreset = (): Preset => {
 
 const pagaPreset = createPreset()
 
-export { createPreset, pagaPreset as default }
+export default pagaPreset
