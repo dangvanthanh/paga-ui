@@ -20,7 +20,10 @@ const api = computed(() => zagTagsInput.connect(service, normalizeProps))
 				<div v-bind="api.getItemProps({ index, value })" :class="styles.tag">
 					<div v-bind="api.getItemPreviewProps({ index, value })">
 						<span>{{ value }}</span>
-						<button v-bind="api.getItemDeleteTriggerProps({ index, value })">
+						<button
+							type="button"
+							v-bind="api.getItemDeleteTriggerProps({ index, value })"
+						>
 							<small>&#x2715;</small>
 						</button>
 					</div>

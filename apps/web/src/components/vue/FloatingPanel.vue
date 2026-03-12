@@ -10,23 +10,32 @@ const api = computed(() => floatingPanel.connect(service, normalizeProps))
 </script>
 
 <template>
-	<button v-bind="api.getTriggerProps()">Toggle Panel</button>
+	<button type="button" v-bind="api.getTriggerProps()">Toggle Panel</button>
 	<div v-bind="api.getPositionerProps()">
 		<div v-bind="api.getContentProps()">
 			<div v-bind="api.getDragTriggerProps()">
 				<div v-bind="api.getHeaderProps()">
 					<p v-bind="api.getTitleProps()">Floating Panel</p>
 					<div v-bind="api.getControlProps()">
-						<button v-bind="api.getStageTriggerProps({ stage: 'minimized' })">
+						<button
+							type="button"
+							v-bind="api.getStageTriggerProps({ stage: 'minimized' })"
+						>
 							<Minus />
 						</button>
-						<button v-bind="api.getStageTriggerProps({ stage: 'maximized' })">
+						<button
+							type="button"
+							v-bind="api.getStageTriggerProps({ stage: 'maximized' })"
+						>
 							<Maximize2 />
 						</button>
-						<button v-bind="api.getStageTriggerProps({ stage: 'default' })">
+						<button
+							type="button"
+							v-bind="api.getStageTriggerProps({ stage: 'default' })"
+						>
 							<ArrowDownLeft />
 						</button>
-						<button v-bind="api.getCloseTriggerProps()">
+						<button type="button" v-bind="api.getCloseTriggerProps()">
 							<XIcon />
 						</button>
 					</div>

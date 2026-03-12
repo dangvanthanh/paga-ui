@@ -14,7 +14,11 @@ const api = computed(() => zagPopover.connect(service, normalizeProps))
 
 <template>
 	<div>
-		<button v-bind="api.getTriggerProps()" :class="styles.trigger">
+		<button
+			type="button"
+			v-bind="api.getTriggerProps()"
+			:class="styles.trigger"
+		>
 			Dimensions <span aria-hidden>▾</span>
 		</button>
 		<Teleport to="body" :disabled="!api.portalled">
@@ -54,6 +58,7 @@ const api = computed(() => zagPopover.connect(service, normalizeProps))
 						</div>
 					</div>
 					<button
+						type="button"
 						v-bind="api.getCloseTriggerProps()"
 						:class="styles.closeTrigger"
 					>

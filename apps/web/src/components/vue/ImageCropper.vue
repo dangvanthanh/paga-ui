@@ -17,6 +17,7 @@ const api = computed(() => imageCropper.connect(service, normalizeProps))
 				src="https://picsum.photos/seed/crop/640/400"
 				crossorigin="anonymous"
 				v-bind="api.getImageProps()"
+				alt=""
 			>
 
 			<div v-bind="api.getSelectionProps()">

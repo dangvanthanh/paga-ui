@@ -12,6 +12,7 @@ const api = computed(() => zagCollapsible.connect(service, normalizeProps))
 <template>
 	<div v-bind="api.getRootProps()">
 		<button
+			type="button"
 			v-bind="api.getTriggerProps()"
 			:class="cx(button({ variant: 'ghost', size: 'sm' }), css({ mb: 4 }))"
 		>

@@ -18,6 +18,7 @@ const api = computed(() => zagPasswordInput.connect(service, normalizeProps))
 		<div v-bind="api.getControlProps()" :class="styles.control">
 			<input v-bind="api.getInputProps()" :class="styles.input">
 			<button
+				type="button"
 				v-bind="api.getVisibilityTriggerProps()"
 				:class="styles.visibilityTrigger"
 			>

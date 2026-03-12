@@ -23,6 +23,6 @@ const api = computed(() => zagToast.connect(service, normalizeProps))
 	<div v-bind="api.getRootProps()">
 		<h3 v-bind="api.getTitleProps()">{{ api.title }}</h3>
 		<p v-bind="api.getDescriptionProps()">{{ api.description }}</p>
-		<button @click="api.dismiss()">Close</button>
+		<button type="button" @click="api.dismiss()">Close</button>
 	</div>
 </template>

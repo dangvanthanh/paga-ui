@@ -28,7 +28,11 @@ const api = computed(() => zagSteps.connect(service, normalizeProps))
 				v-bind="api.getItemProps({ index })"
 				:class="styles.item"
 			>
-				<button v-bind="api.getTriggerProps({ index })" :class="styles.trigger">
+				<button
+					type="button"
+					v-bind="api.getTriggerProps({ index })"
+					:class="styles.trigger"
+				>
 					<div
 						v-bind="api.getIndicatorProps({ index })"
 						:class="styles.indicator"
@@ -61,8 +65,20 @@ const api = computed(() => zagSteps.connect(service, normalizeProps))
 		</div>
 
 		<div>
-			<button v-bind="api.getPrevTriggerProps()" :class="button()">Back</button>
-			<button v-bind="api.getNextTriggerProps()" :class="button()">Next</button>
+			<button
+				type="button"
+				v-bind="api.getPrevTriggerProps()"
+				:class="button()"
+			>
+				Back
+			</button>
+			<button
+				type="button"
+				v-bind="api.getNextTriggerProps()"
+				:class="button()"
+			>
+				Next
+			</button>
 		</div>
 	</div>
 </template>

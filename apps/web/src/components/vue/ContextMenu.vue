@@ -24,7 +24,11 @@ const api = computed(() => zagMenu.connect(service, normalizeProps))
 
 <template>
 	<div>
-		<button v-bind="api.getContextTriggerProps()" :class="styles.trigger">
+		<button
+			type="button"
+			v-bind="api.getContextTriggerProps()"
+			:class="styles.trigger"
+		>
 			<div>Open context menu</div>
 		</button>
 		<div v-bind="api.getPositionerProps()">

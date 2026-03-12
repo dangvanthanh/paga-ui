@@ -12,7 +12,11 @@ const api = computed(() => zagMenu.connect(service, normalizeProps))
 
 <template>
 	<div>
-		<button v-bind="api.getTriggerProps()" :class="styles.trigger">
+		<button
+			type="button"
+			v-bind="api.getTriggerProps()"
+			:class="styles.trigger"
+		>
 			Actions <span aria-hidden>▾</span>
 		</button>
 		<div v-bind="api.getPositionerProps()">

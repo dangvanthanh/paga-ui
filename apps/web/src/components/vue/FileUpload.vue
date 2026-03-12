@@ -29,7 +29,11 @@ const api = computed(() => zagFileUpload.connect(service, normalizeProps))
 		<div v-bind="api.getDropzoneProps()" :class="styles.dropzone">
 			<input v-bind="api.getHiddenInputProps()">
 			<span :class="styles.label">Drag and drop, or&nbsp;</span>
-			<button v-bind="api.getTriggerProps()" :class="styles.trigger">
+			<button
+				type="button"
+				v-bind="api.getTriggerProps()"
+				:class="styles.trigger"
+			>
 				click to select
 			</button>
 		</div>
@@ -46,7 +50,7 @@ const api = computed(() => zagFileUpload.connect(service, normalizeProps))
 					<span>{{ file.name }}</span>
 					<span>{{ humanFileSize(file.size, true) }}</span>
 				</div>
-				<button v-bind="api.getItemDeleteTriggerProps({ file })">
+				<button type="button" v-bind="api.getItemDeleteTriggerProps({ file })">
 					<small>&#x2715;</small>
 				</button>
 			</li>

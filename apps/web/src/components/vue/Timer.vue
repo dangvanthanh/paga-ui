@@ -51,6 +51,7 @@ const api = computed(() => zagTimer.connect(service, normalizeProps))
 		</div>
 		<div :class="flex({ justify: 'center', gap: 2 })">
 			<button
+				type="button"
 				@click="api.start"
 				v-show="!api.running && !api.paused"
 				:class="button({ variant: 'ghost' })"
@@ -59,6 +60,7 @@ const api = computed(() => zagTimer.connect(service, normalizeProps))
 				Start
 			</button>
 			<button
+				type="button"
 				@click="api.pause"
 				v-show="api.running"
 				:class="button({ variant: 'ghost' })"
@@ -67,6 +69,7 @@ const api = computed(() => zagTimer.connect(service, normalizeProps))
 				Pause
 			</button>
 			<button
+				type="button"
 				@click="api.resume"
 				v-show="api.paused"
 				:class="button({ variant: 'ghost' })"
@@ -75,6 +78,7 @@ const api = computed(() => zagTimer.connect(service, normalizeProps))
 				Resume
 			</button>
 			<button
+				type="button"
 				@click="api.reset"
 				v-show="api.running || api.paused"
 				:class="button({ variant: 'ghost' })"

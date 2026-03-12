@@ -27,13 +27,13 @@ api.value.setPageSize(props.pageSize || 1)
 		v-bind="api.getRootProps()"
 		:class="styles.root"
 	>
-		<a
-			href="#previous"
+		<button
+			type="button"
 			v-bind="api.getPrevTriggerProps()"
 			:class="styles.prevTrigger"
 		>
 			<ChevronLeft />
-		</a>
+		</button>
 		<template
 			v-for="(page, i) in api.pages"
 			:key="page.type === 'page' ? page.value : `ellipsis-${i}`"
@@ -55,12 +55,12 @@ api.value.setPageSize(props.pageSize || 1)
 				>
 			</span>
 		</template>
-		<a
-			href="#next"
+		<button
+			type="button"
 			v-bind="api.getNextTriggerProps()"
 			:class="styles.nextTrigger"
 		>
 			<ChevronRight />
-		</a>
+		</button>
 	</nav>
 </template>

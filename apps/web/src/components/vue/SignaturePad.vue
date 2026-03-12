@@ -15,8 +15,9 @@ const api = computed(() => zagSignaturePad.connect(service, normalizeProps))
 	<div v-bind="api.getRootProps()" :class="styles.root">
 		<div v-bind="api.getControlProps()" :class="styles.control">
 			<svg v-bind="api.getSegmentProps()">
+				<title>Signature Pad</title>
 				<path
-					v-for="(path, i) of api.paths"
+					v-for="(path, i) in api.paths"
 					:key="i"
 					v-bind="api.getSegmentPathProps({ path })"
 				/>
@@ -25,7 +26,11 @@ const api = computed(() => zagSignaturePad.connect(service, normalizeProps))
 					v-bind="api.getSegmentPathProps({ path: api.currentPath })"
 				/>
 			</svg>
-			<button v-bind="api.getClearTriggerProps()" :class="styles.clearTrigger">
+			<button
+				type="button"
+				v-bind="api.getClearTriggerProps()"
+				:class="styles.clearTrigger"
+			>
 				<Eraser :size="16" />
 			</button>
 			<div v-bind="api.getGuideProps()" :class="styles.guide" />

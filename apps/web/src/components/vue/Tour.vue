@@ -41,7 +41,7 @@ const open = computed(() => api.value.open && api.value.step)
 
 <template>
 	<div>
-		<button @click="api.start()" :class="css({ fontSize: 'sm' })">
+		<button type="button" @click="api.start()" :class="css({ fontSize: 'sm' })">
 			Start Tour
 		</button>
 	</div>
@@ -68,6 +68,7 @@ const open = computed(() => api.value.open && api.value.step)
 				</div>
 				<div v-if="api.step?.actions" :class="styles.actions">
 					<button
+						type="button"
 						v-for="action in api.step.actions"
 						:key="action.label"
 						v-bind="api.getActionTriggerProps({ action })"
@@ -77,6 +78,7 @@ const open = computed(() => api.value.open && api.value.step)
 					</button>
 				</div>
 				<button
+					type="button"
 					v-bind="api.getCloseTriggerProps()"
 					:class="styles.closeTrigger"
 				>

@@ -13,6 +13,7 @@ const api = computed(() => zagProgress.connect(service, normalizeProps))
 <template>
 	<div v-bind="api.getRootProps()" :class="styles.root">
 		<svg v-bind="api.getCircleProps()" :class="styles.circle">
+			<title>Progress Circular</title>
 			<circle v-bind="api.getCircleTrackProps()" :class="styles.circleTrack" />
 			<circle v-bind="api.getCircleRangeProps()" :class="styles.circleRange" />
 		</svg>

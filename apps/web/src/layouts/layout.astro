@@ -59,8 +59,6 @@ const newTitle = `${title} - Paga UI`
 		>
 	</head>
 	<body>
-		<div class={flex({ direction: 'column', minH: '100vh' })}>
-			<slot />
-		</div>
+		<div class={flex({ direction: 'column', minH: '100vh' })}><slot /></div>
 	</body>
 </html>

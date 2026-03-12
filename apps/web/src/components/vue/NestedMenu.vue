@@ -35,7 +35,11 @@ const shareMenuTrigger = computed(() =>
 </script>
 
 <template>
-	<button v-bind="fileMenu.getTriggerProps()" :class="styles.trigger">
+	<button
+		type="button"
+		v-bind="fileMenu.getTriggerProps()"
+		:class="styles.trigger"
+	>
 		File <span aria-hidden>▾</span>
 	</button>
 	<Teleport to="body">

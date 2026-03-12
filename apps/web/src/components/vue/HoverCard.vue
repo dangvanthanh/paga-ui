@@ -29,9 +29,7 @@ const api = computed(() => zagHoverCard.connect(service, normalizeProps))
 					<div v-bind="api.getArrowTipProps()"></div>
 				</div>
 				<div :class="flex({ align: 'flex-start', gap: 3 })">
-					<div :class="css({ mt: 1 })">
-						<Avatar id="DT" fallback="DT" />
-					</div>
+					<div :class="css({ mt: 1 })"><Avatar id="DT" fallback="DT" /></div>
 					<div :class="css({ flex: '1 1 0%' })">
 						<div :class="css({ color: 'gray.900', fontWeight: 600, mb: 1 })">
 							Dang Van Thanh

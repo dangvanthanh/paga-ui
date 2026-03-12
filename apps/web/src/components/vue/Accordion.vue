@@ -36,6 +36,7 @@ const api = computed(() => zagAccordion.connect(service, normalizeProps))
 			:class="styles.item"
 		>
 			<button
+				type="button"
 				:class="styles.trigger"
 				v-bind="api.getItemTriggerProps({ value: item.title })"
 			>

@@ -13,7 +13,11 @@ const api = computed(() => zagDialog.connect(service, normalizeProps))
 </script>
 
 <template>
-	<button v-bind="api.getTriggerProps()" :class="css({ textStyle: 'sm' })">
+	<button
+		type="button"
+		v-bind="api.getTriggerProps()"
+		:class="css({ textStyle: 'sm' })"
+	>
 		Open Dialog
 	</button>
 	<Teleport to="body">
@@ -35,12 +39,13 @@ const api = computed(() => zagDialog.connect(service, normalizeProps))
 					</div>
 					<div :class="flex({ justify: 'end', gap: 2 })">
 						<button
+							type="button"
 							:class="button({ variant: 'ghost' })"
 							v-bind="api.getCloseTriggerProps()"
 						>
 							Cancel
 						</button>
-						<button :class="button()">Save</button>
+						<button type="button" :class="button()">Save</button>
 					</div>
 				</div>
 			</div>

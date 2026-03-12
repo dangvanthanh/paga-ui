@@ -46,7 +46,11 @@ const api = computed(() => zagCombobox.connect(service, normalizeProps))
 		<label v-bind="api.getLabelProps()" :class="styles.label">Framework</label>
 		<div v-bind="api.getControlProps()" :class="styles.control">
 			<input v-bind="api.getInputProps()" :class="styles.input">
-			<button v-bind="api.getTriggerProps()" :class="styles.trigger">
+			<button
+				type="button"
+				v-bind="api.getTriggerProps()"
+				:class="styles.trigger"
+			>
 				<ChevronsUpDown :size="16" />
 			</button>
 		</div>

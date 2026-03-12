@@ -12,7 +12,12 @@ const api = computed(() => zagTooltip.connect(service, normalizeProps))
 
 <template>
 	<div :class="styles.root">
-		<button ref="ref" v-bind="api.getTriggerProps()" :class="styles.trigger">
+		<button
+			type="button"
+			ref="ref"
+			v-bind="api.getTriggerProps()"
+			:class="styles.trigger"
+		>
 			Hover Me
 		</button>
 		<div

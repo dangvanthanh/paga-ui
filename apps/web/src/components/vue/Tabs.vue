@@ -36,6 +36,7 @@ const api = computed(() => zagTabs.connect(service, normalizeProps))
 	<div ref="ref" v-bind="api.getRootProps()" :class="styles.root">
 		<div v-bind="api.getListProps()" :class="styles.list">
 			<button
+				type="button"
 				v-for="item in data"
 				v-bind="api.getTriggerProps({ value: item.value })"
 				:key="item.value"

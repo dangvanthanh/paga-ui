@@ -26,7 +26,7 @@ const api = computed(() => zagDatepicker.connect(service, normalizeProps))
 				v-bind="api.getInputProps()"
 				:class="css({ w: 'full', px: 2, outline: 'none' })"
 			>
-			<button v-bind="api.getTriggerProps()">🗓</button>
+			<button type="button" v-bind="api.getTriggerProps()">🗓</button>
 		</div>
 		<Teleport to="body">
 			<div v-bind="api.getPositionerProps()">
@@ -39,13 +39,21 @@ const api = computed(() => zagDatepicker.connect(service, normalizeProps))
 							v-bind="api.getViewControlProps({ view: 'year' })"
 							:class="flex({ align: 'center', justify: 'space-between', mb: 2, gap: 6 })"
 						>
-							<button v-bind="api.getPrevTriggerProps()" :class="css({ p: 2 })">
+							<button
+								type="button"
+								v-bind="api.getPrevTriggerProps()"
+								:class="css({ p: 2 })"
+							>
 								<ChevronLeftIcon :size="16" />
 							</button>
-							<button v-bind="api.getViewTriggerProps()">
+							<button type="button" v-bind="api.getViewTriggerProps()">
 								{{ api.visibleRangeText.start }}
 							</button>
-							<button v-bind="api.getNextTriggerProps()" :class="css({ p: 2 })">
+							<button
+								type="button"
+								v-bind="api.getNextTriggerProps()"
+								:class="css({ p: 2 })"
+							>
 								<ChevronRightIcon :size="16" />
 							</button>
 						</div>

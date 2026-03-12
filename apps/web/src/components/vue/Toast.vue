@@ -25,10 +25,10 @@ const bottomRightToast = () =>
 
 <template>
 	<div :class="flex({ gap: 2 })">
-		<button @click="topRightToast" :class="button()">
+		<button type="button" @click="topRightToast" :class="button()">
 			Show Top Right Toast
 		</button>
-		<button @click="bottomRightToast" :class="button()">
+		<button type="button" @click="bottomRightToast" :class="button()">
 			Show Bottom Right toast
 		</button>
 	</div>

@@ -24,7 +24,11 @@ const api = computed(() => zagSelect.connect(service, normalizeProps))
 
 <template>
 	<div :class="styles.root">
-		<button v-bind="api.getTriggerProps()" :class="styles.trigger">
+		<button
+			type="button"
+			v-bind="api.getTriggerProps()"
+			:class="styles.trigger"
+		>
 			<span>{{ api.valueAsString || 'Select option' }}</span>
 			<span>▼</span>
 		</button>

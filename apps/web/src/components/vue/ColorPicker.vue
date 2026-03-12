@@ -33,7 +33,11 @@ const api = computed(() => zagColorPicker.connect(service, normalizeProps))
 		</label>
 		<input v-bind="api.getHiddenInputProps()">
 		<div v-bind="api.getControlProps()" :class="styles.control">
-			<button v-bind="api.getTriggerProps()" :class="styles.trigger">
+			<button
+				type="button"
+				v-bind="api.getTriggerProps()"
+				:class="styles.trigger"
+			>
 				<div
 					v-bind="api.getTransparencyGridProps({ size: '10px' })"
 					:class="styles.transparencyGrid"
@@ -94,6 +98,7 @@ const api = computed(() => zagColorPicker.connect(service, normalizeProps))
 						</div>
 					</div>
 					<button
+						type="button"
 						v-bind="api.getEyeDropperTriggerProps()"
 						:class="styles.eyeDropperTrigger"
 					>
@@ -148,7 +153,10 @@ const api = computed(() => zagColorPicker.connect(service, normalizeProps))
 				<div :class="css({ fontWeight: 600 })">Swatches</div>
 				<div v-bind="api.getSwatchGroupProps()" :class="styles.swatchGroup">
 					<template v-for="preset in presets">
-						<button v-bind="api.getSwatchTriggerProps({ value: preset })">
+						<button
+							type="button"
+							v-bind="api.getSwatchTriggerProps({ value: preset })"
+						>
 							<div
 								v-bind="api.getTransparencyGridProps()"
 								:class="styles.transparencyGrid"
